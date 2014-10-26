@@ -5,7 +5,7 @@
 		<Option title="Singularity" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="FirstGameStuff\map\;FirstGameStuff\;Utilities\;FirstGameStuff\Items\;FirstGameStuff\Items\InventorySorter\;_Main\;Encrypt\;Depreciated\;SecondGameStuff\;" />
+		<Option virtualFolders="FirstGameStuff\map\;FirstGameStuff\;Utilities\;FirstGameStuff\Items\;FirstGameStuff\Items\InventorySorter\;_Main\;Depreciated\;SecondGameStuff\;" />
 		<Build>
 			<Target title="default">
 				<Option output="Singularity" prefix_auto="1" extension_auto="1" />
@@ -27,15 +27,6 @@
 		</Unit>
 		<Unit filename="Effects.h">
 			<Option virtualFolder="FirstGameStuff/" />
-		</Unit>
-		<Unit filename="Encrypt.cpp">
-			<Option virtualFolder="Encrypt/" />
-		</Unit>
-		<Unit filename="Encrypt.h">
-			<Option virtualFolder="Encrypt/" />
-		</Unit>
-		<Unit filename="EncryptConverter.cpp">
-			<Option virtualFolder="Encrypt/" />
 		</Unit>
 		<Unit filename="FileReader.cpp" />
 		<Unit filename="FileReader.h">
@@ -116,6 +107,7 @@
 		</Unit>
 		<Unit filename="pixelPainter.cpp" />
 		<Unit filename="pixelPainter.h" />
+		<Unit filename="staticLibraries.h" />
 		<Unit filename="stringFunctions.cpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>
