@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Singularity" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="FirstGameStuff\map\;FirstGameStuff\;Utilities\;FirstGameStuff\Items\;FirstGameStuff\Items\InventorySorter\;_Main\;Encrypt\;Depreciated\;SecondGameStuff\;" />
+		<Build>
+			<Target title="default">
+				<Option output="Singularity" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Linker>
+			<Add library="gdi32" />
+		</Linker>
+		<Unit filename="Bases.cpp">
+			<Option virtualFolder="SecondGameStuff/" />
+		</Unit>
+		<Unit filename="Bases.h">
+			<Option virtualFolder="SecondGameStuff/" />
+		</Unit>
+		<Unit filename="Depreciated.inl">
+			<Option virtualFolder="Depreciated/" />
+		</Unit>
+		<Unit filename="Effects.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="Encrypt.cpp">
+			<Option virtualFolder="Encrypt/" />
+		</Unit>
+		<Unit filename="Encrypt.h">
+			<Option virtualFolder="Encrypt/" />
+		</Unit>
+		<Unit filename="EncryptConverter.cpp">
+			<Option virtualFolder="Encrypt/" />
+		</Unit>
+		<Unit filename="FileReader.cpp" />
+		<Unit filename="FileReader.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="Interactive.h">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="Inventory.cpp">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="ItemDeclaration.h">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="ItemFileIO.cpp">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="ItemStruct.h">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="Items.cpp">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="Items.h">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="Locations.h">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="LootDrop.cpp">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="LootDrop.h">
+			<Option virtualFolder="FirstGameStuff/Items/" />
+		</Unit>
+		<Unit filename="Map.cpp">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="Map.h">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="MapLoader.cpp">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="MapLoader.h">
+			<Option virtualFolder="FirstGameStuff/map/" />
+		</Unit>
+		<Unit filename="NPC.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="Painter.cpp" />
+		<Unit filename="Painter.h" />
+		<Unit filename="Player.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="ScreenType.cpp" />
+		<Unit filename="ScreenType.h" />
+		<Unit filename="Screens.cpp" />
+		<Unit filename="Screens.h" />
+		<Unit filename="ScreensSwitch.cpp" />
+		<Unit filename="TakeGameMain.cpp">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="TakeGameMain.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="UsefulHeaders.h">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="functionChecker.h">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="inventorySorter.cpp">
+			<Option virtualFolder="FirstGameStuff/Items/InventorySorter/" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option virtualFolder="_Main/" />
+		</Unit>
+		<Unit filename="pixelPainter.cpp" />
+		<Unit filename="pixelPainter.h" />
+		<Unit filename="stringFunctions.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="stringFunctions.h">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="typeChanger.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="typeChanger.h">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

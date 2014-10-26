@@ -1,0 +1,108 @@
+# Project: Singularity
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Bases.o keys.o CursorOptions.o Screens.o Painter.o FileIO.o Container.o ScreensSwitch.o Encrypt.o pixelPainter.o typeChanger.o parseString.o EncryptConverter.o WindowsIntegration.o Server.o TakeGameMain.o ScreenType.o LootDrop.o Items.o treeType.o leafType.o stringFunctions.o ItemFileIO.o Map.o MapLoader.o FileReader.o $(RES)
+LINKOBJ  = main.o Bases.o keys.o CursorOptions.o Screens.o Painter.o FileIO.o Container.o ScreensSwitch.o Encrypt.o pixelPainter.o typeChanger.o parseString.o EncryptConverter.o WindowsIntegration.o Server.o TakeGameMain.o ScreenType.o LootDrop.o Items.o treeType.o leafType.o stringFunctions.o ItemFileIO.o Map.o MapLoader.o FileReader.o $(RES)
+LIBS =  -L"E:/programs/Dev-Cpp/lib" -lgdi32  -g3 
+INCS =  -I"E:/programs/Dev-Cpp/include" 
+CXXINCS =  -I"E:/programs/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"E:/programs/Dev-Cpp/include/c++/3.4.2/backward"  -I"E:/programs/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"E:/programs/Dev-Cpp/include/c++/3.4.2"  -I"E:/programs/Dev-Cpp/include" 
+BIN  = Singularity.exe
+CXXFLAGS = $(CXXINCS)   -fexpensive-optimizations -g3
+CFLAGS = $(INCS)   -fexpensive-optimizations -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Singularity.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Singularity.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Bases.o: Bases.cpp
+	$(CPP) -c Bases.cpp -o Bases.o $(CXXFLAGS)
+
+keys.o: keys.cpp
+	$(CPP) -c keys.cpp -o keys.o $(CXXFLAGS)
+
+CursorOptions.o: CursorOptions.cpp
+	$(CPP) -c CursorOptions.cpp -o CursorOptions.o $(CXXFLAGS)
+
+Screens.o: Screens.cpp
+	$(CPP) -c Screens.cpp -o Screens.o $(CXXFLAGS)
+
+Painter.o: Painter.cpp
+	$(CPP) -c Painter.cpp -o Painter.o $(CXXFLAGS)
+
+FileIO.o: FileIO.cpp
+	$(CPP) -c FileIO.cpp -o FileIO.o $(CXXFLAGS)
+
+Container.o: Container.cpp
+	$(CPP) -c Container.cpp -o Container.o $(CXXFLAGS)
+
+ScreensSwitch.o: ScreensSwitch.cpp
+	$(CPP) -c ScreensSwitch.cpp -o ScreensSwitch.o $(CXXFLAGS)
+
+Encrypt.o: Encrypt.cpp
+	$(CPP) -c Encrypt.cpp -o Encrypt.o $(CXXFLAGS)
+
+pixelPainter.o: pixelPainter.cpp
+	$(CPP) -c pixelPainter.cpp -o pixelPainter.o $(CXXFLAGS)
+
+typeChanger.o: typeChanger.cpp
+	$(CPP) -c typeChanger.cpp -o typeChanger.o $(CXXFLAGS)
+
+parseString.o: parseString.cpp
+	$(CPP) -c parseString.cpp -o parseString.o $(CXXFLAGS)
+
+EncryptConverter.o: EncryptConverter.cpp
+	$(CPP) -c EncryptConverter.cpp -o EncryptConverter.o $(CXXFLAGS)
+
+WindowsIntegration.o: WindowsIntegration.cpp
+	$(CPP) -c WindowsIntegration.cpp -o WindowsIntegration.o $(CXXFLAGS)
+
+Server.o: Server.cpp
+	$(CPP) -c Server.cpp -o Server.o $(CXXFLAGS)
+
+TakeGameMain.o: TakeGameMain.cpp
+	$(CPP) -c TakeGameMain.cpp -o TakeGameMain.o $(CXXFLAGS)
+
+ScreenType.o: ScreenType.cpp
+	$(CPP) -c ScreenType.cpp -o ScreenType.o $(CXXFLAGS)
+
+LootDrop.o: LootDrop.cpp
+	$(CPP) -c LootDrop.cpp -o LootDrop.o $(CXXFLAGS)
+
+Items.o: Items.cpp
+	$(CPP) -c Items.cpp -o Items.o $(CXXFLAGS)
+
+treeType.o: treeType.inl
+	$(CPP) -c treeType.inl -o treeType.o $(CXXFLAGS)
+
+leafType.o: leafType.cpp
+	$(CPP) -c leafType.cpp -o leafType.o $(CXXFLAGS)
+
+stringFunctions.o: stringFunctions.cpp
+	$(CPP) -c stringFunctions.cpp -o stringFunctions.o $(CXXFLAGS)
+
+ItemFileIO.o: ItemFileIO.cpp
+	$(CPP) -c ItemFileIO.cpp -o ItemFileIO.o $(CXXFLAGS)
+
+Map.o: Map.cpp
+	$(CPP) -c Map.cpp -o Map.o $(CXXFLAGS)
+
+MapLoader.o: MapLoader.cpp
+	$(CPP) -c MapLoader.cpp -o MapLoader.o $(CXXFLAGS)
+
+FileReader.o: FileReader.cpp
+	$(CPP) -c FileReader.cpp -o FileReader.o $(CXXFLAGS)
