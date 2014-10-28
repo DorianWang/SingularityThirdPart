@@ -28,10 +28,6 @@
 		<Unit filename="Effects.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
-		<Unit filename="FileReader.cpp" />
-		<Unit filename="FileReader.h">
-			<Option virtualFolder="FirstGameStuff/" />
-		</Unit>
 		<Unit filename="Interactive.h">
 			<Option virtualFolder="FirstGameStuff/map/" />
 		</Unit>
@@ -93,14 +89,11 @@
 		<Unit filename="TakeGameMain.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
-		<Unit filename="UsefulHeaders.h">
-			<Option virtualFolder="Utilities/" />
-		</Unit>
-		<Unit filename="functionChecker.h">
-			<Option virtualFolder="Utilities/" />
-		</Unit>
 		<Unit filename="inventorySorter.cpp">
 			<Option virtualFolder="FirstGameStuff/Items/InventorySorter/" />
+		</Unit>
+		<Unit filename="libraryIncluder.h">
+			<Option virtualFolder="Utilities/" />
 		</Unit>
 		<Unit filename="main.cpp">
 			<Option virtualFolder="_Main/" />

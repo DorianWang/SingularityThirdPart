@@ -878,3 +878,167 @@
 
 1389925682 source:d:\dorian's programs\singularitythirdpart\bases.cpp
 
+1414433168 source:d:\doriancode\singularitythirdpart\bases.cpp
+
+1414433168 source:d:\doriancode\singularitythirdpart\filereader.cpp
+	"FileReader.h"
+
+1414433168 d:\doriancode\singularitythirdpart\filereader.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+
+1414516167 d:\doriancode\singularitythirdpart\maploader.h
+	"libraryIncluder.h"
+
+1414516832 d:\doriancode\singularitythirdpart\libraryincluder.h
+	"_libraryController.h"
+
+1414433168 d:\doriancode\singularitythirdpart\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1414433168 source:d:\doriancode\singularitythirdpart\inventory.cpp
+	"ItemDeclaration.h"
+
+1414433168 d:\doriancode\singularitythirdpart\itemdeclaration.h
+	"iostream"
+	"string"
+	"vector"
+
+1414433168 source:d:\doriancode\singularitythirdpart\inventorysorter.cpp
+	"ItemDeclaration.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\itemfileio.cpp
+	"Items.h"
+
+1414433168 d:\doriancode\singularitythirdpart\items.h
+	"FileIO.h"
+	"treeType.h"
+	"ItemDeclaration.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\items.cpp
+	"Items.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\lootdrop.cpp
+	"LootDrop.h"
+
+1414433168 d:\doriancode\singularitythirdpart\lootdrop.h
+	"FileIO.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\map.cpp
+	"Map.h"
+
+1414433168 d:\doriancode\singularitythirdpart\map.h
+	"Locations.h"
+	"Effects.h"
+
+1414433168 d:\doriancode\singularitythirdpart\locations.h
+	<string>
+	<vector>
+	"Interactive.h"
+	"NPC.h"
+
+1414433168 d:\doriancode\singularitythirdpart\interactive.h
+
+1414433168 d:\doriancode\singularitythirdpart\npc.h
+
+1414433168 d:\doriancode\singularitythirdpart\effects.h
+
+1414433168 source:d:\doriancode\singularitythirdpart\maploader.cpp
+	"MapLoader.h"
+	"Map.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\painter.cpp
+	"Painter.h"
+
+1414433168 d:\doriancode\singularitythirdpart\painter.h
+	"windows.h"
+	"CursorOptions.h"
+	<string>
+	<cstdlib>
+	<iostream>
+
+1414433168 source:d:\doriancode\singularitythirdpart\pixelpainter.cpp
+	"pixelPainter.h"
+
+1414433168 d:\doriancode\singularitythirdpart\pixelpainter.h
+	<Windows.h>
+	"windows.h"
+	"wingdi.h"
+	"stdio.h"
+	<iostream>
+	<cmath>
+
+1414433168 source:d:\doriancode\singularitythirdpart\screens.cpp
+	"Screens.h"
+
+1414433168 d:\doriancode\singularitythirdpart\screens.h
+	<fstream>
+	<vector>
+	<stdarg.h>
+	<stdio.h>
+	<sstream>
+	<iostream>
+	"Keys.h"
+	"CursorOptions.h"
+	"Painter.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\screensswitch.cpp
+	"Screens.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\screentype.cpp
+	"ScreenType.h"
+
+1414433168 d:\doriancode\singularitythirdpart\screentype.h
+	<iostream>
+	<vector>
+	"keys.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\stringfunctions.cpp
+	"stringFunctions.h"
+
+1414433168 d:\doriancode\singularitythirdpart\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
+
+1414433168 source:d:\doriancode\singularitythirdpart\takegamemain.cpp
+	"TakeGameMain.h"
+
+1414433168 d:\doriancode\singularitythirdpart\takegamemain.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+	"FileReader.h"
+
+1414433168 source:d:\doriancode\singularitythirdpart\typechanger.cpp
+	"typeChanger.h"
+
+1414433168 d:\doriancode\singularitythirdpart\typechanger.h
+	<stdio.h>
+	<stdlib.h>
+
+1414517148 source:d:\doriancode\singularitythirdpart\main.cpp
+	<cstdlib>
+	<iostream>
+	<algorithm>
+	<sstream>
+	"UsefulHeaders.h"
+	"Bases.h"
+	"ConsoleOptions.h"
+	"Screens.h"
+	"stringFunctions.h"
+	"treeType.h"
+	"binaryTree.h"
+	"libraryIncluder.h"
+	"Painter.h"
+
+1414433168 d:\doriancode\singularitythirdpart\bases.h
+

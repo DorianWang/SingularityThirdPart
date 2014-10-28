@@ -40,9 +40,7 @@ char e;
 char f;
 };
 
-#include "Container.h"
 #include "Bases.h"
-#include "keys.h"
 #include "ConsoleOptions.h"
 #include "Screens.h"
 #include "stringFunctions.h"
@@ -52,10 +50,10 @@ char f;
 
 #include "binaryTree.h"
 
+#include "libraryIncluder.h"
 
 #include "Painter.h"
-#include "Encrypt.h"
-#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
+//#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
 
 
 // global variables
@@ -137,36 +135,6 @@ int main(int argc, char *argv[])
 
 
 
-
-
-   Encrypter Bromo;
-   bool cipherType[5];
-   //{
-   //Bromo.keygenBytes(6, "");
-//   Bromo.keygenInts(cipherType, 4, std::string("MyFirstCipher"));
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\A", 26);
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\B", 26);
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\C", 26);
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\D", 26);
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\E", 26);
-//   Bromo.createAllCiphers(cipherType, 6, NULL, "Data\\F", 26);\
-//}
-   std::string tempst = "ABCDEFAAA";
-   //intRotor intsStuff[50];
-   //cout<<Bromo.readCiphersFromFiles(tempst, intsStuff, "")<<"!!!"<<endl;
-   //cout<<(char)248<<endl;
-
-//   intRotor rotorArray[16]; bool sdfg[5];
-//   FileIO newFile; newFile.textOpenFile("Data\\A\\FirstCipher0.acp", false);
-//   int ciphersTaken = Bromo.getCiphersFromFile(rotorArray, sdfg, &newFile, 16);
-
-//   for (int i=0; i<ciphersTaken; i++){
-//      for (int j=0; j<(rotorArray[i].rotorLength);j++){
-//          cout<<rotorArray[i].mapping[j]<<" ";
-//      }
-//      cout<<endl;
-//   }
-
 std::string folderStuff = "Stuff\\";
 std::string folderStuffs = "asdfasdf";
 
@@ -220,7 +188,6 @@ ConsoleOptions testConsole;
 cout<<"Please press the maximize button at the top right of the screen."<<endl;
 int screenX = 158; int screenY = 61;
 testConsole.setConsoleSize(screenX,screenY);
-testConsole.test();
 Sleep(1000);
 //cout<<"?"<<endl;
 Keypress KeyIO;
