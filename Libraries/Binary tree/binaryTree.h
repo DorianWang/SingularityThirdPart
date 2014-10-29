@@ -1,7 +1,9 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
-#include "UsefulHeaders.h"
+//#include "UsefulHeaders.h"
+#include <vector>
+
 #include "functionChecker.h"
 #include "binaryNodeType.h"
 
@@ -258,7 +260,7 @@ template <class T> bool binaryTreeType<T>::checkForCompare(bool* compareCheck)
 {
 
 //Basic data type. Must have compare, or I'll eat my hat.
-   if (is_class<T>::value == false){
+   if (std::is_class<T>::value == false){
       std::cout<<"Is not a class!"<<std::endl;
       compareCheck[0] = true; compareCheck[1] = true;
       return true;

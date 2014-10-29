@@ -41,18 +41,17 @@ char f;
 };
 
 #include "Bases.h"
-#include "ConsoleOptions.h"
+//#include "ConsoleOptions.h"
 #include "Screens.h"
 #include "stringFunctions.h"
 
-#include "treeType.h"
+//#include "treeType.h"
 //#include "functionChecker.h"
 
-#include "binaryTree.h"
+//#include "binaryTree.h"
 
 #include "libraryIncluder.h"
 
-#include "Painter.h"
 //#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
 
 

@@ -890,8 +890,15 @@
 1414516167 d:\doriancode\singularitythirdpart\maploader.h
 	"libraryIncluder.h"
 
-1414516832 d:\doriancode\singularitythirdpart\libraryincluder.h
-	"_libraryController.h"
+1414608524 d:\doriancode\singularitythirdpart\libraryincluder.h
+	"Libraries\Binary tree\BinaryTree.h"
+	"Libraries\FileIO\FileIO.h"
+	"Libraries\itemTree\treeType.h"
+	"Libraries\KeyIO\keys.h"
+	"Libraries\Linked list\Container.h"
+	"Libraries\usefulHeaders file\functionChecker.h"
+	"Libraries\usefulHeaders file\UsefulHeaders.h"
+	"Libraries\Windows console stuff\ConsoleOptions.h"
 
 1414433168 d:\doriancode\singularitythirdpart\usefulheaders.h
 	<string>
@@ -917,9 +924,8 @@
 1414433168 source:d:\doriancode\singularitythirdpart\itemfileio.cpp
 	"Items.h"
 
-1414433168 d:\doriancode\singularitythirdpart\items.h
-	"FileIO.h"
-	"treeType.h"
+1414608530 d:\doriancode\singularitythirdpart\items.h
+	"libraryIncluder.h"
 	"ItemDeclaration.h"
 
 1414433168 source:d:\doriancode\singularitythirdpart\items.cpp
@@ -928,8 +934,8 @@
 1414433168 source:d:\doriancode\singularitythirdpart\lootdrop.cpp
 	"LootDrop.h"
 
-1414433168 d:\doriancode\singularitythirdpart\lootdrop.h
-	"FileIO.h"
+1414608537 d:\doriancode\singularitythirdpart\lootdrop.h
+	"libraryIncluder.h"
 
 1414433168 source:d:\doriancode\singularitythirdpart\map.cpp
 	"Map.h"
@@ -975,19 +981,17 @@
 	<iostream>
 	<cmath>
 
-1414433168 source:d:\doriancode\singularitythirdpart\screens.cpp
+1414608453 source:d:\doriancode\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1414433168 d:\doriancode\singularitythirdpart\screens.h
+1414608393 d:\doriancode\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
 	<stdio.h>
 	<sstream>
 	<iostream>
-	"Keys.h"
-	"CursorOptions.h"
-	"Painter.h"
+	"libraryIncluder.h"
 
 1414433168 source:d:\doriancode\singularitythirdpart\screensswitch.cpp
 	"Screens.h"
@@ -995,15 +999,15 @@
 1414433168 source:d:\doriancode\singularitythirdpart\screentype.cpp
 	"ScreenType.h"
 
-1414433168 d:\doriancode\singularitythirdpart\screentype.h
+1414608548 d:\doriancode\singularitythirdpart\screentype.h
 	<iostream>
 	<vector>
-	"keys.h"
+	"libraryIncluder.h"
 
 1414433168 source:d:\doriancode\singularitythirdpart\stringfunctions.cpp
 	"stringFunctions.h"
 
-1414433168 d:\doriancode\singularitythirdpart\stringfunctions.h
+1414608333 d:\doriancode\singularitythirdpart\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
@@ -1025,20 +1029,99 @@
 	<stdio.h>
 	<stdlib.h>
 
-1414517148 source:d:\doriancode\singularitythirdpart\main.cpp
+1414608261 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	"UsefulHeaders.h"
 	"Bases.h"
-	"ConsoleOptions.h"
 	"Screens.h"
 	"stringFunctions.h"
-	"treeType.h"
-	"binaryTree.h"
 	"libraryIncluder.h"
-	"Painter.h"
 
 1414433168 d:\doriancode\singularitythirdpart\bases.h
+
+1414608438 d:\doriancode\singularitythirdpart\libraries\binary tree\binarytree.h
+	<vector>
+	"functionChecker.h"
+	"binaryNodeType.h"
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\binary tree\functionchecker.h
+	<array>
+	<iostream>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\binary tree\binarynodetype.h
+	<cstdlib>
+
+1414608172 d:\doriancode\singularitythirdpart\libraries\fileio\fileio.h
+	<string>
+	<fstream>
+	<iostream>
+	<sstream>
+	<cstdarg>
+	<cstdlib>
+	<vector>
+
+1414608383 d:\doriancode\singularitythirdpart\libraries\itemtree\treetype.h
+	<iostream>
+	<queue>
+	<vector>
+	<string>
+	"stringFunctions.h"
+	"leafType.h"
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\itemtree\leaftype.h
+	<vector>
+	<string>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\keyio\keys.h
+	<string>
+	<iostream>
+	<cstdlib>
+	"conio.h"
+	"windows.h"
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\linked list\container.h
+	"functionChecker.h"
+	<string>
+	<iostream>
+	<vector>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\usefulheaders file\functionchecker.h
+	<array>
+	<iostream>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+	"CursorOptions.h"
+	<cstdlib>
+	<stdexcept>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+	<cstdarg>
+	"windows.h"
+	"stdio.h"
+	<cstdlib>
+	<iostream>
+
+1414433504 d:\doriancode\singularitythirdpart\libraries\linked list\functionchecker.h
+	<array>
+	<iostream>
+
+1414608333 d:\doriancode\singularitythirdpart\libraries\itemtree\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
 

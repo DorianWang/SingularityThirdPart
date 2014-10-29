@@ -10,9 +10,7 @@
 #include <sstream>
 #include <iostream>
 
-#include "Keys.h"
-#include "CursorOptions.h"
-#include "Painter.h"
+#include "libraryIncluder.h"
 
 #define PRESSDELAY 5
 #define SUCCESS_NUM 1
@@ -53,7 +51,6 @@ class SelectScreens
 
 COptions cursorMod;
 Keypress keyIO;
-Painter screenPaint;
 ;;
 std::string studentDrive;
 std::string functionToLetter;

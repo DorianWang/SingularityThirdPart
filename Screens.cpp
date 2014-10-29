@@ -6,22 +6,22 @@
 
 
 SelectScreens::SelectScreens()
-{                 
+{
    functionToLetter = "Press 1 for ";
-   //need to complete;            
+   //need to complete;
 }
 
 //SelectScreens::~SelectScreens()
 //{
 //}
 
-//this takes a string like asdfgqASDFGQ, checks to see if 
+//this takes a string like asdfgqASDFGQ, checks to see if
 int SelectScreens::stringThing(int inputNum, int outputNum, int stringLength)
 {
 //An easier implementaion would involve returning true false, instead of numbers.
 
    if (inputNum==outputNum){
-      return outputNum;                      
+      return outputNum;
    }
 
    if ((inputNum-(stringLength/2))==outputNum){
@@ -53,25 +53,25 @@ cout<<"Press Q to close the options screen"<<endl;
 cursorMod.cursorControl(8);
 cout<<"Test line"; // 9 characters
 do{
-   input = keyIO.get_code(inCharString);             
+   input = keyIO.get_code(inCharString);
 
    //stringTest = stringThing
 
-      if (input!=FAILURE_NUM){             
-          
+      if (input!=FAILURE_NUM){
+
           if (stringThing(input, 0, stringLength)==0){//input==0||input==6){
-             cursorMod.cursorControl(0);                   
+             cursorMod.cursorControl(0);
           }
           if (stringThing(input, 1, stringLength)==1){//input==1||input==7){
           cursorMod.cursorControl(1);
-          }  
-          if (stringThing(input, 2, stringLength)==2){//input==2||input==8){                      
+          }
+          if (stringThing(input, 2, stringLength)==2){//input==2||input==8){
           cursorMod.cursorControl(2);
-          }                       
-          if (stringThing(input, 3, stringLength)==3){//input==3||input==9){                      
+          }
+          if (stringThing(input, 3, stringLength)==3){//input==3||input==9){
           cursorMod.cursorControl(3);
           }
-          if (stringThing(input, 4, stringLength)==4){//input==4||input==10){                       
+          if (stringThing(input, 4, stringLength)==4){//input==4||input==10){
           cursorMod.cursorControl(4);
           }
           if (stringThing(input, 5, stringLength)==5){//input==5||input==11){
@@ -79,14 +79,14 @@ do{
           break;
           //closer
           }
-          
+
           cout << string(9 ,'\b');
           cout <<"Test line";
           Sleep(PRESSDELAY);
       }
-                    
-} while(true);     
-      
+
+} while(true);
+
 }//options screen
 
 int SelectScreens::functionRun()
@@ -117,30 +117,30 @@ cout<<"Plans for future stuff - P"<<endl;
 cout<<"Quit - Q"<<endl;
 
 do{
-   input=keyIO.get_code(inCharString);            
+   input=keyIO.get_code(inCharString);
    if (input!=FAILURE_NUM){
-                  
-      if (stringThing(input, 0, stringLength)==0){ 
+
+      if (stringThing(input, 0, stringLength)==0){
          whichGame=0;
          isGame=true;
          break;
       }
-      
-      if (stringThing(input, 1, stringLength)==1){ 
+
+      if (stringThing(input, 1, stringLength)==1){
          return 1;
          break;
       }
-      
-      if (stringThing(input, 2, stringLength)==2){ 
+
+      if (stringThing(input, 2, stringLength)==2){
          return 2;
          break;
       }
-      
-      if (stringThing(input, 3, stringLength)==3){ 
+
+      if (stringThing(input, 3, stringLength)==3){
          return 3;
          break;
       }
-      
+
       if (stringThing(input, 4, stringLength)==4){
          return 4;
          break;
@@ -149,9 +149,9 @@ do{
       if (stringThing(input, 9, stringLength)==9){
          return 9;
          break;
-      }//maximum amount it can go for programs. 
+      }//maximum amount it can go for programs.
       //If there are too many functions for this screen to control, I will make pressing 9 show additional options.
-      
+
    }
 }while(true);
 
@@ -163,31 +163,31 @@ if (isGame){
    cout<<"Normal - S"<<endl;
    cout<<"Hard - D"<<endl;
    cout<<"Nintendo Hard - N"<<endl;
-     
-   do{   
-         
+
+   do{
+
       input=keyIO.get_code("zasdnZASDN");
 
       if (input!=FAILURE_NUM){
-         continue;       
+         continue;
       }
       if (input>4){
-         return (input-5);                
+         return (input-5);
       }
       else if (input<4&&input>-1){
          return input;
       }
       else
       {
-   
-         //???    
-       
+
+         //???
+
       }
-   
-   }while(true);   
-  
+
+   }while(true);
+
 }//end isGame if statement
-       
+
 }//end function
 
 
@@ -196,8 +196,8 @@ int SelectScreens::mainScreen(int versionNum)
 
 stringstream ss (stringstream::in | stringstream::out);
 
-ss<<versionNum;          
-string out = ss.str();     
+ss<<versionNum;
+string out = ss.str();
 int input;
 
 int programFunction;
@@ -215,37 +215,37 @@ cout<<"Press A to start the game, S to change settings and Q to quit"<<endl;
 //screenPaint.screenWriter(24,80, &chars[2]);
 
 do{
-   input = keyIO.get_code("asqASQ");             
+   input = keyIO.get_code("asqASQ");
 
-      if (input!=FAILURE_NUM){             
-          
+      if (input!=FAILURE_NUM){
+
           if (input==0||input==3){
-          programFunction=gameStart();  
+          programFunction=gameStart();
           system("CLS");
              if (programFunction!=FAILURE_NUM){
                 programRun(programFunction);
                 system("CLS");
                 cout<<"Press A to start the game, S to change settings and Q to quit"<<endl;
-             }      
+             }
           }
-          
+
           if (input==1||input==4){
-          
+
           optionsScreen();
-          
+
           system("CLS");
           cout<<"Press A to start the game, S to change settings and Q to quit"<<endl;
-          screenPaint.screenWriter(24,80, &chars[2]);
-          }  
-          
+//          screenPaint.screenWriter(24,80, &chars[2]);
+          }
+
           if (input==2||input==5){
-                                  
+
           return FAILURE_NUM;
-          
-          }                        
-          
+
+          }
+
       }
-                    
+
 } while(true);
 
 cout<<input<<endl;
@@ -262,12 +262,12 @@ return 0;
 int SelectScreens::emptyFunction()
 {
    cout<<"???"<<endl;
-   return 1;    
+   return 1;
 }
 
 int SelectScreens::futurePlans()
 {
-cout<<"Plan - Finish treeSort, and then this function"<<endl<<endl;    
+cout<<"Plan - Finish treeSort, and then this function"<<endl<<endl;
 system("PAUSE");
 return 1;
 }
@@ -297,12 +297,12 @@ do{
 
 int SelectScreens::treeSort()
 {
-    
+
 stringstream ss (stringstream::in | stringstream::out);
-//ss<<versionNum;          
+//ss<<versionNum;
 //std::string out
-// = ss.str();    
-    
+// = ss.str();
+
 
 fstream myfile;
 std::string keyInput;
@@ -344,9 +344,9 @@ cout<<fileName.length()<<endl;
 for (int i=0;i<fileNameIn.length();i++){
    //cout<<fileName.length()<<endl;
    letter=fileNameIn.at(i);
-   
+
    letterInt=letter;
-   
+
    if (letterInt<123&&letterInt>63){
       option1=true ;
    }
@@ -354,15 +354,15 @@ for (int i=0;i<fileNameIn.length();i++){
       option2=true;
    }
    if (letterInt>47&&letterInt<58){
-      option3=true;                                
+      option3=true;
    }
-   
+
    if (option1||option2||option3){
       if(letterInt!=92&&letterInt!=94&&letterInt!=96){
-         fileName+=letter;                                                                          
-      }                              
+         fileName+=letter;
+      }
    }
-   
+
 
 }
 cout<<"asdfasdf"<<endl;
@@ -378,46 +378,46 @@ cin>>keyInput;
 if (keyInput=="1"){//atoi(keyInput.c_str())==1){
    filePath="Data/"+fileName;
    cout<<filePath<<endl;
-   myfile.open(filePath.c_str());                   
+   myfile.open(filePath.c_str());
 }
 else if (keyInput=="2")
 {
-   
+
    std::string myDocsPathTemp= "";
    findMyDocsWindows(P_myDocsPath);
    //str.shrink_to_fit();
    //filePath=P_myDocsPath;
    int letterNum;
    bool endOfArray=false;
-   
+
    for (int k=0;k<256;k++){
-      letterNum=myDocsPath[k];    
+      letterNum=myDocsPath[k];
       if (letterNum<1){
-         endOfArray=true;                 
+         endOfArray=true;
       }
       if (endOfArray!=true){
       filePath+=myDocsPath[k];
       }
    }
-   
+
    //filePath.shrink_to_fit();
    filePath+="/Data/";
    filePath+=fileName;
    cout<<filePath<<endl;
-   myfile.open(filePath.c_str());    
+   myfile.open(filePath.c_str());
 }
 else if (keyInput=="3")
 {
-   studentDrive="P:/"; 
+   studentDrive="P:/";
    filePath=studentDrive;
    filePath+="Data/";
    filePath+=fileName;
-   myfile.open(filePath.c_str());   
+   myfile.open(filePath.c_str());
    cout<<filePath<<endl;
 }
 else
 {
-   cout<<"I don't know..."<<endl;    
+   cout<<"I don't know..."<<endl;
 }
 
 if (myfile.is_open()){
@@ -447,7 +447,7 @@ if (myfile.eof()){
 //cout<<nextLine<<endl;
 //}
 
-std::vector<char> writable(MAX_LINE_LENGTH + 1);// for use in 
+std::vector<char> writable(MAX_LINE_LENGTH + 1);// for use in
 std::string tempString = "";
 
 while (myfile.eof()!=true){
@@ -473,15 +473,15 @@ while (myfile.eof()!=true){
 //pch = strtok (asdfasdf," ,.-");
 //
 //while(pch!=NULL){
-//   cout<<pch<<endl;    
-//   asdfasdfa+=pch;             
+//   cout<<pch<<endl;
+//   asdfasdfa+=pch;
 //   pch=strtok (NULL," ,.-");
-//   
+//
 //}
 //cout<<asdfasdfa<<endl;
 system("PAUSE");
 
-treeNodeBinary* rootNode; 
+treeNodeBinary* rootNode;
 
 
 
@@ -507,7 +507,7 @@ int counter2=0;
 
 s2[0]='d';
 s2[1]='!';
-s2[2]=0; 
+s2[2]=0;
 
 //cout<<s1<<endl;
 //system("PAUSE");
@@ -520,23 +520,23 @@ do{
       do{
          s1[counter]=s2[counter2];
          counter++;
-         counter2++; 
+         counter2++;
       }while(s2[counter2]!=0);
       break;
    }
-         
-      
+
+
 }while(true);
 
 cout<<s1<<endl<<endl;
-system("PAUSE");   
+system("PAUSE");
 
-return 1; 
+return 1;
 }
 
 int SelectScreens::dwarfGame(int difficulty)
 {
-//struct tile graphicDataDwarf[SCREEN_WIDTH*SCREEN_HEIGHT];  
+//struct tile graphicDataDwarf[SCREEN_WIDTH*SCREEN_HEIGHT];
 system("CLS");
 
 

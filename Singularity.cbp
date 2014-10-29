@@ -73,8 +73,6 @@
 		<Unit filename="NPC.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
-		<Unit filename="Painter.cpp" />
-		<Unit filename="Painter.h" />
 		<Unit filename="Player.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
@@ -98,12 +96,7 @@
 		<Unit filename="main.cpp">
 			<Option virtualFolder="_Main/" />
 		</Unit>
-		<Unit filename="pixelPainter.cpp" />
-		<Unit filename="pixelPainter.h" />
 		<Unit filename="staticLibraries.h" />
-		<Unit filename="stringFunctions.cpp">
-			<Option virtualFolder="Utilities/" />
-		</Unit>
 		<Unit filename="stringFunctions.h">
 			<Option virtualFolder="Utilities/" />
 		</Unit>

@@ -1,5 +1,33 @@
 
-#include "stringFunctions.h"
+#ifndef STR_FUNCTIONS_H
+#define STR_FUNCTIONS_H
+
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <cstdio>
+#include <string.h>
+
+
+//It only works if I have the class. Why?
+class stringFunc
+{
+
+public:
+
+std::string parseFirstToken(std::string input, const char* delim);
+std::string popFirstToken(std::string input, const char* delim);
+
+std::vector <std::string> parseAllTokens(std::string input, const char* delim);
+
+std::string tokensToString(std::vector <std::string> input, const char* delim);
+};
+
+
+
+
+//Implementation
+//{
 
 
 std::string stringFunc::parseFirstToken(std::string input, const char* delim)
@@ -9,7 +37,7 @@ std::string stringFunc::parseFirstToken(std::string input, const char* delim)
    for (int i=0; i<inputLength; i++){
       for (int j=0; j<delimLength; j++){
          if (input.at(i) == delim[j]){
-            return output;   
+            return output;
          }
       }
       output += input.at(i);
@@ -21,9 +49,9 @@ std::string stringFunc::popFirstToken(std::string input, const char* delim)
 {
    std::string output; int inputLength = input.length();
    std::string temp = parseFirstToken(input, delim);
-   
+
    if (temp == input){ return NULL; }
-   
+
    input.erase(0, temp.length());
    output = input;
    return output;
@@ -36,12 +64,12 @@ std::vector <std::string> stringFunc::parseAllTokens(std::string input, const ch
    char tempCString[input.length()]; char* tempToken;
    strcpy(tempCString, input.c_str());
    tempToken = strtok(tempCString, delim);
-   
+
    while(tempToken != NULL){
       tempVector.push_back(tempToken);
       tempToken = strtok(NULL, delim);
    }
-   
+
    return tempVector;
 }
 
@@ -50,9 +78,9 @@ std::vector <std::string> stringFunc::parseAllTokens(std::string input, const ch
 std::string stringFunc::tokensToString(std::vector <std::string> input, const char* delim)
 {
    std::string output;
-   
+
    if (input.size() < 1){ return output; }//Returns an empty string.
-   
+
    if (delim != NULL){
       output = input[0];
       for (int i=1; i<input.size(); i++){
@@ -65,7 +93,7 @@ std::string stringFunc::tokensToString(std::vector <std::string> input, const ch
          output = output + input[i];
       }
    }
-   
+
    return output;
 }
 
@@ -73,4 +101,17 @@ std::string stringFunc::tokensToString(std::vector <std::string> input, const ch
 
 
 
+//}
 
+
+
+
+
+
+
+
+
+
+
+
+#endif
