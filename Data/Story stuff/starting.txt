@@ -1,12 +1,12 @@
 #Story that defines main char
 #Questions affect stats snd stuff
-#//denotes pagebreaks, ()for decisions, [true, output]for choices
+#//denotes pagebreaks, ()for decisions, {*3[][][]} for switches, [true| output]for choices within,
 {You wake up, with a familiar blue background surrounding you. A voice calls out, "Prepare for mounting."}
-3("Wait, mounting?", CURIOUS)(Prepare for dissociation, SCIENTIFIC)(Try to escape, ESCAPER)
-["Wait, mounting?", you ask, confused. The voice does not answer. You wait, but nothing happens. Suddenly, the world ends.]
-[Remembering the protocols drilled into you by the system, you quickly relax and close your eyes. The world around you disolves into a void]
-[Looking around, you see nothing but blue. Panicing does nothing, and an infinite darkness falls.]
+3({"Wait, mounting?"}, CURIOUS)({Prepare for dissociation}, SCIENTIFIC)({Try to escape}, ESCAPER)
+{*3[CURIOUS| "Wait, mounting?", you ask, confused. The voice does not answer. You wait, but nothing happens. Suddenly, the world ends.]
+[SCIENTIFIC| Remembering the protocols drilled into you by the system, you quickly relax and close your eyes. The world around you disolves into a void]
+[ESCAPER| Looking around, you see nothing but blue. Panicking does nothing, and an infinite darkness falls.]}
 
 //
 
-You 
+{You *3[CURIOUS| momentarily panic][SCIENTIFIC| cautiously open your eyes][ESCAPER| thrash around], 
