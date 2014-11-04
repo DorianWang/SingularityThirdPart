@@ -9,7 +9,7 @@
 //These refer to the size vs "average" (human size). A large knife is smaller
 //than a normal sword, for example.
 
-#include "LootDrop.h"
+//#include "LootDrop.h"
 
 enum itemSize { TINY, SMALL, NORMAL, LARGE, GIGANTIC };
 
@@ -17,11 +17,11 @@ enum itemSize { TINY, SMALL, NORMAL, LARGE, GIGANTIC };
 //Exotic (Unique, unable to use)
 enum itemShape { HUMANOID, SERPENTINE, SHAPELESS, EXOTIC };
 
-//Shield does crushing damage, 
-enum itemType { EDGE_WEAPON, CRUSH_WEAPON, STAB_WEAPON, SPECIAL_WEAPON, SHIELD, 
+//Shield does crushing damage,
+enum itemType { EDGE_WEAPON, CRUSH_WEAPON, STAB_WEAPON, SPECIAL_WEAPON, SHIELD,
 RANGED_BOW, RANGED_DART, RANGED_LARGE_PROJECTILE, RANGED_EXOTIC, //Ranged weapon with strange uses
-MAGIC_TOOL, HEALING, MAGIC_HEAL, RESTORE_HEAL, ARMOUR_CLOTHES, ARMOUR_SPECIAL, 
-ARMOUR_MAGIC, ARMOUR_ROBES, ARMOUR_LEATHER,ARMOUR_METAL_CHAIN, 
+MAGIC_TOOL, HEALING, MAGIC_HEAL, RESTORE_HEAL, ARMOUR_CLOTHES, ARMOUR_SPECIAL,
+ARMOUR_MAGIC, ARMOUR_ROBES, ARMOUR_LEATHER,ARMOUR_METAL_CHAIN,
 ARMOUR_METAL_SOLID, ARMOUR_LIVING, QUEST, LOOT, CRAFTING};
 
 
@@ -40,25 +40,25 @@ ELEMENT_POISON, ELEMENT_MIND , ELEMENT_TECH, ELEMENT_MUNDANE };//The last three 
 //   FileIO fileListIn; FileIO fileObjectIn;
 //   fileIn.textOpenFile(FILE_LIST_PATH, false);
 //   std::string tempFileName; int errorNum = 0;
-//   
+//
 //   while(true){
 //      errorNum = fileListIn.readLine(&tempFileName)
 //      if (errorNum <= 0){
 //         break;
-//      }       
+//      }
 //      fileObjectIn.textOpenFile(FILE_LIST_PATH, false);//Do I want text or data?
 //      //parseFile(&fileObjectIn);
 //      fileObjectIn.closeFile();
 //   }
-//   
-//   
+//
+//
 //
 //fileListIn.closeFile();
 //}
 
 
 
-//Items can be 
+//Items can be
 
 //sentinal, Name, sentinal
 //Item dataStorage -> Main type, (second type, third type, fourth, etc...)*optional*
@@ -123,7 +123,7 @@ Consumables
       Potion
          Weak, Moderate, Strong, Arcane;
       Magic storage
-         Elemental crystal cluster (frozen flames, vitrified dew, essence of wind, twisted shadows, shards of light, ;), 
+         Elemental crystal cluster (frozen flames, vitrified dew, essence of wind, twisted shadows, shards of light, ;),
          Empowered elemental crystal cluster (everything, plus heart of the magi [boosts all elements slightly])
          Crystaline mana, Arcane mana crystal cluster;
    Utility
@@ -143,14 +143,14 @@ Loot
 
 Money
    Gold, Silver coins - () Most civilizations accept
-   
-   Paper currency - () civilization must be beyond tech 4, only useful in 
+
+   Paper currency - () civilization must be beyond tech 4, only useful in
    economically linked countries not at war.
       asdf
-   
 
-   
-   
+
+
+
 
 Items and equipment sometimes have a technology value, an intelligence value, a strength value, and/or a skill value.
 -Technology controls what is required to make it, and who can
@@ -163,39 +163,39 @@ Items and equipment sometimes have a technology value, an intelligence value, a 
 Metals in West Atwerca:
    Weapon materials: Copper, Bronze, Iron, Steel (low and high), traelmin ;
    Craft materials: Copper, Lead, Tin, Brass, Silver, Electrum (used for some spells, purity), Gold ;
-   Other "metals" that may be used: thaumium (iron + magic, stronger than low steel), 
+   Other "metals" that may be used: thaumium (iron + magic, stronger than low steel),
    adamantium (very light, strong metal, very valuable), ;
 Other materials used:
    Weapon materials: wood, stone, bone, flint, ;
-   Craft materials: wood, stone, bone, glass, clay, 
-   
-   
-   
-   
+   Craft materials: wood, stone, bone, glass, clay,
+
+
+
+
 Major terrain
    Mountains
 
    Hills
-   
+
    River
-   
+
    Plain
-   
+
    etc.
 
 
 
 Local conditions
    Dirt
-   
+
    Stone
-   
+
    Grass
-   
+
    Slope
-   
+
    Cliff
-   
+
    Water
       shallow, deep, ocean (slow, fast, torrential)
    etc.

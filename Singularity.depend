@@ -1125,3 +1125,220 @@
 	<cstdio>
 	<string.h>
 
+1414509762 source:d:\github\singularitythirdpart\bases.cpp
+
+1414509762 source:d:\github\singularitythirdpart\inventory.cpp
+	"ItemDeclaration.h"
+
+1414509762 d:\github\singularitythirdpart\itemdeclaration.h
+	"iostream"
+	"string"
+	"vector"
+
+1414509763 source:d:\github\singularitythirdpart\inventorysorter.cpp
+	"ItemDeclaration.h"
+
+1415121662 source:d:\github\singularitythirdpart\itemfileio.cpp
+
+1415120606 d:\github\singularitythirdpart\items.h
+	"libraryIncluder.h"
+	"ItemDeclaration.h"
+
+1415121685 d:\github\singularitythirdpart\libraryincluder.h
+	"Libraries\Binary tree\BinaryTree.h"
+	"Libraries\FileIO\FileIO.h"
+	"Libraries\itemTree\treeType.h"
+	"Libraries\KeyIO\keys.h"
+	"Libraries\Linked list\Container.h"
+	"Libraries\usefulHeaders file\functionChecker.h"
+	"Libraries\usefulHeaders file\UsefulHeaders.h"
+	"Libraries\Windows console stuff\ConsoleOptions.h"
+
+1415120606 d:\github\singularitythirdpart\libraries\binary tree\binarytree.h
+	<vector>
+	"functionChecker.h"
+	"binaryNodeType.h"
+
+1415120606 d:\github\singularitythirdpart\libraries\binary tree\functionchecker.h
+	<array>
+	<iostream>
+
+1415120606 d:\github\singularitythirdpart\libraries\binary tree\binarynodetype.h
+	<cstdlib>
+
+1415120606 d:\github\singularitythirdpart\libraries\fileio\fileio.h
+	<string>
+	<fstream>
+	<iostream>
+	<sstream>
+	<cstdarg>
+	<cstdlib>
+	<vector>
+
+1415120606 d:\github\singularitythirdpart\libraries\itemtree\treetype.h
+	<iostream>
+	<queue>
+	<vector>
+	<string>
+	"stringFunctions.h"
+	"leafType.h"
+
+1415120606 d:\github\singularitythirdpart\libraries\itemtree\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
+
+1415120606 d:\github\singularitythirdpart\libraries\itemtree\leaftype.h
+	<vector>
+	<string>
+
+1415120606 d:\github\singularitythirdpart\libraries\keyio\keys.h
+	<string>
+	<iostream>
+	<cstdlib>
+	"conio.h"
+	"windows.h"
+
+1415120606 d:\github\singularitythirdpart\libraries\linked list\container.h
+	"functionChecker.h"
+	<string>
+	<iostream>
+	<vector>
+
+1415120606 d:\github\singularitythirdpart\libraries\linked list\functionchecker.h
+	<array>
+	<iostream>
+
+1415120606 d:\github\singularitythirdpart\libraries\usefulheaders file\functionchecker.h
+	<array>
+	<iostream>
+
+1415120606 d:\github\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1415120606 d:\github\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+	"CursorOptions.h"
+	<cstdlib>
+	<stdexcept>
+
+1415120606 d:\github\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+	<cstdarg>
+	"windows.h"
+	"stdio.h"
+	<cstdlib>
+	<iostream>
+
+1415120606 source:d:\github\singularitythirdpart\items.cpp
+
+1415121629 source:d:\github\singularitythirdpart\lootdrop.cpp
+
+1415121558 d:\github\singularitythirdpart\lootdrop.h
+	"libraryIncluder.h"
+
+1415120606 source:d:\github\singularitythirdpart\main.cpp
+	<cstdlib>
+	<iostream>
+	<algorithm>
+	<sstream>
+	"UsefulHeaders.h"
+	"Bases.h"
+	"Screens.h"
+	"stringFunctions.h"
+	"libraryIncluder.h"
+
+1414509763 d:\github\singularitythirdpart\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1414509762 d:\github\singularitythirdpart\bases.h
+
+1415120606 d:\github\singularitythirdpart\screens.h
+	<fstream>
+	<vector>
+	<stdarg.h>
+	<stdio.h>
+	<sstream>
+	<iostream>
+	"libraryIncluder.h"
+
+1415120606 d:\github\singularitythirdpart\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
+
+1414509762 source:d:\github\singularitythirdpart\map.cpp
+	"Map.h"
+
+1414509762 d:\github\singularitythirdpart\map.h
+	"Locations.h"
+	"Effects.h"
+
+1414509762 d:\github\singularitythirdpart\locations.h
+	<string>
+	<vector>
+	"Interactive.h"
+	"NPC.h"
+
+1414509762 d:\github\singularitythirdpart\interactive.h
+
+1414509762 d:\github\singularitythirdpart\npc.h
+
+1414509762 d:\github\singularitythirdpart\effects.h
+
+1414509762 source:d:\github\singularitythirdpart\maploader.cpp
+	"MapLoader.h"
+	"Map.h"
+
+1415120606 d:\github\singularitythirdpart\maploader.h
+	"libraryIncluder.h"
+
+1415120606 source:d:\github\singularitythirdpart\screens.cpp
+	"Screens.h"
+
+1414509762 source:d:\github\singularitythirdpart\screensswitch.cpp
+	"Screens.h"
+
+1414509762 source:d:\github\singularitythirdpart\screentype.cpp
+	"ScreenType.h"
+
+1415120606 d:\github\singularitythirdpart\screentype.h
+	<iostream>
+	<vector>
+	"libraryIncluder.h"
+
+1414509763 source:d:\github\singularitythirdpart\takegamemain.cpp
+	"TakeGameMain.h"
+
+1414509763 d:\github\singularitythirdpart\takegamemain.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+	"FileReader.h"
+
+1414509762 d:\github\singularitythirdpart\filereader.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+
+1414509763 source:d:\github\singularitythirdpart\typechanger.cpp
+	"typeChanger.h"
+
+1414509763 d:\github\singularitythirdpart\typechanger.h
+	<stdio.h>
+	<stdlib.h>
+

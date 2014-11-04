@@ -1,5 +1,5 @@
 
-#include "Items.h"
+//#include "Items.h"
 
 
 /*
@@ -10,9 +10,9 @@ Things in () are comments and don't actaully exist in the file.
 Nom:
 Sword swords (singular, plural)
 
-BSC: 
+BSC:
 400 4 +6 0.2 0.1
-(size, weight, base damage, damage increase per item level, 
+(size, weight, base damage, damage increase per item level,
 damage increase per user [skill] level)
 
 (primary item trait)
@@ -45,7 +45,7 @@ Iron +2 (override)
 
 Types:
 
-(Descriptor, low level bound, high level bound, affect of descriptor, 
+(Descriptor, low level bound, high level bound, affect of descriptor,
 Damage multiplier)
 
 Broken 1 4 -2 *1
@@ -59,25 +59,26 @@ Good 5 18 *1
 
 //The master item file list lists every item file which must be included in the game.
 //This function will load all the items into memory.
+/*
 int itemParser(std::string pathToMasterItemFileList)
 {
    FileIO inputFileNameList;
    inputFileNameList.textOpenFile(pathToMasterItemFileList, false);
    bool fileIsGood = true; int returnInt = 0; std::string inputLine;
-   
+
    //Item file reading
    while(fileIsGood){
       returnInt = inputFileNameList.readLine(&inputLine);
       if (returnInt<1){ return 0; }
    }
    FileIO inputFile;
-   
-   
+
+
 }
 
 
 
-
+*/
 
 
 

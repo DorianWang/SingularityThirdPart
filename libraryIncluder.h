@@ -1,8 +1,10 @@
+
 #ifndef LIBRARYINCLUDER_H_INCLUDED
 #define LIBRARYINCLUDER_H_INCLUDED
 
 
 //#include "libraryIncluder.h"
+/*
 #define INCLUDE_FILE_IO
 
 #define INCLUDE_BINARY_TREE
@@ -16,7 +18,7 @@
 #define INCLUDE_CONSOLE_OPTIONS
 
 #define INCLUDE_UTILITIES
-
+*/
 //#include "_libraryController.h"
 
 #include "Libraries\Binary tree\BinaryTree.h"
