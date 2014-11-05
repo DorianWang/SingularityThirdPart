@@ -42,8 +42,8 @@ char f;
 
 #include "Bases.h"
 //#include "ConsoleOptions.h"
-#include "Screens.h"
-#include "stringFunctions.h"
+//#include "Screens.h"
+//#include "stringFunctions.h"
 
 //#include "treeType.h"
 //#include "functionChecker.h"
@@ -143,7 +143,7 @@ int counters = 0;
 
 
    linkedList <int> Aso();
-   SelectScreens ScreenControl;
+//   SelectScreens ScreenControl;
    //cout<<Dempo.deleteFile(Dempo.getExecutablePath(), false)<<endl;
 
 

@@ -22,23 +22,23 @@ int currentColour;
 
 public:
 
-COptions();
-~COptions();
+inline COptions();
+inline ~COptions();
 
-int toggleColour(HANDLE cHandle);
+inline int toggleColour(HANDLE cHandle);
 
-void returnDefault(HANDLE cHandle);
-void toggleCursorSize(HANDLE cHandle);
-void toggleCursor(HANDLE cHandle);
-void tempColourChange(bool isDiff, HANDLE cHandle, int targetColour);
-void changeCursorInsert(HANDLE cHandle, bool insertMode);
+inline void returnDefault(HANDLE cHandle);
+inline void toggleCursorSize(HANDLE cHandle);
+inline void toggleCursor(HANDLE cHandle);
+inline void tempColourChange(bool isDiff, HANDLE cHandle, int targetColour);
+inline void changeCursorInsert(HANDLE cHandle, bool insertMode);
 
 
-bool changeCursorPos(short cursorX, short cursorY);
+inline bool changeCursorPos(short cursorX, short cursorY);
 
-void cursorControl(int optionNum);//Controls all other functions. 0 for cursor visible. 1 for opposite, 2 for colour change, 5 for defaults, etc.
+inline void cursorControl(int optionNum);//Controls all other functions. 0 for cursor visible. 1 for opposite, 2 for colour change, 5 for defaults, etc.
 
-void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
+inline void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
 
 };
 

@@ -26,13 +26,13 @@ public:
 
 //This function takes a string, and returns the index of the letter which has been
 //entered. It will return -1 if the letter has not been entered.
-int get_code(std::string importantKeys);
-int get_code();
+inline int get_code(std::string importantKeys);
+inline int get_code();
 
-bool get_code(int keyCode);
-short get_current_code(int keyCode);
+inline bool get_code(int keyCode);
+inline short get_current_code(int keyCode);
 
-bool get_code(bool* wasKeyPressed, bool* isKeyDown, std::string charToCheck);
+inline bool get_code(bool* wasKeyPressed, bool* isKeyDown, std::string charToCheck);
 
 };
 

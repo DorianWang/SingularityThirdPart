@@ -12,8 +12,8 @@ public:
 
 COptions cursorOptions;
 
-int setConsoleSize(unsigned int width, unsigned int height);
-void setConsoleTitle(std::string newName);
+inline int setConsoleSize(unsigned int width, unsigned int height);
+inline void setConsoleTitle(std::string newName);
 
 };
 
