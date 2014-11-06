@@ -5,7 +5,7 @@
 		<Option title="Singularity" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="FirstGameStuff\map\;FirstGameStuff\;Utilities\;FirstGameStuff\Items\;FirstGameStuff\Items\InventorySorter\;_Main\;Depreciated\;SecondGameStuff\;" />
+		<Option virtualFolders="Utilities\;Utilities\Screens\;SecondGameStuff\;SecondGameStuff\Bases\;FirstGameStuff\Items\;FirstGameStuff\map\;FirstGameStuff\;Depreciated\;_Main\;FirstGameStuff\Items\InventorySorter\;" />
 		<Build>
 			<Target title="default">
 				<Option output="Singularity" prefix_auto="1" extension_auto="1" />
@@ -17,10 +17,10 @@
 			<Add library="gdi32" />
 		</Linker>
 		<Unit filename="Bases.cpp">
-			<Option virtualFolder="SecondGameStuff/" />
+			<Option virtualFolder="SecondGameStuff/Bases/" />
 		</Unit>
 		<Unit filename="Bases.h">
-			<Option virtualFolder="SecondGameStuff/" />
+			<Option virtualFolder="SecondGameStuff/Bases/" />
 		</Unit>
 		<Unit filename="Depreciated.inl">
 			<Option virtualFolder="Depreciated/" />
@@ -76,11 +76,27 @@
 		<Unit filename="Player.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
-		<Unit filename="ScreenType.cpp" />
-		<Unit filename="ScreenType.h" />
-		<Unit filename="Screens.cpp" />
-		<Unit filename="Screens.h" />
-		<Unit filename="ScreensSwitch.cpp" />
+		<Unit filename="ScreenType.cpp">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="ScreenType.h">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="Screens.cpp">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="Screens.h">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="ScreensSwitch.cpp">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="SecondGameMain.cpp">
+			<Option virtualFolder="SecondGameStuff/" />
+		</Unit>
+		<Unit filename="SecondGameMain.h">
+			<Option virtualFolder="SecondGameStuff/" />
+		</Unit>
 		<Unit filename="TakeGameMain.cpp">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
@@ -96,7 +112,6 @@
 		<Unit filename="main.cpp">
 			<Option virtualFolder="_Main/" />
 		</Unit>
-		<Unit filename="staticLibraries.h" />
 		<Unit filename="stringFunctions.h">
 			<Option virtualFolder="Utilities/" />
 		</Unit>

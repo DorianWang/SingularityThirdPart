@@ -31,26 +31,13 @@ using namespace std;
 //{
 //};
 
-struct treeNodeBinary
+
+
+class ScreenType
 {
 
-int intData;
-int metaData;
-char moreMetaData;
-
-treeNodeBinary* parent;
-treeNodeBinary* left;
-treeNodeBinary* right;
-
-};
-
-//typedef int(*FuncP)(int A, ...);//for functions
-
-class SelectScreens
-{
-
-COptions cursorMod;
-Keypress keyIO;
+ConsoleOptions* cursorMod;
+Keypress* keyIO;
 ;;
 std::string studentDrive;
 std::string functionToLetter;
@@ -58,34 +45,14 @@ std::string functionToLetter;
 public:
 ;;
 
-SelectScreens();
-//~SelectScreens();
+ScreenType(int minX, int minY, int maxX, int maxY, std::string screenName, std::string screenSourceName);
+ScreenType(int minX, int minY, int maxX, int maxY, std::string screenName, std::string screenSourceName, Keypress* keyOrig, ConsoleOptions* COrig);
 
-int mainScreen(int versionNum);
-void optionsScreen();
-int functionRun();
-int gameStart();
+~ScreenType();
 
-int contextMenu(struct tile graphicData[SCREEN_HEIGHT][SCREEN_WIDTH]);
-
-void programRun(int programNum);
-
-void findMyDocsWindows(char* myDocsPath);
-
-int emptyFunction();
-
-int treeSort();
-int helloWorld();
-int futurePlans();
-
-int dwarfGame(int difficulty);
-
-//FuncP functions[NUM_FUNCTIONS];//array of function pointers
-
-;;
 private:
 
-int stringThing(int inputNum, int outputNum, int stringLength);
+
 
 
 };
