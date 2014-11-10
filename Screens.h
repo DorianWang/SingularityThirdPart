@@ -35,21 +35,24 @@ class ScreenType
 public:
 ;;
 
-ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName, Keypress* keyOrig, ConsoleOptions* COrig);
+ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName);
 
 ~ScreenType();
 
 //Should this return a string for the parent to output, modify an internal buffer which the parent can output, or draw by itself?
 void redraw();
 
+std::vector <char> expectedInput;
+
 private:
 
-ConsoleOptions* consoleMod;
-Keypress* keyIO;
-;;
+
 std::string screenName;
 ;;
-int botX; int botY; int topX; int topY;//The screen's area of influence.
+int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
+
+
+void parseScreenFile(FileIO* file);
 
 
 };

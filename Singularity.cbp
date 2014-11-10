@@ -76,8 +76,12 @@
 		<Unit filename="Player.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
-		<Unit filename="ScreenController.cpp" />
-		<Unit filename="ScreenController.h" />
+		<Unit filename="ScreenController.cpp">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
+		<Unit filename="ScreenController.h">
+			<Option virtualFolder="Utilities/Screens/" />
+		</Unit>
 		<Unit filename="ScreenType.cpp">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
