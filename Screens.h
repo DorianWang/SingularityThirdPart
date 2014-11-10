@@ -27,32 +27,29 @@
 using namespace std;
 
 
-//typedef struct screenGraphicData //user defined datatype
-//{
-//};
-
-
 
 class ScreenType
 {
 
-ConsoleOptions* cursorMod;
-Keypress* keyIO;
-;;
-std::string studentDrive;
-std::string functionToLetter;
-;;
+
 public:
 ;;
 
-ScreenType(int minX, int minY, int maxX, int maxY, std::string screenName, std::string screenSourceName);
-ScreenType(int minX, int minY, int maxX, int maxY, std::string screenName, std::string screenSourceName, Keypress* keyOrig, ConsoleOptions* COrig);
+ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName, Keypress* keyOrig, ConsoleOptions* COrig);
 
 ~ScreenType();
 
+//Should this return a string for the parent to output, modify an internal buffer which the parent can output, or draw by itself?
+void redraw();
+
 private:
 
-
+ConsoleOptions* consoleMod;
+Keypress* keyIO;
+;;
+std::string screenName;
+;;
+int botX; int botY; int topX; int topY;//The screen's area of influence.
 
 
 };

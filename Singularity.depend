@@ -876,7 +876,8 @@
 1414172119 d:\doriancode\singularitysecondpart\binarytree.inl
 	"binaryTree.h"
 
-1389925682 source:d:\dorian's programs\singularitythirdpart\bases.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\bases.cpp
+	"Bases.h"
 
 1414429568 source:d:\doriancode\singularitythirdpart\bases.cpp
 
@@ -1336,4 +1337,179 @@
 1414509763 d:\github\singularitythirdpart\typechanger.h
 	<stdio.h>
 	<stdlib.h>
+
+1414621697 d:\dorian's programs\singularitythirdpart\bases.h
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\inventory.cpp
+	"ItemDeclaration.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\itemdeclaration.h
+	"iostream"
+	"string"
+	"vector"
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\inventorysorter.cpp
+	"ItemDeclaration.h"
+
+1415404215 source:d:\dorian's programs\singularitythirdpart\itemfileio.cpp
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\items.cpp
+
+1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
+
+1415404215 source:d:\dorian's programs\singularitythirdpart\main.cpp
+	<cstdlib>
+	<iostream>
+	<algorithm>
+	<sstream>
+	"UsefulHeaders.h"
+	"Bases.h"
+	"libraryIncluder.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraryincluder.h
+	"Libraries\Binary tree\BinaryTree.h"
+	"Libraries\FileIO\FileIO.h"
+	"Libraries\itemTree\treeType.h"
+	"Libraries\KeyIO\keys.h"
+	"Libraries\Linked list\Container.h"
+	"Libraries\usefulHeaders file\functionChecker.h"
+	"Libraries\usefulHeaders file\UsefulHeaders.h"
+	"Libraries\Windows console stuff\ConsoleOptions.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarytree.h
+	<vector>
+	"functionChecker.h"
+	"binaryNodeType.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\functionchecker.h
+	<array>
+	<iostream>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarynodetype.h
+	<cstdlib>
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
+	<string>
+	<fstream>
+	<iostream>
+	<sstream>
+	<cstdarg>
+	<cstdlib>
+	<vector>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\itemtree\treetype.h
+	<iostream>
+	<queue>
+	<vector>
+	<string>
+	"stringFunctions.h"
+	"leafType.h"
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\itemtree\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\itemtree\leaftype.h
+	<vector>
+	<string>
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\keyio\keys.h
+	<string>
+	<iostream>
+	<cstdlib>
+	"conio.h"
+	"windows.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\linked list\container.h
+	"functionChecker.h"
+	<string>
+	<iostream>
+	<vector>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\linked list\functionchecker.h
+	<array>
+	<iostream>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\functionchecker.h
+	<array>
+	<iostream>
+
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+	<string>
+	<vector>
+	<algorithm>
+	<sstream>
+	"stdio.h"
+	<process.h>
+	<windows.h>
+	<time.h>
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+	"CursorOptions.h"
+	<cstdlib>
+	<stdexcept>
+
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+	<cstdarg>
+	"windows.h"
+	"stdio.h"
+	<cstdlib>
+	<iostream>
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\map.cpp
+	"Map.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\map.h
+	"Locations.h"
+	"Effects.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\locations.h
+	<string>
+	<vector>
+	"Interactive.h"
+	"NPC.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\interactive.h
+
+1414621697 d:\dorian's programs\singularitythirdpart\npc.h
+
+1414621697 d:\dorian's programs\singularitythirdpart\effects.h
+
+1415404215 source:d:\dorian's programs\singularitythirdpart\maploader.cpp
+	"MapLoader.h"
+
+1415404215 d:\dorian's programs\singularitythirdpart\maploader.h
+	"Map.h"
+	"libraryIncluder.h"
+
+1415589770 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+	"ScreenController.h"
+
+1415589910 d:\dorian's programs\singularitythirdpart\screencontroller.h
+	"Screens.h"
+
+1415590292 d:\dorian's programs\singularitythirdpart\screens.h
+	<fstream>
+	<vector>
+	<stdarg.h>
+	<stdio.h>
+	<sstream>
+	<iostream>
+	"libraryIncluder.h"
+
+1415590320 source:d:\dorian's programs\singularitythirdpart\screens.cpp
+	"Screens.h"
 

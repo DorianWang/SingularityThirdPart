@@ -5,10 +5,10 @@
 
 
 
-ScreenType::ScreenType()
+ScreenType::ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName, Keypress* keyOrig, ConsoleOptions* COrig)
 {
-cursorMod = new ConsoleOptions;
-KeyIO = new Keypress;
+consoleMod = COrig;
+keyIO = keyOrig;
 }
 
 ScreenType::~ScreenType()

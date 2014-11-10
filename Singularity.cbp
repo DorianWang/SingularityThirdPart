@@ -76,6 +76,8 @@
 		<Unit filename="Player.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
+		<Unit filename="ScreenController.cpp" />
+		<Unit filename="ScreenController.h" />
 		<Unit filename="ScreenType.cpp">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
@@ -86,9 +88,6 @@
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
 		<Unit filename="Screens.h">
-			<Option virtualFolder="Utilities/Screens/" />
-		</Unit>
-		<Unit filename="ScreensSwitch.cpp">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
 		<Unit filename="SecondGameMain.cpp">
