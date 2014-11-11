@@ -82,10 +82,10 @@
 		<Unit filename="ScreenController.h">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
-		<Unit filename="ScreenType.cpp">
+		<Unit filename="ScreenInstructions.cpp">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
-		<Unit filename="ScreenType.h">
+		<Unit filename="ScreenInstructions.h">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
 		<Unit filename="Screens.cpp">

@@ -48,8 +48,11 @@ private:
 
 
 std::string screenName;
+
+std::vector <screenInscructions> instructions;
 ;;
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
+
 
 
 void parseScreenFile(FileIO* file);
