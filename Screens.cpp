@@ -27,6 +27,10 @@ void ScreenType::parseScreenFile(FileIO* file, std::string screenFileName)
    file.textOpenFile(std::string fileName, false);
 
 while (file.readLine(&tempInput)){
+   if (tempInput)
+
+
+
 
 }
 

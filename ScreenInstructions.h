@@ -11,10 +11,12 @@
 #define SCREEN_HEIGHT 25
 
 //http://stackoverflow.com/questions/6423729/get-current-cursor-position
-struct screenType
+struct screenInscructions
 {
+int Xpos; int Ypos;
 
-
+std::string instructionText;
+//Example: Health: [PLAYER_HEALTH]
 
 };
 
