@@ -449,7 +449,7 @@ int FileIO::clearBuffer(int line)
       return 1;
    }
 
-   lineBuffer.resize();//TODO
+   lineBuffer.resize(line);//TODO, is this correct?
 
    lineBuffer[line].clear();
    lineCounter = line;

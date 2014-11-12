@@ -4,9 +4,11 @@
 #include "libraryIncluder.h"
 #include "Screens.h"
 
-class ScreenControll
+class ScreenControl
 {
 public:
+
+
 
 private:
 
