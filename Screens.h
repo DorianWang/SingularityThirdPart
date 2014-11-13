@@ -12,6 +12,8 @@
 
 #include "libraryIncluder.h"
 
+#include "ScreenInstructions.h"
+
 #define PRESSDELAY 5
 #define SUCCESS_NUM 1
 #define FAILURE_NUM -1
@@ -49,7 +51,7 @@ private:
 
 std::string screenName;
 
-std::vector <screenInscructions> instructions;
+std::vector <screenInstruct <int>> instructions;
 ;;
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
 

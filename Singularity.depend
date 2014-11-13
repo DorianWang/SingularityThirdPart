@@ -879,7 +879,8 @@
 1415404215 source:d:\dorian's programs\singularitythirdpart\bases.cpp
 	"Bases.h"
 
-1414429568 source:d:\doriancode\singularitythirdpart\bases.cpp
+1415295416 source:d:\doriancode\singularitythirdpart\bases.cpp
+	"Bases.h"
 
 1414433168 source:d:\doriancode\singularitythirdpart\filereader.cpp
 	"FileReader.h"
@@ -1050,7 +1051,7 @@
 1414429904 d:\doriancode\singularitythirdpart\libraries\binary tree\binarynodetype.h
 	<cstdlib>
 
-1415216191 d:\doriancode\singularitythirdpart\libraries\fileio\fileio.h
+1415905284 d:\doriancode\singularitythirdpart\libraries\fileio\fileio.h
 	<string>
 	<fstream>
 	<iostream>
