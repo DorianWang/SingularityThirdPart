@@ -205,6 +205,19 @@ cin>>inputStuff;
 
 */
 
+//the backslash n creates a gap.
+std::string stringFuncTester = "qwerty.asdf.qwerty....\n....ytr.poi.";
+
+stringFunc stringTest;
+
+char PERIOD = '.';
+
+std::vector <std::string> tempVec = stringTest.parseAllTokens(stringFuncTester, ".");
+
+for (int i=0; i<tempVec.size(); i++){
+   cout << tempVec[i]<<endl;
+}
+
 
    cout<<"I'm done!"<<endl;
    system("PAUSE");
