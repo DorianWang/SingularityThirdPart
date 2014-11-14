@@ -37,7 +37,7 @@ class ScreenType
 public:
 ;;
 
-ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName);
+ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName, std::string screenFileLocation, FileIO* screenInput);
 
 ~ScreenType();
 
@@ -57,7 +57,7 @@ int botX; int botY; int topX; int topY;//The screen's area of influence. This is
 
 
 
-void parseScreenFile(FileIO* file);
+void parseScreenFile(FileIO* file, std::string screenFileName);
 
 
 };

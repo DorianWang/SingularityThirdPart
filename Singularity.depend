@@ -1399,7 +1399,7 @@
 1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarynodetype.h
 	<cstdlib>
 
-1415404215 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
+1415763858 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
 	<string>
 	<fstream>
 	<iostream>
@@ -1499,10 +1499,11 @@
 1415589770 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1415589910 d:\dorian's programs\singularitythirdpart\screencontroller.h
+1415761937 d:\dorian's programs\singularitythirdpart\screencontroller.h
+	"libraryIncluder.h"
 	"Screens.h"
 
-1415590292 d:\dorian's programs\singularitythirdpart\screens.h
+1415930981 d:\dorian's programs\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1510,7 +1511,40 @@
 	<sstream>
 	<iostream>
 	"libraryIncluder.h"
+	"ScreenInstructions.h"
 
 1415590320 source:d:\dorian's programs\singularitythirdpart\screens.cpp
 	"Screens.h"
+
+1415919360 d:\dorian's programs\singularitythirdpart\screeninstructions.h
+	<iostream>
+	<vector>
+	"libraryIncluder.h"
+
+1415404215 source:d:\dorian's programs\singularitythirdpart\secondgamemain.cpp
+	"SecondGameMain.h"
+
+1415404215 d:\dorian's programs\singularitythirdpart\secondgamemain.h
+	"Bases.h"
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\takegamemain.cpp
+	"TakeGameMain.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\takegamemain.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+	"FileReader.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\filereader.h
+	"MapLoader.h"
+	"UsefulHeaders.h"
+
+1414621697 source:d:\dorian's programs\singularitythirdpart\typechanger.cpp
+	"typeChanger.h"
+
+1414621697 d:\dorian's programs\singularitythirdpart\typechanger.h
+	<stdio.h>
+	<stdlib.h>
+
+1415741145 source:d:\dorian's programs\singularitythirdpart\screeninstructions.cpp
 

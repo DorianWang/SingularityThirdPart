@@ -24,17 +24,18 @@ ScreenType::~ScreenType()
 void ScreenType::parseScreenFile(FileIO* file, std::string screenFileName)
 {
    std::string tempInput;
-   file.textOpenFile(std::string fileName, false);
+   file -> textOpenFile(screenFileName, false);
 
-while (file.readLine(&tempInput)){
-   if (tempInput)
-
+while (file -> readLine(&tempInput)){
+   if (tempInput.empty()){
+      continue;
+   }
 
 
 
 }
 
-file.closeFile();
+file -> closeFile();
 }
 
 
