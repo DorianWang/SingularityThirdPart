@@ -16,6 +16,7 @@
 template <typename Q> class screenInstruct
 {
 
+//Make a
 
    public:
 int Xpos; int Ypos;
@@ -33,6 +34,11 @@ template <typename Q> screenInstruct<Q>::screenInstruct()
    dataOut = NULL;
 }
 
+template <typename Q> screenInstruct<Q>::parseInput(std::string input)
+{
+   //parse things here.
+
+}
 
 
 /*
