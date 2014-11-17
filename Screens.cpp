@@ -31,6 +31,9 @@ while (file -> readLine(&tempInput)){
       continue;
    }
 
+   if (createInstruction(tempInput)){
+      continue;
+   }
 
 
 }
@@ -44,7 +47,39 @@ file -> closeFile();
 
 
 
+bool ScreenType::createInstruction(std::string instructionText)
+{
+   stringFunc stringParse;
+   std::string tokenStr;
+   tokenStr = stringParse.parseFirstToken(instructionText, "\\");
+   //Using '\' for parsing. Might need to change it later.
+   bool returnBool;
 
+   if (tokenStr == "INT"){
+      screenInstruct <int>* tempInstruct = new screenInstruct <int>;
+
+      returnBool = tempInstruct -> parseInput(instructionText);
+      if (returnBool){
+         instructionsInt.push_back()
+      }
+   }
+
+   if (tokenStr == "STR"){
+      screenInstruct <std::string>* tempInstruct = new screenInstruct <std::string>;
+
+      return tempInstruct -> parseInput(instructionText);
+   }
+
+   if (tokenStr == "DBL"){
+      screenInstruct <double>* tempInstruct = new screenInstruct <double>;
+
+      return tempInstruct -> parseInput(instructionText);
+   }
+
+   if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL")){
+      return false; //Not an instruction.
+   }
+}
 
 
 

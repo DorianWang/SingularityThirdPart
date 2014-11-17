@@ -51,7 +51,9 @@ private:
 
 std::string screenName;
 
-std::vector <screenInstruct <int>> instructions;
+std::vector <screenInstruct <int>*> instructionsInt;
+std::vector <screenInstruct <std::string>*> instructionsString;
+std::vector <screenInstruct <double>*> instructionsDouble;
 ;;
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
 
@@ -59,6 +61,7 @@ int botX; int botY; int topX; int topY;//The screen's area of influence. This is
 
 void parseScreenFile(FileIO* file, std::string screenFileName);
 
+bool createInstruction(std::string instructionText);
 
 };
 

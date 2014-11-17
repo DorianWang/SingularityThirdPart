@@ -212,6 +212,10 @@ stringFunc stringTest;
 
 char PERIOD = '.';
 
+cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
+cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
+
+
 std::vector <std::string> tempVec = stringTest.parseAllTokens(stringFuncTester, ".");
 
 

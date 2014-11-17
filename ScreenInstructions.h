@@ -23,6 +23,8 @@ int Xpos; int Ypos;
 
 screenInstruct();
 
+bool parseInput(std::string input);
+
 std::string instructionText;
 
 Q* dataOut;
@@ -34,7 +36,7 @@ template <typename Q> screenInstruct<Q>::screenInstruct()
    dataOut = NULL;
 }
 
-template <typename Q> screenInstruct<Q>::parseInput(std::string input)
+template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 {
    //parse things here.
 
