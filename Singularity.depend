@@ -980,10 +980,10 @@
 	<iostream>
 	<cmath>
 
-1415987239 source:d:\doriancode\singularitythirdpart\screens.cpp
+1416253170 source:d:\doriancode\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1415987239 d:\doriancode\singularitythirdpart\screens.h
+1416253253 d:\doriancode\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1029,7 +1029,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1415990170 source:d:\doriancode\singularitythirdpart\main.cpp
+1416250963 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1556,7 +1556,7 @@
 	"libraryIncluder.h"
 	"Screens.h"
 
-1415908550 d:\doriancode\singularitythirdpart\screeninstructions.h
+1416254791 d:\doriancode\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"

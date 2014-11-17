@@ -7,8 +7,8 @@
 
 #include "libraryIncluder.h"
 
-#define SCREEN_WIDTH 80
-#define SCREEN_HEIGHT 25
+#define EXPECTED_INSTRUCTION_SIZE 5
+
 
 //http://stackoverflow.com/questions/6423729/get-current-cursor-position
 
@@ -38,8 +38,22 @@ template <typename Q> screenInstruct<Q>::screenInstruct()
 
 template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 {
-   //parse things here.
+   std::vector <std::string> parsedInput;
+   stringFunc stringParser;
 
+   parsedInput = stringParser.parseAllTokens(input, "\\");
+
+   if (parsedInput.size() != EXPECTED_INSTRUCTION_SIZE){
+      return false;
+   }
+
+
+   //Ignore the first token, as it contains the type data.
+   //If this becomes an issue,
+   //http://www.cplusplus.com/reference/stdexcept/invalid_argument/
+   Xpos = atoi(parsedInput.at(1).c_str()); Ypos = atoi(parsedInput.at(2).c_str());
+
+//TODO
 }
 
 

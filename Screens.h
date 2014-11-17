@@ -14,6 +14,8 @@
 
 #include "ScreenInstructions.h"
 
+
+
 #define PRESSDELAY 5
 #define SUCCESS_NUM 1
 #define FAILURE_NUM -1
@@ -25,6 +27,8 @@
 #define SCREEN_WIDTH 80
 
 #define NUM_FUNCTIONS
+
+
 
 using namespace std;
 
@@ -51,9 +55,9 @@ private:
 
 std::string screenName;
 
-std::vector <screenInstruct <int>*> instructionsInt;
-std::vector <screenInstruct <std::string>*> instructionsString;
-std::vector <screenInstruct <double>*> instructionsDouble;
+std::vector <screenInstruct <int>* > instructionsInt;
+std::vector <screenInstruct <std::string>* > instructionsString;
+std::vector <screenInstruct <double>* > instructionsDouble;
 ;;
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
 

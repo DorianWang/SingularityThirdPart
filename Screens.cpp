@@ -60,20 +60,41 @@ bool ScreenType::createInstruction(std::string instructionText)
 
       returnBool = tempInstruct -> parseInput(instructionText);
       if (returnBool){
-         instructionsInt.push_back()
+         instructionsInt.push_back(tempInstruct);
+         return returnBool;
       }
+
+      //Nothing happened. Why?
+      delete tempInstruct;
+      return returnBool;
    }
 
    if (tokenStr == "STR"){
       screenInstruct <std::string>* tempInstruct = new screenInstruct <std::string>;
 
-      return tempInstruct -> parseInput(instructionText);
+      returnBool = tempInstruct -> parseInput(instructionText);
+      if (returnBool){
+         instructionsString.push_back(tempInstruct);
+         return returnBool;
+      }
+
+      //Nothing happened. Why?
+      delete tempInstruct;
+      return returnBool;
    }
 
    if (tokenStr == "DBL"){
       screenInstruct <double>* tempInstruct = new screenInstruct <double>;
 
-      return tempInstruct -> parseInput(instructionText);
+      returnBool = tempInstruct -> parseInput(instructionText);
+      if (returnBool){
+         instructionsDouble.push_back(tempInstruct);
+         return returnBool;
+      }
+
+      //Nothing happened. Why?
+      delete tempInstruct;
+      return returnBool;
    }
 
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL")){
