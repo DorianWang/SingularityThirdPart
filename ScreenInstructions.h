@@ -52,6 +52,7 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
    //If this becomes an issue,
    //http://www.cplusplus.com/reference/stdexcept/invalid_argument/
    Xpos = atoi(parsedInput.at(1).c_str()); Ypos = atoi(parsedInput.at(2).c_str());
+   instructionText = parsedInput.at(3);
 
 //TODO
 }
