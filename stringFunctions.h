@@ -7,6 +7,7 @@
 #include <vector>
 #include <cstdio>
 #include <string.h>
+#include <cstdarg>
 
 
 //It only works if I have the class. Why?
@@ -21,6 +22,8 @@ inline std::string popFirstToken(std::string input, const char* delim);
 inline std::vector <std::string> parseAllTokens(std::string input, const char* delim);
 
 inline std::string tokensToString(std::vector <std::string> input, const char* delim);
+
+//inline bool stringToOther(std::string input; std::string outputType, ...);
 };
 
 
