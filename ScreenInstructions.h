@@ -28,12 +28,14 @@ bool parseInput(std::string input);
 std::string instructionText;
 std::string dataOutName;
 
+bool dataOutSet;
 Q* dataOut;
 };
 
 
 template <typename Q> screenInstruct<Q>::screenInstruct()
 {
+   dataOutSet = false;
    dataOut = NULL;
 }
 
