@@ -3,6 +3,7 @@
 
 #include "libraryIncluder.h"
 #include "Screens.h"
+#include <list>
 
 struct instructDataOut
 {
@@ -16,7 +17,7 @@ class ScreenControl
 {
 public:
 
-instructDataOut getNextUnsetInstructPointer();
+instructDataOut popFirstUnsetInstructPointer();
 std::vector <instructDataOut> getAllUnsetInstruct();
 
 bool makeNewScreen (std::string screenName, std::string screenLocation);

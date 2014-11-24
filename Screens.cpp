@@ -28,16 +28,22 @@ void ScreenType::parseScreenFile(FileIO* file)
 {
    std::string tempInput;
    std::vector <std::string> parserOutput;
-   file -> textOpenFile(screenFileName, false);
+
+   //file -> textOpenFile(screenFileName, false);
+   //No longer needed.
+
    stringFunc stringParcer;
 
    if (file -> readLine(&tempInput)){
-
+      parserOutput = stringParcer.parseAllTokens(tempInput, "\\");
    }
    else
    {
       //Wut? Broken
    }
+
+   botX = atoi(parserOutput.at(0).c_str()); botY = atoi(parserOutput.at(1).c_str());
+   topX = atoi(parserOutput.at(2).c_str()); topY = atoi(parserOutput.at(3).c_str());
 
 while (file -> readLine(&tempInput)){
    if (tempInput.empty()){
