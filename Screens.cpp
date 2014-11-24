@@ -5,11 +5,14 @@
 
 
 
-ScreenType::ScreenType(int minX, int minY, int maxX, int maxY, std::string newScreenName, std::string screenFileLocation, FileIO* screenInput)
+ScreenType::ScreenType(std::string newScreenName, FileIO* screenInput)
 {
-botX = minX; botY = minY; topX = maxX; topY = maxY;
+//botX = minX; botY = minY; topX = maxX; topY = maxY;
+//Get these from the parsed file...
 
-parseScreenFile(screenInput, screenFileLocation);
+screenName = newScreenName;
+
+parseScreenFile(screenInput);
 }
 
 ScreenType::~ScreenType()
@@ -20,11 +23,21 @@ ScreenType::~ScreenType()
 
 
 //Screens are always stored in the data folder.
-//However, the screenFileLocation string will provide all the necessary file structure information.
-void ScreenType::parseScreenFile(FileIO* file, std::string screenFileName)
+//However, the FileIO object passed has all the necessary information.
+void ScreenType::parseScreenFile(FileIO* file)
 {
    std::string tempInput;
+   std::vector <std::string> parserOutput;
    file -> textOpenFile(screenFileName, false);
+   stringFunc stringParcer;
+
+   if (file -> readLine(&tempInput)){
+
+   }
+   else
+   {
+      //Wut? Broken
+   }
 
 while (file -> readLine(&tempInput)){
    if (tempInput.empty()){

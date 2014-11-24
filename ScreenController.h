@@ -19,11 +19,16 @@ public:
 instructDataOut getNextUnsetInstructPointer();
 std::vector <instructDataOut> getAllUnsetInstruct();
 
+bool makeNewScreen (std::string screenName, std::string screenLocation);
+
 private:
 
 FileIO fileReader;
 
 std::vector <ScreenType*> screenArray;
+
+std::list <instructDataOut> UnsetPointerList;
+
 //Need something to keep track of screens in use...
 
 
