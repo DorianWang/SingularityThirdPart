@@ -45,5 +45,8 @@ Temporary Items
 .o
 
 *.o
+#no need for executables...
+*.exe
+
 
 

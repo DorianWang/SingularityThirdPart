@@ -17,7 +17,7 @@ class ScreenControl
 {
 public:
 
-instructDataOut popFirstUnsetInstructPointer();
+bool popFirstUnsetInstructPointer(instructDataOut* output);
 std::vector <instructDataOut> getAllUnsetInstruct();
 
 bool makeNewScreen (std::string screenName, std::string screenLocation);
