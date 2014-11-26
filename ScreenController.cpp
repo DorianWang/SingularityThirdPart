@@ -8,6 +8,7 @@ bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut* output)
       instructDataOut tempData;
       tempData = UnsetPointerList.front();
       UnsetPointerList.pop_front();
+      *output = tempData;
       return true;
    }
    return false;
@@ -23,4 +24,24 @@ std::vector <instructDataOut> ScreenControl::getAllUnsetInstruct()
    }
 UnsetPointerList.clear();
 return tempVector;
+}
+
+
+
+
+
+
+
+bool makeNewScreen (std::string screenName, std::string screenLocation)
+{
+   FileIO inputFile;
+   std::string filePath = screenLocation + "/" + screenName + ".scrn";
+   inputFile.textOpenFile(filePath, false);
+
+   ScreenType* tempScreen = new ScreenType(screenName, &inputFile);
+
+   for (int i = 0; i < tempScreen ->instructionsString.size(); i++){
+      //TODO: Turn instructions into instruct pointers.
+   }
+
 }

@@ -1549,10 +1549,10 @@
 
 1415741145 source:d:\dorian's programs\singularitythirdpart\screeninstructions.cpp
 
-1416853676 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
+1416945954 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1416853715 d:\doriancode\singularitythirdpart\screencontroller.h
+1416945948 d:\doriancode\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	<list>
