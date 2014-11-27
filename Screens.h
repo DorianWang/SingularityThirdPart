@@ -50,14 +50,17 @@ void redraw();
 
 std::vector <char> expectedInput;
 
+std::vector <screenInstruct <int>* > instructionsInt;
+std::vector <screenInstruct <std::string>* > instructionsString;
+std::vector <screenInstruct <double>* > instructionsDouble;
+
+
 private:
 
 
 std::string screenName;
 
-std::vector <screenInstruct <int>* > instructionsInt;
-std::vector <screenInstruct <std::string>* > instructionsString;
-std::vector <screenInstruct <double>* > instructionsDouble;
+
 ;;
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
 

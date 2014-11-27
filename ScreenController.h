@@ -3,6 +3,8 @@
 
 #include "libraryIncluder.h"
 #include "Screens.h"
+#include "ScreenInstructions.h"
+
 #include <list>
 
 struct instructDataOut
@@ -21,6 +23,8 @@ bool popFirstUnsetInstructPointer(instructDataOut* output);
 std::vector <instructDataOut> getAllUnsetInstruct();
 
 bool makeNewScreen (std::string screenName, std::string screenLocation);
+
+void outputScreen(std::string screenName);
 
 private:
 

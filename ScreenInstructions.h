@@ -26,16 +26,18 @@ screenInstruct();
 bool parseInput(std::string input);
 
 std::string instructionText;
-std::string dataOutName;
 
-bool dataOutSet;
+std::string dataOutName;
+//Name of the macro that the main function will provide.
+
+bool dataOutGet;
 Q* dataOut;
 };
 
 
 template <typename Q> screenInstruct<Q>::screenInstruct()
 {
-   dataOutSet = false;
+   dataOutGet = false;
    dataOut = NULL;
 }
 

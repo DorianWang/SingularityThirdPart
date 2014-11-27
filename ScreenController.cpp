@@ -32,7 +32,7 @@ return tempVector;
 
 
 
-bool makeNewScreen (std::string screenName, std::string screenLocation)
+bool ScreenControl::makeNewScreen (std::string screenName, std::string screenLocation)
 {
    FileIO inputFile;
    std::string filePath = screenLocation + "/" + screenName + ".scrn";
@@ -40,8 +40,65 @@ bool makeNewScreen (std::string screenName, std::string screenLocation)
 
    ScreenType* tempScreen = new ScreenType(screenName, &inputFile);
 
-   for (int i = 0; i < tempScreen ->instructionsString.size(); i++){
-      //TODO: Turn instructions into instruct pointers.
+//Things to list of stuff
+//{
+
+   for (int i = 0; i < tempScreen -> instructionsString.size(); i++){
+      instructDataOut tempInstruct;
+      tempScreen -> instructionsString[i] -> dataOutGet = true;
+
+      tempInstruct.macroInstruct = tempScreen -> instructionsString[i] -> dataOutName;
+      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsString[i] -> dataOut;
+
+      UnsetPointerList.push_back(tempInstruct);
    }
 
+   for (int i = 0; i < tempScreen -> instructionsInt.size(); i++){
+      instructDataOut tempInstruct;
+      tempScreen -> instructionsString[i] -> dataOutGet = true;
+
+      tempInstruct.macroInstruct = tempScreen -> instructionsInt[i] -> dataOutName;
+      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsInt[i] -> dataOut;
+
+      UnsetPointerList.push_back(tempInstruct);
+   }
+
+   for (int i = 0; i < tempScreen -> instructionsDouble.size(); i++){
+      instructDataOut tempInstruct;
+      tempScreen -> instructionsString[i] -> dataOutGet = true;
+
+      tempInstruct.macroInstruct = tempScreen -> instructionsDouble[i] -> dataOutName;
+      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsDouble[i] -> dataOut;
+
+      UnsetPointerList.push_back(tempInstruct);
+   }
+
+//}
+
+return true;//Good! I think...
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
