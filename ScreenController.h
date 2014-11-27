@@ -22,9 +22,11 @@ public:
 bool popFirstUnsetInstructPointer(instructDataOut* output);
 std::vector <instructDataOut> getAllUnsetInstruct();
 
-bool makeNewScreen (std::string screenName, std::string screenLocation);
+int makeNewScreen (std::string screenName, std::string screenLocation);
 
-void outputScreen(std::string screenName);
+int getScreenIndex(std::string screenNameSearch);
+
+void outputScreen();
 
 private:
 

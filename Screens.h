@@ -40,6 +40,7 @@ class ScreenType
 
 public:
 ;;
+std::string screenName;
 
 ScreenType(std::string newScreenName, FileIO* screenInput);
 
@@ -56,9 +57,6 @@ std::vector <screenInstruct <double>* > instructionsDouble;
 
 
 private:
-
-
-std::string screenName;
 
 
 ;;
