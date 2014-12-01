@@ -26,7 +26,7 @@ int makeNewScreen (std::string screenName, std::string screenLocation);
 
 int getScreenIndex(std::string screenNameSearch);
 
-void outputScreen(int screenIndex);
+bool outputScreen(int screenIndex);
 
 private:
 

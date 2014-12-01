@@ -94,6 +94,36 @@ int ScreenControl::getScreenIndex(std::string screenNameSearch)
 
 
 
+bool ScreenControl::outputScreen(int screenIndex)
+{
+   //If the input is invalid, return false
+   if (screenArray.size() > screenIndex && screenIndex >= 0){
+      return false;
+   }
+
+   //Loop until done
+   //{
+   for (int i = 0; i < screenArray[i] -> instructionsInt.size(); i++){
+
+   }
+
+   for (int i = 0; i < screenArray[i] -> instructionsInt.size(); i++){
+      if (screenArray[i] -> screenName == screenNameSearch){
+         return i;
+      }
+   }
+
+   for (int i = 0; i < screenArray[i] -> instructionsInt.size(); i++){
+      if (screenArray[i] -> screenName == screenNameSearch){
+         return i;
+      }
+   }
+   \\}
+
+
+}
+
+
 
 
 
