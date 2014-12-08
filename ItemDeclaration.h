@@ -27,14 +27,31 @@
 
 enum usesItem {
 WP_ONE_HAND, WP_TWO_HAND, AR_CHEST, AR_HEAD, AR_ARM, AR_LEG, AR_FOOT, AR_NECK,
-AR_HAND, //TODO
+AR_HAND,
+//Jewelry. These are in their own slot, unless they also have an armour/weapon slot.
+JWL_NECK, JWL_WRIST, JWL_EAR, JWL_HAND, JWL_HEAD, JWL_CHEST, JWL_LEG, JWL_FOOT,
+
+//Tool items. They do things, and limit actions. CARRY is for bags, and CONTAINER is for liquid containers
+TOOL_BLADE, TOOL_STAB, TOOL_CARRY, TOOL_CONTAINER,
+
+//TODO
 
 };
 
 
 enum usesConsume {
-POTION_HEAL, BANDAGE, OTHER_MEDICAL, FOOD, POTION_MANA, ELEMENT_CLUSTER, POWER_ELEMENT_CLUSTER,
-CRYSTAL_MANA, EXPLODE_DISABLE, EXPLODE_DAMAGE, EXPLODE_FLARE, TRANSFORM_MAGIC, TRANSFORM_TECH,
+
+//Restoratives
+POTION_HEAL, BANDAGE, OTHER_MEDICAL, POTION_MANA, ELEMENT_CLUSTER, POWER_ELEMENT_CLUSTER, CRYSTAL_MANA,
+
+//Used to cause damage, blind the enemy, etc.
+EXPLODE_DISABLE, EXPLODE_DAMAGE, EXPLODE_FLARE,
+
+//These all have special effects.
+TRANSFORM_MAGIC, TRANSFORM_TECH,
+
+//Not yet used.
+FOOD
 
 };
 

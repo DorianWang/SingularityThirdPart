@@ -16,7 +16,7 @@
 template <typename Q> class screenInstruct
 {
 
-//Make a
+
 
    public:
 int Xpos; int Ypos;
