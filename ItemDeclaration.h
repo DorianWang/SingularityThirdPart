@@ -32,7 +32,8 @@ AR_HAND,
 JWL_NECK, JWL_WRIST, JWL_EAR, JWL_HAND, JWL_HEAD, JWL_CHEST, JWL_LEG, JWL_FOOT,
 
 //Tool items. They do things, and limit actions. CARRY is for bags, and CONTAINER is for liquid containers
-TOOL_BLADE, TOOL_STAB, TOOL_CARRY, TOOL_CONTAINER,
+//COMPUTER accesses high tech consoles, MULTI is a multitool for screws, etc.
+TOOL_BLADE, TOOL_STAB, TOOL_CARRY, TOOL_CONTAINER, TOOL_COMPUTER, TOOL_MULTI
 
 //TODO
 
