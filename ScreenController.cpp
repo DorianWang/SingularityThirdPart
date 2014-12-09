@@ -98,13 +98,36 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
    va_start(args, inputType);
    std::stringstream ss(stringstream::in | stringstream::out);
 
+   stringFunc stringTest; //What do I plan to use for the delimiter?
+
+   //Int
+   if (inputTupe == 'i'){
+      double* input = va_arg(args, double*);
+
+
+
+
+   return ss.str();
+   }
+
+
+
    //Double
    if (inputType == 'd'){
-      int* input = va_arg(args, int*);
+      double* input = va_arg(args, double*);
 
-      ss<</* token << std::setprecision(51) <<*/
+      ss<</* token << std::setprecision(51) <<*/ endl;
 
+   return ss.str();
    }
+
+   //String
+   if (inputType == 's'){
+      std::string* input = va_arg(args, std::string*);
+
+   return ss.str();
+   }
+
 }
 
 
