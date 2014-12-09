@@ -92,6 +92,22 @@ int ScreenControl::getScreenIndex(std::string screenNameSearch)
    return -1;
 }
 
+std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
+{
+   va_list args;
+   va_start(args, inputType);
+   std::stringstream ss(stringstream::in | stringstream::out);
+
+   //Double
+   if (inputType == 'd'){
+      int* input = va_arg(args, int*);
+
+      ss<</* token << std::setprecision(51) <<*/
+
+   }
+}
+
+
 
 
 bool ScreenControl::outputScreen(int screenIndex)

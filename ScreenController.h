@@ -38,7 +38,7 @@ std::list <instructDataOut> UnsetPointerList;
 
 //Need something to keep track of screens in use...
 
-
+std::string parseInstruct(std::string input, char inputType, ...);
 
 
 };

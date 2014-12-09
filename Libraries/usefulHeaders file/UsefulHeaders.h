@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <cstdarg>
 
 #include "stdio.h"//This does stuff!
 
