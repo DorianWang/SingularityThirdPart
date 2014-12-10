@@ -7,7 +7,7 @@
 
 #include "libraryIncluder.h"
 
-#define EXPECTED_INSTRUCTION_SIZE 5
+#define EXPECTED_INSTRUCTION_SIZE 4
 
 
 //http://stackoverflow.com/questions/6423729/get-current-cursor-position
@@ -15,6 +15,9 @@
 
 template <typename Q> class screenInstruct
 {
+
+    typedef T type;
+
 
 
 
@@ -52,12 +55,28 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
       return false;
    }
 
+   //http://stackoverflow.com/questions/7647958/how-to-check-if-the-template-parameter-of-the-function-has-a-certain-type
+   if (type = )
 
    //Ignore the first token, as it contains the type data.
    //If this becomes an issue,
    //http://www.cplusplus.com/reference/stdexcept/invalid_argument/
    Xpos = atoi(parsedInput.at(1).c_str()); Ypos = atoi(parsedInput.at(2).c_str());
-   instructionText = parsedInput.at(3); dataOutName = parsedInput.at(4);
+
+   std::string tempString = parsedInput.at(3);
+
+   int i = 0;
+   while (tempString.at(i) != 0){
+      if (tempString.at(i) == '{'){
+         break;
+      }
+      i++;
+   }
+
+   //std::string tempDataIn
+
+   //dataOutName = ;
+   //instructionText =
 
 return true;
 }

@@ -916,7 +916,7 @@
 1414429568 source:d:\doriancode\singularitythirdpart\inventory.cpp
 	"ItemDeclaration.h"
 
-1414429568 d:\doriancode\singularitythirdpart\itemdeclaration.h
+1418152305 d:\doriancode\singularitythirdpart\itemdeclaration.h
 	"iostream"
 	"string"
 	"vector"
@@ -1090,11 +1090,12 @@
 	<array>
 	<iostream>
 
-1414429904 d:\doriancode\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+1418152305 d:\doriancode\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
 	<sstream>
+	<cstdarg>
 	"stdio.h"
 	<process.h>
 	<windows.h>

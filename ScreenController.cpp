@@ -99,11 +99,11 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
    std::stringstream ss(stringstream::in | stringstream::out);
 
    stringFunc stringTest; //What do I plan to use for the delimiter?
+   //'@'? It is not used much in normal writing, so...
 
    //Int
-   if (inputTupe == 'i'){
+   if (inputType == 'i'){
       double* input = va_arg(args, double*);
-
 
 
 
@@ -144,21 +144,19 @@ bool ScreenControl::outputScreen(int screenIndex)
    //{
    for (int i = 0; i < screenArray[screenIndex] -> instructionsInt.size(); i++){
          //TODO: change location, create parseInstruct, and finish
-      cout << parseInstruct(screenArray[screenIndex] -> instructionsInt[i]);
+      //cout << parseInstruct(screenArray[screenIndex] -> instructionsInt[i]);
    }
 
    for (int i = 0; i < screenArray[screenIndex] -> instructionsInt.size(); i++){
-      screenArray[screenIndex] -> screenName == screenNameSearch){
          return i;
-      }
+
    }
 
    for (int i = 0; i < screenArray[screenIndex] -> instructionsInt.size(); i++){
-      if (screenArray[i] -> screenName == screenNameSearch){
          return i;
-      }
+
    }
-   \\}
+
 
 
 }

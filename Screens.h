@@ -55,6 +55,8 @@ std::vector <screenInstruct <int>* > instructionsInt;
 std::vector <screenInstruct <std::string>* > instructionsString;
 std::vector <screenInstruct <double>* > instructionsDouble;
 
+std::vector <screenInstruct <void>* > instructionsVoid;
+
 
 private:
 

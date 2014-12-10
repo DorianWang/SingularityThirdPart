@@ -116,6 +116,19 @@ bool ScreenType::createInstruction(std::string instructionText)
       return returnBool;
    }
 
+   if (tokenStr == "NUL"){
+      screenInstruct <void>* tempInstruct = new screenInstruct <void>;
+      returnBool = tempInstruct -> parseInput(instructionText);
+
+      if (returnBool){
+         instructionsVoid.push_back(tempInstruct);
+         return returnBool;
+      }
+
+      delete tempInstruct;
+      return returnBool;
+   }
+
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL")){
       return false; //Not an instruction.
    }
