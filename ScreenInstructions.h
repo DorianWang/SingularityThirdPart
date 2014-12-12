@@ -16,10 +16,8 @@
 template <typename Q> class screenInstruct
 {
 
-    typedef T type;
 
-
-
+bool isVoid;
 
    public:
 int Xpos; int Ypos;
@@ -27,6 +25,8 @@ int Xpos; int Ypos;
 screenInstruct();
 
 bool parseInput(std::string input);
+
+
 
 std::string instructionText;
 
@@ -40,10 +40,15 @@ Q* dataOut;
 
 template <typename Q> screenInstruct<Q>::screenInstruct()
 {
+
+   isVoid = std::is_same<Q, void>::value;
    dataOutGet = false;
    dataOut = NULL;
 }
 
+
+//This function parses input, obtaining the x and y coordinates, as well as
+//the macro required. The macro is then replaced by a '@'.
 template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 {
    std::vector <std::string> parsedInput;
@@ -55,8 +60,7 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
       return false;
    }
 
-   //http://stackoverflow.com/questions/7647958/how-to-check-if-the-template-parameter-of-the-function-has-a-certain-type
-   if (type = )
+
 
    //Ignore the first token, as it contains the type data.
    //If this becomes an issue,
@@ -65,13 +69,17 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 
    std::string tempString = parsedInput.at(3);
 
-   int i = 0;
-   while (tempString.at(i) != 0){
-      if (tempString.at(i) == '{'){
-         break;
-      }
-      i++;
+   //http://stackoverflow.com/questions/7647958/how-to-check-if-the-template-parameter-of-the-function-has-a-certain-type
+   if (isVoid){
+      instructionText = tempString;
+      return true;
    }
+
+
+   int i = 0;
+   std::size_t firstBracket = tempString.find('{');
+   std::size_t secondBracket = tempString.find('}', firstBracket+1);
+
 
    //std::string tempDataIn
 
