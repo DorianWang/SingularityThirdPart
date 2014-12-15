@@ -80,11 +80,22 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
    std::size_t firstBracket = tempString.find('{');
    std::size_t secondBracket = tempString.find('}', firstBracket+1);
 
+   if (firstBracket == npos || secondBracket == npos){
+      //Bad stuff happened. Stop here.
+   }
+
+   //Get the macro in between the two brackets, and then remove it and the brackets.
+
+   instructionText = tempString.substr(firstBracket + 1, secondBracket - firstBracket - 1);
+   tempString.erase(firstBracket, secondBracket - firstBracket +1);
+   tempString.insert(firstBracket, "@");
+
+
 
    //std::string tempDataIn
 
    //dataOutName = ;
-   //instructionText =
+
 
 return true;
 }

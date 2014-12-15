@@ -218,11 +218,24 @@ cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 
 std::vector <std::string> tempVec = stringTest.parseAllTokens(stringFuncTester, ".");
 
+std::string tempString = "This is a {MACRO} which should do things";
 
+   std::size_t firstBracket = tempString.find('{');
+   std::size_t secondBracket = tempString.find('}', firstBracket+1);
+
+   //Get the macro in between the two brackets, and then remove it and the brackets.
+
+   std::string instructionText = tempString.substr(firstBracket + 1, secondBracket - firstBracket - 1);
+   tempString.erase(firstBracket, secondBracket - firstBracket +1);
+   tempString.insert(firstBracket, "@");
+
+   cout<<instructionText<<endl<<tempString<<endl;
+
+/*
 for (int i=0; i<tempVec.size(); i++){
    cout << tempVec[i]<<endl;
 }
-
+*/
 
    cout<<"I'm done!"<<endl;
    system("PAUSE");
