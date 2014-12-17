@@ -6,6 +6,7 @@
 
 #include "UsefulHeaders.h"
 
+#include "ScreenInstructions.h"
 
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
@@ -218,18 +219,15 @@ cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 
 std::vector <std::string> tempVec = stringTest.parseAllTokens(stringFuncTester, ".");
 
-std::string tempString = "This is a {MACRO} which should do things";
+std::string tempString = "int\\2\\3\\This is a {MACRO}";
 
-   std::size_t firstBracket = tempString.find('{');
-   std::size_t secondBracket = tempString.find('}', firstBracket+1);
+screenInstruct<int> tempInstructTest;
 
-   //Get the macro in between the two brackets, and then remove it and the brackets.
+tempInstructTest.parseInput(tempString);
 
-   std::string instructionText = tempString.substr(firstBracket + 1, secondBracket - firstBracket - 1);
-   tempString.erase(firstBracket, secondBracket - firstBracket +1);
-   tempString.insert(firstBracket, "@");
 
-   cout<<instructionText<<endl<<tempString<<endl;
+cout<<tempInstructTest.dataOutName<<" "<<tempInstructTest.instructionText<<" "<<tempInstructTest.Xpos<<", "<<tempInstructTest.Ypos<<endl;
+
 
 /*
 for (int i=0; i<tempVec.size(); i++){

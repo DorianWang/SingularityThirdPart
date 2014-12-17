@@ -60,8 +60,6 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
       return false;
    }
 
-
-
    //Ignore the first token, as it contains the type data.
    //If this becomes an issue,
    //http://www.cplusplus.com/reference/stdexcept/invalid_argument/
@@ -70,6 +68,7 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
    std::string tempString = parsedInput.at(3);
 
    //http://stackoverflow.com/questions/7647958/how-to-check-if-the-template-parameter-of-the-function-has-a-certain-type
+   //There is no macro in this input, stop now.
    if (isVoid){
       instructionText = tempString;
       return true;
@@ -80,40 +79,28 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
    std::size_t firstBracket = tempString.find('{');
    std::size_t secondBracket = tempString.find('}', firstBracket+1);
 
-   if (firstBracket == npos || secondBracket == npos){
+   if (firstBracket == std::string::npos || secondBracket == std::string::npos){
       //Bad stuff happened. Stop here.
+      return false;
    }
 
    //Get the macro in between the two brackets, and then remove it and the brackets.
+   dataOutName = tempString.substr(firstBracket + 1, secondBracket - firstBracket - 1);
 
-   instructionText = tempString.substr(firstBracket + 1, secondBracket - firstBracket - 1);
+   //Removes the macro and replaces it with a @
+   //Then sets the instruction text to the parsed string.
    tempString.erase(firstBracket, secondBracket - firstBracket +1);
    tempString.insert(firstBracket, "@");
-
-
-
-   //std::string tempDataIn
-
-   //dataOutName = ;
+   instructionText = tempString;
 
 
 return true;
 }
 
 
-/*
-struct screenInstructionsInt
-{
-int Xpos; int Ypos;
 
-std::string instructionText;
-//Example: Health: [PLAYER_HEALTH]
 
-//Remember to set to zero when created.
-int* dataOut;
 
-};
-*/
 
 
 

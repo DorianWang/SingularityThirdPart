@@ -1130,7 +1130,7 @@
 1417104616 source:d:\github\singularitythirdpart\inventory.cpp
 	"ItemDeclaration.h"
 
-1417104616 d:\github\singularitythirdpart\itemdeclaration.h
+1418143892 d:\github\singularitythirdpart\itemdeclaration.h
 	"iostream"
 	"string"
 	"vector"
@@ -1215,11 +1215,12 @@
 	<array>
 	<iostream>
 
-1417104616 d:\github\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+1418144857 d:\github\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
 	<sstream>
+	<cstdarg>
 	"stdio.h"
 	<process.h>
 	<windows.h>
@@ -1244,12 +1245,13 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1417104616 source:d:\github\singularitythirdpart\main.cpp
+1418833479 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	"UsefulHeaders.h"
+	"ScreenInstructions.h"
 	"Bases.h"
 	"libraryIncluder.h"
 
@@ -1265,7 +1267,7 @@
 
 1417104616 d:\github\singularitythirdpart\bases.h
 
-1417105001 d:\github\singularitythirdpart\screens.h
+1418831274 d:\github\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1308,7 +1310,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1417104616 source:d:\github\singularitythirdpart\screens.cpp
+1418831274 source:d:\github\singularitythirdpart\screens.cpp
 	"Screens.h"
 
 1414509762 source:d:\github\singularitythirdpart\screensswitch.cpp
@@ -1574,7 +1576,7 @@
 
 1417104616 source:d:\github\singularitythirdpart\screeninstructions.cpp
 
-1417105734 d:\github\singularitythirdpart\screeninstructions.h
+1418833522 d:\github\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"
@@ -1584,4 +1586,13 @@
 
 1417104616 d:\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
+
+1418831274 source:d:\github\singularitythirdpart\screencontroller.cpp
+	"ScreenController.h"
+
+1418831274 d:\github\singularitythirdpart\screencontroller.h
+	"libraryIncluder.h"
+	"Screens.h"
+	"ScreenInstructions.h"
+	<list>
 
