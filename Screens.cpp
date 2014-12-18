@@ -45,16 +45,26 @@ void ScreenType::parseScreenFile(FileIO* file)
    botX = atoi(parserOutput.at(0).c_str()); botY = atoi(parserOutput.at(1).c_str());
    topX = atoi(parserOutput.at(2).c_str()); topY = atoi(parserOutput.at(3).c_str());
 
+   screenID = parserOutput.at(4);
+
 while (file -> readLine(&tempInput)){
+   //Empty lines are skipped.
    if (tempInput.empty()){
       continue;
    }
+
+   //Lines with a pound at the beginning are ignored, these are comments.
+   if (tempInput.at(0) == '#'){
+      continue;
+   }
+
 
    if (createInstruction(tempInput)){
       continue;
    }
 
-
+//Do something bad.
+//Maybe it's a comment?
 }
 
 file -> closeFile();
@@ -130,7 +140,7 @@ bool ScreenType::createInstruction(std::string instructionText)
    }
 
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL")){
-      return false; //Not an instruction.
+      return false; //Not a valid instruction.
    }
 }
 

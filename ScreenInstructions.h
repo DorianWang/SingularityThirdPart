@@ -91,6 +91,10 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
    //Then sets the instruction text to the parsed string.
    tempString.erase(firstBracket, secondBracket - firstBracket +1);
    tempString.insert(firstBracket, "@");
+
+   //Finds the true end of the string with the ';' character.
+   std::size_t stringEnd = tempString.find(';', secondBracket+1);
+
    instructionText = tempString;
 
 

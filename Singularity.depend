@@ -1348,7 +1348,7 @@
 1414621697 source:d:\dorian's programs\singularitythirdpart\inventory.cpp
 	"ItemDeclaration.h"
 
-1414621697 d:\dorian's programs\singularitythirdpart\itemdeclaration.h
+1418093292 d:\dorian's programs\singularitythirdpart\itemdeclaration.h
 	"iostream"
 	"string"
 	"vector"
@@ -1452,11 +1452,12 @@
 	<array>
 	<iostream>
 
-1414621697 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+1418346342 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
 	<sstream>
+	<cstdarg>
 	"stdio.h"
 	<process.h>
 	<windows.h>

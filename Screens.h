@@ -40,7 +40,11 @@ class ScreenType
 
 public:
 ;;
+//Name given to screen by caller.
 std::string screenName;
+
+//Name given to screen by file.
+std::string screenID;
 
 ScreenType(std::string newScreenName, FileIO* screenInput);
 
