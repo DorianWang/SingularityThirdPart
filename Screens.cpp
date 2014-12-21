@@ -11,6 +11,7 @@ ScreenType::ScreenType(std::string newScreenName, FileIO* screenInput)
 //Get these from the parsed file...
 
 screenName = newScreenName;
+isGood = false;
 
 parseScreenFile(screenInput);
 }
@@ -34,12 +35,15 @@ void ScreenType::parseScreenFile(FileIO* file)
 
    stringFunc stringParcer;
 
+   cout<<"1";
+
    if (file -> readLine(&tempInput)){
       parserOutput = stringParcer.parseAllTokens(tempInput, "\\");
    }
    else
    {
       //Wut? Broken
+      cout<<"2";
    }
 
    botX = atoi(parserOutput.at(0).c_str()); botY = atoi(parserOutput.at(1).c_str());
@@ -47,7 +51,10 @@ void ScreenType::parseScreenFile(FileIO* file)
 
    screenID = parserOutput.at(4);
 
+   cout<<"3";
+
 while (file -> readLine(&tempInput)){
+      cout<<"4";
    //Empty lines are skipped.
    if (tempInput.empty()){
       continue;
@@ -60,13 +67,15 @@ while (file -> readLine(&tempInput)){
 
 
    if (createInstruction(tempInput)){
+      cout<<tempInput<<endl;
       continue;
    }
 
-//Do something bad.
-//Maybe it's a comment?
+//Something bad happened.
 }
 
+cout<<"5";
+isGood = true;
 file -> closeFile();
 }
 

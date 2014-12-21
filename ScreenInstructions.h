@@ -49,6 +49,7 @@ template <typename Q> screenInstruct<Q>::screenInstruct()
 
 //This function parses input, obtaining the x and y coordinates, as well as
 //the macro required. The macro is then replaced by a '@'.
+//"INT", "STR", "DBL", and "NUL" are all valid identifiers.
 template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 {
    std::vector <std::string> parsedInput;

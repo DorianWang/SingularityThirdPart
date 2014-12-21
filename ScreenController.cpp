@@ -35,10 +35,18 @@ return tempVector;
 int ScreenControl::makeNewScreen (std::string screenName, std::string screenLocation)
 {
    FileIO inputFile;
-   std::string filePath = screenLocation + "/" + screenName + ".scrn";
+   std::string filePath = DATA_FOLDER + screenLocation + "/" + screenName + ".sc";
    inputFile.textOpenFile(filePath, false);
 
+   if (! inputFile.isOpen){
+      return -1;
+   }
+
    ScreenType* tempScreen = new ScreenType(screenName, &inputFile);
+
+   if (!tempScreen -> isGood){
+      return -1;
+   }
    screenArray.push_back(tempScreen);
 
 //Things to list of stuff

@@ -7,6 +7,8 @@
 
 #include <list>
 
+#define DATA_FOLDER "Data/"
+
 struct instructDataOut
 {
    std::string macroInstruct;

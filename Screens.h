@@ -61,6 +61,8 @@ std::vector <screenInstruct <double>* > instructionsDouble;
 
 std::vector <screenInstruct <void>* > instructionsVoid;
 
+bool isGood;
+
 
 private:
 

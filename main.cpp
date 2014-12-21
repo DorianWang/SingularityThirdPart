@@ -7,6 +7,7 @@
 #include "UsefulHeaders.h"
 
 #include "ScreenInstructions.h"
+#include "ScreenController.h"
 
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
@@ -217,16 +218,11 @@ cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 
 
-std::vector <std::string> tempVec = stringTest.parseAllTokens(stringFuncTester, ".");
-
-std::string tempString = "int\\2\\3\\This is a {MACRO}";
-
-screenInstruct<int> tempInstructTest;
-
-tempInstructTest.parseInput(tempString);
+ScreenControl screenTest;
 
 
-cout<<tempInstructTest.dataOutName<<" "<<tempInstructTest.instructionText<<" "<<tempInstructTest.Xpos<<", "<<tempInstructTest.Ypos<<endl;
+cout<<screenTest.makeNewScreen("screenTest", "Screens");
+
 
 
 /*
