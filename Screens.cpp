@@ -62,6 +62,7 @@ while (file -> readLine(&tempInput)){
 
    //Lines with a pound at the beginning are ignored, these are comments.
    if (tempInput.at(0) == '#'){
+         cout<<"Read comment: "<<tempInput<<endl;
       continue;
    }
 
@@ -74,7 +75,7 @@ while (file -> readLine(&tempInput)){
 //Something bad happened.
 }
 
-cout<<"5";
+cout<<"5"<<endl;
 isGood = true;
 file -> closeFile();
 }

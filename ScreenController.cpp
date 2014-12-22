@@ -102,6 +102,11 @@ int ScreenControl::getScreenIndex(std::string screenNameSearch)
 
 std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
 {
+   //Void / NULL
+   if (inputType = 'v'){
+      return input;
+   }
+
    va_list args;
    va_start(args, inputType);
    std::stringstream ss(stringstream::in | stringstream::out);
@@ -109,11 +114,13 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
    stringFunc stringTest; //What do I plan to use for the delimiter?
    //'@'? It is not used much in normal writing, so...
 
+
+
+
    //Int
    if (inputType == 'i'){
-      double* input = va_arg(args, double*);
-
-
+      int* inputVar = va_arg(args, int*);
+      ss << *inputVar;
 
    return ss.str();
    }
@@ -122,16 +129,21 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
 
    //Double
    if (inputType == 'd'){
-      double* input = va_arg(args, double*);
+      double* inputVar = va_arg(args, double*);
 
-      ss<</* token << std::setprecision(51) <<*/ endl;
+      //Conversion to percent.
+
+      if (inputVar)
+
+      ss<<std::setprecision(4);
+      ss<< (inputVar * 100)  << '%' <<endl;
 
    return ss.str();
    }
 
    //String
    if (inputType == 's'){
-      std::string* input = va_arg(args, std::string*);
+      std::string* inputVar = va_arg(args, std::string*);
 
    return ss.str();
    }
