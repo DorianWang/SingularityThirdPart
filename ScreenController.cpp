@@ -114,7 +114,10 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
    stringFunc stringTest; //What do I plan to use for the delimiter?
    //'@'? It is not used much in normal writing, so...
 
+   //Breaks the input into components, separated by the '@' character.
+   //First finds the location of the '@'
 
+   size_t delim = input.find('@', 0);
 
 
    //Int
@@ -133,10 +136,12 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
 
       //Conversion to percent.
 
-      if (inputVar)
+      if (*inputVar){
+
+      }
 
       ss<<std::setprecision(4);
-      ss<< (inputVar * 100)  << '%' <<endl;
+      ss<< (*inputVar * 100)  << '%' <<endl;
 
    return ss.str();
    }

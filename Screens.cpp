@@ -136,6 +136,22 @@ bool ScreenType::createInstruction(std::string instructionText)
       return returnBool;
    }
 
+   //Percent, for formatted output. 99.9%, <0.01%, etc.
+   if (tokenStr == "PCT"){
+      screenInstruct <double>* tempInstruct = new screenInstruct <double>;
+
+      returnBool = tempInstruct -> parseInput(instructionText);
+      if (returnBool){
+         instructionsPercentDouble.push_back(tempInstruct);
+         return returnBool;
+      }
+
+      //Nothing happened. Why?
+      delete tempInstruct;
+      return returnBool;
+   }
+
+
    if (tokenStr == "NUL"){
       screenInstruct <void>* tempInstruct = new screenInstruct <void>;
       returnBool = tempInstruct -> parseInput(instructionText);
