@@ -103,7 +103,7 @@ int ScreenControl::getScreenIndex(std::string screenNameSearch)
 std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
 {
    //Void / NULL
-   if (inputType = 'v'){
+   if (inputType == 'v'){
       return input;
    }
 
@@ -119,39 +119,83 @@ std::string ScreenControl::parseInstruct(std::string input, char inputType, ...)
 
    size_t delim = input.find('@', 0);
 
+   std::string firstString = input.substr(0, delim);
+   std::string secondString = input.substr(delim + 1) ;
+
+   ss<<firstString;
 
    //Int
    if (inputType == 'i'){
       int* inputVar = va_arg(args, int*);
       ss << *inputVar;
-
-   return ss.str();
    }
 
-
-
-   //Double
-   if (inputType == 'd'){
+   //Percent output, takes doubles.
+   //1 digit after decimal.
+   else if (inputType == 'p'){
       double* inputVar = va_arg(args, double*);
 
-      //Conversion to percent.
-
-      if (*inputVar){
-
+      if (*inputVar < 0.001){
+         ss << "0%";
+         //Basically 0.
+      }
+      else if (*inputVar < 0.01){
+         ss << "<0.1%";
+         //Very unlikely, but can happen. Assumes less than 0.1%, but greater than 0.01%
+      }
+      else if (*inputVar < 0.1){
+         //Conversion to percent. Two decimals. "9.98%".
+         ss << std::setprecision(2) << fixed ;
+         ss << (*inputVar * 100)  << '%';
+      }
+      else {
+         //Conversion to percent. One decimal. "64.8%".
+         ss << std::setprecision(1) << fixed ;
+         ss << (*inputVar * 100)  << '%';
       }
 
-      ss<<std::setprecision(4);
-      ss<< (*inputVar * 100)  << '%' <<endl;
+   }
 
-   return ss.str();
+   //Double
+   //Always has 5 character or less, including the dot.
+   //Has three modes, tiny, small, and large
+   else if (inputType == 'd'){
+      double* inputVar = va_arg(args, double*);
+
+
+      //Tiny
+      if (*inputVar < 1.00){
+         ss << std::setprecision(3) << fixed;
+         ss << *inputVar;
+      }
+      //Small
+      else if (*inputVar < 10000.0){
+         ss << std::setprecision(4) << fixed;
+         ss << *inputVar;
+      }
+      //Large
+      else
+      {
+         ss.unsetf(ios_base::floatfield);
+         ss << std::setprecision(5);
+      }
+
    }
 
    //String
-   if (inputType == 's'){
+   else if (inputType == 's'){
       std::string* inputVar = va_arg(args, std::string*);
-
-   return ss.str();
+      ss << *inputVar;
    }
+
+   //Default return, this shouldn't happen, but is not a crash worthy error.
+   else {
+      return std::string();//empty string, not good.
+   }
+
+   //Completes the instruction.
+   ss<< secondString;
+   return ss.str();
 
 }
 

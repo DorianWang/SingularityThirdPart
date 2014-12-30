@@ -223,8 +223,21 @@ ScreenControl screenTest;
 
 cout<<screenTest.makeNewScreen("screenTest", "Screens");
 
+ScreenControl testScreen;
+std::string qpow = "This is a @.";
+double testDouble = 9999.1465;
+cout << endl;
 
+cout << testScreen.parseInstruct(qpow, 'd', &testDouble);
+cout << endl;
 
+stringstream ss;
+
+ss << std::setprecision(3) <<fixed;
+
+ss<< 0.0189;
+
+cout<<ss.str();
 /*
 for (int i=0; i<tempVec.size(); i++){
    cout << tempVec[i]<<endl;

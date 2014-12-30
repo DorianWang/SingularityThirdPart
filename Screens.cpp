@@ -94,6 +94,7 @@ bool ScreenType::createInstruction(std::string instructionText)
    //Using '\' for parsing. Might need to change it later.
    bool returnBool;
 
+   //Integers
    if (tokenStr == "INT"){
       screenInstruct <int>* tempInstruct = new screenInstruct <int>;
 
@@ -108,6 +109,22 @@ bool ScreenType::createInstruction(std::string instructionText)
       return returnBool;
    }
 
+   if (tokenStr == "ORT"){
+      screenInstruct <short>* tempInstruct = new screenInstruct <short>;
+
+      returnBool = tempInstruct -> parseInput(instructionText);
+      if (returnBool){
+         instructionsShortInt.push_back(tempInstruct);
+         return returnBool;
+      }
+
+      //Nothing happened. Why?
+      delete tempInstruct;
+      return returnBool;
+
+   }
+
+   //Just your everyday strings...
    if (tokenStr == "STR"){
       screenInstruct <std::string>* tempInstruct = new screenInstruct <std::string>;
 
@@ -122,6 +139,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       return returnBool;
    }
 
+   //Regular doubles. They are formatted differently on output. See screenController.h "parseInstruct(...)"
    if (tokenStr == "DBL"){
       screenInstruct <double>* tempInstruct = new screenInstruct <double>;
 
@@ -165,7 +183,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       return returnBool;
    }
 
-   if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL")){
+   if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL" || tokenStr != "PCT" || tokenStr != "NUL" || tokenStr != "ORT")){
       return false; //Not a valid instruction.
    }
 }
