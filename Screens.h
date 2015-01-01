@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 #include "libraryIncluder.h"
 
@@ -27,6 +28,14 @@
 #define SCREEN_WIDTH 80
 
 #define NUM_FUNCTIONS
+
+
+struct screenOutputData {
+   int smallX; int smallY;
+   int bigX; int bigY;
+
+   std::vector < std::string > screenData;
+};
 
 
 
@@ -50,8 +59,8 @@ ScreenType(std::string newScreenName, FileIO* screenInput);
 
 ~ScreenType();
 
-//Should this return a string for the parent to output, modify an internal buffer which the parent can output, or draw by itself?
-void redraw();
+//This function returns a data structure that tells the parent lines to draw, and where to draw things.
+screenOutputData redraw();
 
 std::vector <char> expectedInput;
 
@@ -74,6 +83,7 @@ private:
 int botX; int botY; int topX; int topY;//The screen's area of influence. This is inclusive.
 
 
+std::string parseInstruct(std::string input, char inputType, ...);
 
 void parseScreenFile(FileIO* file);
 

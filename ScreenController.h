@@ -5,7 +5,6 @@
 #include "Screens.h"
 #include "ScreenInstructions.h"
 
-#include <iomanip>
 #include <list>
 
 #define DATA_FOLDER "Data/"
@@ -34,8 +33,6 @@ int getScreenIndex(std::string screenNameSearch);
 
 bool outputScreen(int screenIndex);
 
-//Testing public
-std::string parseInstruct(std::string input, char inputType, ...);
 
 private:
 

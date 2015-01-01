@@ -23,6 +23,9 @@ inline std::vector <std::string> parseAllTokens(std::string input, const char* d
 
 inline std::string tokensToString(std::vector <std::string> input, const char* delim);
 
+//0 is the first character. Input of ("Hello", "In", 0) returns "Inllo"
+inline std::string insertStringIntoString(std::string original, std::string input, int startIndex);
+
 //inline bool stringToOther(std::string input; std::string outputType, ...);
 };
 
@@ -37,8 +40,8 @@ std::string stringFunc::parseFirstToken(std::string input, const char* delim)
 {
    std::string output; int inputLength = input.length();
    int delimLength = strlen(delim);
-   for (int i=0; i<inputLength; i++){
-      for (int j=0; j<delimLength; j++){
+   for (int i = 0; i < inputLength; i++){
+      for (int j = 0; j < delimLength; j++){
          if (input.at(i) == delim[j]){
             return output;
          }
@@ -86,13 +89,13 @@ std::string stringFunc::tokensToString(std::vector <std::string> input, const ch
 
    if (delim != NULL){
       output = input[0];
-      for (int i=1; i<input.size(); i++){
+      for (int i = 1; i < input.size(); i++){
          output = output + delim + input[i];
       }
    }
    else
    {
-      for (int i=0; i<input.size(); i++){
+      for (int i = 0; i < input.size(); i++){
          output = output + input[i];
       }
    }
@@ -100,7 +103,10 @@ std::string stringFunc::tokensToString(std::vector <std::string> input, const ch
    return output;
 }
 
-
+std::string stringFunc::insertStringIntoString(std::string original, std::string input, int startIndex)
+{
+   //if ()
+}
 
 
 
