@@ -105,7 +105,14 @@ std::string stringFunc::tokensToString(std::vector <std::string> input, const ch
 
 std::string stringFunc::insertStringIntoString(std::string original, std::string input, int startIndex)
 {
-   //if ()
+   if ( input == std::string() ){
+      return original;
+   }
+
+   if ( original.length() < startIndex + input.length() ){
+      //Pad string
+   }
+
 }
 
 
