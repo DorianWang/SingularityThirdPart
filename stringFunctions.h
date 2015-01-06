@@ -110,7 +110,8 @@ std::string stringFunc::insertStringIntoString(std::string original, std::string
    }
 
    if ( original.length() < startIndex + input.length() ){
-      //Pad string
+      original.resize(startIndex, ' ');
+      original = original + input;
    }
 
 }
