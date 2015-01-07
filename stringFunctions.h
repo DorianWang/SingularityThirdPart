@@ -109,11 +109,22 @@ std::string stringFunc::insertStringIntoString(std::string original, std::string
       return original;
    }
 
-   if ( original.length() < startIndex + input.length() ){
+   //Example: "Hello ", " world!", 5
+   //Original length = 6, startIndex = 5, input length = 7
+   //Resize, original = "Hello"
+   //Add, original = "Hello world!"
+   if ( original.length() <= startIndex + input.length() ){
       original.resize(startIndex, ' ');
       original = original + input;
    }
+   else
+   {
+      for (int i = 0; i < input.length(); i++){
+         original[i + startIndex] = input[i];
+      }
+   }
 
+   return original;
 }
 
 
