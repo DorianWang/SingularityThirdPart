@@ -234,12 +234,14 @@ std::string testingStringInsert = stringTest.insertStringIntoString("Hellohoifea
 
 cout << endl;
 
-for (int i = 0; i< 19; i++){
+for (int i = 0; i< 21; i++){
    cout<<'A';
 }
 cout <<endl;
 
 cout << testingStringInsert << endl;
+
+cout << stringTest.insertStringIntoString("", "world!", 20) << endl;
 
 /*
 for (int i=0; i<tempVec.size(); i++){

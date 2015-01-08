@@ -980,16 +980,17 @@
 	<iostream>
 	<cmath>
 
-1418236503 source:d:\doriancode\singularitythirdpart\screens.cpp
+1420484391 source:d:\doriancode\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1418924172 d:\doriancode\singularitythirdpart\screens.h
+1420484391 d:\doriancode\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
 	<stdio.h>
 	<sstream>
 	<iostream>
+	<iomanip>
 	"libraryIncluder.h"
 	"ScreenInstructions.h"
 
@@ -1117,12 +1118,13 @@
 	<array>
 	<iostream>
 
-1415216558 d:\doriancode\singularitythirdpart\libraries\itemtree\stringfunctions.h
+1420738373 d:\doriancode\singularitythirdpart\libraries\itemtree\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
 	<cstdio>
 	<string.h>
+	<cstdarg>
 
 1417104616 source:d:\github\singularitythirdpart\bases.cpp
 	"Bases.h"
@@ -1560,16 +1562,16 @@
 
 1415741145 source:d:\dorian's programs\singularitythirdpart\screeninstructions.cpp
 
-1418236772 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
+1420484391 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1418235871 d:\doriancode\singularitythirdpart\screencontroller.h
+1420484391 d:\doriancode\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"
 	<list>
 
-1418927454 d:\doriancode\singularitythirdpart\screeninstructions.h
+1420484391 d:\doriancode\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"
