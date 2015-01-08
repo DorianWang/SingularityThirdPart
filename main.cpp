@@ -9,6 +9,8 @@
 #include "ScreenInstructions.h"
 #include "ScreenController.h"
 
+#include "stringFunctions.h"
+
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
 
@@ -228,6 +230,16 @@ std::string qpow = "This is a @.";
 double testDouble = 0.1;
 
 
+std::string testingStringInsert = stringTest.insertStringIntoString("Hellohoifea", "world!", 20);
+
+cout << endl;
+
+for (int i = 0; i< 19; i++){
+   cout<<'A';
+}
+cout <<endl;
+
+cout << testingStringInsert << endl;
 
 /*
 for (int i=0; i<tempVec.size(); i++){

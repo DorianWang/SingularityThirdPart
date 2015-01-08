@@ -1362,7 +1362,7 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1420082789 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1420686696 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1370,6 +1370,7 @@
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
+	"stringFunctions.h"
 	"Bases.h"
 	"libraryIncluder.h"
 
@@ -1422,12 +1423,13 @@
 	"stringFunctions.h"
 	"leafType.h"
 
-1415404215 d:\dorian's programs\singularitythirdpart\libraries\itemtree\stringfunctions.h
+1420675124 d:\dorian's programs\singularitythirdpart\libraries\itemtree\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
 	<cstdio>
 	<string.h>
+	<cstdarg>
 
 1414621697 d:\dorian's programs\singularitythirdpart\libraries\itemtree\leaftype.h
 	<vector>
@@ -1523,7 +1525,7 @@
 	"libraryIncluder.h"
 	"ScreenInstructions.h"
 
-1419909962 source:d:\dorian's programs\singularitythirdpart\screens.cpp
+1420082274 source:d:\dorian's programs\singularitythirdpart\screens.cpp
 	"Screens.h"
 
 1419133227 d:\dorian's programs\singularitythirdpart\screeninstructions.h
@@ -1601,4 +1603,12 @@
 	"Screens.h"
 	"ScreenInstructions.h"
 	<list>
+
+1420675124 d:\dorian's programs\singularitythirdpart\stringfunctions.h
+	<stdio.h>
+	<iostream>
+	<vector>
+	<cstdio>
+	<string.h>
+	<cstdarg>
 
