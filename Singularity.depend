@@ -1364,7 +1364,7 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1420686696 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1420835100 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1516,7 +1516,7 @@
 	"ScreenInstructions.h"
 	<list>
 
-1420082810 d:\dorian's programs\singularitythirdpart\screens.h
+1420948519 d:\dorian's programs\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>

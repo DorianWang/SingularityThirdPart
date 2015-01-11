@@ -190,7 +190,8 @@ bool ScreenType::createInstruction(std::string instructionText)
 }
 
 
-
+//The inputTypes are:
+// 'v' for void (No additional data), 'i' for int, 'o' for short, 'p' for percent, 'd' for double, and 's' for string.
 std::string ScreenType::parseInstruct(std::string input, char inputType, ...)
 {
    //Void / NULL
@@ -280,6 +281,7 @@ std::string ScreenType::parseInstruct(std::string input, char inputType, ...)
       {
          ss.unsetf(ios_base::floatfield);
          ss << std::setprecision(5);
+         ss << *inputVar;
       }
 
    }
@@ -302,12 +304,21 @@ std::string ScreenType::parseInstruct(std::string input, char inputType, ...)
 
 
 
-
-
 screenOutputData ScreenType::redraw()
 {
+
+   screenOutputData tempData;
+   tempData.smallX = botX;
+   tempData.smallY = botY;
+   tempData.bigX = topX;
+   tempData.bigY = topY;
+
+   stringFunc stringModder;
+
+
    for (int i = 0; i < instructionsInt.size(); i++ ){
-      //Output.
+      screenOutputData.screenData[instructionsInt[i].Ypos] = stringModder.insertStringIntoString(screenOutputData.screenData[instructionsInt[i].Ypos],
+                                                                  parseInstruct(instructionsInt[i].instructionText, 'i', instructionsInt[i].dataOut), instructionsInt[i].Xpos);
    }
 
    for (int i = 0; i < instructionsString.size(); i++ ){

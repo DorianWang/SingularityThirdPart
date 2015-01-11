@@ -243,6 +243,8 @@ cout << testingStringInsert << endl;
 
 cout << stringTest.insertStringIntoString("", "world!", 20) << endl;
 
+cout << stringTest.insertStringIntoString("Hello!", "", 20) << endl;
+
 /*
 for (int i=0; i<tempVec.size(); i++){
    cout << tempVec[i]<<endl;
