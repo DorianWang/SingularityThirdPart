@@ -1,4 +1,4 @@
--1\-1\-1\-1\testName
+0\0\2\20\testName
 #comment, this should be ignored.
 #More comments
 

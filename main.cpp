@@ -223,7 +223,7 @@ cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 ScreenControl screenTest;
 
 
-cout<<screenTest.makeNewScreen("screenTest", "Screens");
+cout << screenTest.makeNewScreen("screenTest", "Screens") << endl;
 
 ScreenControl testScreen;
 std::string qpow = "This is a @.";
@@ -232,18 +232,16 @@ double testDouble = 0.1;
 
 std::string testingStringInsert = stringTest.insertStringIntoString("Hellohoifea", "world!", 20);
 
-cout << endl;
-
 for (int i = 0; i< 21; i++){
    cout<<'A';
 }
 cout <<endl;
 
-cout << testingStringInsert << endl;
+cout << "---" << endl;
 
-cout << stringTest.insertStringIntoString("", "world!", 20) << endl;
+cout << screenTest.outputScreen(0) <<endl;
 
-cout << stringTest.insertStringIntoString("Hello!", "", 20) << endl;
+cout << "---" << endl;
 
 /*
 for (int i=0; i<tempVec.size(); i++){

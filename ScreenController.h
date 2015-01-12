@@ -38,9 +38,9 @@ private:
 
 FileIO fileReader;
 
-std::vector <ScreenType*> screenArray;
+std::vector < ScreenType* > screenArray;
 
-std::list <instructDataOut> UnsetPointerList;
+std::list < instructDataOut > UnsetPointerList;
 
 //Need something to keep track of screens in use...
 

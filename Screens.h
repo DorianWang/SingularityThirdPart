@@ -60,7 +60,7 @@ ScreenType(std::string newScreenName, FileIO* screenInput);
 ~ScreenType();
 
 //This function returns a data structure that tells the parent lines to draw, and where to draw things.
-screenOutputData redraw();
+screenOutputData* redraw();
 
 
 std::vector <screenInstruct <int>* > instructionsInt;

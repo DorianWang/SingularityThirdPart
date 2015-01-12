@@ -123,7 +123,6 @@ std::string stringFunc::insertStringIntoString(std::string original, std::string
          original[i + startIndex] = input[i];
       }
    }
-
    return original;
 }
 

@@ -110,6 +110,15 @@ bool ScreenControl::outputScreen(int screenIndex)
    }
    //Call ScreenType::redraw(), then format output.
 
+   screenOutputData* temp = screenArray[screenIndex] -> redraw();
+
+   //Temporary output code;
+
+   for (int i = 0; i < temp -> screenData.size(); i++){
+      cout << temp -> screenData[i] << endl;
+   }
+
+return true;
 }
 
 
