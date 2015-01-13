@@ -24,7 +24,7 @@ public:
 //Macros : Stuff and stuff {THIS_IS_A_MACRO} more stuff and things.
 //have already been replaced by the instruct input function.
 //So the above would be Stuff and stuff @ more stuff and things.
-bool popFirstUnsetInstructPointer(instructDataOut* output);
+bool popFirstUnsetInstructPointer(instructDataOut** output);
 std::vector <instructDataOut> getAllUnsetInstruct();
 
 int makeNewScreen (std::string screenName, std::string screenLocation);

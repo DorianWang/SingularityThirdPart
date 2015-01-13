@@ -1,12 +1,13 @@
 #include "ScreenController.h"
 
 
-
-bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut* output)
+//variablePointerPointer is a pointer to the dataOut pointer
+bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut** output)
 {
+   cout << "Stuff!" << endl;
    if (UnsetPointerList.size() > 0){
-      instructDataOut tempData;
-      tempData = UnsetPointerList.front();
+      instructDataOut* tempData = new instructDataOut;
+      *tempData = UnsetPointerList.front();
       UnsetPointerList.pop_front();
       *output = tempData;
       return true;

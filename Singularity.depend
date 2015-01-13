@@ -1189,12 +1189,13 @@
 	"stringFunctions.h"
 	"leafType.h"
 
-1417104616 d:\github\singularitythirdpart\libraries\itemtree\stringfunctions.h
+1421167910 d:\github\singularitythirdpart\libraries\itemtree\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
 	<cstdio>
 	<string.h>
+	<cstdarg>
 
 1417104616 d:\github\singularitythirdpart\libraries\itemtree\leaftype.h
 	<vector>
@@ -1251,13 +1252,15 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1418833479 source:d:\github\singularitythirdpart\main.cpp
+1421169500 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
+	"ScreenController.h"
+	"stringFunctions.h"
 	"Bases.h"
 	"libraryIncluder.h"
 
@@ -1273,22 +1276,24 @@
 
 1417104616 d:\github\singularitythirdpart\bases.h
 
-1418831274 d:\github\singularitythirdpart\screens.h
+1421167910 d:\github\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
 	<stdio.h>
 	<sstream>
 	<iostream>
+	<iomanip>
 	"libraryIncluder.h"
 	"ScreenInstructions.h"
 
-1415120606 d:\github\singularitythirdpart\stringfunctions.h
+1421167910 d:\github\singularitythirdpart\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
 	<cstdio>
 	<string.h>
+	<cstdarg>
 
 1417104616 source:d:\github\singularitythirdpart\map.cpp
 	"Map.h"
@@ -1316,7 +1321,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1418831274 source:d:\github\singularitythirdpart\screens.cpp
+1421167910 source:d:\github\singularitythirdpart\screens.cpp
 	"Screens.h"
 
 1414509762 source:d:\github\singularitythirdpart\screensswitch.cpp
@@ -1590,7 +1595,7 @@
 
 1417104616 source:d:\github\singularitythirdpart\screeninstructions.cpp
 
-1418833522 d:\github\singularitythirdpart\screeninstructions.h
+1421167910 d:\github\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"
@@ -1601,10 +1606,10 @@
 1417104616 d:\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1418831274 source:d:\github\singularitythirdpart\screencontroller.cpp
+1421169286 source:d:\github\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1418831274 d:\github\singularitythirdpart\screencontroller.h
+1421169302 d:\github\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"

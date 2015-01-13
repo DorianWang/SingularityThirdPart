@@ -239,6 +239,17 @@ cout <<endl;
 
 cout << "---" << endl;
 
+instructDataOut* newInstruct;
+screenTest.popFirstUnsetInstructPointer(&newInstruct);
+
+std::string testingMacroString = "Things!";
+
+if (newInstruct -> macroInstruct == "TEST_MACRO"){
+   //(std::string **)(newInstruct -> variablePointerPointer) = &testingMacroString;
+}
+
+cout << "Things" << endl;
+
 cout << screenTest.outputScreen(0) <<endl;
 
 cout << "---" << endl;
