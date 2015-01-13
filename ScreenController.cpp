@@ -10,8 +10,11 @@ bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut** output)
       *tempData = UnsetPointerList.front();
       UnsetPointerList.pop_front();
       *output = tempData;
+   cout << "More stuff!"<< endl;
       return true;
    }
+
+   cout << "No things!" << endl;
    return false;
 }
 
@@ -58,7 +61,7 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
       tempScreen -> instructionsString[i] -> dataOutGet = true;
 
       tempInstruct.macroInstruct = tempScreen -> instructionsString[i] -> dataOutName;
-      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsString[i] -> dataOut;
+      tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsString[i] -> dataOut);
 
       UnsetPointerList.push_back(tempInstruct);
    }
@@ -68,7 +71,7 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
       tempScreen -> instructionsString[i] -> dataOutGet = true;
 
       tempInstruct.macroInstruct = tempScreen -> instructionsInt[i] -> dataOutName;
-      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsInt[i] -> dataOut;
+      tempInstruct.variablePointerPointer = (void*) *&(tempScreen -> instructionsInt[i] -> dataOut);
 
       UnsetPointerList.push_back(tempInstruct);
    }
@@ -111,7 +114,11 @@ bool ScreenControl::outputScreen(int screenIndex)
    }
    //Call ScreenType::redraw(), then format output.
 
+   cout << "A" << endl;
+
    screenOutputData* temp = screenArray[screenIndex] -> redraw();
+
+   cout << "B" << endl;
 
    //Temporary output code;
 

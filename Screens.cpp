@@ -329,6 +329,7 @@ screenOutputData* ScreenType::redraw()
 
 
    for (int i = 0; i < instructionsString.size(); i++ ){
+      cout << "Outputting string" <<endl;
       tempData -> screenData[instructionsString[i] -> Ypos] = stringModder.insertStringIntoString(
                         tempData -> screenData[instructionsString[i] -> Ypos], parseInstruct(
                         instructionsString[i] -> instructionText, 's', instructionsString[i] -> dataOut), instructionsString[i] -> Xpos);
