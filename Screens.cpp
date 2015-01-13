@@ -35,15 +35,12 @@ void ScreenType::parseScreenFile(FileIO* file)
 
    stringFunc stringParcer;
 
-   cout << "1";
-
    if (file -> readLine(&tempInput)){
       parserOutput = stringParcer.parseAllTokens(tempInput, "\\");
    }
    else
    {
       //Wut? Broken
-      cout << "2";
    }
 
    botX = atoi(parserOutput.at(0).c_str()); botY = atoi(parserOutput.at(1).c_str());
@@ -51,10 +48,8 @@ void ScreenType::parseScreenFile(FileIO* file)
 
    screenID = parserOutput.at(4);
 
-   cout << "3";
 
 while (file -> readLine(&tempInput)){
-      cout << "4";
    //Empty lines are skipped.
    if (tempInput.empty()){
       continue;
@@ -75,12 +70,9 @@ while (file -> readLine(&tempInput)){
 //Something bad happened.
 }
 
-cout<<"5"<<endl;
 isGood = true;
 file -> closeFile();
 }
-
-
 
 
 
@@ -186,7 +178,7 @@ bool ScreenType::createInstruction(std::string instructionText)
    //Not a valid instruction.
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL" || tokenStr != "PCT" || tokenStr != "NUL" || tokenStr != "ORT")){
       return false;
-   }
+   }instructionsPercentDouble
 }
 
 
@@ -201,7 +193,7 @@ std::string ScreenType::parseInstruct(std::string input, char inputType, ...)
 
    va_list args;
    va_start(args, inputType);
-   std::stringstream ss(stringstream::in | stringstream::out);
+   std::stringstream ss(stringstream::iinstructionsPercentDoublen | stringstream::out);
 
    stringFunc stringTest; //What do I plan to use for the delimiter?
    //'@'? It is not used much in normal writing, so...
@@ -316,7 +308,8 @@ screenOutputData* ScreenType::redraw()
    tempData -> bigX = topX;
    tempData -> bigY = topY;
 
-   tempData -> screenData.resize(topY - botY);
+   //Initializes the vector to be able to contain all data which should fit into the vector.
+   tempData -> screenData.resize(topY - botY + 1);
 
    stringFunc stringModder;
 
@@ -329,7 +322,6 @@ screenOutputData* ScreenType::redraw()
 
 
    for (int i = 0; i < instructionsString.size(); i++ ){
-      cout << "Outputting string" <<endl;
       tempData -> screenData[instructionsString[i] -> Ypos] = stringModder.insertStringIntoString(
                         tempData -> screenData[instructionsString[i] -> Ypos], parseInstruct(
                         instructionsString[i] -> instructionText, 's', instructionsString[i] -> dataOut), instructionsString[i] -> Xpos);

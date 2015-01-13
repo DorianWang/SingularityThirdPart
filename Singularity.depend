@@ -1031,7 +1031,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1421179094 source:d:\doriancode\singularitythirdpart\main.cpp
+1421179143 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1571,7 +1571,7 @@
 
 1415741145 source:d:\dorian's programs\singularitythirdpart\screeninstructions.cpp
 
-1421179119 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
+1421179465 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
 1421175862 d:\doriancode\singularitythirdpart\screencontroller.h

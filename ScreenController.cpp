@@ -68,20 +68,40 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
 
    for (int i = 0; i < tempScreen -> instructionsInt.size(); i++){
       instructDataOut tempInstruct;
-      tempScreen -> instructionsString[i] -> dataOutGet = true;
+      tempScreen -> instructionsInt[i] -> dataOutGet = true;
 
       tempInstruct.macroInstruct = tempScreen -> instructionsInt[i] -> dataOutName;
-      tempInstruct.variablePointerPointer = (void*) *&(tempScreen -> instructionsInt[i] -> dataOut);
+      tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsInt[i] -> dataOut);
 
       UnsetPointerList.push_back(tempInstruct);
    }
 
    for (int i = 0; i < tempScreen -> instructionsDouble.size(); i++){
       instructDataOut tempInstruct;
-      tempScreen -> instructionsString[i] -> dataOutGet = true;
+      tempScreen -> instructionsDouble[i] -> dataOutGet = true;
 
       tempInstruct.macroInstruct = tempScreen -> instructionsDouble[i] -> dataOutName;
-      tempInstruct.variablePointerPointer = (void*) tempScreen -> instructionsDouble[i] -> dataOut;
+      tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsDouble[i] -> dataOut);
+
+      UnsetPointerList.push_back(tempInstruct);
+   }
+
+   for (int i = 0; i < tempScreen -> instructionsShortInt.size(); i++){
+      instructDataOut tempInstruct;
+      tempScreen -> instructionsShortInt[i] -> dataOutGet = true;
+
+      tempInstruct.macroInstruct = tempScreen -> instructionsShortInt[i] -> dataOutName;
+      tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsShortInt[i] -> dataOut);
+
+      UnsetPointerList.push_back(tempInstruct);
+   }
+
+   for (int i = 0; i < tempScreen -> instructionsPercentDouble.size(); i++){
+      instructDataOut tempInstruct;
+      tempScreen -> instructionsPercentDouble[i] -> dataOutGet = true;
+
+      tempInstruct.macroInstruct = tempScreen -> instructionsPercentDouble[i] -> dataOutName;
+      tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsPercentDouble[i] -> dataOut);
 
       UnsetPointerList.push_back(tempInstruct);
    }
@@ -114,11 +134,7 @@ bool ScreenControl::outputScreen(int screenIndex)
    }
    //Call ScreenType::redraw(), then format output.
 
-   cout << "A" << endl;
-
    screenOutputData* temp = screenArray[screenIndex] -> redraw();
-
-   cout << "B" << endl;
 
    //Temporary output code;
 

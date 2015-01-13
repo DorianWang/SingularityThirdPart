@@ -246,12 +246,9 @@ std::string testingMacroString = "Asdf!";
 
 
 if (newInstruct -> macroInstruct == "TEST_MACRO"){
-   cout << "Found something!" << endl;
    std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
    *tempPointer = &testingMacroString;
 }
-
-cout << "Things" << endl;
 
 cout << screenTest.outputScreen(0) <<endl;
 
