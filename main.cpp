@@ -239,15 +239,39 @@ cout <<endl;
 
 cout << "---" << endl;
 
-instructDataOut* newInstruct;
-screenTest.popFirstUnsetInstructPointer(&newInstruct);
+
 
 std::string testingMacroString = "Asdf!";
+short testShort = 20;
+int health = 100;
+while (true){
 
+
+//Should I add macro conventions? Maybe INT_HEALTH for an integer, or STR_STRINGTHING for a string?
+
+instructDataOut* newInstruct;
+if (screenTest.popFirstUnsetInstructPointer(&newInstruct) == false){
+   break;
+}
 
 if (newInstruct -> macroInstruct == "TEST_MACRO"){
    std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
    *tempPointer = &testingMacroString;
+}
+else if (newInstruct -> macroInstruct == "MACRO"){
+   short ** tempPointer = (short **)(newInstruct -> variablePointerPointer);
+   *tempPointer = &testShort;
+}
+else if (newInstruct -> macroInstruct == "HEALTH"){
+   int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
+   *tempPointer = &testShort;
+}
+else{
+   cout << "whut?" << endl;
+}
+
+delete newInstruct;
+
 }
 
 cout << screenTest.outputScreen(0) <<endl;

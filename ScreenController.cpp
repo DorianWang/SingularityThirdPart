@@ -4,17 +4,14 @@
 //variablePointerPointer is a pointer to the dataOut pointer
 bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut** output)
 {
-   cout << "Stuff!" << endl;
    if (UnsetPointerList.size() > 0){
       instructDataOut* tempData = new instructDataOut;
       *tempData = UnsetPointerList.front();
       UnsetPointerList.pop_front();
       *output = tempData;
-   cout << "More stuff!"<< endl;
       return true;
    }
 
-   cout << "No things!" << endl;
    return false;
 }
 

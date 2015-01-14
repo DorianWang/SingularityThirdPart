@@ -178,7 +178,7 @@ bool ScreenType::createInstruction(std::string instructionText)
    //Not a valid instruction.
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL" || tokenStr != "PCT" || tokenStr != "NUL" || tokenStr != "ORT")){
       return false;
-   }instructionsPercentDouble
+   }
 }
 
 
@@ -193,7 +193,7 @@ std::string ScreenType::parseInstruct(std::string input, char inputType, ...)
 
    va_list args;
    va_start(args, inputType);
-   std::stringstream ss(stringstream::iinstructionsPercentDoublen | stringstream::out);
+   std::stringstream ss(stringstream::in | stringstream::out);
 
    stringFunc stringTest; //What do I plan to use for the delimiter?
    //'@'? It is not used much in normal writing, so...
