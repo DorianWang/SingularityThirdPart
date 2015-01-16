@@ -142,7 +142,35 @@ bool ScreenControl::outputScreen(int screenIndex)
 return true;
 }
 
+void ScreenControl::outputFormattedLine (std::string input)
+{
+   ConsoleOptions newConsoleOptions;
+   char colourSelector = ' ';
+   size_t lastFound = 0;
 
+   for (int i = 0; i < input.size(); i++){
+      if (input.at(i) == '^'){
+         cout << input.substr(lastFound, i - lastFound);
+         colourSelector = input.at(i + 1);
+
+         switch (colourSelector) {
+            case 'r':
+               cout << "x is 1";
+            break;
+
+            case 2:
+               cout << "x is 2";
+            break;
+
+            default:
+               cout << "value of x unknown";
+         }
+
+
+      }
+   }
+//Everything is done!
+}
 
 
 

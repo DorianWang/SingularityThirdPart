@@ -1373,7 +1373,7 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1420835100 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1421371425 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1478,12 +1478,12 @@
 	<windows.h>
 	<time.h>
 
-1415404215 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+1421370966 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
 	"CursorOptions.h"
 	<cstdlib>
 	<stdexcept>
 
-1415404215 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+1421371464 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
 	<cstdarg>
 	"windows.h"
 	"stdio.h"
@@ -1516,16 +1516,16 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1420082122 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+1421369858 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1420082812 d:\dorian's programs\singularitythirdpart\screencontroller.h
+1421370441 d:\dorian's programs\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"
 	<list>
 
-1420948519 d:\dorian's programs\singularitythirdpart\screens.h
+1421188810 d:\dorian's programs\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1536,10 +1536,10 @@
 	"libraryIncluder.h"
 	"ScreenInstructions.h"
 
-1420082274 source:d:\dorian's programs\singularitythirdpart\screens.cpp
+1421367669 source:d:\dorian's programs\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1419133227 d:\dorian's programs\singularitythirdpart\screeninstructions.h
+1421188810 d:\dorian's programs\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"
@@ -1615,7 +1615,7 @@
 	"ScreenInstructions.h"
 	<list>
 
-1420675124 d:\dorian's programs\singularitythirdpart\stringfunctions.h
+1421188810 d:\dorian's programs\singularitythirdpart\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>

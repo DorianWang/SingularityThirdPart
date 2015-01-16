@@ -188,13 +188,15 @@ int counters = 0;
 //
 ConsoleOptions testConsole;
 
-cout<<"Please press the maximize button at the top right of the screen."<<endl;
+//cout<<"Please press the maximize button at the top right of the screen."<<endl;
 int screenX = 158; int screenY = 61;
 testConsole.setConsoleSize(screenX, screenY);
-Sleep(1000);
+testConsole.changeCurrentWindowText("New name!");
+
+//Sleep(1000);
 //cout<<"?"<<endl;
 Keypress KeyIO;
-   system("PAUSE");
+//   system("PAUSE");
 
 
 
@@ -216,14 +218,15 @@ stringFunc stringTest;
 
 char PERIOD = '.';
 
+/*
 cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
 cout << stringTest.parseFirstToken(stringFuncTester, ".")<<endl;
-
+*/
 
 ScreenControl screenTest;
 
 
-cout << screenTest.makeNewScreen("screenTest", "Screens") << endl;
+screenTest.makeNewScreen("screenTest", "Screens");
 
 ScreenControl testScreen;
 std::string qpow = "This is a @.";
@@ -232,9 +235,7 @@ double testDouble = 0.1;
 
 std::string testingStringInsert = stringTest.insertStringIntoString("Hellohoifea", "world!", 20);
 
-for (int i = 0; i< 21; i++){
-   cout<<'A';
-}
+
 cout <<endl;
 
 cout << "---" << endl;
@@ -264,7 +265,7 @@ else if (newInstruct -> macroInstruct == "MACRO"){
 }
 else if (newInstruct -> macroInstruct == "HEALTH"){
    int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &testShort;
+   *tempPointer = &health;
 }
 else{
    cout << "whut?" << endl;
@@ -283,6 +284,13 @@ for (int i=0; i<tempVec.size(); i++){
    cout << tempVec[i]<<endl;
 }
 */
+
+for (int i = 0; i < 1000; i++){
+   testConsole.cursorOptions.setColour(i % 256, ' ');
+   cout << 'A';
+}
+
+
 
    cout<<"I'm done!"<<endl;
    system("PAUSE");

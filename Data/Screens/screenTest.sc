@@ -6,3 +6,4 @@
 NUL\0\0\This is my macro: {PUT_MACRO_HERE};
 STR\0\2\This is another macro: {TEST_MACRO};
 ORT\30\2\More {MACRO} testing!;
+INT\0\3\Health: {HEALTH};

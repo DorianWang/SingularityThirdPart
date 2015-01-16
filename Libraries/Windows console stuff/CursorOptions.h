@@ -38,7 +38,9 @@ inline bool changeCursorPos(short cursorX, short cursorY);
 
 inline void cursorControl(int optionNum);//Controls all other functions. 0 for cursor visible. 1 for opposite, 2 for colour change, 5 for defaults, etc.
 
-inline void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
+inline int setColour(int newColour, char backgroundColour);
+
+//inline void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
 
 };
 
@@ -58,7 +60,7 @@ COptions::COptions()
 
 cursorVisibility = true;
 cursorSmall = true;
-currentColour=7;
+currentColour = 7;
 consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 
 }
@@ -114,16 +116,31 @@ int COptions::toggleColour(HANDLE cHandle)
     GetConsoleScreenBufferInfo(cHandle, &con_info);
     int cursorColour = con_info.wAttributes;
 
-    if (cursorColour>14){
-    cursorColour=0;
-    currentColour=0;
+    if (cursorColour > 14){
+       cursorColour = 0;
+       currentColour = 0;
     }
 
-    cursorColour+=1;
-    currentColour+=1;
+    cursorColour += 1;
+    currentColour += 1;
     SetConsoleTextAttribute(cHandle, cursorColour);
 
     return cursorColour;
+    //0 is black, 1 is dark blue, 2 is green, 3 is cyan, 4 is dark red, 5 is magenta, 6 is gold, 7 is white, 8 is grey, 9 is blue, 10 is light green
+    //11 is light blue, 12 is red, 13 is magenta, 14 is yellow, 15 is light grey, 16+ is highlighted
+
+}// changes cursor colour
+
+int COptions::setColour(int newColour, char backgroundColour)
+{
+
+    CONSOLE_SCREEN_BUFFER_INFO con_info;
+    GetConsoleScreenBufferInfo(consoleHandle, &con_info);
+    //int cursorColour = con_info.wAttributes;
+
+    SetConsoleTextAttribute(consoleHandle, newColour);
+
+    return newColour;
     //0 is black, 1 is dark blue, 2 is green, 3 is cyan, 4 is dark red, 5 is magenta, 6 is gold, 7 is white, 8 is grey, 9 is blue, 10 is light green
     //11 is light blue, 12 is red, 13 is magenta, 14 is yellow, 15 is light grey, 16+ is highlighted
 
@@ -136,18 +153,18 @@ void COptions::returnDefault(HANDLE cHandle)
     GetConsoleScreenBufferInfo(cHandle, &con_info);
     int cursorColour = con_info.wAttributes;
 
-    if (cursorColour!=15){
-    currentColour=15;
-    cursorColour=15;
+    //if (cursorColour!=15){
+    currentColour = 15;
+    cursorColour = 15;
     SetConsoleTextAttribute(cHandle, cursorColour);
-    }
+    //}
 
     if (cursorVisibility){
-    toggleCursor(cHandle);
+       toggleCursor(cHandle);
     }
 
-    if (cursorSmall==false){
-    toggleCursorSize(cHandle);
+    if (cursorSmall == false){
+       toggleCursorSize(cHandle);
     }
 
 }// changes cursor colour
@@ -160,13 +177,13 @@ void COptions::tempColourChange(bool isDiff, HANDLE cHandle, int targetColour)
     GetConsoleScreenBufferInfo(cHandle, &con_info);
     int cursorColour = con_info.wAttributes;
 
-    if(isDiff==false){
-    currentColour=cursorColour;
+    if(isDiff == false){
+    currentColour = cursorColour;
     SetConsoleTextAttribute(cHandle, targetColour);
     }
 
     if(isDiff){
-    cursorColour=currentColour;
+    cursorColour = currentColour;
     SetConsoleTextAttribute(cHandle, cursorColour);
     }
 
@@ -174,61 +191,61 @@ void COptions::tempColourChange(bool isDiff, HANDLE cHandle, int targetColour)
 
 void COptions::cursorControl(int optionNum)
 {
-     bool debugDetector=true;
+     bool debugDetector = true;
      if (optionNum == 0){
 
-        if (cursorVisibility==false){
-        toggleCursor(consoleHandle);
+        if (cursorVisibility == false){
+           toggleCursor(consoleHandle);
         }
 
-        debugDetector=false;
+        debugDetector = false;
      }//if cursor is false, make true
 
      if (optionNum == 1){
 
         if (cursorVisibility){
-        toggleCursor(consoleHandle);
+           toggleCursor(consoleHandle);
         }
 
-        debugDetector=false;
+        debugDetector = false;
      }//if cursor is true, make false
 
-     if (optionNum==2){
+     if (optionNum == 2){
         toggleColour(consoleHandle);
-        debugDetector=false;
+        debugDetector = false;
      }//change colour
 
-     if (optionNum==3){
+     if (optionNum == 3){
         returnDefault(consoleHandle);
-        debugDetector=false;
+        debugDetector = false;
      }//returns defaults
 
-     if (optionNum==4){
+     if (optionNum == 4){
         toggleCursor(consoleHandle); //force toggle
-        debugDetector=false;
+        debugDetector = false;
      }
 
-     if (optionNum==5){
+     if (optionNum == 5){
         changeCursorInsert(consoleHandle, true);//Insert mode
         debugDetector=false;
      }
 
-     if (optionNum==6){
+     if (optionNum == 6){
         changeCursorInsert(consoleHandle, false);//no Insert mode
         debugDetector=false;
      }
 
-     if (optionNum==7){
+     if (optionNum == 7){
         tempColourChange(false, consoleHandle, 15);
         debugDetector=false;
      }
 
-     if (optionNum==8){
+     if (optionNum == 8){
         tempColourChange(true,consoleHandle, 15);
         debugDetector=false;
      }
 
-     if (optionNum==9){
+     if (optionNum == 9){
         //changeWindowText("Stuff", consoleHandle);
         debugDetector=false;
      }
@@ -247,8 +264,6 @@ void COptions::cursorControl(int optionNum)
 
 
 }
-
-
 
 
 bool COptions::changeCursorPos(short cursorX, short cursorY)
@@ -285,13 +300,6 @@ void COptions::changeCursorInsert(HANDLE cHandle, bool insertMode)
 
 }
 
-void COptions::changeCurrentWindowText(const char* newText)//, HWND cHandle)
-{
-   HWND temp = GetActiveWindow();
-   HWND temp2 = GetForegroundWindow();
-   cout<<temp<<" "<<temp2<<endl;
-   cout<<SetWindowText(temp2, newText)<<endl;;
-}
 
 
 

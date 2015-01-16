@@ -33,6 +33,7 @@ int getScreenIndex(std::string screenNameSearch);
 
 bool outputScreen(int screenIndex);
 
+void outputFormattedLine (std::string input);
 
 private:
 

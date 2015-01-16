@@ -57,13 +57,13 @@ while (file -> readLine(&tempInput)){
 
    //Lines with a pound at the beginning are ignored, these are comments.
    if (tempInput.at(0) == '#'){
-         cout << "Read comment: " << tempInput << endl;
+      //cout << "Read comment: " << tempInput << endl;
       continue;
    }
 
 
    if (createInstruction(tempInput)){
-      cout << tempInput << endl;
+      //cout << tempInput << endl;
       continue;
    }
 

@@ -14,6 +14,7 @@ COptions cursorOptions;
 
 inline int setConsoleSize(unsigned int width, unsigned int height);
 inline void setConsoleTitle(std::string newName);
+inline void changeCurrentWindowText(const char* newText);
 
 };
 
@@ -61,6 +62,12 @@ SetConsoleTitle(newName.c_str());
 }
 
 
+void ConsoleOptions::changeCurrentWindowText(const char* newText)//, HWND cHandle)
+{
+   //HWND temp = GetActiveWindow();
+   HWND temp2 = GetForegroundWindow();
+   SetWindowText(temp2, newText);
+}
 
 //Graphics!
 //http://lazyfoo.net/SDL_tutorials/lesson01/index.php
