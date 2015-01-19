@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include <iostream>
 
+enum textColour {BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD, SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
+
 using namespace std;
 
 class COptions

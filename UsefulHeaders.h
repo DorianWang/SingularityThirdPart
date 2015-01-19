@@ -6,6 +6,9 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <cmath>
+#include <cstdlib>
+#include <time.h>
 
 #include "stdio.h"//This does stuff!
 

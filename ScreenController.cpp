@@ -155,10 +155,10 @@ void ScreenControl::outputFormattedLine (std::string input)
 
          switch (colourSelector) {
             case 'r':
-               cout << "x is 1";
+               //Red
             break;
 
-            case 2:
+            case 'b':
                cout << "x is 2";
             break;
 

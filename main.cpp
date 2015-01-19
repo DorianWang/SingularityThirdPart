@@ -285,13 +285,34 @@ for (int i=0; i<tempVec.size(); i++){
 }
 */
 
+double PI = 3.14159265359;
+
+srand (static_cast <unsigned> (time(0)));
+
+   system("PAUSE");
+   system ("CLS");
+
+/*
 for (int i = 0; i < 1000; i++){
-   testConsole.cursorOptions.setColour(i % 256, ' ');
+   //double r = static_cast <double> (rand()) / static_cast <double> (RAND_MAX);
+
+   double r = i/1000.0;
+
+   double result = sin (r*PI*4);
+
+   testConsole.cursorOptions.setColour(rand() % 15 + 1, 'a');
+   testConsole.cursorOptions.changeCursorPos(round(r * 100), round (result * 20 + 22));
    cout << 'A';
 }
 
+*/
 
+for (int i = 0; i < 256; i++){
+   testConsole.cursorOptions.setColour(i, ' ');
+   cout << 'A';
+}
 
+   testConsole.cursorOptions.changeCursorPos(0, 54);
    cout<<"I'm done!"<<endl;
    system("PAUSE");
 

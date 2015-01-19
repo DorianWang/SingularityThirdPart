@@ -1373,7 +1373,7 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1421371425 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1421637751 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1385,11 +1385,14 @@
 	"Bases.h"
 	"libraryIncluder.h"
 
-1414621697 d:\dorian's programs\singularitythirdpart\usefulheaders.h
+1421631885 d:\dorian's programs\singularitythirdpart\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
 	<sstream>
+	<cmath>
+	<cstdlib>
+	<time.h>
 	"stdio.h"
 	<process.h>
 	<windows.h>
@@ -1516,7 +1519,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1421369858 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+1421637656 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
 1421370441 d:\dorian's programs\singularitythirdpart\screencontroller.h
