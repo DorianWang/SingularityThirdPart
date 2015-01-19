@@ -308,7 +308,7 @@ for (int i = 0; i < 1000; i++){
 */
 
 for (int i = 0; i < 256; i++){
-   testConsole.cursorOptions.setColour(i, ' ');
+   testConsole.cursorOptions.setColour(i, 0);
    cout << 'A';
 }
 

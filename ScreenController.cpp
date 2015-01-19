@@ -145,25 +145,20 @@ return true;
 void ScreenControl::outputFormattedLine (std::string input)
 {
    ConsoleOptions newConsoleOptions;
-   char colourSelector = ' ';
+   char colourSelector = ' '; char backgroundSelector = ' ';
    size_t lastFound = 0;
+
 
    for (int i = 0; i < input.size(); i++){
       if (input.at(i) == '^'){
          cout << input.substr(lastFound, i - lastFound);
-         colourSelector = input.at(i + 1);
+         if (input.length() > i + 1){
+            colourSelector = input.at(i + 1);
+            backgroundSelector = input.at(i + 2);
+         }
 
-         switch (colourSelector) {
-            case 'r':
-               //Red
-            break;
+            newConsoleOptions.cursorOptions.setColour();
 
-            case 'b':
-               cout << "x is 2";
-            break;
-
-            default:
-               cout << "value of x unknown";
          }
 
 

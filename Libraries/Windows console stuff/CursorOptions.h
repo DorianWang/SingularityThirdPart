@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 
-enum textColour {BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD, SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
+enum class textColour {BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD, SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
 
 using namespace std;
 
@@ -133,16 +133,43 @@ int COptions::toggleColour(HANDLE cHandle)
 
 }// changes cursor colour
 
-int COptions::setColour(int newColour, char backgroundColour)
+//enum class textColour
+//{BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD,
+//SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
+int COptions::letterCodeToColourInt(char input)
+{
+   switch (input){
+      case 'l':
+         return textColour::BLACK;
+         break;
+      case 'b':
+         return textColour::DARK_BLUE;
+         break;
+      case 'g':
+         return textColour::GREEN_BLUE;
+         break;
+      case 'u':
+         return textColour::BLUE_GREEN;
+         break;
+         //TODO
+
+
+
+   }
+}
+
+
+
+int COptions::setColour(int newColour, int backgroundColour)
 {
 
     CONSOLE_SCREEN_BUFFER_INFO con_info;
     GetConsoleScreenBufferInfo(consoleHandle, &con_info);
     //int cursorColour = con_info.wAttributes;
 
-    SetConsoleTextAttribute(consoleHandle, newColour);
+    SetConsoleTextAttribute(consoleHandle, newColour + backgroundColour * 16);
 
-    return newColour;
+    return newColour + backgroundColour * 16;
     //0 is black, 1 is dark blue, 2 is green, 3 is cyan, 4 is dark red, 5 is magenta, 6 is gold, 7 is white, 8 is grey, 9 is blue, 10 is light green
     //11 is light blue, 12 is red, 13 is magenta, 14 is yellow, 15 is light grey, 16+ is highlighted
 
@@ -257,8 +284,6 @@ void COptions::cursorControl(int optionNum)
      if (optionNum==10){
         debugDetector=false;
      }
-
-
 
      if (debugDetector){
      cout<<"Something broke in CursorOptions.cpp"<<endl;
