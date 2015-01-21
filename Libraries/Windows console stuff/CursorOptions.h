@@ -42,6 +42,7 @@ inline void cursorControl(int optionNum);//Controls all other functions. 0 for c
 
 inline int setColour(int newColour, int backgroundColour);
 inline int letterCodeToColourInt(char input);
+inline char colourIntToletterCode(int input);
 
 //inline void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
 
@@ -153,43 +154,43 @@ int COptions::letterCodeToColourInt(char input)
          return (int) textColour::BLUE_GREEN;
          break;
       case 'r':
-         return textColour::DARK_RED;
+         return (int) textColour::DARK_RED;
          break;
       case 'p':
-         return textColour::PURPLE;
+         return (int) textColour::PURPLE;
          break;
       case 'o':
-         return textColour::GOLD;
+         return (int) textColour::GOLD;
          break;
       case 's':
-         return textColour::SILVER;
+         return (int) textColour::SILVER;
          break;
       case 'a':
-         return textColour::GREY;
+         return (int) textColour::GREY;
          break;
       case 'B':
-         return textColour::BLUE;
+         return (int) textColour::BLUE;
          break;
       case 'G':
-         return textColour::BRIGHT_GREEN;
+         return (int) textColour::BRIGHT_GREEN;
          break;
       case 'c':
-         return textColour::CYAN;
+         return (int) textColour::CYAN;
          break;
       case 'R':
-         return textColour::RED;
+         return (int) textColour::RED;
          break;
       case 'P':
-         return textColour::PINK;
+         return (int) textColour::PINK;
          break;
       case 'y':
-         return textColour::YELLOW;
+         return (int) textColour::YELLOW;
          break;
       case 'w':
-         return textColour::WHITE;
+         return (int) textColour::WHITE;
          break;
       default:
-         return textColour::WHITE;
+         return (int) textColour::WHITE;
          break;
    }
 }
@@ -197,59 +198,59 @@ int COptions::letterCodeToColourInt(char input)
 //enum class textColour
 //{BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD,
 //SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
-int COptions::colourIntToletterCode(int input)
+char COptions::colourIntToletterCode(int input)
 {
    switch (input){
-      case 'l':
-         return textColour::BLACK;
+      case (int) textColour::BLACK:
+         return 'l';
          break;
-      case 'b':
-         return textColour::DARK_BLUE;
+      case (int) textColour::DARK_BLUE:
+         return 'b';
          break;
-      case 'g':
-         return textColour::GREEN_BLUE;
+      case (int) textColour::GREEN_BLUE :
+         return 'g';
          break;
-      case 'u':
-         return textColour::BLUE_GREEN;
+      case (int) textColour::BLUE_GREEN :
+         return 'u';
          break;
-      case 'r':
-         return textColour::DARK_RED;
+      case (int) textColour::DARK_RED :
+         return 'r';
          break;
-      case 'p':
-         return textColour::PURPLE;
+      case (int) textColour::PURPLE :
+         return 'p';
          break;
-      case 'o':
-         return textColour::GOLD;
+      case (int) textColour::GOLD :
+         return 'o';
          break;
-      case 's':
-         return textColour::SILVER;
+      case (int) textColour::SILVER :
+         return 's';
          break;
-      case 'a':
-         return textColour::GREY;
+      case (int) textColour::GREY :
+         return 'a';
          break;
-      case 'B':
-         return textColour::BLUE;
+      case (int) textColour::BLUE :
+         return 'B';
          break;
-      case 'G':
-         return textColour::BRIGHT_GREEN;
+      case (int) textColour::BRIGHT_GREEN :
+         return 'G';
          break;
-      case 'c':
-         return textColour::CYAN;
+      case (int) textColour::CYAN :
+         return 'c';
          break;
-      case 'R':
-         return textColour::RED;
+      case (int) textColour::RED :
+         return 'R';
          break;
-      case 'P':
-         return textColour::PINK;
+      case (int) textColour::PINK :
+         return 'P';
          break;
-      case 'y':
-         return textColour::YELLOW;
+      case (int) textColour::YELLOW :
+         return 'y';
          break;
-      case 'w':
-         return textColour::WHITE;
+      case (int) textColour::WHITE:
+         return  'w';
          break;
       default:
-         return textColour::WHITE;
+         return  'w';
          break;
    }
 }

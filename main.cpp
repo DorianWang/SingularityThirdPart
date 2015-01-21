@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <sstream>
+#include <iomanip>
 
 #include "UsefulHeaders.h"
 
@@ -80,20 +81,59 @@ int temp = *a;
 *b = temp;
 }
 
-class foo
+class factorial
 {
+   std::vector <int> storage;
+   int calculatedValue;
 
-};
-
-class bar
-{
    public:
-   bool operator == (const bar& op2){
-      return true;//Testing
+
+   int calc(int input){
+      if (calculatedValue >= input){
+         return storage[input];
+      }
+      storage[input] = calc(input - 1) * input;
+      calculatedValue = input;
+      return storage[input];
+   };
+
+
+   factorial(int construct){
+      storage.reserve(construct+1);
+      storage[0] = 1;
+      calculatedValue = 0;
+
+      calc(construct);
    };
 };
 
+class eCalculator
+{
+   std::vector <double> storage;
+   int calculatedValue;
+   factorial factorialCalculator = factorial(10);
 
+   public:
+
+   double calc(int input){
+      if (calculatedValue >= input){
+         return storage[input];
+      }
+      storage[input] = calc(input - 1) + 1.0/factorialCalculator.calc(input);
+      calculatedValue = input;
+      return storage[input];
+   };
+
+
+   eCalculator(int construct){
+      storage.reserve(construct+1);
+      storage[0] = 1;
+      calculatedValue = 0;
+
+      calc(construct);
+   };
+
+};
 
 int main(int argc, char *argv[])
 {
@@ -289,6 +329,7 @@ double PI = 3.14159265359;
 
 srand (static_cast <unsigned> (time(0)));
 
+
    system("PAUSE");
    system ("CLS");
 
@@ -320,12 +361,12 @@ for (int i = d; i <= -1; i++){
          continue;
       }
 
-      int temp1 = d/i;
-      int temp2 = a/j;
-      int temp3 = (c-j*temp1)/i;
-      if (temp1*i == d && temp2*j == a){
-         if (b == i*temp2 + j*temp3 && c == j*temp1 + i*temp3){
-            cout << "found solution: " << '(' << j << "x + " << i << ")(" << temp2 << "x^2 + " << temp3 << "x + " << temp1 << ")" << endl;
+      int k = d/i;
+      int l = a/j;
+      int m = (c-j*k)/i;
+      if (k*i == d && l*j == a){
+         if (b == i*l + j*m && c == j*k + i*m){
+            cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
          }
       }
    }
@@ -339,12 +380,12 @@ for (int i = 1; i <= d; i++){
          continue;
       }
 
-      int temp1 = d/i;
-      int temp2 = a/j;
-      int temp3 = (c-j*temp1)/i;
-      if (temp1*i == d && temp2*j == a){
-         if (b == i*temp2 + j*temp3 && c == j*temp1 + i*temp3){
-            cout << "found solution: " << '(' << j << "x + " << i << ")(" << temp2 << "x^2 + " << temp3 << "x + " << temp1 << ")" << endl;
+      int k = d/i;
+      int l = a/j;
+      int m = (c-j*k)/i;
+      if (k*i == d && l*j == a){
+         if (b == i*l + j*m && c == j*k + i*m){
+            cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
          }
       }
    }
@@ -359,19 +400,34 @@ for (int i = 1; i <= abs(d); i++){
          continue;
       }
 
-      int temp1 = d/i;
-      int temp2 = a/j;
-      int temp3 = (c-j*temp1)/i;
-      if (temp1*i == d && temp2*j == a){
-         if (b == i*temp2 + j*temp3){
-            cout << "found solution: " << i << ' ' << j << ' ' << temp1 << ' ' << temp2 << ' ' << temp3 << endl;
+      int k = d/i;
+      int l = a/j;
+      int m = (c-j*k)/i;
+      if (k*i == d && l*j == a){
+         if (b == i*l + j*m){
+            cout << "found solution: " << i << ' ' << j << ' ' << k << ' ' << l << ' ' << m << endl;
          }
       }
    }
 }
 */
 
+eCalculator testCalc(10);
 
+cout << std::setprecision (12);
+
+cout << testCalc.calc(0) << endl;
+cout << testCalc.calc(1) << endl;
+cout << testCalc.calc(2) << endl;
+cout << testCalc.calc(3) << endl;
+cout << testCalc.calc(4) << endl;
+cout << testCalc.calc(5) << endl;
+cout << testCalc.calc(6) << endl;
+cout << testCalc.calc(7) << endl;
+cout << testCalc.calc(8) << endl;
+cout << testCalc.calc(9) << endl;
+cout << testCalc.calc(10) << endl;
+cout << "The number at this accuracy is actually: " << 2.71828182846 << endl;
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
    cout<<"I'm done!"<<endl;
