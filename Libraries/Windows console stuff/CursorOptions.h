@@ -152,14 +152,107 @@ int COptions::letterCodeToColourInt(char input)
       case 'u':
          return (int) textColour::BLUE_GREEN;
          break;
-         //TODO
-
-
-
+      case 'r':
+         return textColour::DARK_RED;
+         break;
+      case 'p':
+         return textColour::PURPLE;
+         break;
+      case 'o':
+         return textColour::GOLD;
+         break;
+      case 's':
+         return textColour::SILVER;
+         break;
+      case 'a':
+         return textColour::GREY;
+         break;
+      case 'B':
+         return textColour::BLUE;
+         break;
+      case 'G':
+         return textColour::BRIGHT_GREEN;
+         break;
+      case 'c':
+         return textColour::CYAN;
+         break;
+      case 'R':
+         return textColour::RED;
+         break;
+      case 'P':
+         return textColour::PINK;
+         break;
+      case 'y':
+         return textColour::YELLOW;
+         break;
+      case 'w':
+         return textColour::WHITE;
+         break;
+      default:
+         return textColour::WHITE;
+         break;
    }
 }
 
-
+//enum class textColour
+//{BLACK, DARK_BLUE, GREEN_BLUE, BLUE_GREEN, DARK_RED, PURPLE, GOLD,
+//SILVER, GREY, BLUE, BRIGHT_GREEN, CYAN, RED, PINK, YELLOW, WHITE};
+int COptions::colourIntToletterCode(int input)
+{
+   switch (input){
+      case 'l':
+         return textColour::BLACK;
+         break;
+      case 'b':
+         return textColour::DARK_BLUE;
+         break;
+      case 'g':
+         return textColour::GREEN_BLUE;
+         break;
+      case 'u':
+         return textColour::BLUE_GREEN;
+         break;
+      case 'r':
+         return textColour::DARK_RED;
+         break;
+      case 'p':
+         return textColour::PURPLE;
+         break;
+      case 'o':
+         return textColour::GOLD;
+         break;
+      case 's':
+         return textColour::SILVER;
+         break;
+      case 'a':
+         return textColour::GREY;
+         break;
+      case 'B':
+         return textColour::BLUE;
+         break;
+      case 'G':
+         return textColour::BRIGHT_GREEN;
+         break;
+      case 'c':
+         return textColour::CYAN;
+         break;
+      case 'R':
+         return textColour::RED;
+         break;
+      case 'P':
+         return textColour::PINK;
+         break;
+      case 'y':
+         return textColour::YELLOW;
+         break;
+      case 'w':
+         return textColour::WHITE;
+         break;
+      default:
+         return textColour::WHITE;
+         break;
+   }
+}
 
 int COptions::setColour(int newColour, int backgroundColour)
 {
