@@ -157,7 +157,7 @@ void ScreenControl::outputFormattedLine (std::string input)
             backgroundSelector = input.at(i + 2);
          }
 
-            newConsoleOptions.cursorOptions.setColour();
+            newConsoleOptions.cursorOptions.setColour(1, 1);
 
          }
 
@@ -165,7 +165,7 @@ void ScreenControl::outputFormattedLine (std::string input)
       }
    }
 //Everything is done!
-}
+
 
 
 

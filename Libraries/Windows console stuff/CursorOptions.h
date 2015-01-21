@@ -40,7 +40,8 @@ inline bool changeCursorPos(short cursorX, short cursorY);
 
 inline void cursorControl(int optionNum);//Controls all other functions. 0 for cursor visible. 1 for opposite, 2 for colour change, 5 for defaults, etc.
 
-inline int setColour(int newColour, char backgroundColour);
+inline int setColour(int newColour, int backgroundColour);
+inline int letterCodeToColourInt(char input);
 
 //inline void changeCurrentWindowText(const char* newText);//Changes the currently selected console's name.
 
@@ -140,16 +141,16 @@ int COptions::letterCodeToColourInt(char input)
 {
    switch (input){
       case 'l':
-         return textColour::BLACK;
+         return (int) textColour::BLACK;
          break;
       case 'b':
-         return textColour::DARK_BLUE;
+         return (int) textColour::DARK_BLUE;
          break;
       case 'g':
-         return textColour::GREEN_BLUE;
+         return (int) textColour::GREEN_BLUE;
          break;
       case 'u':
-         return textColour::BLUE_GREEN;
+         return (int) textColour::BLUE_GREEN;
          break;
          //TODO
 

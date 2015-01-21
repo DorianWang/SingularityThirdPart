@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 //   cout<<them<<endl;
 
    Keypress KeyIn;
-   short a = 0;
+   //short a = 0;
 
       if(KeyIn.get_code(4)){
          cout<<"One!"<<" ";
@@ -307,10 +307,71 @@ for (int i = 0; i < 1000; i++){
 
 */
 
-for (int i = 0; i < 256; i++){
-   testConsole.cursorOptions.setColour(i, 0);
-   cout << 'A';
+
+int a = 1;
+int b = -6;
+int c = -1;
+int d = 30;
+
+if (d < 0){
+for (int i = d; i <= -1; i++){
+   for (int j = -abs(a); j <= abs(a); j++){
+      if (j == 0){
+         continue;
+      }
+
+      int temp1 = d/i;
+      int temp2 = a/j;
+      int temp3 = (c-j*temp1)/i;
+      if (temp1*i == d && temp2*j == a){
+         if (b == i*temp2 + j*temp3 && c == j*temp1 + i*temp3){
+            cout << "found solution: " << '(' << j << "x + " << i << ")(" << temp2 << "x^2 + " << temp3 << "x + " << temp1 << ")" << endl;
+         }
+      }
+   }
 }
+}
+else
+{
+for (int i = 1; i <= d; i++){
+   for (int j = -abs(a); j <= abs(a); j++){
+      if (j == 0){
+         continue;
+      }
+
+      int temp1 = d/i;
+      int temp2 = a/j;
+      int temp3 = (c-j*temp1)/i;
+      if (temp1*i == d && temp2*j == a){
+         if (b == i*temp2 + j*temp3 && c == j*temp1 + i*temp3){
+            cout << "found solution: " << '(' << j << "x + " << i << ")(" << temp2 << "x^2 + " << temp3 << "x + " << temp1 << ")" << endl;
+         }
+      }
+   }
+}
+
+}
+
+/*
+for (int i = 1; i <= abs(d); i++){
+   for (int j = -abs(a); j <= abs(a); j++){
+      if (j == 0){
+         continue;
+      }
+
+      int temp1 = d/i;
+      int temp2 = a/j;
+      int temp3 = (c-j*temp1)/i;
+      if (temp1*i == d && temp2*j == a){
+         if (b == i*temp2 + j*temp3){
+            cout << "found solution: " << i << ' ' << j << ' ' << temp1 << ' ' << temp2 << ' ' << temp3 << endl;
+         }
+      }
+   }
+}
+*/
+
+
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
    cout<<"I'm done!"<<endl;
