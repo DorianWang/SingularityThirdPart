@@ -152,12 +152,13 @@ void ScreenControl::outputFormattedLine (std::string input)
    for (int i = 0; i < input.size(); i++){
       if (input.at(i) == '^'){
          cout << input.substr(lastFound, i - lastFound);
-         if (input.length() > i + 1){
+         if (input.length() > i + 2){
             colourSelector = input.at(i + 1);
             backgroundSelector = input.at(i + 2);
          }
 
-            newConsoleOptions.cursorOptions.setColour(1, 1);
+            newConsoleOptions.cursorOptions.setColour(newConsoleOptions.cursorOptions.letterCodeToColourInt(colourSelector)
+                                                      , newConsoleOptions.cursorOptions.letterCodeToColourInt(backgroundSelector));
 
          }
 
