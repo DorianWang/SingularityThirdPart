@@ -332,8 +332,8 @@ srand (static_cast <unsigned> (time(0)));
 
    system("PAUSE");
    system ("CLS");
-
 /*
+
 for (int i = 0; i < 1000; i++){
    //double r = static_cast <double> (rand()) / static_cast <double> (RAND_MAX);
 
@@ -343,10 +343,15 @@ for (int i = 0; i < 1000; i++){
 
    testConsole.cursorOptions.setColour(rand() % 15 + 1, 'a');
    testConsole.cursorOptions.changeCursorPos(round(r * 100), round (result * 20 + 22));
-   cout << 'A';
+   cout << '*';
 }
 
+   system("PAUSE");
+   system ("CLS");
+
 */
+
+system ("PAUSE");
 
 
 int a = 1;
@@ -355,43 +360,45 @@ int c = -1;
 int d = 30;
 
 if (d < 0){
-for (int i = d; i <= -1; i++){
-   for (int j = -abs(a); j <= abs(a); j++){
-      if (j == 0){
-         continue;
-      }
+   for (int i = d; i <= -1; i++){
+      for (int j = -abs(a); j <= abs(a); j++){
+         if (j == 0){
+            continue;
+         }
 
-      int k = d/i;
-      int l = a/j;
-      int m = (c-j*k)/i;
-      if (k*i == d && l*j == a){
-         if (b == i*l + j*m && c == j*k + i*m){
-            cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
+         int k = d/i;
+         int l = a/j;
+         int m = (c-j*k)/i;
+         if (k*i == d && l*j == a){
+            if (b == i*l + j*m && c == j*k + i*m){
+               cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
+            }
          }
       }
    }
-}
 }
 else
 {
-for (int i = 1; i <= d; i++){
-   for (int j = -abs(a); j <= abs(a); j++){
-      if (j == 0){
-         continue;
-      }
+   for (int i = 1; i <= d; i++){
+      for (int j = -abs(a); j <= abs(a); j++){
+         if (j == 0){
+            continue;
+         }
 
-      int k = d/i;
-      int l = a/j;
-      int m = (c-j*k)/i;
-      if (k*i == d && l*j == a){
-         if (b == i*l + j*m && c == j*k + i*m){
-            cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
+         int k = d/i;
+         int l = a/j;
+         int m = (c-j*k)/i;
+         if (k*i == d && l*j == a){
+            if (b == i*l + j*m && c == j*k + i*m){
+               cout << "found solution: " << '(' << j << "x + " << i << ")(" << l << "x^2 + " << m << "x + " << k << ")" << endl;
+            }
          }
       }
    }
 }
 
-}
+
+
 
 /*
 for (int i = 1; i <= abs(d); i++){
@@ -412,6 +419,7 @@ for (int i = 1; i <= abs(d); i++){
 }
 */
 
+
 eCalculator testCalc(10);
 
 cout << std::setprecision (12);
@@ -428,6 +436,8 @@ cout << testCalc.calc(8) << endl;
 cout << testCalc.calc(9) << endl;
 cout << testCalc.calc(10) << endl;
 cout << "The number at this accuracy is actually: " << 2.71828182846 << endl;
+
+
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
    cout<<"I'm done!"<<endl;

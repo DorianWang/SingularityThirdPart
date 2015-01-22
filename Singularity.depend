@@ -1373,11 +1373,12 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1421805502 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1421892645 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
+	<iomanip>
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
