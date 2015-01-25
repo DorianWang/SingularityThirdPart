@@ -155,16 +155,17 @@ void ScreenControl::outputFormattedLine (std::string input)
          if (input.length() > i + 2){
             colourSelector = input.at(i + 1);
             backgroundSelector = input.at(i + 2);
-         }
 
             newConsoleOptions.cursorOptions.setColour(newConsoleOptions.cursorOptions.letterCodeToColourInt(colourSelector)
-                                                      , newConsoleOptions.cursorOptions.letterCodeToColourInt(backgroundSelector));
-
+                                , newConsoleOptions.cursorOptions.letterCodeToColourInt(backgroundSelector));
+         i = i+2;
          }
-
+         //Use substr()?
 
       }
+
    }
+}
 //Everything is done!
 
 
