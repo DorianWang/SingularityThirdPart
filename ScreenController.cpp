@@ -145,24 +145,16 @@ return true;
 void ScreenControl::outputFormattedLine (std::string input)
 {
    ConsoleOptions newConsoleOptions;
-   char colourSelector = ' '; char backgroundSelector = ' ';
-   size_t lastFound = 0;
 
+   std::vector <std::string> tempStrings = stringFunc::parseAllTokens(input, '^');
 
-   for (int i = 0; i < input.size(); i++){
-      if (input.at(i) == '^'){
-         cout << input.substr(lastFound, i - lastFound);
-         if (input.length() > i + 2){
-            colourSelector = input.at(i + 1);
-            backgroundSelector = input.at(i + 2);
-
-            newConsoleOptions.cursorOptions.setColour(newConsoleOptions.cursorOptions.letterCodeToColourInt(colourSelector)
-                                , newConsoleOptions.cursorOptions.letterCodeToColourInt(backgroundSelector));
-         i = i+2;
-         }
-         //Use substr()?
-
+   for (int i = 0; i < tempStrings.size(); i++){
+      if (tempStrings[i].size() < 2){
+         continue;
       }
+      //Do colour stuff, then output.
+   }
+
 
    }
 }
