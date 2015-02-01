@@ -29,12 +29,17 @@
 
 #define NUM_FUNCTIONS
 
+struct cleanedInstruct {
+   std::string output;
+   int xPos;
+   int yPos;
+};
 
 struct screenOutputData {
    int smallX; int smallY;
    int bigX; int bigY;
 
-   std::vector < std::string > screenData;
+   std::vector < cleanedInstruct > screenData;
 };
 
 

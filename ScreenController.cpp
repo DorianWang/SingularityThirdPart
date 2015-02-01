@@ -152,11 +152,14 @@ void ScreenControl::outputFormattedLine (std::string input)
       if (tempStrings[i].size() < 2){
          continue;
       }
+
+      newConsoleOptions.cursorOptions.setColour( COptions::letterCodeToColourInt(tempStrings[i].at(0)),
+                                                COptions::letterCodeToColourInt(tempStrings[i].at(1)))
+      cout << tempStrings[i].substr (2);
       //Do colour stuff, then output.
    }
 
 
-   }
 }
 //Everything is done!
 

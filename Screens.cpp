@@ -315,11 +315,10 @@ screenOutputData* ScreenType::redraw()
 
 
    for (int i = 0; i < instructionsInt.size(); i++ ){
-      tempData -> screenData[instructionsInt[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsInt[i] -> Ypos], parseInstruct(
-                        instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut), instructionsInt[i] -> Xpos);
+      tempData -> screenData[i] = parseInstruct(
+                        instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut)
    }
-
+//TODO: stuff
 
    for (int i = 0; i < instructionsString.size(); i++ ){
       tempData -> screenData[instructionsString[i] -> Ypos] = stringModder.insertStringIntoString(
