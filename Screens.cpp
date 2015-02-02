@@ -315,8 +315,10 @@ screenOutputData* ScreenType::redraw()
 
 
    for (int i = 0; i < instructionsInt.size(); i++ ){
-      tempData -> screenData[i] = parseInstruct(
+      tempData -> screenData[i].output = parseInstruct(
                         instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut)
+      tempData -> screenData[i].xPos = instructionsInt[i] ->
+
    }
 //TODO: stuff
 
