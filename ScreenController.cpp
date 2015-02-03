@@ -135,16 +135,19 @@ bool ScreenControl::outputScreen(int screenIndex)
 
    //Temporary output code;
 
-   for (int i = 0; i < temp -> screenData.size(); i++){
-      cout << temp -> screenData[i] << endl;
-   }
+   outputFormattedLine
+
 
 return true;
 }
 
-void ScreenControl::outputFormattedLine (std::string input)
+void ScreenControl::outputFormattedLines (screenOutputData* temp)
 {
    ConsoleOptions newConsoleOptions;
+
+   for (int i = 0; i < temp -> screenData.size(); i++){
+
+   }
 
    std::vector <std::string> tempStrings = stringFunc::parseAllTokens(input, '^');
 

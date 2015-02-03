@@ -9,7 +9,7 @@
 
 #define DATA_FOLDER "Data/"
 
-struct instructDataOut
+struct instructDataOutoutputFormattedLine
 {
    std::string macroInstruct;
    void* variablePointerPointer;
@@ -33,7 +33,7 @@ int getScreenIndex(std::string screenNameSearch);
 
 bool outputScreen(int screenIndex);
 
-void outputFormattedLine (std::string input);
+void outputFormattedLines (std::string input, int xScreen, int yScreen, int xInstruct, int yInstruct);
 
 private:
 

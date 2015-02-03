@@ -300,8 +300,14 @@ screenOutputData* ScreenType::redraw()
 {
 
    screenOutputData* tempData = new screenOutputData;
-
-
+   tempData -> screenData.reserve(instructionsInt.size() +
+                                  instructionsString.size() +
+                                  instructionsDouble.size() +
+                                  instructionsShortInt.size() +
+                                  instructionsPercentDouble.size() +
+                                  instructionsVoid.size() +
+                                  10
+                                  );
 
    tempData -> smallX = botX;
    tempData -> smallY = botY;
@@ -311,53 +317,68 @@ screenOutputData* ScreenType::redraw()
    //Initializes the vector to be able to contain all data which should fit into the vector.
    tempData -> screenData.resize(topY - botY + 1);
 
-   stringFunc stringModder;
-
+   //stringFunc stringModder;
 
    for (int i = 0; i < instructionsInt.size(); i++ ){
-      tempData -> screenData[i].output = parseInstruct(
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = parseInstruct(
                         instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut)
-      tempData -> screenData[i].xPos = instructionsInt[i] ->
-
+      tempCleanInstruct.xPos = instructionsInt[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsInt[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
-//TODO: stuff
+
 
    for (int i = 0; i < instructionsString.size(); i++ ){
-      tempData -> screenData[instructionsString[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsString[i] -> Ypos], parseInstruct(
-                        instructionsString[i] -> instructionText, 's', instructionsString[i] -> dataOut), instructionsString[i] -> Xpos);
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = parseInstruct(
+                        instructionsString[i] -> instructionText, 'i', instructionsString[i] -> dataOut)
+      tempCleanInstruct.xPos = instructionsString[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsString[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
 
 
    for (int i = 0; i < instructionsDouble.size(); i++ ){
-      tempData -> screenData[instructionsDouble[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsDouble[i] -> Ypos], parseInstruct(
-                        instructionsDouble[i] -> instructionText, 'd', instructionsDouble[i] -> dataOut), instructionsDouble[i] -> Xpos);
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = parseInstruct(
+                        instructionsDouble[i] -> instructionText, 'i', instructionsDouble[i] -> dataOut)
+      tempCleanInstruct.xPos = instructionsDouble[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsDouble[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
 
 
    for (int i = 0; i < instructionsShortInt.size(); i++ ){
-      tempData -> screenData[instructionsShortInt[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsShortInt[i] -> Ypos], parseInstruct(
-                        instructionsShortInt[i] -> instructionText, 'o', instructionsShortInt[i] -> dataOut), instructionsShortInt[i] -> Xpos);
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = parseInstruct(
+                        instructionsShortInt[i] -> instructionText, 'i', instructionsShortInt[i] -> dataOut)
+      tempCleanInstruct.xPos = instructionsShortInt[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsShortInt[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
 
 
    for (int i = 0; i < instructionsPercentDouble.size(); i++ ){
-      tempData -> screenData[instructionsPercentDouble[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsPercentDouble[i] -> Ypos], parseInstruct(
-                        instructionsPercentDouble[i] -> instructionText, 'p', instructionsPercentDouble[i] -> dataOut), instructionsPercentDouble[i] -> Xpos);
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = parseInstruct(
+                        instructionsPercentDouble[i] -> instructionText, 'i', instructionsPercentDouble[i] -> dataOut)
+      tempCleanInstruct.xPos = instructionsPercentDouble[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsPercentDouble[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
 
 
    for (int i = 0; i < instructionsVoid.size(); i++ ){
-      tempData -> screenData[instructionsVoid[i] -> Ypos] = stringModder.insertStringIntoString(
-                        tempData -> screenData[instructionsVoid[i] -> Ypos], parseInstruct(
-                        instructionsVoid[i] -> instructionText, 'v', ' '), instructionsVoid[i] -> Xpos);
+      cleanedInstruct tempCleanInstruct;
+      tempCleanInstruct.output = instructionsVoid[i] -> instructionText;
+      tempCleanInstruct.xPos = instructionsVoid[i] -> Xpos;
+      tempCleanInstruct.yPos = instructionsVoid[i] -> Ypos;
+      tempData -> screenData.push_back(tempCleanInstruct);
    }
 
-return tempData;
 
+return tempData;
 }
 
 
