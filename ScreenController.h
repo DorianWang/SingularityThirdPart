@@ -9,7 +9,7 @@
 
 #define DATA_FOLDER "Data/"
 
-#define DEFAULT_COLOUR 16
+#define DEFAULT_COLOUR 15
 #define DEFAULT_BACK_COLOUR 0
 
 struct instructDataOut

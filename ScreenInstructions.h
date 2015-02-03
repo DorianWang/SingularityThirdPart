@@ -90,11 +90,11 @@ template <typename Q> bool screenInstruct<Q>::parseInput(std::string input)
 
    //Removes the macro and replaces it with a @
    //Then sets the instruction text to the parsed string.
-   tempString.erase(firstBracket, secondBracket - firstBracket +1);
+   tempString.erase(firstBracket, secondBracket - firstBracket + 1);
    tempString.insert(firstBracket, "@");
 
    //Finds the true end of the string with the ';' character.
-   std::size_t stringEnd = tempString.find(';', firstBracket+1);
+   std::size_t stringEnd = tempString.find(';', firstBracket + 1);
 
    tempString = tempString.substr(0, stringEnd);
 

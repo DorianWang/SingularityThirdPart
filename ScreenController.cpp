@@ -152,12 +152,16 @@ void ScreenControl::outputFormattedLines (screenOutputData* temp)
 
       newConsoleOptions.cursorOptions.changeCursorPos(temp -> smallX + temp -> screenData[i].xPos,
                                                          temp -> smallY + temp -> screenData[i].yPos);
+      newConsoleOptions.cursorOptions.setColour( defaultTextColour, defaultBackColour);
 
       for (int i = 0; i < tempStrings.size(); i++){
          if (tempStrings[i].size() < 2){
             continue;
          }
 
+         if ( temp -> screenData[i].output[0] != '^' && i == 0){
+            cout << tempStrings[i];
+         }
          newConsoleOptions.cursorOptions.setColour( newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(0)),
                                        newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(1)));
          cout << tempStrings[i].substr (2);

@@ -329,11 +329,13 @@ double PI = 3.14159265359;
 
 srand (static_cast <unsigned> (time(0)));
 
+testConsole.cursorOptions.setColour(15, 0);
+
+cout << "Testing colours" << endl;
+
 
    system("PAUSE");
    system ("CLS");
-
-
 
 
 
