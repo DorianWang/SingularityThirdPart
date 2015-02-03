@@ -9,7 +9,10 @@
 
 #define DATA_FOLDER "Data/"
 
-struct instructDataOutoutputFormattedLine
+#define DEFAULT_COLOUR 16
+#define DEFAULT_BACK_COLOUR 0
+
+struct instructDataOut
 {
    std::string macroInstruct;
    void* variablePointerPointer;
@@ -20,6 +23,16 @@ struct instructDataOutoutputFormattedLine
 class ScreenControl
 {
 public:
+
+int defaultTextColour;
+int defaultBackColour;
+
+
+ScreenControl(){
+defaultTextColour = DEFAULT_COLOUR;
+defaultBackColour = DEFAULT_BACK_COLOUR;
+
+}
 
 //Macros : Stuff and stuff {THIS_IS_A_MACRO} more stuff and things.
 //have already been replaced by the instruct input function.
@@ -33,7 +46,9 @@ int getScreenIndex(std::string screenNameSearch);
 
 bool outputScreen(int screenIndex);
 
-void outputFormattedLines (std::string input, int xScreen, int yScreen, int xInstruct, int yInstruct);
+void outputFormattedLines (screenOutputData* temp);
+
+
 
 private:
 

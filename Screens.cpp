@@ -322,7 +322,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsInt.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut)
+                        instructionsInt[i] -> instructionText, 'i', instructionsInt[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsInt[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsInt[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -332,7 +332,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsString.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsString[i] -> instructionText, 'i', instructionsString[i] -> dataOut)
+                        instructionsString[i] -> instructionText, 'i', instructionsString[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsString[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsString[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -342,7 +342,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsDouble.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsDouble[i] -> instructionText, 'i', instructionsDouble[i] -> dataOut)
+                        instructionsDouble[i] -> instructionText, 'i', instructionsDouble[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsDouble[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsDouble[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -352,7 +352,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsShortInt.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsShortInt[i] -> instructionText, 'i', instructionsShortInt[i] -> dataOut)
+                        instructionsShortInt[i] -> instructionText, 'i', instructionsShortInt[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsShortInt[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsShortInt[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -362,7 +362,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsPercentDouble.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsPercentDouble[i] -> instructionText, 'i', instructionsPercentDouble[i] -> dataOut)
+                        instructionsPercentDouble[i] -> instructionText, 'i', instructionsPercentDouble[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsPercentDouble[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsPercentDouble[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);

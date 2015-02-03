@@ -135,7 +135,7 @@ bool ScreenControl::outputScreen(int screenIndex)
 
    //Temporary output code;
 
-   outputFormattedLine
+   outputFormattedLines(temp);
 
 
 return true;
@@ -144,25 +144,27 @@ return true;
 void ScreenControl::outputFormattedLines (screenOutputData* temp)
 {
    ConsoleOptions newConsoleOptions;
+   stringFunc stringFunctions;
 
    for (int i = 0; i < temp -> screenData.size(); i++){
 
-   }
+      std::vector <std::string> tempStrings = stringFunctions.parseAllTokens(temp -> screenData[i].output, "^");
 
-   std::vector <std::string> tempStrings = stringFunc::parseAllTokens(input, '^');
+      newConsoleOptions.cursorOptions.changeCursorPos(temp -> smallX + temp -> screenData[i].xPos,
+                                                         temp -> smallY + temp -> screenData[i].yPos);
 
-   for (int i = 0; i < tempStrings.size(); i++){
-      if (tempStrings[i].size() < 2){
-         continue;
+      for (int i = 0; i < tempStrings.size(); i++){
+         if (tempStrings[i].size() < 2){
+            continue;
+         }
+
+         newConsoleOptions.cursorOptions.setColour( newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(0)),
+                                       newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(1)));
+         cout << tempStrings[i].substr (2);
+         //Do colour stuff, then output.
       }
 
-      newConsoleOptions.cursorOptions.setColour( COptions::letterCodeToColourInt(tempStrings[i].at(0)),
-                                                COptions::letterCodeToColourInt(tempStrings[i].at(1)))
-      cout << tempStrings[i].substr (2);
-      //Do colour stuff, then output.
    }
-
-
 }
 //Everything is done!
 
