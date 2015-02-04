@@ -337,6 +337,7 @@ cout << "Testing colours" << endl;
    system("PAUSE");
    system ("CLS");
 
+   for (int i = 0)
 
 
    testConsole.cursorOptions.changeCursorPos(0, 54);

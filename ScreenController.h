@@ -48,7 +48,7 @@ bool outputScreen(int screenIndex);
 
 void outputFormattedLines (screenOutputData* temp);
 
-
+std::vector <std::string> testVector;
 
 private:
 
