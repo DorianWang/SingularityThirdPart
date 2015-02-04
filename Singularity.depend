@@ -893,7 +893,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1415215971 d:\doriancode\singularitythirdpart\libraryincluder.h
+1423064175 d:\doriancode\singularitythirdpart\libraryincluder.h
 	"Libraries\Binary tree\BinaryTree.h"
 	"Libraries\FileIO\FileIO.h"
 	"Libraries\itemTree\treeType.h"
@@ -903,11 +903,14 @@
 	"Libraries\usefulHeaders file\UsefulHeaders.h"
 	"Libraries\Windows console stuff\ConsoleOptions.h"
 
-1414429568 d:\doriancode\singularitythirdpart\usefulheaders.h
+1421866537 d:\doriancode\singularitythirdpart\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
 	<sstream>
+	<cmath>
+	<cstdlib>
+	<time.h>
 	"stdio.h"
 	<process.h>
 	<windows.h>
@@ -980,10 +983,10 @@
 	<iostream>
 	<cmath>
 
-1421259209 source:d:\doriancode\singularitythirdpart\screens.cpp
+1423064175 source:d:\doriancode\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1421086151 d:\doriancode\singularitythirdpart\screens.h
+1422972426 d:\doriancode\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1031,11 +1034,12 @@
 	<stdio.h>
 	<stdlib.h>
 
-1421259275 source:d:\doriancode\singularitythirdpart\main.cpp
+1423066423 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
+	<iomanip>
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
@@ -1106,12 +1110,12 @@
 	<windows.h>
 	<time.h>
 
-1415216713 d:\doriancode\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+1421866537 d:\doriancode\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
 	"CursorOptions.h"
 	<cstdlib>
 	<stdexcept>
 
-1415216696 d:\doriancode\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+1421866537 d:\doriancode\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
 	<cstdarg>
 	"windows.h"
 	"stdio.h"
@@ -1582,13 +1586,13 @@
 1421258925 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1421175862 d:\doriancode\singularitythirdpart\screencontroller.h
+1423064175 d:\doriancode\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"
 	<list>
 
-1421087330 d:\doriancode\singularitythirdpart\screeninstructions.h
+1423064175 d:\doriancode\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"

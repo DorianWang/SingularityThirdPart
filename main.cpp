@@ -81,59 +81,7 @@ int temp = *a;
 *b = temp;
 }
 
-class factorial
-{
-   std::vector <int> storage;
-   int calculatedValue;
 
-   public:
-
-   int calc(int input){
-      if (calculatedValue >= input){
-         return storage[input];
-      }
-      storage[input] = calc(input - 1) * input;
-      calculatedValue = input;
-      return storage[input];
-   };
-
-
-   factorial(int construct){
-      storage.reserve(construct+1);
-      storage[0] = 1;
-      calculatedValue = 0;
-
-      calc(construct);
-   };
-};
-
-class eCalculator
-{
-   std::vector <double> storage;
-   int calculatedValue;
-   factorial factorialCalculator = factorial(10);
-
-   public:
-
-   double calc(int input){
-      if (calculatedValue >= input){
-         return storage[input];
-      }
-      storage[input] = calc(input - 1) + 1.0/factorialCalculator.calc(input);
-      calculatedValue = input;
-      return storage[input];
-   };
-
-
-   eCalculator(int construct){
-      storage.reserve(construct+1);
-      storage[0] = 1;
-      calculatedValue = 0;
-
-      calc(construct);
-   };
-
-};
 
 int main(int argc, char *argv[])
 {
@@ -187,44 +135,6 @@ int counters = 0;
 
 
    linkedList <int> Aso();
-//   SelectScreens ScreenControl;
-   //cout<<Dempo.deleteFile(Dempo.getExecutablePath(), false)<<endl;
-
-
-   //ScreenControl.mainScreen(VERSION_NUM);
-   //^Important for code n' stuff
-
-   //Aso.
-
-
-
-//
-//
-//   treeType <int> aephoro("asdf");
-//
-//   aephoro.addNode("node1");
-//   aephoro.addNode("node2");
-//
-//   treeType <int> * treePointer;
-//   treePointer = aephoro.getNodeAtIndex(1);
-//   if (treePointer){
-//      cout<<treePointer -> getName()<<endl;
-//      treePointer -> addNode("node3");
-//   }
-//   treePointer = treePointer -> getNodeAtIndex(0);
-//
-//   cout<<treePointer -> listNodePath()<<endl;//It works!
-//
-//   std::string nodePath = treePointer -> listNodePath();
-//
-//   stringFunc asdfa;
-//
-//   std::vector <std::string> tokenVector = asdfa.parseAllTokens(nodePath, ". ");
-//
-//   for (int i=0; i<tokenVector.size(); i++){
-//      cout<<tokenVector[i]<<" -> ";
-//   }
-//   cout<<endl;
 //
 ConsoleOptions testConsole;
 
@@ -337,7 +247,9 @@ cout << "Testing colours" << endl;
    system("PAUSE");
    system ("CLS");
 
-   for (int i = 0)
+   for (int i = 0; i < screenTest.testVector.size(); i++){
+      cout<< screenTest.testVector[i] <<endl;
+   }
 
 
    testConsole.cursorOptions.changeCursorPos(0, 54);

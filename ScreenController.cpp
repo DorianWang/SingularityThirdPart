@@ -148,7 +148,7 @@ void ScreenControl::outputFormattedLines (screenOutputData* temp)
 
    for (int i = 0; i < temp -> screenData.size(); i++){
 
-      testVector.push_back(temp -> screenData[i].output);
+
 
       std::vector <std::string> tempStrings = stringFunctions.parseAllTokens(temp -> screenData[i].output, "^");
 
@@ -156,19 +156,21 @@ void ScreenControl::outputFormattedLines (screenOutputData* temp)
                                                          temp -> smallY + temp -> screenData[i].yPos);
       newConsoleOptions.cursorOptions.setColour( defaultTextColour, defaultBackColour);
 
-      for (int i = 0; i < tempStrings.size(); i++){
-         if (tempStrings[i].size() < 2){
+      for (int j = 0; j < tempStrings.size(); j++){
+         if (tempStrings[j].size() < 2){
             continue;
          }
 
-         if ( temp -> screenData[i].output[0] != '^' && i == 0){
-            cout << tempStrings[i];
+         if ( temp -> screenData[i].output[0] != '^' && j == 0){
+            cout << tempStrings[j];
+            testVector.push_back(tempStrings[j]);
             continue;
          }
-         newConsoleOptions.cursorOptions.setColour( newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(0)),
-                                       newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[i].at(1)));
-         cout << tempStrings[i].substr (2);
+         newConsoleOptions.cursorOptions.setColour( newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[j].at(0)),
+                                       newConsoleOptions.cursorOptions.letterCodeToColourInt(tempStrings[j].at(1)));
+         cout << tempStrings[j].substr (2);
          //Do colour stuff, then output.
+         testVector.push_back(tempStrings[j].substr (2));
       }
       newConsoleOptions.cursorOptions.setColour( defaultTextColour, defaultBackColour);
    }
