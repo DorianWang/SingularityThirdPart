@@ -225,7 +225,8 @@ delete newInstruct;
 
 }
 
-cout << screenTest.outputScreen(0) <<endl;
+
+screenTest.outputScreen(0);
 
 cout << "---" << endl;
 
