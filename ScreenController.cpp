@@ -97,6 +97,8 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
       instructDataOut tempInstruct;
       tempScreen -> instructionsPercentDouble[i] -> dataOutGet = true;
 
+      cout << tempScreen -> instructionsPercentDouble[i] -> instructionText << endl;
+
       tempInstruct.macroInstruct = tempScreen -> instructionsPercentDouble[i] -> dataOutName;
       tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsPercentDouble[i] -> dataOut);
 

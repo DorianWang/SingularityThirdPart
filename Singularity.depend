@@ -1256,7 +1256,7 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1423059830 source:d:\github\singularitythirdpart\main.cpp
+1423153018 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1329,7 +1329,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1422981514 source:d:\github\singularitythirdpart\screens.cpp
+1423152887 source:d:\github\singularitythirdpart\screens.cpp
 	"Screens.h"
 
 1414509762 source:d:\github\singularitythirdpart\screensswitch.cpp
@@ -1618,10 +1618,10 @@
 1422891863 d:\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1423061448 source:d:\github\singularitythirdpart\screencontroller.cpp
+1423149939 source:d:\github\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
-1423059830 d:\github\singularitythirdpart\screencontroller.h
+1423063104 d:\github\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"

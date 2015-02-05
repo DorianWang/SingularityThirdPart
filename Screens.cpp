@@ -148,6 +148,7 @@ bool ScreenType::createInstruction(std::string instructionText)
 
    //Percent, for formatted output. 99.9%, <0.01%, etc.
    if (tokenStr == "PCT"){
+      system ("PAUSE");
       screenInstruct <double>* tempInstruct = new screenInstruct <double>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
@@ -332,7 +333,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsString.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsString[i] -> instructionText, 'i', instructionsString[i] -> dataOut);
+                        instructionsString[i] -> instructionText, 's', instructionsString[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsString[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsString[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -342,7 +343,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsDouble.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsDouble[i] -> instructionText, 'i', instructionsDouble[i] -> dataOut);
+                        instructionsDouble[i] -> instructionText, 'd', instructionsDouble[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsDouble[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsDouble[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -352,7 +353,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsShortInt.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsShortInt[i] -> instructionText, 'i', instructionsShortInt[i] -> dataOut);
+                        instructionsShortInt[i] -> instructionText, 'o', instructionsShortInt[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsShortInt[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsShortInt[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);
@@ -362,7 +363,7 @@ screenOutputData* ScreenType::redraw()
    for (int i = 0; i < instructionsPercentDouble.size(); i++ ){
       cleanedInstruct tempCleanInstruct;
       tempCleanInstruct.output = parseInstruct(
-                        instructionsPercentDouble[i] -> instructionText, 'i', instructionsPercentDouble[i] -> dataOut);
+                        instructionsPercentDouble[i] -> instructionText, 'p', instructionsPercentDouble[i] -> dataOut);
       tempCleanInstruct.xPos = instructionsPercentDouble[i] -> Xpos;
       tempCleanInstruct.yPos = instructionsPercentDouble[i] -> Ypos;
       tempData -> screenData.push_back(tempCleanInstruct);

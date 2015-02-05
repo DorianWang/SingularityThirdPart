@@ -177,6 +177,8 @@ ScreenControl screenTest;
 
 
 screenTest.makeNewScreen("screenTest", "Screens");
+cout <<screenTest.makeNewScreen("screenTest2", "Screens")<< endl;
+   system("PAUSE");
 
 ScreenControl testScreen;
 std::string qpow = "This is a @.";
@@ -195,6 +197,8 @@ cout << "---" << endl;
 std::string testingMacroString = "Asdf!";
 short testShort = 20;
 int health = 100;
+double worthMe = 0.98423;
+
 while (true){
 
 
@@ -217,6 +221,11 @@ else if (newInstruct -> macroInstruct == "HEALTH"){
    int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
    *tempPointer = &health;
 }
+else if (newInstruct -> macroInstruct == "WORTH"){
+   double ** tempPointer = (double **)(newInstruct -> variablePointerPointer);
+   *tempPointer = &worthMe;
+}
+
 else{
    cout << "whut?" << endl;
 }
@@ -248,9 +257,7 @@ cout << "Testing colours" << endl;
    system("PAUSE");
    system ("CLS");
 
-   for (int i = 0; i < screenTest.testVector.size(); i++){
-      cout<< screenTest.testVector[i] <<endl;
-   }
+screenTest.outputScreen(1);
 
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
