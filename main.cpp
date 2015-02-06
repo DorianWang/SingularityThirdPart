@@ -239,11 +239,9 @@ screenTest.outputScreen(0);
 
 cout << "---" << endl;
 
-/*
-for (int i=0; i<tempVec.size(); i++){
-   cout << tempVec[i]<<endl;
-}
-*/
+
+
+
 
 double PI = 3.14159265359;
 
@@ -258,6 +256,10 @@ cout << "Testing colours" << endl;
    system ("CLS");
 
 screenTest.outputScreen(1);
+
+for (int i = 0; i < screenTest.testVector.size(); i++){
+   cout << screenTest.testVector[i]<<endl;
+}
 
 
    testConsole.cursorOptions.changeCursorPos(0, 54);

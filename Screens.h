@@ -79,6 +79,7 @@ std::vector <screenInstruct <void>* > instructionsVoid;
 
 bool isGood;
 
+std::vector <std::string> debugCodes;
 
 private:
 

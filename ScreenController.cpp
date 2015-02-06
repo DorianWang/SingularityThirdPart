@@ -50,6 +50,11 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
    }
    screenArray.push_back(tempScreen);
 
+   for (int i = 0; i< tempScreen -> debugCodes.size(); i++){
+      testVector.push_back(tempScreen -> debugCodes[i]);
+   }
+
+
 //Things to list of stuff
 //{
 

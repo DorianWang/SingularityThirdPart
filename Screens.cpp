@@ -91,6 +91,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       screenInstruct <int>* tempInstruct = new screenInstruct <int>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsInt.push_back(tempInstruct);
          return returnBool;
@@ -106,6 +107,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       screenInstruct <short>* tempInstruct = new screenInstruct <short>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsShortInt.push_back(tempInstruct);
          return returnBool;
@@ -121,6 +123,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       screenInstruct <std::string>* tempInstruct = new screenInstruct <std::string>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsString.push_back(tempInstruct);
          return returnBool;
@@ -136,6 +139,7 @@ bool ScreenType::createInstruction(std::string instructionText)
       screenInstruct <double>* tempInstruct = new screenInstruct <double>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsDouble.push_back(tempInstruct);
          return returnBool;
@@ -148,10 +152,10 @@ bool ScreenType::createInstruction(std::string instructionText)
 
    //Percent, for formatted output. 99.9%, <0.01%, etc.
    if (tokenStr == "PCT"){
-      system ("PAUSE");
       screenInstruct <double>* tempInstruct = new screenInstruct <double>;
 
       returnBool = tempInstruct -> parseInput(instructionText);
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsPercentDouble.push_back(tempInstruct);
          return returnBool;
@@ -166,7 +170,7 @@ bool ScreenType::createInstruction(std::string instructionText)
    if (tokenStr == "NUL"){
       screenInstruct <void>* tempInstruct = new screenInstruct <void>;
       returnBool = tempInstruct -> parseInput(instructionText);
-
+      //debugCodes.push_back(instructionText);
       if (returnBool){
          instructionsVoid.push_back(tempInstruct);
          return returnBool;
@@ -178,6 +182,7 @@ bool ScreenType::createInstruction(std::string instructionText)
 
    //Not a valid instruction.
    if (!(tokenStr == "INT" || tokenStr == "STR" || tokenStr != "DBL" || tokenStr != "PCT" || tokenStr != "NUL" || tokenStr != "ORT")){
+      //debugCodes.push_back("Failed to parse input!");
       return false;
    }
 }
