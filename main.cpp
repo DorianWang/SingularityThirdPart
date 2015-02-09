@@ -46,14 +46,7 @@ char f;
 };
 
 #include "Bases.h"
-//#include "ConsoleOptions.h"
-//#include "Screens.h"
-//#include "stringFunctions.h"
 
-//#include "treeType.h"
-//#include "functionChecker.h"
-
-//#include "binaryTree.h"
 
 #include "libraryIncluder.h"
 
@@ -86,6 +79,8 @@ int temp = *a;
 int main(int argc, char *argv[])
 {
     srand (time(NULL));
+
+
     //cout<<asdfgh<<qwe<<asdfgh<<qwe<<endl;
     //cout<<asdfgh<<asdfgh<<qwe<<asdfgh<<qwe<<endl;
     //219 -> 178 -> 177 -> 176 -> 43
@@ -107,13 +102,8 @@ int main(int argc, char *argv[])
 //   myFile.readLine(&them);
 //   cout<<them<<endl;
 
-   Keypress KeyIn;
-   //short a = 0;
 
-      if(KeyIn.get_code(4)){
-         cout<<"One!"<<" ";
-      }
-      //Nothing is 0, true is -127/65408, and toggled is 1, (toggled and down is 65409/-128)
+   //Nothing is 0, true is -127/65408, and toggled is 1, (toggled and down is 65409/-128)
 
    /*
    COptions Ebeko;
@@ -178,9 +168,9 @@ ScreenControl screenTest;
 
 screenTest.makeNewScreen("screenTest", "Screens");
 cout <<screenTest.makeNewScreen("screenTest2", "Screens")<< endl;
-   system("PAUSE");
+system("PAUSE");
 
-ScreenControl testScreen;
+
 std::string qpow = "This is a @.";
 double testDouble = 0.1;
 
@@ -191,7 +181,6 @@ std::string testingStringInsert = stringTest.insertStringIntoString("Hellohoifea
 cout <<endl;
 
 cout << "---" << endl;
-
 
 
 std::string testingMacroString = "Asdf!";
@@ -233,13 +222,13 @@ else{
 delete newInstruct;
 
 }
-
+//Things good here
 
 screenTest.outputScreen(0);
 
+//Not good by here...
+
 cout << "---" << endl;
-
-
 
 
 
@@ -257,10 +246,11 @@ cout << "Testing colours" << endl;
 
 screenTest.outputScreen(1);
 
+/*
 for (int i = 0; i < screenTest.testVector.size(); i++){
    cout << screenTest.testVector[i]<<endl;
 }
-
+*/
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
    cout<<"I'm done!"<<endl;

@@ -102,8 +102,6 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
       instructDataOut tempInstruct;
       tempScreen -> instructionsPercentDouble[i] -> dataOutGet = true;
 
-      cout << tempScreen -> instructionsPercentDouble[i] -> instructionText << endl;
-
       tempInstruct.macroInstruct = tempScreen -> instructionsPercentDouble[i] -> dataOutName;
       tempInstruct.variablePointerPointer = (void*) &(tempScreen -> instructionsPercentDouble[i] -> dataOut);
 
@@ -132,6 +130,7 @@ int ScreenControl::getScreenIndex(std::string screenNameSearch)
 
 bool ScreenControl::outputScreen(int screenIndex)
 {
+
    //If the input cannot be in the array, return false.
    if (screenArray.size() <= screenIndex || screenIndex < 0){
       return false;
@@ -141,9 +140,7 @@ bool ScreenControl::outputScreen(int screenIndex)
    screenOutputData* temp = screenArray[screenIndex] -> redraw();
 
    //Temporary output code;
-
    outputFormattedLines(temp);
-
 
 return true;
 }
@@ -153,18 +150,18 @@ void ScreenControl::outputFormattedLines (screenOutputData* temp)
    ConsoleOptions newConsoleOptions;
    stringFunc stringFunctions;
 
-   for (int i = 0; i < temp -> screenData.size(); i++){
-
-
+   int counter = (temp -> screenData.size());
+   for (int i = 0; i < counter; i++){
 
       std::vector <std::string> tempStrings = stringFunctions.parseAllTokens(temp -> screenData[i].output, "^");
 
       newConsoleOptions.cursorOptions.changeCursorPos(temp -> smallX + temp -> screenData[i].xPos,
-                                                         temp -> smallY + temp -> screenData[i].yPos);
+                                                        temp -> smallY + temp -> screenData[i].yPos);
       newConsoleOptions.cursorOptions.setColour( defaultTextColour, defaultBackColour);
 
+
       for (int j = 0; j < tempStrings.size(); j++){
-         if (tempStrings[j].size() < 2){
+         if (tempStrings[j].size() <= 2){
             continue;
          }
 
@@ -178,6 +175,7 @@ void ScreenControl::outputFormattedLines (screenOutputData* temp)
          cout << tempStrings[j].substr (2);
          //Do colour stuff, then output.
          testVector.push_back(tempStrings[j].substr (2));
+
       }
       newConsoleOptions.cursorOptions.setColour( defaultTextColour, defaultBackColour);
    }
