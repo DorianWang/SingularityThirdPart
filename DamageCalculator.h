@@ -1,0 +1,8 @@
+#ifndef DAMAGECALULATOR_H_INCLUDED
+#define DAMAGECALULATOR_H_INCLUDED
+
+#include "DamageTypes.h"
+
+
+
+#endif // DAMAGECALULATOR_H_INCLUDED

@@ -3,7 +3,7 @@
 #define NPC_H
 
 
-struct stats
+struct baseStats
 {
 //I need to add a function that controls changes to prevent any funny stuff.
    unsigned short intelligence;
@@ -13,8 +13,6 @@ struct stats
    unsigned short agility;
    unsigned short endurance;
 
-   unsigned short tempOne;
-   unsigned short tempTwo;
 
    unsigned char magicKnowledge;
    unsigned char techKnowledge;
@@ -25,8 +23,12 @@ struct stats
    int baseHealth;
    int baseMana;
 
-   int unassignedOne;
-   int unassignedTwo;
+};
+
+struct learnedSkills
+{
+   int swordSkill;
+   int
 
 };
 
