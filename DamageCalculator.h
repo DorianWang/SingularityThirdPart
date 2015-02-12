@@ -3,6 +3,11 @@
 
 #include "DamageTypes.h"
 
+#define DAMAGE_
+
+
+
+
 
 
 #endif // DAMAGECALULATOR_H_INCLUDED
