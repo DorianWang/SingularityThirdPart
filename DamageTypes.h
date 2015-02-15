@@ -3,7 +3,6 @@
 
 
 
-
 struct resistanceTypes
 {
    short magicResist;
@@ -28,10 +27,27 @@ struct resistanceTypes
 
 };
 
+struct magicDamage
+{
+   int arcanePower;
+   int elementalPower;
+};
 
+struct physicalDamage
+{
+   int stabPower;
+   int slashPower;
+   int crushPower;
+   int poisonPower;
+   int DOTPower;
+};
 
-
-
+struct damagePacket
+{
+   magicDamage magical;
+   int pure;
+   physicalDamage physical;
+};
 
 
 
