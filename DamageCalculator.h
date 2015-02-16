@@ -16,6 +16,8 @@
 #define MAGIC_CONST_THRESHOLD
 //Void damage has no threshold.
 
+#define ARMOUR_MAX_PERCENT_RESIST 100.0
+
 #define ARMOUR_STAB 80
 #define ARMOUR_SLASH 100
 #define ARMOUR_CRUSH 60
@@ -32,13 +34,17 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
    return round();
 }
 
-
+//By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0).
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
 {
    double tempResist = ARMOUR_CONST_HALF/(ARMOUR_CONST_HALF + inputResistances.physicalResist);
    double tempOutput;
-   tempOutput += inputDamage.crushPower *
 
+   //Crushing damage.
+   tempOutput += inputDamage.crushPower * ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST * (ARMOUR_MAX_PERCENT_RESIST - crushResist)/ARMOUR_MAX_PERCENT_RESIST ;
+
+   //Slashing damage.
+   tempOutput += inputDamage.slashResist * ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST * (ARMOUR_MAX_PERCENT_RESIST - slashResist)/ARMOUR_MAX_PERCENT_RESIST ;
 }
 
 
