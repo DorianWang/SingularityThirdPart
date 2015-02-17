@@ -7,9 +7,9 @@
 
 #define MAGIC_BREAKPOINT_ZERO 0
 
-#define ARMOUR_CONST_HALF 50.0
-#define MAGIC_CONST_HALF 50.0
-#define VOID_CONST_HALF 100.0
+#define ARMOUR_CONST_HALF 100.0
+#define MAGIC_CONST_HALF 100.0
+#define VOID_CONST_HALF 200.0
 
 //TODO:
 #define ARMOUR_CONST_THRESHOLD
@@ -38,17 +38,34 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
 {
    double tempResist = ARMOUR_CONST_HALF/(ARMOUR_CONST_HALF + inputResistances.physicalResist);
-   double tempOutput;
+   double tempOutput = 0.000000;
 
    //Crushing damage.
-   tempOutput += inputDamage.crushPower * ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST * (ARMOUR_MAX_PERCENT_RESIST - crushResist)/ARMOUR_MAX_PERCENT_RESIST ;
+   tempOutput += inputDamage.crushPower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
    //Slashing damage.
-   tempOutput += inputDamage.slashResist * ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST * (ARMOUR_MAX_PERCENT_RESIST - slashResist)/ARMOUR_MAX_PERCENT_RESIST ;
+   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
+
+   //Stabbing power.
+   tempOutput += inputDamage.stabPower * (ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.stabResist/ARMOUR_MAX_PERCENT_RESIST) ;
+
+   //Poison power. Poison tends to be rare, so it checks first.
+   if (inputDamage.poisonPower != 0){
+      tempOuput += inputDamage.poisonPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.poisonResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   }
+
+   //Other DOT power. Damage over time effects tend to be rare, so it checks first.
+   if (inputDamage.DOTPower != 0){
+      tempOuput += inputDamage.DOTPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.otherDOTResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   }
+
+   //Returns the total, modified by the base armour.
+   return tempResist * tempOutput;
 }
 
 
 //The calculation for magic resistance is done by percentage.
+//TODO:
 double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances)
 {
    double tempResist = MAGIC_CONST_HALF/(MAGIC_CONST_HALF + inputResistances.magicResist);
