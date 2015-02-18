@@ -24,6 +24,8 @@
 #define ARMOUR_POISON 10
 #define ARMOUR_DOT 20
 
+#define MAGIC_ARCANE_RESIST 100
+
 
 int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResistances)
 {
@@ -69,7 +71,18 @@ double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResis
 double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances)
 {
    double tempResist = MAGIC_CONST_HALF/(MAGIC_CONST_HALF + inputResistances.magicResist);
-   double tempOutput;
+   double tempOutput = 0.000000000;
+
+   //Crushing damage.
+   tempOutput += inputDamage.arcanePower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
+
+   //Slashing damage.
+   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
+
+
+   //Returns the total, modified by the base armour.
+   return tempResist * tempOutput;
+
 }
 
 
