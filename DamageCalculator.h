@@ -25,40 +25,44 @@
 #define ARMOUR_DOT 20
 
 #define MAGIC_ARCANE_RESIST 100
+#define MAGIC_ELEMENTAL_RESIST 80
+
+double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
+double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 
 
 int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResistances)
 {
    double tempDamage;
    tempDamage += calculatePhysical(inputDamage.physical, inputResistances);
-   tempDamage += calculatePhysical(inputDamage.magical, inputResistances);
-   tempDamage += inputDamage.pure * VOID_CONST_HALF/(VOID_CONST_HALF + inputResistances.voidResist);
-   return round();
+   tempDamage += calculateMagical(inputDamage.magical, inputResistances);
+   tempDamage += inputDamage.pure * VOID_CONST_HALF/(VOID_CONST_HALF + inputResistances -> voidResist);
+   return round(tempDamage);
 }
 
 //By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0).
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
 {
-   double tempResist = ARMOUR_CONST_HALF/(ARMOUR_CONST_HALF + inputResistances.physicalResist);
+   double tempResist = ARMOUR_CONST_HALF/(ARMOUR_CONST_HALF + inputResistances -> physicalResist);
    double tempOutput = 0.000000;
 
    //Crushing damage.
-   tempOutput += inputDamage.crushPower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += inputDamage.crushPower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
    //Slashing damage.
-   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
    //Stabbing power.
-   tempOutput += inputDamage.stabPower * (ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.stabResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += inputDamage.stabPower * (ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> stabResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
    //Poison power. Poison tends to be rare, so it checks first.
    if (inputDamage.poisonPower != 0){
-      tempOuput += inputDamage.poisonPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.poisonResist/ARMOUR_MAX_PERCENT_RESIST) ;
+      tempOutput += inputDamage.poisonPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> poisonResist/ARMOUR_MAX_PERCENT_RESIST) ;
    }
 
    //Other DOT power. Damage over time effects tend to be rare, so it checks first.
    if (inputDamage.DOTPower != 0){
-      tempOuput += inputDamage.DOTPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.otherDOTResist/ARMOUR_MAX_PERCENT_RESIST) ;
+      tempOutput += inputDamage.DOTPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> otherDOTResist/ARMOUR_MAX_PERCENT_RESIST) ;
    }
 
    //Returns the total, modified by the base armour.
@@ -70,19 +74,17 @@ double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResis
 //TODO:
 double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances)
 {
-   double tempResist = MAGIC_CONST_HALF/(MAGIC_CONST_HALF + inputResistances.magicResist);
-   double tempOutput = 0.000000000;
+   double tempResist = MAGIC_CONST_HALF/(MAGIC_CONST_HALF + inputResistances -> magicResist);
+   double tempOutput = 0.000000;
 
-   //Crushing damage.
-   tempOutput += inputDamage.arcanePower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   //Arcane damage.
+   tempOutput += inputDamage.arcanePower * (MAGIC_ARCANE_RESIST / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> arcaneResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
-   //Slashing damage.
-   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances.slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   //Elemental damage.
+   tempOutput += inputDamage.elementalPower * (MAGIC_ELEMENTAL_RESIST / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> elementalMagicResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
-
-   //Returns the total, modified by the base armour.
+   //Returns the total, modified by the base resistance.
    return tempResist * tempOutput;
-
 }
 
 

@@ -28,7 +28,7 @@ struct baseStats
 struct learnedSkills
 {
    int swordSkill;
-   int
+   int TODO;
 
 };
 
@@ -60,7 +60,7 @@ public:
    bool isHostile;//If it is not hostile, it will not attack first.
    //equipmentContainer equipItems;
    std::vector <short> unassignedVars;
-   stats thisStats;
+   baseStats thisStats;
 
 
 };

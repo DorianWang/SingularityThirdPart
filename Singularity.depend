@@ -955,7 +955,7 @@
 
 1414429568 d:\doriancode\singularitythirdpart\interactive.h
 
-1414429568 d:\doriancode\singularitythirdpart\npc.h
+1424449939 d:\doriancode\singularitythirdpart\npc.h
 
 1414429568 d:\doriancode\singularitythirdpart\effects.h
 
@@ -986,7 +986,7 @@
 1423064175 source:d:\doriancode\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1422972426 d:\doriancode\singularitythirdpart\screens.h
+1424355736 d:\doriancode\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1034,7 +1034,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1423066423 source:d:\doriancode\singularitythirdpart\main.cpp
+1424355736 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1634,4 +1634,13 @@
 	<cstdio>
 	<string.h>
 	<cstdarg>
+
+1424355736 source:d:\doriancode\singularitythirdpart\damagecalculator.cpp
+	"DamageCalculator.h"
+
+1424449913 d:\doriancode\singularitythirdpart\damagecalculator.h
+	"DamageTypes.h"
+	<cmath>
+
+1424355736 d:\doriancode\singularitythirdpart\damagetypes.h
 
