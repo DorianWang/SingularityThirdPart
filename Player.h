@@ -11,8 +11,10 @@
 class playerChar : public fightingChar
 {
 
-int baseCarryingCapacity;
+   int baseCarryingCapacity;
 
+   unsigned char magicKnowledge;
+   unsigned char techKnowledge;
 
 
 

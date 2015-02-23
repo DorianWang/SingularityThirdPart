@@ -3,7 +3,7 @@
 #define NPC_H
 
 
-struct baseStats
+class baseStats
 {
 //I need to add a function that controls changes to prevent any funny stuff.
    unsigned short intelligence;
@@ -13,15 +13,21 @@ struct baseStats
    unsigned short agility;
    unsigned short endurance;
 
-
-   unsigned char magicKnowledge;
-   unsigned char techKnowledge;
-
-   char basePhysicalResistance;
-   char baseMagicResistance;
+   resistanceTypes resistance;
 
    int baseHealth;
    int baseMana;
+
+public:
+   unsigned short getInt(){ return intelligence; }
+   unsigned short getWis(){ return wisdom; }
+   unsigned short getCha(){ return charisma; }
+   unsigned short getStr(){ return strength; }
+   unsigned short getAgi(){ return agility; }
+   unsigned short getEnd(){ return endurance; }
+
+
+
 
 };
 
