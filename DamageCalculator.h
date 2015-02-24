@@ -12,6 +12,7 @@
 #define VOID_CONST_HALF 200.0
 
 //TODO:
+//These are a ratio of the armour or magic resistance which directly reduces damage.
 #define ARMOUR_CONST_THRESHOLD
 #define MAGIC_CONST_THRESHOLD
 //Void damage has no threshold.

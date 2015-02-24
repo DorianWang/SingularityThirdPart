@@ -22,9 +22,6 @@
 		<Unit filename="Bases.h">
 			<Option virtualFolder="SecondGameStuff/Bases/" />
 		</Unit>
-		<Unit filename="DamageCalculator.cpp">
-			<Option virtualFolder="FirstGameStuff/DamageStuff/" />
-		</Unit>
 		<Unit filename="DamageCalculator.h">
 			<Option virtualFolder="FirstGameStuff/DamageStuff/" />
 		</Unit>

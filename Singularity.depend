@@ -1381,7 +1381,7 @@
 
 1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1423452879 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1423453185 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1517,7 +1517,8 @@
 
 1414621697 d:\dorian's programs\singularitythirdpart\interactive.h
 
-1414621697 d:\dorian's programs\singularitythirdpart\npc.h
+1424739445 d:\dorian's programs\singularitythirdpart\npc.h
+	"DamageCalculator.h"
 
 1414621697 d:\dorian's programs\singularitythirdpart\effects.h
 
@@ -1528,7 +1529,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1423452695 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+1423453150 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
 1423179493 d:\dorian's programs\singularitythirdpart\screencontroller.h
@@ -1643,4 +1644,13 @@
 	<cmath>
 
 1424355736 d:\doriancode\singularitythirdpart\damagetypes.h
+
+1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
+	"DamageCalculator.h"
+
+1424533269 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+	"DamageTypes.h"
+	<cmath>
+
+1423972277 d:\dorian's programs\singularitythirdpart\damagetypes.h
 
