@@ -1,6 +1,6 @@
 
-
-
+#ifndef DAMAGE_TYPES_H
+#define DAMAGE_TYPES_H
 
 
 struct resistanceTypes
@@ -44,9 +44,9 @@ struct physicalDamage
 
 struct damagePacket
 {
+   physicalDamage physical;
    magicDamage magical;
    int pure;
-   physicalDamage physical;
 };
 
 
@@ -54,7 +54,7 @@ struct damagePacket
 
 
 
-
+#endif
 
 
 

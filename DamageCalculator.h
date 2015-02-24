@@ -13,8 +13,8 @@
 
 //TODO:
 //These are a ratio of the armour or magic resistance which directly reduces damage.
-#define ARMOUR_CONST_THRESHOLD
-#define MAGIC_CONST_THRESHOLD
+#define ARMOUR_CONST_THRESHOLD 0.125 // 1/8
+#define MAGIC_CONST_THRESHOLD 0.125 // 1/8
 //Void damage has no threshold.
 
 #define ARMOUR_MAX_PERCENT_RESIST 100.0
@@ -67,7 +67,13 @@ double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResis
    }
 
    //Returns the total, modified by the base armour.
-   return tempResist * tempOutput;
+   tempOutput = tempResist * tempOutput;
+
+   if (tempOutput > ARMOUR_CONST_THRESHOLD * inputResistances -> physicalResist){
+      return tempOutput - ARMOUR_CONST_THRESHOLD * inputResistances -> physicalResist;
+   }
+   return 0.00000000;
+
 }
 
 
@@ -85,7 +91,10 @@ double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistanc
    tempOutput += inputDamage.elementalPower * (MAGIC_ELEMENTAL_RESIST / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> elementalMagicResist/ARMOUR_MAX_PERCENT_RESIST) ;
 
    //Returns the total, modified by the base resistance.
-   return tempResist * tempOutput;
+   if (tempOutput > MAGIC_CONST_THRESHOLD * inputResistances -> magicResist){
+      return tempOutput - MAGIC_CONST_THRESHOLD * inputResistances -> magicResist;
+   }
+   return 0.00000000;
 }
 
 

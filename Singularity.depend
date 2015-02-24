@@ -1256,7 +1256,7 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1423153018 source:d:\github\singularitythirdpart\main.cpp
+1423496183 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1303,8 +1303,7 @@
 	<string.h>
 	<cstdarg>
 
-1422891863 source:d:\github\singularitythirdpart\map.cpp
-	"Map.h"
+1424790444 source:d:\github\singularitythirdpart\map.cpp
 
 1422891863 d:\github\singularitythirdpart\map.h
 	"Locations.h"
@@ -1318,7 +1317,8 @@
 
 1422891862 d:\github\singularitythirdpart\interactive.h
 
-1422891863 d:\github\singularitythirdpart\npc.h
+1424786666 d:\github\singularitythirdpart\npc.h
+	"DamageCalculator.h"
 
 1422891862 d:\github\singularitythirdpart\effects.h
 
@@ -1329,7 +1329,7 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1423233905 source:d:\github\singularitythirdpart\screens.cpp
+1423235114 source:d:\github\singularitythirdpart\screens.cpp
 	"Screens.h"
 
 1414509762 source:d:\github\singularitythirdpart\screensswitch.cpp
@@ -1619,7 +1619,7 @@
 1422891863 d:\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1423233965 source:d:\github\singularitythirdpart\screencontroller.cpp
+1423496183 source:d:\github\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 
 1423063104 d:\github\singularitythirdpart\screencontroller.h
@@ -1653,4 +1653,10 @@
 	<cmath>
 
 1423972277 d:\dorian's programs\singularitythirdpart\damagetypes.h
+
+1424788321 d:\github\singularitythirdpart\damagecalculator.h
+	"DamageTypes.h"
+	<cmath>
+
+1424790480 d:\github\singularitythirdpart\damagetypes.h
 
