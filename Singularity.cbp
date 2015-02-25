@@ -5,7 +5,7 @@
 		<Option title="Singularity" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Utilities\;Utilities\Screens\;SecondGameStuff\;SecondGameStuff\Bases\;FirstGameStuff\Items\;FirstGameStuff\map\;FirstGameStuff\;Depreciated\;_Main\;FirstGameStuff\Items\InventorySorter\;FirstGameStuff\DamageStuff\;FirstGameStuff\Player\;" />
+		<Option virtualFolders="Utilities\;Utilities\Screens\;SecondGameStuff\;SecondGameStuff\Bases\;FirstGameStuff\map\;FirstGameStuff\;Depreciated\;_Main\;FirstGameStuff\GameObjects\;FirstGameStuff\GameObjects\Player\;FirstGameStuff\GameObjects\Items\;FirstGameStuff\GameObjects\DamageStuff\;FirstGameStuff\GameObjects\Items\InventorySorter\;" />
 		<Build>
 			<Target title="default">
 				<Option output="Singularity" prefix_auto="1" extension_auto="1" />
@@ -22,11 +22,14 @@
 		<Unit filename="Bases.h">
 			<Option virtualFolder="SecondGameStuff/Bases/" />
 		</Unit>
+		<Unit filename="CharacterThings.h">
+			<Option virtualFolder="FirstGameStuff/GameObjects/" />
+		</Unit>
 		<Unit filename="DamageCalculator.h">
-			<Option virtualFolder="FirstGameStuff/DamageStuff/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/DamageStuff/" />
 		</Unit>
 		<Unit filename="DamageTypes.h">
-			<Option virtualFolder="FirstGameStuff/DamageStuff/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/DamageStuff/" />
 		</Unit>
 		<Unit filename="Depreciated.inl">
 			<Option virtualFolder="Depreciated/" />
@@ -38,31 +41,31 @@
 			<Option virtualFolder="FirstGameStuff/map/" />
 		</Unit>
 		<Unit filename="Inventory.cpp">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="ItemDeclaration.h">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="ItemFileIO.cpp">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="ItemStruct.h">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="Items.cpp">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="Items.h">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="Locations.h">
 			<Option virtualFolder="FirstGameStuff/map/" />
 		</Unit>
 		<Unit filename="LootDrop.cpp">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="LootDrop.h">
-			<Option virtualFolder="FirstGameStuff/Items/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/" />
 		</Unit>
 		<Unit filename="Map.cpp">
 			<Option virtualFolder="FirstGameStuff/map/" />
@@ -80,7 +83,7 @@
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
 		<Unit filename="Player.h">
-			<Option virtualFolder="FirstGameStuff/Player/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Player/" />
 		</Unit>
 		<Unit filename="ScreenController.cpp">
 			<Option virtualFolder="Utilities/Screens/" />
@@ -110,7 +113,7 @@
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
 		<Unit filename="inventorySorter.cpp">
-			<Option virtualFolder="FirstGameStuff/Items/InventorySorter/" />
+			<Option virtualFolder="FirstGameStuff/GameObjects/Items/InventorySorter/" />
 		</Unit>
 		<Unit filename="libraryIncluder.h">
 			<Option virtualFolder="Utilities/" />

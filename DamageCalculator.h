@@ -28,6 +28,10 @@
 #define MAGIC_ARCANE_RESIST 100
 #define MAGIC_ELEMENTAL_RESIST 80
 
+
+//Defence calculations
+//{
+
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
 double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 
@@ -40,6 +44,7 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
    tempDamage += inputDamage.pure * VOID_CONST_HALF/(VOID_CONST_HALF + inputResistances -> voidResist);
    return round(tempDamage);
 }
+
 
 //By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0).
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
@@ -97,9 +102,65 @@ double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistanc
    return 0.00000000;
 }
 
+//}
+
+
+
+//Attack calculations
+//{
+
+
+struct statScaling
+{
+   int statNum; double scaling;
+};
+
+struct attackScaling
+{
+   std::vector <statScaling> arcaneScaling;
+   std::vector <statScaling> elementalScaling;
+
+   std::vector <statScaling> stabScaling;
+   std::vector <statScaling> slashScaling;
+   std::vector <statScaling> crushScaling;
+   std::vector <statScaling> poisonScaling;
+   std::vector <statScaling> DOTScaling;
+
+   std::vector <statScaling> voidScaling;
+};
+
+struct attackType
+{
+   std::string name;
+   attackScaling scaling;
+   //Add a costType later.
+   //costType cost;
+   double baseDamage;
+};
+
+
+
+//}
+
+
 
 
 #endif // DAMAGECALULATOR_H_INCLUDED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

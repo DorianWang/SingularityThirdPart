@@ -23,8 +23,6 @@ struct resistanceTypes
    short poisonResist;
    short otherDOTResist;//Burning, freezing, etc.
 
-
-
 };
 
 struct magicDamage
