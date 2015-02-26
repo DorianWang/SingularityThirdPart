@@ -87,7 +87,7 @@ struct learnedSkills
 
    short biology;
    short crystallography;
-   short geology
+   short geology;
    //TODO:
 
    short sneak;

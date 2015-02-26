@@ -135,7 +135,7 @@ struct attackType
    attackScaling scaling;
    //Add a costType later.
    //costType cost;
-   double baseDamage;
+   damagePacket baseDamage;
 };
 
 
