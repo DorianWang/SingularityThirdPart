@@ -87,7 +87,7 @@ struct learnedSkills
 
    short biology; //All biology knowledge.
    short crystallography; //All crystal knowledge, improves chance of finding them, their sell value, and their efficacy.
-   short geology;
+   short geology; //All rock
    short chemistry;
 
    short botany;
