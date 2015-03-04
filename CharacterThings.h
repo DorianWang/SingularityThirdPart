@@ -1,6 +1,8 @@
 #ifndef CHARACTERTHINGS_H_INCLUDED
 #define CHARACTERTHINGS_H_INCLUDED
 
+#define MAX_STAT 200
+
 
 class baseStats
 {
@@ -30,12 +32,12 @@ public:
    unsigned short getEnd(){ return endurance; }
 
    //Sets the value of the selected stat
-   bool getInt(unsigned short setInput){ if( setInput < MAX_STAT ){ intelligence = MAX_STAT; return true;} return false; }
-   bool getWis(unsigned short setInput){ if( setInput < MAX_STAT ){ wisdom = MAX_STAT; return true;} return false; }
-   bool getCha(unsigned short setInput){ if( setInput < MAX_STAT ){ charisma = MAX_STAT; return true;} return false; }
-   bool getStr(unsigned short setInput){ if( setInput < MAX_STAT ){ strength = MAX_STAT; return true;} return false; }
-   bool getAgi(unsigned short setInput){ if( setInput < MAX_STAT ){ agility = MAX_STAT; return true;} return false; }
-   bool getEnd(unsigned short setInput){ if( setInput < MAX_STAT ){ endurance = MAX_STAT; return true;} return false; }
+   bool setInt(unsigned short setInput){ if( setInput < MAX_STAT ){ intelligence = MAX_STAT; return true;} return false; }
+   bool setWis(unsigned short setInput){ if( setInput < MAX_STAT ){ wisdom = MAX_STAT; return true;} return false; }
+   bool setCha(unsigned short setInput){ if( setInput < MAX_STAT ){ charisma = MAX_STAT; return true;} return false; }
+   bool setStr(unsigned short setInput){ if( setInput < MAX_STAT ){ strength = MAX_STAT; return true;} return false; }
+   bool setAgi(unsigned short setInput){ if( setInput < MAX_STAT ){ agility = MAX_STAT; return true;} return false; }
+   bool setEnd(unsigned short setInput){ if( setInput < MAX_STAT ){ endurance = MAX_STAT; return true;} return false; }
 
    //Increments by the input value.
    bool incrInt(short setInput){ if( setInput + intelligence < MAX_STAT ){ intelligence = MAX_STAT; return true;} return false; }
@@ -48,7 +50,7 @@ public:
 
    //}
 
-};
+};;;
 
 
 //Note that skills can be negative...
@@ -88,13 +90,12 @@ struct learnedSkills
    short biology; //All biology knowledge.
    short crystallography; //All crystal knowledge, improves chance of finding them, their sell value, and their efficacy.
    short geology; //All rock
-   short chemistry;
+   short chemistry; //Used in making potions, chemicals, etc.
 
-   short botany;
+   short botany; //Used to identify useful plants, and do things with them.
    //TODO:
 
    short sneak;
-
 
 
    //Misc skills

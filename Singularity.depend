@@ -1502,8 +1502,7 @@
 	<cstdlib>
 	<iostream>
 
-1414621697 source:d:\dorian's programs\singularitythirdpart\map.cpp
-	"Map.h"
+1424816032 source:d:\dorian's programs\singularitythirdpart\map.cpp
 
 1414621697 d:\dorian's programs\singularitythirdpart\map.h
 	"Locations.h"
@@ -1517,8 +1516,9 @@
 
 1414621697 d:\dorian's programs\singularitythirdpart\interactive.h
 
-1424739445 d:\dorian's programs\singularitythirdpart\npc.h
+1424831068 d:\dorian's programs\singularitythirdpart\npc.h
 	"DamageCalculator.h"
+	"CharacterThings.h"
 
 1414621697 d:\dorian's programs\singularitythirdpart\effects.h
 
@@ -1648,15 +1648,17 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1424533269 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1424985943 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 
-1423972277 d:\dorian's programs\singularitythirdpart\damagetypes.h
+1424816404 d:\dorian's programs\singularitythirdpart\damagetypes.h
 
 1424788321 d:\github\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 
 1424790480 d:\github\singularitythirdpart\damagetypes.h
+
+1425430491 d:\dorian's programs\singularitythirdpart\characterthings.h
 
