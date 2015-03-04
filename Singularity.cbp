@@ -16,6 +16,9 @@
 		<Linker>
 			<Add library="gdi32" />
 		</Linker>
+		<Unit filename="AttackReader.h">
+			<Option virtualFolder="FirstGameStuff/GameObjects/DamageStuff/" />
+		</Unit>
 		<Unit filename="Bases.cpp">
 			<Option virtualFolder="SecondGameStuff/Bases/" />
 		</Unit>

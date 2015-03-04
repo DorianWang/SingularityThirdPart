@@ -28,23 +28,15 @@
 #define MAGIC_ARCANE_RESIST 100
 #define MAGIC_ELEMENTAL_RESIST 80
 
+class damageCalculator{
+};
+
 
 //Defence calculations
 //{
 
-double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
-double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
-
-
-int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResistances)
-{
-   double tempDamage;
-   tempDamage += calculatePhysical(inputDamage.physical, inputResistances);
-   tempDamage += calculateMagical(inputDamage.magical, inputResistances);
-   tempDamage += inputDamage.pure * VOID_CONST_HALF/(VOID_CONST_HALF + inputResistances -> voidResist);
-   return round(tempDamage);
-}
-
+//double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
+//double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 
 //By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0).
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
@@ -101,6 +93,19 @@ double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistanc
    }
    return 0.00000000;
 }
+
+
+
+int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResistances)
+{
+   double tempDamage;
+   tempDamage += calculatePhysical(inputDamage.physical, inputResistances);
+   tempDamage += calculateMagical(inputDamage.magical, inputResistances);
+   tempDamage += inputDamage.pure * VOID_CONST_HALF/(VOID_CONST_HALF + inputResistances -> voidResist);
+   return round(tempDamage);
+}
+
+
 
 //}
 
