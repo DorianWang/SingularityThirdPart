@@ -28,7 +28,7 @@
 #define MAGIC_ARCANE_RESIST 100
 #define MAGIC_ELEMENTAL_RESIST 80
 
-class damageCalculator{
+class defenceCalculator{
 
 
 //Defence calculations
@@ -107,12 +107,6 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
 
 
 //}
-
-
-
-
-
-
 
 
 };
