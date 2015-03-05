@@ -29,7 +29,6 @@
 #define MAGIC_ELEMENTAL_RESIST 80
 
 class damageCalculator{
-};
 
 
 //Defence calculations
@@ -108,6 +107,17 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
 
 
 //}
+
+
+
+
+
+
+
+
+};
+
+
 
 
 
