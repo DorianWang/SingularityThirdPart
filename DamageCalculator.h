@@ -4,6 +4,8 @@
 #include "DamageTypes.h"
 #include <cmath>
 
+#include "UsefulHeaders.h"
+
 
 #define MAGIC_BREAKPOINT_ZERO 0
 

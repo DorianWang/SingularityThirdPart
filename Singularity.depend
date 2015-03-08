@@ -1649,9 +1649,10 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1425522965 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1425764806 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
+	"UsefulHeaders.h"
 
 1424816404 d:\dorian's programs\singularitythirdpart\damagetypes.h
 
