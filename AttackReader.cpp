@@ -9,6 +9,9 @@ bool attackReader::readFile(std::string newFileName)
    std::string tempInput;
    std::vector <std::string> parserOutput;
 
+   FileIO* file = new FileIO;
+
+   file -> dataOpenFile(newFileName, false);
 
    stringFunc stringParcer;
 
@@ -25,7 +28,12 @@ while (true){
 
 
 
-while (file -> readLine(&tempInput)){
+while (true){
+
+   if (file -> readLine(&tempInput) == false){
+      return false; //Broken things!
+   }
+
    //Empty lines are skipped.
    if (tempInput.empty()){
       continue;
@@ -37,8 +45,10 @@ while (file -> readLine(&tempInput)){
       continue;
    }
 
+   if (tempInput == "end;")
+   //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
 
-   if (createInstruction(tempInput)){
+   if (true/*createInstruction(tempInput)*/){
       //cout << tempInput << endl;
       continue;
    }
@@ -46,7 +56,7 @@ while (file -> readLine(&tempInput)){
 //Something bad happened.
 }
 
-isGood = true;
+//isGood = true;
 file -> closeFile();
 }
 
