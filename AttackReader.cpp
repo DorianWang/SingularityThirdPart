@@ -28,33 +28,32 @@ while (true){
 
 
 
-while (true){
+   while (true){
 
-   if (file -> readLine(&tempInput) == false){
-      return false; //Broken things!
+      if (file -> readLine(&tempInput) == false){
+         return false; //Broken things!
+      }
+
+      //Empty lines are skipped.
+      if (tempInput.empty()){
+         continue;
+      }
+
+      //Lines with a pound at the beginning are ignored, these are comments.
+      if (tempInput.at(0) == '#'){
+         //cout << "Read comment: " << tempInput << endl;
+         continue;
+      }
+
+      if (tempInput == "end;")
+      //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
+
+      if (true/*createInstruction(tempInput)*/){
+         //cout << tempInput << endl;
+         continue;
+      }
+
    }
-
-   //Empty lines are skipped.
-   if (tempInput.empty()){
-      continue;
-   }
-
-   //Lines with a pound at the beginning are ignored, these are comments.
-   if (tempInput.at(0) == '#'){
-      //cout << "Read comment: " << tempInput << endl;
-      continue;
-   }
-
-   if (tempInput == "end;")
-   //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
-
-   if (true/*createInstruction(tempInput)*/){
-      //cout << tempInput << endl;
-      continue;
-   }
-
-//Something bad happened.
-}
 
 //isGood = true;
 file -> closeFile();
