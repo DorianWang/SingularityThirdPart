@@ -9,17 +9,18 @@ bool attackReader::readFile(std::string newFileName)
    std::string tempInput;
    std::vector <std::string> parserOutput;
 
-   //file -> textOpenFile(screenFileName, false);
-   //No longer needed.
 
    stringFunc stringParcer;
 
+while (true){
+   attackType newAttack;
+
    if (file -> readLine(&tempInput)){
-      attacks.push_back(parseLine(tempInput, "\\"));
+      newAttack.name = file -> readLine(&tempInput);
    }
    else
    {
-      //Wut? Broken
+      break;//No more attacks to read!
    }
 
 
@@ -48,6 +49,27 @@ while (file -> readLine(&tempInput)){
 isGood = true;
 file -> closeFile();
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
