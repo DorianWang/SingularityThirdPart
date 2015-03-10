@@ -11,6 +11,7 @@ class attackReader
 
 FileIO file;
 
+bool addScaling(FileIO* file, std::vector <attackScaling>* outputVector);
 
 
 public:

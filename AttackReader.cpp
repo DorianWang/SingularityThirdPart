@@ -62,14 +62,20 @@ file -> closeFile();
 }
 
 
+bool attackReader::addScaling(FileIO* file, std::vector <attackScaling>* outputVector)
+{
+
+}
 
 
+//String checker:
+/*
+std::string foo("--foo");
+if (text.rfind(foo, 0) == string::npos){
+   //Bad
+}
 
-
-
-
-
-
+*/
 
 
 
