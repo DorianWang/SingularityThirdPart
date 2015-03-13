@@ -25,9 +25,6 @@ while (true){
    {
       break;//No more attacks to read!
    }
-
-
-
    while (true){
 
       if (file -> readLine(&tempInput) == false){
@@ -48,7 +45,7 @@ while (true){
       if (tempInput == "end;")
       //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
 
-      if (true/*createInstruction(tempInput)*/){
+      if (tempInput == "magic;"){
          //cout << tempInput << endl;
          continue;
       }
