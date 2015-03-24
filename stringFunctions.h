@@ -26,6 +26,8 @@ inline std::string tokensToString(std::vector <std::string> input, const char* d
 //0 is the first character. Input of ("Hello", "In", 0) returns "Inllo"
 inline std::string insertStringIntoString(std::string original, std::string input, int startIndex);
 
+inline std::string trimWhitespace(std::string input, char whitespace);
+
 //inline bool stringToOther(std::string input; std::string outputType, ...);
 };
 
@@ -126,7 +128,22 @@ std::string stringFunc::insertStringIntoString(std::string original, std::string
    return original;
 }
 
+std::string stringFunc::trimWhitespace(const std::string input, const std::string whitespace)
+{
+   //http://stackoverflow.com/questions/1798112/removing-leading-and-trailing-spaces-from-a-string
+   const auto strBegin = str.find_first_not_of(whitespace);
 
+   if (strBegin == std::string::npos){
+      return input; //Whitespace anywhere!
+   }
+
+
+   const auto strEnd = str.find_last_not_of(whitespace);
+   const auto strRange = strEnd - strBegin + 1;
+
+   return str.substr(strBegin, strRange);
+
+}
 
 //}
 

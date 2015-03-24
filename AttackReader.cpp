@@ -42,7 +42,12 @@ while (true){
          continue;
       }
 
-      if (tempInput == "end;")
+//removeTrailingSpaces (tempInput);
+
+      if (tempInput == "end;"){
+
+
+      }
       //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
 
       if (tempInput == "magic;"){
