@@ -10,50 +10,27 @@ bool attackReader::readFile(std::string newFileName)
    std::vector <std::string> parserOutput;
 
    FileIO* file = new FileIO;
+   newFileName = ATTACK_DATA_LOCATION + newFileName;
 
    file -> dataOpenFile(newFileName, false);
 
-   stringFunc stringParcer;
+   stringFunc stringModder;
 
 while (true){
-   attackType newAttack;
 
-   if (file -> readLine(&tempInput)){
-      newAttack.name = file -> readLine(&tempInput);
-   }
-   else
-   {
+   if (file -> readLine(&tempInput) == false){
       break;//No more attacks to read!
    }
-   while (true){
 
-      if (file -> readLine(&tempInput) == false){
-         return false; //Broken things!
-      }
+   if (tempInput.at(0) == '#'){
+      continue; //Comment found.
+   }
 
-      //Empty lines are skipped.
-      if (tempInput.empty()){
-         continue;
-      }
+   tempInput = stringModder.trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
-      //Lines with a pound at the beginning are ignored, these are comments.
-      if (tempInput.at(0) == '#'){
-         //cout << "Read comment: " << tempInput << endl;
-         continue;
-      }
-
-//removeTrailingSpaces (tempInput);
-
-      if (tempInput == "end;"){
-
-
-      }
-      //std::size_t stringEnd = tempInput.find(';', tempInput.begin());
-
-      if (tempInput == "magic;"){
-         //cout << tempInput << endl;
-         continue;
-      }
+   if (tempInput.substr(0, 9) == "end file;"){
+      break; //End of file.
+   }
 
    }
 
