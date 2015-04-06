@@ -240,11 +240,19 @@ testConsole.cursorOptions.setColour(15, 0);
 
 cout << "Testing colours" << endl;
 
+/*
+std::string testingSub = "qwertyuiop";
+cout << (testingSub.substr(0, 6) == "qwerty") << endl;
+//This is true.
+*/
 
    system("PAUSE");
    system ("CLS");
 
 screenTest.outputScreen(1);
+
+
+
 
 /*
 for (int i = 0; i < screenTest.testVector.size(); i++){

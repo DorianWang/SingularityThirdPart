@@ -19,7 +19,10 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         break;//No more attacks to read!
+         return true;//No more attacks to read!
+         //TODO: Add some way of adding errors to an error log.
+         //TODO: Add an event log.
+         //This one would be "Warning: Unable to continue reading file."
       }
 
       tempInput = stringModder.trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -29,10 +32,10 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
       }
 
       if (tempInput.substr(0, 9) == "end file;"){
-         break; //End of file.
+         return true; //End of file.
       }
 
-      outputVector -> push_back( addAttack(file, &stringModder) );
+      outputVector -> push_back( addAttack(file, &stringModder, tempInput) );
 
    }
 
@@ -40,10 +43,12 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
 file -> closeFile();
 }
 
-attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder)
+attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName)
 {
 
 std::string tempInput;
+int tempLength = 5 + newAttackName.size();
+attackType tempAttack;
 
    while (true){
 
@@ -57,19 +62,48 @@ std::string tempInput;
          continue; //Comment found.
       }
 
-      if (tempInput.substr(0, 9) == "end file;"){
+      if (tempInput.substr(0, tempLength) == "end " + newAttackName + ';'){
          break; //End of file.
       }
 
-      //addAttack(FileIO attackFile, stringFunc* stringModder);
+      //This doesn't have to be hard coded, but this should catch my mistakes as opposed to other ways.
+      if (tempInput.substr(0, 5) == "physical"){
+         addScaling(file, stringModder, "physical");
+         continue;
+      }
 
+      if (tempInput.substr(0, 5) == "magic"){
+         addScaling(file, stringModder, "magic");
+         continue;
+      }
+
+      if (tempInput.substr(0, 5) == "void"){
+         addScaling(file, stringModder, &(tempAttack.scaling), "void");
+         continue;
+      }
    }
 }
 
 
 
-bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputVector)
+bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
 {
+/*
+struct attackScaling
+{
+   std::vector <statScaling> arcaneScaling;
+   std::vector <statScaling> elementalScaling;
+
+   std::vector <statScaling> stabScaling;
+   std::vector <statScaling> slashScaling;
+   std::vector <statScaling> crushScaling;
+   std::vector <statScaling> poisonScaling;
+   std::vector <statScaling> DOTScaling;
+
+   std::vector <statScaling> voidScaling;
+};
+*/
+
 
 std::string tempInput;
 
@@ -85,7 +119,7 @@ std::string tempInput;
          continue; //Comment found.
       }
 
-      if (tempInput.substr(0, 9) == "end file;"){
+      if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
          break; //End of file.
       }
 

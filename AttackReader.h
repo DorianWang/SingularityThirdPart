@@ -11,8 +11,8 @@ class attackReader
 
 FileIO file;
 
-bool addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputVector);
-attackType addAttack(FileIO* file, stringFunc* stringModder);
+bool addScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname);
+attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName);
 
 public:
 
