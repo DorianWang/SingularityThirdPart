@@ -68,12 +68,12 @@ attackType tempAttack;
 
       //This doesn't have to be hard coded, but this should catch my mistakes as opposed to other ways.
       if (tempInput.substr(0, 5) == "physical"){
-         addScaling(file, stringModder, "physical");
+         addScaling(file, stringModder, &(tempAttack.scaling), "physical");
          continue;
       }
 
       if (tempInput.substr(0, 5) == "magic"){
-         addScaling(file, stringModder, "magic");
+         addScaling(file, stringModder, &(tempAttack.scaling), "magic");
          continue;
       }
 
@@ -103,7 +103,7 @@ struct attackScaling
    std::vector <statScaling> voidScaling;
 };
 */
-
+std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
 
 std::string tempInput;
 
@@ -119,10 +119,11 @@ std::string tempInput;
          continue; //Comment found.
       }
 
-      if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-         break; //End of file.
+      for (int i = 0; i < nameOfScalings.size(); i++){
+         if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
+            break; //End of file.
+         }
       }
-
       //addAttack(FileIO attackFile, stringFunc* stringModder);
 
    }
