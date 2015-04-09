@@ -12,7 +12,7 @@ class attackReader
 FileIO file;
 
 bool addScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname);
-attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName);
+attackType addAttackScaling(FileIO* file, stringFunc* stringModder, std::string newAttackName);
 
 public:
 

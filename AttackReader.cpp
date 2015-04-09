@@ -68,17 +68,17 @@ attackType tempAttack;
 
       //This doesn't have to be hard coded, but this should catch my mistakes as opposed to other ways.
       if (tempInput.substr(0, 5) == "physical"){
-         addScaling(file, stringModder, &(tempAttack.scaling), "physical");
+         addAttackScaling(file, stringModder, &(tempAttack.scaling), "physical");
          continue;
       }
 
       if (tempInput.substr(0, 5) == "magic"){
-         addScaling(file, stringModder, &(tempAttack.scaling), "magic");
+         addAttackScaling(file, stringModder, &(tempAttack.scaling), "magic");
          continue;
       }
 
       if (tempInput.substr(0, 5) == "void"){
-         addScaling(file, stringModder, &(tempAttack.scaling), "void");
+         addAttackScaling(file, stringModder, &(tempAttack.scaling), "void");
          continue;
       }
    }
@@ -86,7 +86,7 @@ attackType tempAttack;
 
 
 
-bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
+bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
 {
 /*
 struct attackScaling
@@ -129,6 +129,47 @@ std::string tempInput;
    }
 }
 
+
+bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
+{
+
+/*
+Stats which can scale attacks are:
+-Base (Not really a scaling, but must be counted, +x)
+-Attacker level (+x per level)
+-All base stats (int, etc, +x per stat point)
+-Attacker Health and mana (+x per stat point)
+-Defender Health and mana (+x per stat point)
+-Defender base stats (Much more rare)
+-Random number between 0 - x
+
+
+*/
+std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
+
+std::string tempInput;
+
+   while (true){
+
+      if (file -> readLine(&tempInput) == false){
+         break;//No more attacks to read!
+      }
+
+      tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
+
+      if (tempInput.at(0) == '#'){
+         continue; //Comment found.
+      }
+
+      for (int i = 0; i < nameOfScalings.size(); i++){
+         if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
+            break; //End of file.
+         }
+      }
+      //addAttack(FileIO attackFile, stringFunc* stringModder);
+
+   }
+}
 
 //String checker:
 /*
