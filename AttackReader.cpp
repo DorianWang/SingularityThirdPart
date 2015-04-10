@@ -86,7 +86,7 @@ attackType tempAttack;
 
 
 
-bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
+bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings)
 {
 /*
 struct attackScaling
@@ -143,9 +143,15 @@ Stats which can scale attacks are:
 -Defender base stats (Much more rare)
 -Random number between 0 - x
 
-
+-All skills
+   -
+   -
+   -
+   -
 */
-std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
+
+std::vector nameOfScalings
+
 
 std::string tempInput;
 
