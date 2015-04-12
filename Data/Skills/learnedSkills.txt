@@ -1,0 +1,58 @@
+#Combat skills
+#{
+
+   #Physical skills
+   stab;
+   slash;
+   crush;
+   ranged;
+
+   #Beast affinity modifies a few abilities, which are quite special.
+   beast;
+
+   #Magic skills
+   arcane;
+   elemental;
+
+   #Two different skills that both provide dodge and anti-dodge. One is based off int and wis, the other is agi and end
+   short foresight;
+   short martialReflex;
+
+#}
+
+   #Skills used on both friendly and less than friendly NPCs to get them to do things you want.
+   #Persuasion is int and cha, posture is cha and agi
+   persuasion;
+   posture;
+
+   curiosity;
+   technoScience;
+
+   biology;
+   #All biology knowledge.
+   crystal; 
+   #All crystallography knowledge, improves chance of finding them, their sell value, and their efficacy.
+   geology; 
+   #All rocks, ores, etc
+   chemistry; 
+   #Used in making potions, chemicals, etc.
+
+   botany; 
+   #Used to identify useful plants, and do things with them.
+   #TODO:
+
+   sneak;
+
+
+   #Misc skills
+   armourer;
+   # end and int, increases armour given by items.
+   packRat;
+   # end and agi, gives carry space.
+
+   reader;
+   # int and wis, increases ability to read items.
+   swimmer;
+   # agi and end, allows character to swim
+
+   #int TODO;

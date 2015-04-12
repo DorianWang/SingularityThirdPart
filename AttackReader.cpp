@@ -143,14 +143,11 @@ Stats which can scale attacks are:
 -Defender base stats (Much more rare)
 -Random number between 0 - x
 
--All skills
-   -
-   -
-   -
-   -
+-All learned skills
+   -These are obtained from a file, which maps name to an index.
 */
 
-std::vector nameOfScalings
+std::vector <std::string> nameOfScalings;
 
 
 std::string tempInput;
