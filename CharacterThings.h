@@ -52,62 +52,24 @@ public:
 };;;
 
 
-//Note that skills can be negative...
-struct learnedSkills
+class learnedSkills
 {
-
-//Combat skills
-//{
-
-   //Physical skills
-   short stabSkill;
-   short slashSkill;
-   short crushSkill;
-   short rangedSkill;
-
-   //Modifies a few abilities, which are quite special.
-   short beastAffinity;
-
-   //Magic skills
-   short arcaneAffinity;
-   short elementalAffinity;
-
-   //Two different skills that both provide dodge and anti-dodge. One is based off int and wis, the other is agi and end
-   short foresight;
-   short martialReflex;
-
-//}
-
-   //Skills used on both friendly and less than friendly NPCs to get them to do things you want.
-   //Persuasion is int and cha, posture is cha and agi
-   short persuasion;
-   short posture;
-
-   short curiosity;
-   short technoScience;
-
-   short biology; //All biology knowledge.
-   short crystallography; //All crystal knowledge, improves chance of finding them, their sell value, and their efficacy.
-   short geology; //All rock
-   short chemistry; //Used in making potions, chemicals, etc.
-
-   short botany; //Used to identify useful plants, and do things with them.
-   //TODO:
-
-   short sneak;
-
-
-   //Misc skills
-   short armourer;// end and int, increases armour given by items.
-   short packRat;// end and agi, gives carry space.
-
-   short reader;// int and wis, increases ability to read items.
-   short swimmer;// agi and end, allows character to swim
-
-   int TODO;
-
+std::vector <double> skills;
 };
 
+class getLearnedSkills
+{
+   std::vector <std::string> skillInput;
+
+
+public:
+   getLearnedSkills(std::string skillsFile, std::string displayNameFile);
+   ~getLearnedSkills();
+
+   int stringToSkill(std::string input);
+   std::string skillToString(int input);
+
+};
 
 
 

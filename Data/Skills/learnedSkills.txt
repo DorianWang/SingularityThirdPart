@@ -25,34 +25,42 @@
    persuasion;
    posture;
 
+
+   #All science things!
    curiosity;
    technoScience;
+   engineer;
 
-   biology;
    #All biology knowledge.
-   crystal; 
-   #All crystallography knowledge, improves chance of finding them, their sell value, and their efficacy.
-   geology; 
-   #All rocks, ores, etc
-   chemistry; 
+   biology;
    #Used in making potions, chemicals, etc.
+   chemistry; 
 
-   botany; 
+   #All crystallography knowledge, improves chance of finding them, their sell value, and their efficacy.
+   crystal; 
+   #All rocks, ores, etc
+   geology; 
    #Used to identify useful plants, and do things with them.
+   botany; 
+
    #TODO:
 
    sneak;
 
 
    #Misc skills
-   armourer;
    # end and int, increases armour given by items.
-   packRat;
+   armourer;
    # end and agi, gives carry space.
+   packRat;
 
+   # int and wis, increases ability to read items. Increases some magic abilities
    reader;
-   # int and wis, increases ability to read items.
-   swimmer;
-   # agi and end, allows character to swim
 
-   #int TODO;
+
+   #TODO;
+
+
+
+
+

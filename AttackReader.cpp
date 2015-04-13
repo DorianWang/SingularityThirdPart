@@ -144,7 +144,7 @@ Stats which can scale attacks are:
 -Random number between 0 - x
 
 -All learned skills
-   -These are obtained from a file, which maps name to an index.
+   -These are obtained from a file, which maps names to an index.
 */
 
 std::vector <std::string> nameOfScalings;
