@@ -64,7 +64,6 @@ class getLearnedSkills
 
 public:
    getLearnedSkills(std::string skillsFile, std::string displayNameFile);
-   ~getLearnedSkills();
 
    int stringToSkill(std::string input);
    std::string skillToString(int input);

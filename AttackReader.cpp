@@ -49,44 +49,13 @@ attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder, std::
 std::string tempInput;
 int tempLength = 5 + newAttackName.size();
 attackType tempAttack;
+addSubtypeScaling
 
-   while (true){
-
-      if (file -> readLine(&tempInput) == false){
-         return attackType();//No more attacks to read!
-      }
-
-      tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
-
-      if (tempInput.at(0) == '#'){
-         continue; //Comment found.
-      }
-
-      if (tempInput.substr(0, tempLength) == "end " + newAttackName + ';'){
-         break; //End of file.
-      }
-
-      //This doesn't have to be hard coded, but this should catch my mistakes as opposed to other ways.
-      if (tempInput.substr(0, 5) == "physical"){
-         addAttackScaling(file, stringModder, &(tempAttack.scaling), "physical");
-         continue;
-      }
-
-      if (tempInput.substr(0, 5) == "magic"){
-         addAttackScaling(file, stringModder, &(tempAttack.scaling), "magic");
-         continue;
-      }
-
-      if (tempInput.substr(0, 5) == "void"){
-         addAttackScaling(file, stringModder, &(tempAttack.scaling), "void");
-         continue;
-      }
-   }
 }
 
 
 
-bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings)
+bool attackReader::addSubtypeScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings)
 {
 /*
 struct attackScaling
@@ -110,7 +79,7 @@ std::string tempInput;
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         break;//No more attacks to read!
+         return false;//No more attacks to read!
       }
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -121,7 +90,7 @@ std::string tempInput;
 
       for (int i = 0; i < nameOfScalings.size(); i++){
          if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-            break; //End of file.
+            return true; //End of file.
          }
       }
       //addAttack(FileIO attackFile, stringFunc* stringModder);
@@ -130,7 +99,7 @@ std::string tempInput;
 }
 
 
-bool attackReader::addAttackScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings, std::string scalingname)
+bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, statScaling* outputScalings, std::string scalingname)
 {
 
 /*
@@ -174,14 +143,6 @@ std::string tempInput;
    }
 }
 
-//String checker:
-/*
-std::string foo("--foo");
-if (text.rfind(foo, 0) == string::npos){
-   //Bad
-}
-
-*/
 
 
 

@@ -118,6 +118,7 @@
 		<Unit filename="TakeGameMain.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
+		<Unit filename="eventLog.h" />
 		<Unit filename="inventorySorter.cpp">
 			<Option virtualFolder="FirstGameStuff/GameObjects/Items/InventorySorter/" />
 		</Unit>
