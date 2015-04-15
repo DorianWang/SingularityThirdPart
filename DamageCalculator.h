@@ -128,6 +128,8 @@ struct statScaling
 
 struct attackScaling
 {
+   std::vector <statScaling> Scalings[8];
+   /*
    std::vector <statScaling> arcaneScaling;
    std::vector <statScaling> elementalScaling;
 
@@ -138,6 +140,7 @@ struct attackScaling
    std::vector <statScaling> DOTScaling;
 
    std::vector <statScaling> voidScaling;
+   */
 };
 
 struct attackType
@@ -146,7 +149,7 @@ struct attackType
    attackScaling scaling;
    //Add a costType later.
    //costType cost;
-   damagePacket baseDamage;
+   //damagePacket baseDamage;
 };
 
 

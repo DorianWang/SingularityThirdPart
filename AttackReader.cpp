@@ -47,9 +47,13 @@ attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder, std::
 {
 
 std::string tempInput;
-int tempLength = 5 + newAttackName.size();
+
 attackType tempAttack;
-addSubtypeScaling
+tempAttack.name = newAttackName;
+
+//addCostScaling();
+
+addSubtypeScaling(file, stringModder, &(tempAttack.scaling));
 
 }
 
@@ -72,7 +76,9 @@ struct attackScaling
    std::vector <statScaling> voidScaling;
 };
 */
+
 std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
+//TODO: get scaling names from file, and make attackScaling dynamic as well.
 
 std::string tempInput;
 
@@ -89,8 +95,9 @@ std::string tempInput;
       }
 
       for (int i = 0; i < nameOfScalings.size(); i++){
-         if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-            return true; //End of file.
+         if (tempInput.substr(0, 9) == nameOfScalings[i] + ';'){
+
+            return addScaling(file, stringModder, &(outputScalings -> Scalings[i]), nameOfScalings[i]);
          }
       }
       //addAttack(FileIO attackFile, stringFunc* stringModder);
