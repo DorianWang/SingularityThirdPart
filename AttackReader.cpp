@@ -121,6 +121,8 @@ Stats which can scale attacks are:
    -These are obtained from a file, which maps names to an index.
 */
 
+
+
 std::vector <std::string> nameOfScalings;
 
 

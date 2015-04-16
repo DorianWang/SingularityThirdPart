@@ -1,0 +1,16 @@
+base;
+#the base damage of the attack, increases damage by x
+
+attackerLvl;
+#the level of the one using the attack. +x per level
+
+int;
+wis;
+cha;
+str;
+agi;
+end;
+#base stats, increases damage by x per point
+#intelligence, wisdom, charisma, strength, agility, and endurance
+
+
