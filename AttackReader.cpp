@@ -58,7 +58,6 @@ addSubtypeScaling(file, stringModder, &(tempAttack.scaling));
 }
 
 
-
 bool attackReader::addSubtypeScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings)
 {
 /*
@@ -96,7 +95,6 @@ std::string tempInput;
 
       for (int i = 0; i < nameOfScalings.size(); i++){
          if (tempInput.substr(0, 9) == nameOfScalings[i] + ';'){
-
             return addScaling(file, stringModder, &(outputScalings -> Scalings[i]), nameOfScalings[i]);
          }
       }
