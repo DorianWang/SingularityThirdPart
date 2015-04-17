@@ -17,6 +17,8 @@ attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAtta
 
 public:
 
+   attackReader();
+
    std::vector <attackType> attacks;
    std::string fileName;
 

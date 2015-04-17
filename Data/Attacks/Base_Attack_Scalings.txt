@@ -13,4 +13,24 @@ end;
 #base stats, increases damage by x per point
 #intelligence, wisdom, charisma, strength, agility, and endurance
 
+attackerHP;
+attackerMP;
+#other base stats of the attacker
+
+defenderHP;
+defenderMP;
+#some base stats of the defender
+
+defInt;
+defWis;
+defCha;
+defStr;
+defAgi;
+defEnd;
+#base stats of the defender. These are used mostly in special attacks.
+
+rand;
+#Some number between 0 to x inclusive. Use base to bump it up to y to x+y.
+
+
 
