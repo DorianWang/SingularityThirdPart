@@ -119,6 +119,8 @@ Stats which can scale attacks are:
 
 -All learned skills
    -These are obtained from a file, which maps names to an index.
+
+There are 19 different scalings, in the same order as above.
 */
 
 
