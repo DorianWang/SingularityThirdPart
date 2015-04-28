@@ -2,6 +2,7 @@
 #define EVENTLOG_H_INCLUDED
 
 #include "libraryIncluder.h"
+#include <ctime>
 
 
 #define EVENT_LOG_LOCATION "\Data\Event_logs"
@@ -42,6 +43,12 @@ eventLog(bool debugMode)
       bufferMaxSize = NORMAL_BUFFER_SIZE;
       fileMaxSize = MAX_FILE_LINE_LENGTH;
    }
+
+   time_t timer; struct tm* ptm;
+   timer = time(NULL);
+   ptm = localtime (&timer);
+   strftime(cStr, 20, "%F", ptm);
+   //http://www.cplusplus.com/reference/ctime/strftime/
 }
 
 ~eventLog()
@@ -72,7 +79,9 @@ bool pushBuffer()
    fileMaxSize += lineBufferLength;
    lineBufferLength = 0;
 
-   if (fileLineLength >= fileMaxSize)
+   if (fileLineLength >= fileMaxSize){
+
+   }
 
 }
 
