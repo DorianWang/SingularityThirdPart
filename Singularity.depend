@@ -1641,7 +1641,7 @@
 1424355736 source:d:\doriancode\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1425907253 d:\doriancode\singularitythirdpart\damagecalculator.h
+1429276544 d:\doriancode\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
@@ -1675,6 +1675,13 @@
 	"AttackReader.h"
 
 1428351569 d:\dorian's programs\singularitythirdpart\attackreader.h
+	"DamageCalculator.h"
+	"libraryIncluder.h"
+
+1430234505 source:d:\doriancode\singularitythirdpart\attackreader.cpp
+	"AttackReader.h"
+
+1430234557 d:\doriancode\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 

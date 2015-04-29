@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <sstream>
 #include <iomanip>
+#include <ctime>
 
 #include "UsefulHeaders.h"
 
@@ -230,6 +231,11 @@ screenTest.outputScreen(0);
 
 cout << "---" << endl;
 
+   time_t timer; struct tm* ptm; char cStr[22];
+   timer = time(NULL);
+   ptm = localtime (&timer);
+   strftime(cStr, 20, "%F", ptm);
+   //http://www.cplusplus.com/reference/ctime/strftime/
 
 
 double PI = 3.14159265359;
@@ -252,7 +258,12 @@ cout << (testingSub.substr(0, 6) == "qwerty") << endl;
 screenTest.outputScreen(1);
 
 
-
+   time_t timer2; struct tm* ptm2; char cStr2[22];
+   timer2 = time(NULL);
+   ptm2 = localtime (&timer2);
+   strftime(cStr, 20, "%F", ptm2);
+   //http://www.cplusplus.com/reference/ctime/strftime/
+   cout << "Test " << cStr << " complete!" << endl;
 
 /*
 for (int i = 0; i < screenTest.testVector.size(); i++){

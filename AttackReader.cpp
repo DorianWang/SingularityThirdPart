@@ -104,7 +104,7 @@ std::string tempInput;
 }
 
 
-bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, statScaling* outputScalings, const std::string scalingname)
+bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputScalings, const std::string scalingname)
 {
 
 /*
