@@ -19,6 +19,8 @@ class eventLog
 {
 
 FileIO logFile;
+std::string fileName;
+
 std::string buffer;
 
 int lineBufferLength;
@@ -44,11 +46,13 @@ eventLog(bool debugMode)
       fileMaxSize = MAX_FILE_LINE_LENGTH;
    }
 
-   time_t timer; struct tm* ptm; char cStr[22];
+   time_t timer; struct tm* ptm; char cStr[32];
    timer = time(NULL);
    ptm = localtime (&timer);
-   strftime(cStr, 20, "%F", ptm);
+   strftime(cStr, 30, "%Y_%m_%d-%H:%M", ptm);
    //http://www.cplusplus.com/reference/ctime/strftime/
+
+
 }
 
 ~eventLog()

@@ -258,12 +258,6 @@ cout << (testingSub.substr(0, 6) == "qwerty") << endl;
 screenTest.outputScreen(1);
 
 
-   time_t timer2; struct tm* ptm2; char cStr2[22];
-   timer2 = time(NULL);
-   ptm2 = localtime (&timer2);
-   strftime(cStr, 20, "%F", ptm2);
-   //http://www.cplusplus.com/reference/ctime/strftime/
-   cout << "Test " << cStr << " complete!" << endl;
 
 /*
 for (int i = 0; i < screenTest.testVector.size(); i++){

@@ -1257,12 +1257,13 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1428500721 source:d:\github\singularitythirdpart\main.cpp
+1430320914 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	<iomanip>
+	<ctime>
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
@@ -1682,6 +1683,13 @@
 	"AttackReader.h"
 
 1430234557 d:\doriancode\singularitythirdpart\attackreader.h
+	"DamageCalculator.h"
+	"libraryIncluder.h"
+
+1430318888 source:d:\github\singularitythirdpart\attackreader.cpp
+	"AttackReader.h"
+
+1430318888 d:\github\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 
