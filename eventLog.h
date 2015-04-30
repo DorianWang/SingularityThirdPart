@@ -67,6 +67,11 @@ void newFile()
    //http://www.cplusplus.com/reference/ctime/strftime/
 
    fileName = cStr + "_LOG.txt";
+
+   FileIO tempFile;
+   tempFile.textOpenFile(fileName, true);
+   logFile.closeFile();
+   logFile = tempFile;
 }
 
 
@@ -96,9 +101,9 @@ bool pushBuffer()
    lineBufferLength = 0;
 
    if (fileLineLength >= fileMaxSize){
-
+      newFile();
    }
-
+return true;
 }
 
 
