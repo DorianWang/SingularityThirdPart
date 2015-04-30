@@ -46,11 +46,7 @@ eventLog(bool debugMode)
       fileMaxSize = MAX_FILE_LINE_LENGTH;
    }
 
-   time_t timer; struct tm* ptm; char cStr[32];
-   timer = time(NULL);
-   ptm = localtime (&timer);
-   strftime(cStr, 30, "%Y_%m_%d-%H:%M", ptm);
-   //http://www.cplusplus.com/reference/ctime/strftime/
+newFile();
 
 
 }
@@ -61,6 +57,18 @@ eventLog(bool debugMode)
       pushBuffer();
    }
 }
+
+void newFile()
+{
+   time_t timer; struct tm* ptm; char cStr[32];
+   timer = time(NULL);
+   ptm = localtime (&timer);
+   strftime(cStr, 30, "%Y_%m_%d_%H_%M", ptm);
+   //http://www.cplusplus.com/reference/ctime/strftime/
+
+   fileName = cStr + "_LOG.txt";
+}
+
 
 
 void addNewLog(std::string input)
@@ -77,6 +85,10 @@ void addNewLog(std::string input)
 
 bool pushBuffer()
 {
+   if (lineBufferLength <= 0){
+      lineBufferLength = 0;
+      return false;
+   }
    logFile.bufferAddition(buffer);
    logFile.writeBuffer();
 
