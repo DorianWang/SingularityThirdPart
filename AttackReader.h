@@ -22,6 +22,11 @@ public:
    std::vector <attackType> attacks;
    std::string fileName;
 
+/**
+Does things
+@param things
+@return things and stuff
+*/
    bool readFile(std::string newFileName, std::vector <attackType>* outputVector);
 
 

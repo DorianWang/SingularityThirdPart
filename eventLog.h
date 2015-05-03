@@ -5,7 +5,7 @@
 #include <ctime>
 
 
-#define EVENT_LOG_LOCATION "\Data\Event_logs"
+#define EVENT_LOG_LOCATION "/Data/Event_logs/"
 #define EVENT_LOG_NAME "STP_Log.txt"
 
 #define MAX_FILE_LINE_LENGTH 4096
@@ -15,10 +15,18 @@
 #define DEBUG_FILE_LINE_LENGTH 2048
 #define DEBUG_BUFFER_SIZE 1
 
+#define DEBUG_MODE true
+
+namespace eventRecorder
+{
+
+
+
+
 class eventLog
 {
 
-FileIO logFile;
+FileIO* logFile;
 std::string fileName;
 
 std::string buffer;
@@ -45,10 +53,8 @@ eventLog(bool debugMode)
       bufferMaxSize = NORMAL_BUFFER_SIZE;
       fileMaxSize = MAX_FILE_LINE_LENGTH;
    }
-
+logFile = NULL;
 newFile();
-
-
 }
 
 ~eventLog()
@@ -62,29 +68,33 @@ void newFile()
 {
    time_t timer; struct tm* ptm; char cStr[32];
    timer = time(NULL);
+   system("PAUSE");
    ptm = localtime (&timer);
    strftime(cStr, 30, "%Y_%m_%d_%H_%M", ptm);
    //http://www.cplusplus.com/reference/ctime/strftime/
+   fileName = EVENT_LOG_LOCATION;
+   fileName += (std::string)cStr;
+   fileName += (std::string)"_LOG.txt";
+   system("PAUSE");
 
-   fileName = cStr + "_LOG.txt";
-
-   FileIO tempFile;
-   tempFile.textOpenFile(fileName, true);
-   logFile.closeFile();
+   FileIO* tempFile = new FileIO;
+   tempFile -> textOpenFile(fileName, true);
+   if (logFile != NULL){
+      logFile -> closeFile();
+      delete logFile;
+   }
    logFile = tempFile;
 }
 
 
-
 void addNewLog(std::string input)
 {
-   buffer << input << "\n" ;
+   buffer = input + "\n" ;
    lineBufferLength++;
 
    if (lineBufferLength >= bufferMaxSize){
       pushBuffer();
    }
-
 };
 
 
@@ -94,8 +104,8 @@ bool pushBuffer()
       lineBufferLength = 0;
       return false;
    }
-   logFile.bufferAddition(buffer);
-   logFile.writeBuffer();
+   logFile -> bufferAddition(buffer);
+   logFile -> writeBuffer();
 
    fileMaxSize += lineBufferLength;
    lineBufferLength = 0;
@@ -104,18 +114,28 @@ bool pushBuffer()
       newFile();
    }
 return true;
-}
-
-
-
-
+};
 
 };
 
-
 extern eventLog* eventLogger;
 
+eventLog* eventLogger = new eventLog(DEBUG_MODE);
 
-
+}
 
 #endif // EVENTLOG_H_INCLUDED
+
+
+
+
+
+
+
+
+
+
+
+
+
+

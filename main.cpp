@@ -12,6 +12,7 @@
 #include "ScreenController.h"
 
 #include "stringFunctions.h"
+#include "eventLog.h"
 
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
@@ -63,8 +64,6 @@ char f;
 //Keypress keyIO;
 bool cursorVisibility = false;
 bool cursorSmall = true;
-
-
 
 
 
@@ -258,7 +257,6 @@ cout << (testingSub.substr(0, 6) == "qwerty") << endl;
 screenTest.outputScreen(1);
 
 
-
 /*
 for (int i = 0; i < screenTest.testVector.size(); i++){
    cout << screenTest.testVector[i]<<endl;
@@ -269,6 +267,8 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
    cout<<"I'm done!"<<endl;
    system("PAUSE");
 
+   eventRecorder::eventLogger -> addNewLog("FoundFile");
+   eventRecorder::eventLogger -> pushBuffer();
 
    return EXIT_SUCCESS;
 }
