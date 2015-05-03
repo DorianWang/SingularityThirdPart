@@ -1,5 +1,5 @@
 #include "ScreenController.h"
-
+#include "eventLog.h"
 
 //variablePointerPointer is a pointer to the dataOut pointer
 bool ScreenControl::popFirstUnsetInstructPointer(instructDataOut** output)
@@ -26,10 +26,6 @@ std::vector <instructDataOut> ScreenControl::getAllUnsetInstruct()
 UnsetPointerList.clear();
 return tempVector;
 }
-
-
-
-
 
 
 
@@ -109,6 +105,9 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
    }
 
 //}
+
+   eventRecorder::eventLogger -> addNewLog("NewScreen!");
+   eventRecorder::eventLogger -> pushBuffer();
 
 return screenArray.size() - 1;//Good! I think...
 }

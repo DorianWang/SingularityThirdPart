@@ -1534,8 +1534,9 @@
 	"Map.h"
 	"libraryIncluder.h"
 
-1423456750 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+1430673564 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
+	"eventLog.h"
 
 1423183093 d:\dorian's programs\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
@@ -1654,7 +1655,7 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1429146005 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1430661847 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
@@ -1674,10 +1675,10 @@
 
 1429108218 d:\github\singularitythirdpart\characterthings.h
 
-1430357215 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
+1430661850 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
 
-1430611333 d:\dorian's programs\singularitythirdpart\attackreader.h
+1430661110 d:\dorian's programs\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 
@@ -1695,7 +1696,7 @@
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 
-1430618024 d:\dorian's programs\singularitythirdpart\eventlog.h
+1430672274 d:\dorian's programs\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 

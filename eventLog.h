@@ -5,7 +5,8 @@
 #include <ctime>
 
 
-#define EVENT_LOG_LOCATION "/Data/Event_logs/"
+#define EVENT_LOG_LOCATION "Data\\Event_logs\\"
+//#define EVENT_LOG_LOCATION ""
 #define EVENT_LOG_NAME "STP_Log.txt"
 
 #define MAX_FILE_LINE_LENGTH 4096
@@ -19,8 +20,6 @@
 
 namespace eventRecorder
 {
-
-
 
 
 class eventLog
@@ -84,12 +83,13 @@ void newFile()
       delete logFile;
    }
    logFile = tempFile;
+   cout << fileName << " " << tempFile <<endl;
 }
 
 
 void addNewLog(std::string input)
 {
-   buffer = input + "\n" ;
+   buffer += input + "\n" ;
    lineBufferLength++;
 
    if (lineBufferLength >= bufferMaxSize){
@@ -104,8 +104,8 @@ bool pushBuffer()
       lineBufferLength = 0;
       return false;
    }
-   logFile -> bufferAddition(buffer);
-   logFile -> writeBuffer();
+   cout << buffer << endl;
+   logFile -> writeLine(buffer);
 
    fileMaxSize += lineBufferLength;
    lineBufferLength = 0;

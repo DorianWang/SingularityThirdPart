@@ -30,6 +30,10 @@
 #define MAGIC_ARCANE_RESIST 100
 #define MAGIC_ELEMENTAL_RESIST 80
 
+namespace attackScaling
+{
+
+
 class defenceCalculator{
 
 
@@ -156,7 +160,7 @@ struct attackType
 
 //}
 
-
+}
 
 
 #endif // DAMAGECALULATOR_H_INCLUDED

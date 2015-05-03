@@ -6,6 +6,9 @@
 
 #define ATTACK_DATA_LOCATION "/Data/Combat/Attacks/"
 
+namespace attackScaling
+{
+
 class attackReader
 {
 
@@ -33,7 +36,7 @@ Does things
 };
 
 
-
+}
 
 #endif // ATTACKREADER_H_INCLUDED
 

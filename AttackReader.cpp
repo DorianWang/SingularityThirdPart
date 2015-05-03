@@ -1,6 +1,7 @@
 
 #include "AttackReader.h"
-
+namespace attackScaling
+{
 
 //Screens are always stored in the data folder.
 //However, the FileIO object passed has all the necessary information.
@@ -153,7 +154,7 @@ std::string tempInput;
 }
 
 
-
+}
 
 
 
