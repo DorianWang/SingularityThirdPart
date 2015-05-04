@@ -118,15 +118,11 @@ return true;
 
 };
 
-extern eventLog* eventLogger;
-
-eventLog* eventLogger = new eventLog(DEBUG_MODE);
-
 }
 
 #endif // EVENTLOG_H_INCLUDED
 
-
+extern eventRecorder::eventLog* eventLogger;
 
 
 

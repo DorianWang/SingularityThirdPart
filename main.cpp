@@ -16,7 +16,7 @@
 
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
-
+eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 
 //using namespace std;
 
@@ -78,7 +78,7 @@ int temp = *a;
 
 int main(int argc, char *argv[])
 {
-    srand (time(NULL));
+   srand (time(NULL));
 
 
     //cout<<asdfgh<<qwe<<asdfgh<<qwe<<endl;
@@ -267,8 +267,8 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
    cout<<"I'm done!"<<endl;
    system("PAUSE");
 
-   eventRecorder::eventLogger -> addNewLog("FoundFile");
-   eventRecorder::eventLogger -> pushBuffer();
+   eventLogger -> addNewLog("FoundFile");
+   eventLogger -> pushBuffer();
 
    return EXIT_SUCCESS;
 }

@@ -106,8 +106,7 @@ int ScreenControl::makeNewScreen (std::string screenName, std::string screenLoca
 
 //}
 
-   eventRecorder::eventLogger -> addNewLog("NewScreen!");
-   eventRecorder::eventLogger -> pushBuffer();
+   eventLogger -> addNewLog("Adding new screen: " + screenName);
 
 return screenArray.size() - 1;//Good! I think...
 }
