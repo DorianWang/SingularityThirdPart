@@ -89,11 +89,15 @@ void newFile()
 
 void addNewLog(std::string input)
 {
-   buffer += input + "\n" ;
+   buffer += input ;
    lineBufferLength++;
 
    if (lineBufferLength >= bufferMaxSize){
       pushBuffer();
+   }
+   else
+   {
+      buffer += "\n";
    }
 };
 

@@ -1257,7 +1257,7 @@
 1415121558 d:\github\singularitythirdpart\lootdrop.h
 	"libraryIncluder.h"
 
-1430747323 source:d:\github\singularitythirdpart\main.cpp
+1430747538 source:d:\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1626,7 +1626,7 @@
 1422895463 d:\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1430747336 source:d:\github\singularitythirdpart\screencontroller.cpp
+1430748616 source:d:\github\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 	"eventLog.h"
 
@@ -1702,7 +1702,7 @@
 	"libraryIncluder.h"
 	<ctime>
 
-1430747392 d:\github\singularitythirdpart\eventlog.h
+1430920799 d:\github\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 
