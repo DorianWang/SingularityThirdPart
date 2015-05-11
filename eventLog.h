@@ -121,6 +121,7 @@ return true;
 };
 
 };
+//End eventLog class
 
 }
 

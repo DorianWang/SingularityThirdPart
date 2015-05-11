@@ -15,11 +15,11 @@
 
 //TODO:
 //These are a ratio of the armour or magic resistance which directly reduces damage.
-#define ARMOUR_CONST_THRESHOLD 0.125 // 1/8
-#define MAGIC_CONST_THRESHOLD 0.125 // 1/8
+#define ARMOUR_CONST_THRESHOLD 0.12500 // 1/8
+#define MAGIC_CONST_THRESHOLD 0.12500 // 1/8
 //Void damage has no threshold.
 
-#define ARMOUR_MAX_PERCENT_RESIST 100.0
+#define ARMOUR_MAX_PERCENT_RESIST 100.00
 
 #define ARMOUR_STAB 80
 #define ARMOUR_SLASH 100
@@ -43,7 +43,7 @@ class defenceCalculator{
 //double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
 //double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 
-//By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0).
+//By using defined constants, the compiler should replace them with constant values (100.0/100.0 with 1.0). Constant folding!
 double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances)
 {
    double tempResist = ARMOUR_CONST_HALF/(ARMOUR_CONST_HALF + inputResistances -> physicalResist);

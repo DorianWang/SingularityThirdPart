@@ -267,7 +267,7 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
    cout<<"I'm done!"<<endl;
    system("PAUSE");
 
-   eventLogger -> addNewLog("FoundFile");
+   eventLogger -> addNewLog("End Program successfully!");
    eventLogger -> pushBuffer();
 
    return EXIT_SUCCESS;
