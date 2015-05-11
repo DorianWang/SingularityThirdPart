@@ -20,6 +20,8 @@ class baseStats
    int baseMana;
 
 public:
+//TODO: Fix all the things here
+
 
    //{
 
@@ -32,7 +34,7 @@ public:
    unsigned short getEnd(){ return endurance; }
 
    //Sets the value of the selected stat
-   bool setInt(unsigned short setInput){ if( setInput < MAX_STAT ){ intelligence = MAX_STAT; return true;} return false; }
+   bool setInt(unsigned short setInput){ intelligence = setInput; if(checkValue ){ intelligence = MAX_STAT; return true;} return false; }
    bool setWis(unsigned short setInput){ if( setInput < MAX_STAT ){ wisdom = MAX_STAT; return true;} return false; }
    bool setCha(unsigned short setInput){ if( setInput < MAX_STAT ){ charisma = MAX_STAT; return true;} return false; }
    bool setStr(unsigned short setInput){ if( setInput < MAX_STAT ){ strength = MAX_STAT; return true;} return false; }
@@ -47,9 +49,12 @@ public:
    bool incrAgi(short setInput){ if( setInput + agility < MAX_STAT ){ agility = MAX_STAT; return true;} return false; }
    bool incrEnd(short setInput){ if( setInput + endurance < MAX_STAT ){ endurance = MAX_STAT; return true;} return false; }
 
+   bool checkValue(unsigned short Input){ if( Input < MAX_STAT ){ return true; } return false; }
+
+
    //}
 
-};;;
+};
 
 
 class learnedSkills
@@ -63,7 +68,10 @@ class getLearnedSkills
 
 
 public:
-   getLearnedSkills(std::string skillsFile, std::string displayNameFile);
+   getLearnedSkills(std::string skillsFile, std::string displayNameFile)
+   {
+
+   };
 
    int stringToSkill(std::string input);
    std::string skillToString(int input);
