@@ -1385,7 +1385,7 @@
 
 1415407815 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1430617144 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1431303410 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1657,7 +1657,7 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1430661847 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1431210473 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
@@ -1671,7 +1671,7 @@
 
 1424882062 d:\github\singularitythirdpart\damagetypes.h
 
-1429146005 d:\dorian's programs\singularitythirdpart\characterthings.h
+1431978916 d:\dorian's programs\singularitythirdpart\characterthings.h
 
 1429023075 d:\doriancode\singularitythirdpart\characterthings.h
 
@@ -1698,7 +1698,7 @@
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 
-1430672274 d:\dorian's programs\singularitythirdpart\eventlog.h
+1431209822 d:\dorian's programs\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 

@@ -21,6 +21,8 @@ class baseStats
 
 public:
 //TODO: Fix all the things here
+   bool checkOutput(unsigned short* Input){ if( *Input > MAX_STAT ){ *Input = MAX_STAT; return false; } return true; };
+   bool checkInput(unsigned short* Input, short setInput){ if (setInput < 0 && setInput * (-1) > *Input){ *Input = 0; return false; }; return true; };
 
 
    //{
@@ -35,22 +37,20 @@ public:
 
    //Sets the value of the selected stat
    //Returning false means the value was set to the max.
-   bool setInt(unsigned short setInput){ intelligence = setInput; return checkValue(endurance) == false }
-   bool setWis(unsigned short setInput){ wisdom = setInput; return checkValue(endurance) == false }
-   bool setCha(unsigned short setInput){ charisma = setInput; return checkValue(endurance) == false }
-   bool setStr(unsigned short setInput){ strength = setInput; return checkValue(endurance) == false }
-   bool setAgi(unsigned short setInput){ agility = setInput; return checkValue(endurance) == false }
-   bool setEnd(unsigned short setInput){ endurance = setInput; return checkValue(endurance) == false }
+   bool setInt(unsigned short setInput){ intelligence = setInput; return checkOutput(&intelligence) == false; }
+   bool setWis(unsigned short setInput){ wisdom = setInput; return checkOutput(&wisdom) == false; }
+   bool setCha(unsigned short setInput){ charisma = setInput; return checkOutput(&charisma) == false; }
+   bool setStr(unsigned short setInput){ strength = setInput; return checkOutput(&strength) == false; }
+   bool setAgi(unsigned short setInput){ agility = setInput; return checkOutput(&agility) == false; }
+   bool setEnd(unsigned short setInput){ endurance = setInput; return checkOutput(&endurance) == false; }
 
    //Increments by the input value.
-   bool incrInt(short setInput){ intelligence = intelligence + setInput; if( setInput + intelligence < MAX_STAT ){ intelligence = MAX_STAT; return true;} return false; }
-   bool incrWis(short setInput){ if( setInput + wisdom < MAX_STAT ){ wisdom = MAX_STAT; return true;} return false; }
-   bool incrCha(short setInput){ if( setInput + charisma < MAX_STAT ){ charisma = MAX_STAT; return true;} return false; }
-   bool incrStr(short setInput){ if( setInput + strength < MAX_STAT ){ strength = MAX_STAT; return true;} return false; }
-   bool incrAgi(short setInput){ if( setInput + agility < MAX_STAT ){ agility = MAX_STAT; return true;} return false; }
-   bool incrEnd(short setInput){ if( setInput + endurance < MAX_STAT ){ endurance = MAX_STAT; return true;} return false; }
-
-   bool checkValue(unsigned short* Input){ if( Input > MAX_STAT ){ Input = MAX_STAT; return false; } return true; }
+   bool incrInt(short setInput){ if (!checkInput(&intelligence, setInput)){ return false; }; intelligence = intelligence + setInput; return checkOutput(&intelligence); }
+   bool incrWis(short setInput){ if (!checkInput(&wisdom, setInput)){ return false; }; wisdom = wisdom + setInput; return checkOutput(&wisdom); }
+   bool incrCha(short setInput){ if (!checkInput(&charisma, setInput)){ return false; }; charisma = charisma + setInput; return checkOutput(&charisma); }
+   bool incrStr(short setInput){ if (!checkInput(&strength, setInput)){ return false; }; strength = strength + setInput; return checkOutput(&strength); }
+   bool incrAgi(short setInput){ if (!checkInput(&agility, setInput)){ return false; }; agility = agility + setInput; return checkOutput(&agility); }
+   bool incrEnd(short setInput){ if (!checkInput(&endurance, setInput)){ return false; }; endurance = endurance + setInput; return checkOutput(&endurance); }
 
 
    //}
