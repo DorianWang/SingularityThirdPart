@@ -52,7 +52,6 @@ public:
    bool incrAgi(short setInput){ if (!checkInput(&agility, setInput)){ return false; }; agility = agility + setInput; return checkOutput(&agility); }
    bool incrEnd(short setInput){ if (!checkInput(&endurance, setInput)){ return false; }; endurance = endurance + setInput; return checkOutput(&endurance); }
 
-
    //}
 
 };
