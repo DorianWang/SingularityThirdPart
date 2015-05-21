@@ -12,7 +12,6 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
 
    FileIO* file = new FileIO;
    newFileName = ATTACK_DATA_LOCATION + newFileName;
-
    file -> dataOpenFile(newFileName, false);
 
    stringFunc stringModder;
@@ -20,10 +19,8 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         return true;//No more attacks to read!
-         //TODO: Add some way of adding errors to an error log.
-         //TODO: Add an event log.
-         //This one would be "Warning: Unable to continue reading file."
+         eventLogger ->addNewLog("WARNING: Unexpected end of file: " + newFileName);
+         break;
       }
 
       tempInput = stringModder.trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -33,6 +30,7 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
       }
 
       if (tempInput.substr(0, 9) == "end file;"){
+         eventLogger -> addNewLog("INFO: No more attacks to read from file: " + newFileName);
          return true; //End of file.
       }
 
@@ -41,7 +39,9 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
    }
 
 //isGood = true;
-file -> closeFile();
+   file -> closeFile();
+   eventLogger -> addNewLog("INFO: Closing file: " + newFileName);
+   return true;
 }
 
 attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName)
@@ -125,9 +125,7 @@ There are 19 different scalings, in the same order as above.
 */
 
 
-
 std::vector <std::string> nameOfScalings;
-
 
 std::string tempInput;
 
