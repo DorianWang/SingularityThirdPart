@@ -13,6 +13,9 @@ end;
 #base stats, increases damage by x per point
 #intelligence, wisdom, charisma, strength, agility, and endurance
 
+spirit;
+#Special stat. Hard to boost, hard to calculate, 
+
 attackerHP;
 attackerMP;
 #other base stats of the attacker

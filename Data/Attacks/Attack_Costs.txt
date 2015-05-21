@@ -1,0 +1,9 @@
+SELF_HP attackerHP
+MANA attackerMP
+#Basically, blood magic and regular magic.
+
+SPIRIT spirit
+#Be careful, don't burn yourself out...
+
+DFND_MP defenderMP
+#Mana burn.

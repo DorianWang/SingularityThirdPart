@@ -19,10 +19,9 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         eventLogger ->addNewLog("WARNING: Unexpected end of file: " + newFileName);
+         eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
          break;
       }
-
       tempInput = stringModder.trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
       if (tempInput.at(0) == '#'){
@@ -35,10 +34,8 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
       }
 
       outputVector -> push_back( addAttack(file, &stringModder, tempInput) );
-
    }
 
-//isGood = true;
    file -> closeFile();
    eventLogger -> addNewLog("INFO: Closing file: " + newFileName);
    return true;
@@ -46,16 +43,14 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
 
 attackType attackReader::addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName)
 {
+   std::string tempInput;
 
-std::string tempInput;
+   attackType tempAttack;
+   tempAttack.name = newAttackName;
+   //TODO: Make this function.
+   //addCostScaling();
 
-attackType tempAttack;
-tempAttack.name = newAttackName;
-
-//addCostScaling();
-
-addSubtypeScaling(file, stringModder, &(tempAttack.scaling));
-
+   addSubtypeScaling(file, stringModder, &(tempAttack.scaling));
 }
 
 
@@ -123,8 +118,6 @@ Stats which can scale attacks are:
 
 There are 19 different scalings, in the same order as above.
 */
-
-
 std::vector <std::string> nameOfScalings;
 
 std::string tempInput;
@@ -132,7 +125,8 @@ std::string tempInput;
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         break;//No more attacks to read!
+         eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
+         break;
       }
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -143,10 +137,10 @@ std::string tempInput;
 
       for (int i = 0; i < nameOfScalings.size(); i++){
          if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-            break; //End of file.
+            eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
+            break;
          }
       }
-      //addAttack(FileIO attackFile, stringFunc* stringModder);
 
    }
 }
