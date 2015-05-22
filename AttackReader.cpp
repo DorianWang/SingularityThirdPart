@@ -118,6 +118,7 @@ Stats which can scale attacks are:
 
 There are 19 different scalings, in the same order as above.
 */
+//TODO: get scaling names from file.
 std::vector <std::string> nameOfScalings;
 
 std::string tempInput;
