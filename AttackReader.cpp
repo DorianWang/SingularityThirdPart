@@ -138,7 +138,7 @@ std::string tempInput;
 
       for (int i = 0; i < nameOfScalings.size(); i++){
          if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-            eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
+            eventLogger -> addNewLog("INFO: end of scaling: " + scalingname);
             break;
          }
       }
