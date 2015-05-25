@@ -122,12 +122,14 @@ There are 19 different scalings, in the same order as above.
 std::vector <std::string> nameOfScalings;
 
 std::string tempInput;
+std::string tempParsedInput;
+double scalingValue;
 
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
-         break;
+         eventLogger -> addNewLog("WARNING: Unexpected end of file in function: addScaling");
+         return false;
       }
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -136,11 +138,18 @@ std::string tempInput;
          continue; //Comment found.
       }
 
+      if (tempInput.substr(0, scalingname.length() + 1) == scalingname + ';'){
+         return true;
+      }
+
       for (int i = 0; i < nameOfScalings.size(); i++){
-         if (tempInput.substr(0, 9) == "end " + scalingname + ';'){
-            eventLogger -> addNewLog("INFO: end of scaling: " + scalingname);
-            break;
+         if (tempInput.substr(0, nameOfScalings[i].length()) == scalingname){
+            tempParsedInput = tempInput.substr(nameOfScalings[i].length());
+            sscanf(tempParsedInput.c_str(), "%*[^0-9]%lf", &scalingValue);
+            statScaling tempStat; tempStat.statNum = i; tempStat.scaling = 0;
+            eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
          }
+
       }
 
    }
