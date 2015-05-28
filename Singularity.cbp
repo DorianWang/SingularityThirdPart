@@ -112,6 +112,9 @@
 		<Unit filename="SecondGameMain.h">
 			<Option virtualFolder="SecondGameStuff/" />
 		</Unit>
+		<Unit filename="StatReader.h">
+			<Option virtualFolder="FirstGameStuff/GameObjects/ByTheStats/" />
+		</Unit>
 		<Unit filename="TakeGameMain.cpp">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
@@ -129,6 +132,9 @@
 		</Unit>
 		<Unit filename="main.cpp">
 			<Option virtualFolder="_Main/" />
+		</Unit>
+		<Unit filename="statReader.cpp">
+			<Option virtualFolder="FirstGameStuff/GameObjects/ByTheStats/" />
 		</Unit>
 		<Unit filename="stringFunctions.h">
 			<Option virtualFolder="Utilities/" />

@@ -146,7 +146,7 @@ double scalingValue;
          if (tempInput.substr(0, nameOfScalings[i].length()) == scalingname){
             tempParsedInput = tempInput.substr(nameOfScalings[i].length());
             sscanf(tempParsedInput.c_str(), "%*[^0-9]%lf", &scalingValue);
-            statScaling tempStat; tempStat.statNum = i; tempStat.scaling = 0;
+            statScaling tempStat; tempStat.statNum = i; tempStat.scaling = scalingValue;
             eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
          }
 
