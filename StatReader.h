@@ -21,13 +21,18 @@
 class statReader
 {
 
-
+FileIO statFile;
 
 
 
 
 
 public:
+
+   statReader();
+   ~statReader();
+
+
    std::vector <std::string> statList;
 
 };
