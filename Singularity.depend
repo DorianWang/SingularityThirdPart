@@ -1035,16 +1035,18 @@
 	<stdio.h>
 	<stdlib.h>
 
-1424359336 source:d:\doriancode\singularitythirdpart\main.cpp
+1431350109 source:d:\doriancode\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	<iomanip>
+	<ctime>
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
 	"stringFunctions.h"
+	"eventLog.h"
 	"Bases.h"
 	"libraryIncluder.h"
 
@@ -1591,8 +1593,9 @@
 
 1415741145 source:d:\dorian's programs\singularitythirdpart\screeninstructions.cpp
 
-1424359336 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
+1431350109 source:d:\doriancode\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
+	"eventLog.h"
 
 1423067775 d:\doriancode\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
@@ -1647,7 +1650,7 @@
 1424355736 source:d:\doriancode\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1429276544 d:\doriancode\singularitythirdpart\damagecalculator.h
+1431350109 d:\doriancode\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
@@ -1673,7 +1676,7 @@
 
 1432169084 d:\dorian's programs\singularitythirdpart\characterthings.h
 
-1429023075 d:\doriancode\singularitythirdpart\characterthings.h
+1432827897 d:\doriancode\singularitythirdpart\characterthings.h
 
 1432128921 d:\github\singularitythirdpart\characterthings.h
 
@@ -1684,12 +1687,13 @@
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 
-1430234505 source:d:\doriancode\singularitythirdpart\attackreader.cpp
+1432827896 source:d:\doriancode\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
 
-1430234557 d:\doriancode\singularitythirdpart\attackreader.h
+1432827896 d:\doriancode\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
+	"eventLog.h"
 
 1432820095 source:d:\github\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
@@ -1704,6 +1708,10 @@
 	<ctime>
 
 1431354787 d:\github\singularitythirdpart\eventlog.h
+	"libraryIncluder.h"
+	<ctime>
+
+1431350109 d:\doriancode\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 

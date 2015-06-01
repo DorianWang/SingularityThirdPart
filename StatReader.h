@@ -14,8 +14,8 @@
 #include <vector>
 
 
-#define SKILL_FILE_LOCATION "Data/Skills/"
-#define FILE_LEARNED_SKILLS "learnedSkills.txt"
+#define SKILL_FILE_LOCATION std::string("Data/Skills/")
+#define FILE_LEARNED_SKILLS std::string("learnedSkills.txt")
 
 
 class statReader
