@@ -4,6 +4,7 @@
 #define STATREADER_H_INCLUDED
 
 #include "libraryIncluder.h"
+#include "eventLog.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -13,7 +14,8 @@
 #include <ctime>
 #include <vector>
 #include <map>
-
+#include <string>
+#include <sstream>
 
 #define SKILL_FILE_LOCATION std::string("Data/Skills/")
 #define FILE_LEARNED_SKILLS std::string("learnedSkills.txt")
