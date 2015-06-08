@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <ctime>
 #include <vector>
+#include <map>
 
 
 #define SKILL_FILE_LOCATION std::string("Data/Skills/")
@@ -23,8 +24,8 @@ class statReader
 
 FileIO statFile;
 
-
-
+   std::vector <std::string> statList;
+   std::map <std::string, int> statMap;
 
 
 public:
@@ -32,8 +33,8 @@ public:
    statReader();
    ~statReader();
 
-
-   std::vector <std::string> statList;
+   int statToInt(std::string input);
+   std::string intToStat(int input);
 
 };
 
