@@ -10,6 +10,11 @@
 statReader::statReader()
 {
    statFile.textOpenFile(SKILL_FILE_LOCATION + FILE_LEARNED_SKILLS, false);
+   std::string readInput;
+   while(statFile.readLine(&readInput)){
+
+   }
+
 }
 
 std::string statReader::intToStat(int input)
@@ -44,7 +49,10 @@ int statReader::statToInt(std::string input)
    return returnInt;
 }
 
-
+bool statReader::parseInput()
+{
+   asdf
+}
 
 
 
