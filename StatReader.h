@@ -29,6 +29,9 @@ FileIO statFile;
    std::vector <std::string> statList;
    std::map <std::string, int> statMap;
 
+   stringFunc stringModder;
+
+   bool parseInput(std::string input);
 
 public:
 

@@ -12,7 +12,7 @@ statReader::statReader()
    statFile.textOpenFile(SKILL_FILE_LOCATION + FILE_LEARNED_SKILLS, false);
    std::string readInput;
    while(statFile.readLine(&readInput)){
-
+      parseInput(readInput);
    }
 
 }
@@ -49,10 +49,41 @@ int statReader::statToInt(std::string input)
    return returnInt;
 }
 
-bool statReader::parseInput()
+bool statReader::parseInput(std::string input)
 {
-   asdf
+   input = stringModder.trimWhitespace(input, " /t");
+   if (input != std::string("")){
+
+      try
+      {
+         statMap.at(input);
+      }
+         catch (const std::out_of_range& oor)
+      {
+         statList.push_back(input);
+         statMap.insert(std::pair<std::string, int>(input, statList.size()-1));
+         return true;
+      }
+      eventLogger -> addNewLog("Warning: Input: " + input + " already exists in the system.");
+   }
+   return false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
