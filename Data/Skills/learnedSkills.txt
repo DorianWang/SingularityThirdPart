@@ -2,60 +2,60 @@
 #{
 
    #Physical skills
-   stab;
-   slash;
-   crush;
-   ranged;
+   stab
+   slash
+   crush
+   ranged
 
    #Beast affinity modifies a few abilities, which are quite special.
-   beast;
+   beast
 
    #Magic skills
-   arcane;
-   elemental;
+   arcane
+   elemental
 
    #Two different skills that both provide dodge and anti-dodge. One is based off int and wis, the other is agi and end
-   short foresight;
-   short martialReflex;
+   short foresight
+   short martialReflex
 
 #}
 
    #Skills used on both friendly and less than friendly NPCs to get them to do things you want.
    #Persuasion is int and cha, posture is cha and agi
-   persuasion;
-   posture;
+   persuasion
+   posture
 
 
    #All science things!
-   curiosity;
-   technoScience;
-   engineer;
+   curiosity
+   technoScience
+   engineer
 
    #All biology knowledge.
-   biology;
+   biology
    #Used in making potions, chemicals, etc.
-   chemistry; 
+   chemistry;
 
    #All crystallography knowledge, improves chance of finding them, their sell value, and their efficacy.
-   crystal; 
+   crystal
    #All rocks, ores, etc
-   geology; 
+   geology
    #Used to identify useful plants, and do things with them.
-   botany; 
+   botany
 
    #TODO:
 
-   sneak;
+   sneak
 
 
    #Misc skills
    # end and int, increases armour given by items.
-   armourer;
+   armourer
    # end and agi, gives carry space.
-   packRat;
+   packRat
 
    # int and wis, increases ability to read items. Increases some magic abilities
-   reader;
+   reader
 
 
    #TODO;

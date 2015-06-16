@@ -52,8 +52,7 @@ int statReader::statToInt(std::string input)
 bool statReader::parseInput(std::string input)
 {
    input = stringModder.trimWhitespace(input, " /t");
-   if (input != std::string("")){
-
+   if (input != std::string("") && input.at(0) != '#'){
       try
       {
          statMap.at(input);
