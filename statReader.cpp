@@ -49,6 +49,10 @@ int statReader::statToInt(std::string input)
    return returnInt;
 }
 
+
+
+//This function reads lines. If the line is not empty and is not a comment (denoted by starting the line with '#'),
+//It will create a listing within the statMap, and a corresponding entry in the statList.
 bool statReader::parseInput(std::string input)
 {
    input = stringModder.trimWhitespace(input, " /t");
