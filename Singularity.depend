@@ -1387,7 +1387,7 @@
 
 1415407815 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1431303410 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1439518328 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1399,6 +1399,7 @@
 	"ScreenController.h"
 	"stringFunctions.h"
 	"eventLog.h"
+	"StatReader.h"
 	"Bases.h"
 	"libraryIncluder.h"
 
@@ -1437,7 +1438,7 @@
 1414625297 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarynodetype.h
 	<cstdlib>
 
-1432422060 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
+1439519258 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
 	<string>
 	<fstream>
 	<iostream>
@@ -1680,12 +1681,13 @@
 
 1434120411 d:\github\singularitythirdpart\characterthings.h
 
-1430661850 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
+1433034079 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
 
-1430661110 d:\dorian's programs\singularitythirdpart\attackreader.h
+1432171716 d:\dorian's programs\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
+	"eventLog.h"
 
 1432827896 source:d:\doriancode\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
@@ -1703,7 +1705,7 @@
 	"libraryIncluder.h"
 	"eventLog.h"
 
-1431209822 d:\dorian's programs\singularitythirdpart\eventlog.h
+1436999454 d:\dorian's programs\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 
@@ -1714,4 +1716,21 @@
 1431350109 d:\doriancode\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
+
+1439517266 source:d:\dorian's programs\singularitythirdpart\statreader.cpp
+	"StatReader.h"
+
+1436998981 d:\dorian's programs\singularitythirdpart\statreader.h
+	"libraryIncluder.h"
+	"eventLog.h"
+	<cstdlib>
+	<iostream>
+	<algorithm>
+	<sstream>
+	<iomanip>
+	<ctime>
+	<vector>
+	<map>
+	<string>
+	<sstream>
 

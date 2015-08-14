@@ -15,8 +15,8 @@
    elemental
 
    #Two different skills that both provide dodge and anti-dodge. One is based off int and wis, the other is agi and end
-   short foresight
-   short martialReflex
+   foresight
+   martialReflex
 
 #}
 
@@ -34,7 +34,7 @@
    #All biology knowledge.
    biology
    #Used in making potions, chemicals, etc.
-   chemistry;
+   chemistry
 
    #All crystallography knowledge, improves chance of finding them, their sell value, and their efficacy.
    crystal

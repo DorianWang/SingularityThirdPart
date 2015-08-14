@@ -46,9 +46,7 @@ inline bool writeDwarf();
 
 //If isFirstTime is true, the file will be created, closed and then reopened.
 //Attempting to use a file without creating it first will not work.
-inline int textOpenFile();
 inline int textOpenFile(std::string fileName, bool isFirstTime);
-inline int dataOpenFile();
 inline int dataOpenFile(std::string filePath, bool isFirstTime);
 // <<<<<
 
@@ -77,13 +75,14 @@ std::string getFileName(bool isBinary);
 inline int deleteFile(std::string *fileName);
 inline bool checkIfOpen();
 
-//Line buffer stuff, to allow for storage in the object. More convienient.
+//Line buffer stuff, to allow for storage in the object. More convenient.
 inline void bufferLines(std::string input);
 inline void bufferAddition(std::string input);
 inline void writeBuffer();
 inline void writeBuffer(bool clearData);
-inline void clearBuffer();
+
 inline int clearBuffer(int line);
+inline void clearBuffer();
 
 //Data buffer stuff
 inline void bufferData(const void* input, int sizeOfData, int arrayLength);
@@ -163,17 +162,16 @@ void FileIO::fileConstructor()
 //File deletion
 //{
 
-int FileIO::deleteFile(std::string *fileName)
+int FileIO::deleteFile(std::string* fileName)
 {
-
    if( remove( (*fileName).c_str() ) != 0 ){
       perror( "Error deleting file" );
+      return 0;
    }
    else
    {
-      cout<<"File successfully deleted"<<endl;
+      return 1;
    }
-   return 1;
 }
 
 //}
@@ -182,28 +180,23 @@ int FileIO::deleteFile(std::string *fileName)
 //Opening files
 //{
 
-//Takes a string, and opens the file at that location.
+//Takes a string, and opens the file at that location. Stays at the beginning of the file if not created.
 int FileIO::textOpenFile(std::string filePath, bool isFirstTime)
 {
    if (isFirstTime){
-      myfile.open(filePath.c_str(), ios::out);//creates the file
+      myfile.open(filePath.c_str(), ios::out); //creates the file
       myfile.close();
-      myfile.open(filePath.c_str(), ios::out | ios::in);
-      isBinary=false;
-      fileLength=0;
-      fileConstructor();
-      return 1;
    }
 
    myfile.open(filePath.c_str(), ios::out | ios::in);
 
    if (myfile.is_open()){
-      isBinary=false;
+      isBinary = false;
       fileConstructor();
       return 1;
    }
 
-return 0;//file is not open
+return 0; //File is not open.
 }
 
 //Takes a string, and opens the file at that location.
@@ -230,104 +223,13 @@ int FileIO::dataOpenFile(std::string filePath, bool isFirstTime)
 return 0;//file is not open
 }
 
-int FileIO::textOpenFile()
-{
-   std::string fileName;
-   std::string input;
-   bool newFile=false;
-
-   while (true){
-      fileName = getFileName();
-      system("CLS");
-      cout<<"I will now try to open the file \""<<fileName<<"\"."<<endl;
-      cout<<"Is this right? Enter Y to continue, Q to quit, and anything else to try again."<<endl;
-      cout<<"If the file does not exist, please press C instead."<<endl;
-      cin>>input;
-      if (input=="Y"||input=="y"){
-         break;
-      }
-      if (input=="C"||input=="c"){
-         newFile=true;
-         break;
-      }
-      if (input=="Q"||input=="q"){
-         return 0;
-      }
-   }
-
-   //fileName = getFileName();
-   if (newFile){
-      myfile.open(filePath.c_str(), ios::out);//creates the file
-      myfile.close();
-      myfile.open(filePath.c_str(), ios::out | ios::in);
-      isBinary=false;
-      fileLength=0;
-      fileConstructor();
-      return 1;
-   }
-
-   myfile.open(filePath.c_str(), ios::out | ios::in);
-   if (myfile.is_open()){
-      isBinary=false;
-      fileConstructor();
-      return 1;
-   }
-}
-
-//http://courses.cs.vt.edu/cs2604/fall02/binio.html
-//Binary files
-int FileIO::dataOpenFile()
-{
-   std::string fileName;// = getFileName();
-   std::string input;
-   bool newFile=false;
-
-   while (true){
-      fileName = getFileName();
-      system("CLS");
-      cout<<"I will now try to open the file \""<<fileName<<"\"."<<endl;
-      cout<<"Is this right? Enter Y to continue, Q to quit, and anything else to try again."<<endl;
-      cout<<"If the file does not exist, please press C instead."<<endl;
-      cin>>input;
-      if (input=="Y"||input=="y"){
-         break;
-      }
-      if (input=="C"||input=="c"){
-         newFile=true;
-         break;
-      }
-      if (input=="Q"||input=="q"){
-         return 0;
-      }
-
-   }
-
-   if (newFile){
-      myfile.open(filePath.c_str(), ios::out | ios::binary);//creates the file
-      myfile.close();
-      myfile.open(filePath.c_str(), ios::out | ios::in | ios::binary);//Actually leaves it open.
-      isBinary=true;
-      fileLength=0;
-      fileConstructor();
-      return 1;
-   }
-
-   myfile.open(filePath.c_str(), ios::out | ios::in | ios::binary);
-   isBinary=true;
-
-   myfile.seekg (0, myfile.end);
-   fileLength = myfile.tellg();//Finds the length of the file.
-   myfile.seekg (0, myfile.beg);
-   fileConstructor();
-   return 1;
-}
-
-
 //}
+
 
 
 //Closing files
 //{
+
 bool FileIO::checkIfOpen()
 {
    if (myfile.is_open()){
@@ -368,7 +270,7 @@ void FileIO::closeFile(bool asdf)
 //{
 
 //Reads one line from the file, and returns it.
-int FileIO::readLine(std::string *output)
+int FileIO::readLine(std::string* output)
 {
    if (!myfile.good()){
       return 0;
@@ -376,13 +278,18 @@ int FileIO::readLine(std::string *output)
 
    std::string input;
 
-   getline( myfile, input );
-   if (input.length()==0){
+   //Will read until it hits a line with text.
+   while (true){
+      getline( myfile, input );
+      if (!myfile.good()){
+         return 0;
+      }
+      if (input.length() == 0){
+         continue;
+      }
+      *output = input;
       return 1;
    }
-
-   *output = input;
-   return 2;
 }
 
 //Reads a line from the file, and then appends an endline to it.
@@ -395,13 +302,14 @@ int FileIO::readWholeLine(std::string *output)
    std::string input;
 
    getline( myfile, input );
-   if (input.length()==0){
-      return 1;//Empty line...
+   if (input.length() == 0){
+      *output = std::string("\n");
+      return 1;
    }
    stringstream ss;
-   ss<<input<<endl;
+   ss << input << std::endl;
    *output = ss.str();
-   return 2;
+   return 1;
 }
 
 //}
@@ -409,7 +317,6 @@ int FileIO::readWholeLine(std::string *output)
 
 //Text line buffer
 //{
-
 
 //Adds to the line buffer, and then increments the line counter.
 void FileIO::bufferLines(std::string input)
@@ -432,31 +339,6 @@ void FileIO::bufferLines(std::string input)
    lineCounter++;
    dataInLineBuffer=false;
    lineBufferBuffer.clear();
-}
-
-
-//Clears the line buffer after line #(line), and sets the counter to that line.
-int FileIO::clearBuffer(int line)
-{
-   if (line > lineCounter||line < 0){
-      return 0;
-   }
-
-   if (line == 0){
-      lineBuffer.clear();
-      dataInLineBuffer = false;
-      lineBufferBuffer.clear();
-      return 1;
-   }
-
-   lineBuffer.resize(line);//TODO, is this correct?
-
-   lineBuffer[line].clear();
-   lineCounter = line;
-   dataInLineBuffer = false;
-   lineBufferBuffer.clear();
-   if (lineBuffer[line].empty())return 1;
-   return 0;
 }
 
 //Writes the buffer to the file, and then clears it.
@@ -490,11 +372,41 @@ void FileIO::bufferAddition(std::string input)
    dataInLineBuffer = true;
 }
 
+//Clears the line buffer after line #(line), and sets the counter to that line.
+int FileIO::clearBuffer(int line)
+{
+   if (line > lineCounter||line < 0){
+      return 0;
+   }
+
+   if (line == 0){
+      lineBuffer.clear();
+      dataInLineBuffer = false;
+      lineBufferBuffer.clear();
+      return 1;
+   }
+
+   lineBuffer.resize(line);//TODO, is this correct?
+
+   lineBuffer[line].clear();
+   lineCounter = line;
+   dataInLineBuffer = false;
+   lineBufferBuffer.clear();
+   if (lineBuffer[line].empty()) {return 1;}
+   return 0;
+}
+
+//Clears the line buffer after line #(line), and sets the counter to that line.
+void FileIO::clearBuffer()
+{
+   lineBuffer.clear();
+   dataInLineBuffer = false;
+   lineBufferBuffer.clear();
+   lineCounter = 0;
+
+}
 
 //}
-
-
-
 
 
 
@@ -636,8 +548,6 @@ int FileIO::goPos(int isRead, int position)
 //}
 
 
-
-
 // It is limited to MAX_BUFFER bytes per pull.
 // Multiple executions may be required to get all data.
 // http://stackoverflow.com/questions
@@ -734,21 +644,12 @@ return 0;
 
 
 //Clears entire buffer, and resets counter
-void FileIO::clearBuffer()
+void FileIO::clearDataBuffer()
 {
    dataInLineBuffer = false;
-   lineBuffer.clear();
-   lineBufferBuffer.clear();
-   lineCounter = 0;
+   dataCounter = 0;
    dataBuffer.clear();
 }
-
-
-
-
-
-
-
 
 
 
@@ -787,20 +688,6 @@ return 0;
 
 }
 
-
-
-void FileIO::clearDataBuffer()
-{
-   if (dataBuffer.size()>=1){
-      clearDataBuffer(0);
-   }
-}
-
-void FileIO::clearDataBuffer(int dummy)
-{
-   dataBuffer.clear();//Clearing buffer
-   dataBuffer.resize(64);//Resizing buffer
-}
 
 
 

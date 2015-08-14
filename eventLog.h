@@ -83,7 +83,7 @@ void newFile()
       delete logFile;
    }
    logFile = tempFile;
-   cout << fileName << " " << tempFile <<endl;
+   //cout << fileName << " " << tempFile <<endl;
 }
 
 
@@ -110,6 +110,8 @@ bool pushBuffer()
    }
    cout << buffer << endl;
    logFile -> writeLine(buffer);
+
+   buffer = std::string("");
 
    fileMaxSize += lineBufferLength;
    lineBufferLength = 0;

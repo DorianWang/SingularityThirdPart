@@ -13,6 +13,7 @@
 
 #include "stringFunctions.h"
 #include "eventLog.h"
+#include "StatReader.h"
 
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
@@ -81,19 +82,6 @@ int main(int argc, char *argv[])
    srand (time(NULL));
 
 
-    //cout<<asdfgh<<qwe<<asdfgh<<qwe<<endl;
-    //cout<<asdfgh<<asdfgh<<qwe<<asdfgh<<qwe<<endl;
-    //219 -> 178 -> 177 -> 176 -> 43
-   int poiu = 4321;
-//   poi(4, &poiu);
-
-   float asdf = 24;
-   int asdfs = 564;
-   void* temp;
-   char buffer[16];
-   buffer[0]='0';buffer[1]='1';buffer[2]='5';buffer[3]='h';//buffer[4]='c';buffer[5]='d';buffer[6]='q';buffer[7]='h';
-   buffer[8]='Q';buffer[9]=0;
-
    FileIO myFile;//FileIO has been tested, and appears to work...
    //However, there is more testing to be done!
 
@@ -101,6 +89,15 @@ int main(int argc, char *argv[])
 //   std::string them;
 //   myFile.readLine(&them);
 //   cout<<them<<endl;
+
+   myFile.textOpenFile(std::string("test.txt"), false);
+
+   std::string testingString;
+   while (myFile.readLine(&testingString)){
+      cout << testingString << "!" << endl;
+   }
+   system("PAUSE");
+   system ("CLS");
 
 
    //Nothing is 0, true is -127/65408, and toggled is 1, (toggled and down is 65409/-128)
@@ -113,7 +110,6 @@ int main(int argc, char *argv[])
    */
    //Both work, but the first will only work if the front window is this one.
    //The second one always works.
-
 
 
 std::string folderStuff = "Stuff\\";
@@ -254,6 +250,19 @@ cout << (testingSub.substr(0, 6) == "qwerty") << endl;
    system("PAUSE");
    system ("CLS");
 
+   statReader statInput;
+   std::vector <std::string> testList = statInput.testing();
+
+   for (int i = 0; i < testList.size(); i++){
+      cout << testList[i] << endl;
+   }
+
+
+
+
+   system("PAUSE");
+   system ("CLS");
+
 screenTest.outputScreen(1);
 
 
@@ -263,7 +272,11 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
 }
 */
 
+
+
    testConsole.cursorOptions.changeCursorPos(0, 54);
+
+
    cout<<"I'm done!"<<endl;
    system("PAUSE");
 

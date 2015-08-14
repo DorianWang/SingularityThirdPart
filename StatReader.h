@@ -24,7 +24,7 @@
 class statReader
 {
 
-FileIO statFile;
+   FileIO statFile;
 
    std::vector <std::string> statList;
    std::map <std::string, int> statMap;
@@ -40,6 +40,8 @@ public:
 
    int statToInt(std::string input);
    std::string intToStat(int input);
+
+   std::vector <std::string> testing();
 
 };
 

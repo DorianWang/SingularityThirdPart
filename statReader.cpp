@@ -4,9 +4,6 @@
 
 
 
-
-
-
 statReader::statReader()
 {
    statFile.textOpenFile(SKILL_FILE_LOCATION + FILE_LEARNED_SKILLS, false);
@@ -16,6 +13,13 @@ statReader::statReader()
    }
 
 }
+
+statReader::~statReader()
+{
+   //nothing
+}
+
+
 
 std::string statReader::intToStat(int input)
 {
@@ -33,7 +37,7 @@ std::string statReader::intToStat(int input)
    return returnStat;
 }
 
-
+//Finds the value that corresponds to the inputted string.
 int statReader::statToInt(std::string input)
 {
    int returnInt = 0;
@@ -55,8 +59,9 @@ int statReader::statToInt(std::string input)
 //It will create a listing within the statMap, and a corresponding entry in the statList.
 bool statReader::parseInput(std::string input)
 {
-   input = stringModder.trimWhitespace(input, " /t");
+   input = stringModder.trimWhitespace(input, " \t");
    if (input != std::string("") && input.at(0) != '#'){
+
       try
       {
          statMap.at(input);
@@ -72,7 +77,10 @@ bool statReader::parseInput(std::string input)
    return false;
 }
 
-
+std::vector <std::string> statReader::testing()
+{
+   return statList;
+}
 
 
 
