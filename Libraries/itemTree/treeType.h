@@ -124,9 +124,8 @@ template <class T> treeType<T>* treeType<T>::findNode(std::string name)
 
 template <class T> treeType<T>* treeType<T>::findConnectedNode(std::string name)
 {
-   int a = 0;
-   for (int i = 0; i<childNodes.size(); i++){
-      if (childNodes[i] -> label == name){
+   for (int i = 0; i < childNodes.size(); i++){
+      if ( childNodes[i] -> label == name ){
          return childNodes[i];
       }
    }
@@ -153,7 +152,8 @@ template <class T> leafType<T>* treeType<T>::findLeaf(std::string name)
 }
 
 //keyWords must be placed in order of more to less specific (equipment weapon edge, for example)
-//Not complete
+//Needs testing.
+//Format of keyWords must be "String String String String". Extra spaces are not tolerated.
 template <class T> leafType<T>* treeType<T>::findLeaf(std::string name, std::string keyWords)
 {
    stringFunc strParser;
@@ -174,21 +174,35 @@ template <class T> leafType<T>* treeType<T>::findLeaf(std::string name, std::str
    treeType<T>* tempNode;
    nodeQueue.push(this);
 
+   //This searches the tree for the first hint. When it is found, it clears the queue and recursively searches the new tree.
    while(!nodeQueue.empty()){
       tempNode = nodeQueue.front();
       nodeQueue.pop();
       returnValue = tempNode -> findConnectedNode(firstToken);
 
+      //If the first keyword is found, call findLeaf on the smaller tree.
       if (returnValue != NULL){
+         if (name == keyWords){
+            return returnValue;
+         }
+
          std::string temp = keyWords;
          if (temp != keyWords){
             //temp.erase(temp.begin(), firstToken.length() + 1);
-            temp.erase(0, firstToken.length() + 1);
+
+            if (temp.length() != firstToken.length()){
+               temp.erase(0, firstToken.length() + 1);
+            }
+            else
+            {
+               return findLeaf(name, name);
+            }
+
          }
          return findLeaf(name, temp);
       }
 
-      for (int i=0; i < tempNode -> childNodes.size(); i++){
+      for (int i = 0; i < tempNode -> childNodes.size(); i++){
          nodeQueue.push (tempNode -> childNodes[i]);
       }
    }

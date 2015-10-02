@@ -3,6 +3,9 @@
 #define DAMAGE_TYPES_H
 
 
+
+
+
 struct resistanceTypes
 {
    short magicResist;

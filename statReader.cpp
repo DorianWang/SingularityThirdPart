@@ -40,7 +40,7 @@ std::string statReader::intToStat(int input)
 //Finds the value that corresponds to the inputted string.
 int statReader::statToInt(std::string input)
 {
-   int returnInt = 0;
+   int returnInt = -1;
    try
    {
       returnInt = statMap.at(input);
