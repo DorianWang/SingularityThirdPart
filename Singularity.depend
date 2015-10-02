@@ -1387,14 +1387,13 @@
 
 1415407815 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1442097763 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1439518328 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	<iomanip>
 	<ctime>
-	"GL\glfw3.h"
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
@@ -1448,7 +1447,7 @@
 	<cstdlib>
 	<vector>
 
-1440474212 d:\dorian's programs\singularitythirdpart\libraries\itemtree\treetype.h
+1414625297 d:\dorian's programs\singularitythirdpart\libraries\itemtree\treetype.h
 	<iostream>
 	<queue>
 	<vector>
@@ -1662,12 +1661,12 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1440643773 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1431210473 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
 
-1440643942 d:\dorian's programs\singularitythirdpart\damagetypes.h
+1424820004 d:\dorian's programs\singularitythirdpart\damagetypes.h
 
 1434120411 d:\github\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
@@ -1682,14 +1681,13 @@
 
 1434120411 d:\github\singularitythirdpart\characterthings.h
 
-1440644395 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
+1433034079 source:d:\dorian's programs\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
 
-1439606177 d:\dorian's programs\singularitythirdpart\attackreader.h
+1432171716 d:\dorian's programs\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 	"eventLog.h"
-	"StatReader.h"
 
 1432827896 source:d:\doriancode\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
@@ -1719,7 +1717,7 @@
 	"libraryIncluder.h"
 	<ctime>
 
-1439594158 source:d:\dorian's programs\singularitythirdpart\statreader.cpp
+1439517266 source:d:\dorian's programs\singularitythirdpart\statreader.cpp
 	"StatReader.h"
 
 1436998981 d:\dorian's programs\singularitythirdpart\statreader.h

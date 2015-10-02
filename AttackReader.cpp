@@ -91,7 +91,7 @@ std::string tempInput;
 
       for (int i = 0; i < nameOfScalings.size(); i++){
          if (tempInput.substr(0, 9) == nameOfScalings[i] + ';'){
-            return addScaling(file, stringModder, &(outputScalings -> Scalings), nameOfScalings[i]);
+            return addScaling(file, stringModder, &(outputScalings -> Scalings[i]), nameOfScalings[i]);
          }
       }
       //addAttack(FileIO attackFile, stringFunc* stringModder);
@@ -118,11 +118,8 @@ Stats which can scale attacks are:
 
 There are 19 different scalings, in the same order as above.
 */
-std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
-//TODO: get scaling names from file, and make attackScaling dynamic as well.
-
-
-statReader statTable;
+//TODO: get scaling names from file.
+std::vector <std::string> nameOfScalings;
 
 std::string tempInput;
 std::string tempParsedInput;

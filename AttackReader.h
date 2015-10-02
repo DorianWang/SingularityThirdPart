@@ -4,7 +4,6 @@
 #include "DamageCalculator.h"
 #include "libraryIncluder.h"
 #include "eventLog.h"
-#include "StatReader.h"
 
 #define ATTACK_DATA_LOCATION "/Data/Combat/Attacks/"
 

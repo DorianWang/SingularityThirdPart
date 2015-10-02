@@ -40,10 +40,6 @@ class defenceCalculator{
 //Defence calculations
 //{
 
-
-
-
-
 //double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
 //double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 
@@ -116,7 +112,6 @@ int calculateTotalDamage(damagePacket inputDamage, resistanceTypes* inputResista
 
 
 
-
 //}
 
 
@@ -137,7 +132,7 @@ struct statScaling
 
 struct attackScaling
 {
-   std::vector <statScaling> Scalings;
+   std::vector <statScaling> Scalings[8];
    /*
    std::vector <statScaling> arcaneScaling;
    std::vector <statScaling> elementalScaling;
@@ -166,10 +161,6 @@ struct attackType
 //}
 
 }
-
-
-
-
 
 
 #endif // DAMAGECALULATOR_H_INCLUDED
