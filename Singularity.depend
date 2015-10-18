@@ -1387,7 +1387,7 @@
 
 1415407815 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
-1442097763 source:d:\dorian's programs\singularitythirdpart\main.cpp
+1444961076 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
@@ -1662,7 +1662,7 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1440643773 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1444961076 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"

@@ -24,6 +24,10 @@ eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 
 //using namespace std;
 
+
+
+
+
 struct interactObject
 {
    std::string nameObject;
@@ -69,13 +73,16 @@ char f;
 bool cursorVisibility = false;
 bool cursorSmall = true;
 
+double xpos;
+double ypos;
+
+//object
 
 
-void swap(int*a, int*b)
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-int temp = *a;
-*a=*b;
-*b = temp;
+    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS);
+        //Call function of object.
 }
 
 
@@ -109,6 +116,7 @@ int openGLTest()
    glfwMakeContextCurrent(window);
    glfwSetKeyCallback(window, key_callback);
    glfwSwapInterval(1); //Set time between buffer switches.
+   glfwGetCursorPos(window, &xpos, &ypos);
 
    double time = glfwGetTime();
 
@@ -136,10 +144,16 @@ int openGLTest()
       glVertex3f(0.f, 0.6f, 0.f);
       glEnd();
 
+      glfwGetCursorPos(window, &xpos, &ypos);
+      cout << xpos << ", " << ypos << endl;
+
       glfwSwapBuffers(window);
       glfwPollEvents();
+
    }
 
+   //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+   cout << xpos << ", " << ypos << endl;
    glfwDestroyWindow(window);
    glfwTerminate(); //All done.
    return 1;
