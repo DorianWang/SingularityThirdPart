@@ -6,8 +6,6 @@
 #include <iomanip>
 #include <ctime>
 
-#define GLFW_INCLUDE_GLU
-#include "GL\glfw3.h"
 
 #include "UsefulHeaders.h"
 
@@ -18,15 +16,13 @@
 #include "eventLog.h"
 #include "StatReader.h"
 
+#include "DamageCalculator.h"
+
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
 eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 
 //using namespace std;
-
-
-
-
 
 struct interactObject
 {
@@ -60,11 +56,8 @@ char f;
 
 #include "libraryIncluder.h"
 
-//#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
-
-
 // global variables
-#define VERSION_NUM 0.01
+#define VERSION_NUM 0.02
 
 
 
@@ -173,11 +166,6 @@ int main(int argc, char *argv[])
    FileIO myFile;//FileIO has been tested, and appears to work...
    //However, there is more testing to be done!
 
-//   myFile.textOpenFile("Data/Maps/Thing.txt", false);
-//   std::string them;
-//   myFile.readLine(&them);
-//   cout<<them<<endl;
-
    myFile.textOpenFile(std::string("test.txt"), false);
 
    std::string testingString;
@@ -187,17 +175,6 @@ int main(int argc, char *argv[])
    system("PAUSE");
    system ("CLS");
 
-
-   //Nothing is 0, true is -127/65408, and toggled is 1, (toggled and down is 65409/-128)
-
-   /*
-   COptions Ebeko;
-   Ebeko.changeCurrentWindowText("Rahfsdkhf");
-   system("PAUSE");
-   SetConsoleTitle("Adventure Game");
-   */
-   //Both work, but the first will only work if the front window is this one.
-   //The second one always works.
 
 
 std::string folderStuff = "Stuff\\";
@@ -223,17 +200,6 @@ Keypress KeyIO;
 //   system("PAUSE");
 
 
-
-/*
-bool keyPressed[4]; bool keyDown[4];
-system("PAUSE");
-KeyIO.get_code(keyPressed, keyDown, "asdf");
-system("PAUSE");
-KeyIO.get_code(keyPressed, keyDown, "asdf");
-std::string inputStuff;
-cin>>inputStuff;
-
-*/
 
 //the backslash n creates a gap.
 std::string stringFuncTester = "qwerty.asdf.qwerty....This is a line break!\n....ytr.poi.";
@@ -277,31 +243,30 @@ while (true){
 
 //Should I add macro conventions? Maybe INT_HEALTH for an integer, or STR_STRINGTHING for a string?
 
-instructDataOut* newInstruct;
-if (screenTest.popFirstUnsetInstructPointer(&newInstruct) == false){
-   break;
-}
+   instructDataOut* newInstruct;
+   if (screenTest.popFirstUnsetInstructPointer(&newInstruct) == false){
+      break;
+   }
 
-if (newInstruct -> macroInstruct == "TEST_MACRO"){
-   std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &testingMacroString;
-}
-else if (newInstruct -> macroInstruct == "MACRO"){
-   short ** tempPointer = (short **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &testShort;
-}
-else if (newInstruct -> macroInstruct == "HEALTH"){
-   int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &health;
-}
-else if (newInstruct -> macroInstruct == "WORTH"){
-   double ** tempPointer = (double **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &worthMe;
-}
-
-else{
-   cout << "whut?" << endl;
-}
+   if (newInstruct -> macroInstruct == "TEST_MACRO"){
+      std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &testingMacroString;
+   }
+   else if (newInstruct -> macroInstruct == "MACRO"){
+      short ** tempPointer = (short **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &testShort;
+   }
+   else if (newInstruct -> macroInstruct == "HEALTH"){
+      int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &health;
+   }
+   else if (newInstruct -> macroInstruct == "WORTH"){
+      double ** tempPointer = (double **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &worthMe;
+   }
+   else{
+      cout << "whut?" << endl;
+   }
 
 delete newInstruct;
 
@@ -328,6 +293,8 @@ srand (static_cast <unsigned> (time(0)));
 testConsole.cursorOptions.setColour(15, 0);
 
 cout << "Testing colours" << endl;
+
+
 
 /*
 std::string testingSub = "qwertyuiop";
@@ -369,16 +336,8 @@ openGLTest();
 screenTest.outputScreen(1);
 
 
-/*
-for (int i = 0; i < screenTest.testVector.size(); i++){
-   cout << screenTest.testVector[i]<<endl;
-}
-*/
-
-
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
-
 
    cout<<"I'm done!"<<endl;
    system("PAUSE");

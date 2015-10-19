@@ -3,6 +3,7 @@
 
 #include "DamageTypes.h"
 #include <cmath>
+#include <algorithm>
 
 #include "UsefulHeaders.h"
 
@@ -21,14 +22,18 @@
 
 #define ARMOUR_MAX_PERCENT_RESIST 100.00
 
-#define ARMOUR_STAB 80
-#define ARMOUR_SLASH 100
-#define ARMOUR_CRUSH 60
-#define ARMOUR_POISON 10
-#define ARMOUR_DOT 20
 
-#define MAGIC_ARCANE_RESIST 100
-#define MAGIC_ELEMENTAL_RESIST 80
+//Guidelines for armour stats.
+/*
+#define ARMOUR_STAB_MODIFIER 0.80
+#define ARMOUR_SLASH_MODIFIER 1.00
+#define ARMOUR_CRUSH_MODIFIER 0.60
+#define ARMOUR_POISON_MODIFIER 0.05
+#define ARMOUR_DOT_MODIFIER 0.10
+*/
+
+#define MAGIC_ARCANE_RESIST 1.00
+#define MAGIC_ELEMENTAL_RESIST 0.80
 
 namespace attackScaling
 {
@@ -54,22 +59,39 @@ double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResis
    double tempOutput = 0.000000;
 
    //Crushing damage.
-   tempOutput += inputDamage.crushPower * (ARMOUR_CRUSH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> crushResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += std::max(inputDamage.crushPower * (1 - inputResistances -> crushResist/ARMOUR_MAX_PERCENT_RESIST)
+                     - inputResistances -> crushResist * ARMOUR_CONST_THRESHOLD,
+                     0.000000 //Does not add a negative number to tempOutput.
+                     ) ;
 
    //Slashing damage.
-   tempOutput += inputDamage.slashPower * (ARMOUR_SLASH / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> slashResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += std::max(inputDamage.slashPower * (1 - inputResistances -> slashResist/ARMOUR_MAX_PERCENT_RESIST)
+                     - inputResistances -> slashResist * ARMOUR_CONST_THRESHOLD,
+                     0.000000 //Does not add a negative number to tempOutput.
+                     ) ;
 
    //Stabbing power.
-   tempOutput += inputDamage.stabPower * (ARMOUR_STAB / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> stabResist/ARMOUR_MAX_PERCENT_RESIST) ;
+   tempOutput += std::max(inputDamage.stabPower * (1 - inputResistances -> stabResist/ARMOUR_MAX_PERCENT_RESIST)
+                     - inputResistances -> stabResist * ARMOUR_CONST_THRESHOLD,
+                     0.000000 //Does not add a negative number to tempOutput.
+                     ) ;
 
    //Poison power. Poison tends to be rare, so it checks first.
    if (inputDamage.poisonPower != 0){
-      tempOutput += inputDamage.poisonPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> poisonResist/ARMOUR_MAX_PERCENT_RESIST) ;
+//      tempOutput += inputDamage.poisonPower * (1 - (inputResistances -> poisonResist * ARMOUR_POISON_MODIFIER)/ARMOUR_MAX_PERCENT_RESIST) ;
+      tempOutput += std::max(inputDamage.poisonPower * (1 - inputResistances -> poisonResist/ARMOUR_MAX_PERCENT_RESIST)
+                     - inputResistances -> poisonResist * ARMOUR_CONST_THRESHOLD,
+                     0.000000 //Does not add a negative number to tempOutput.
+                     ) ;
    }
 
    //Other DOT power. Damage over time effects tend to be rare, so it checks first.
    if (inputDamage.DOTPower != 0){
-      tempOutput += inputDamage.DOTPower * (ARMOUR_POISON / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> otherDOTResist/ARMOUR_MAX_PERCENT_RESIST) ;
+  //    tempOutput += inputDamage.DOTPower * (ARMOUR_DOT_MODIFIER / ARMOUR_MAX_PERCENT_RESIST) * (1 - inputResistances -> otherDOTResist/ARMOUR_MAX_PERCENT_RESIST) ;
+         tempOutput += std::max(inputDamage.DOTPower * (1 - inputResistances -> otherDOTResist/ARMOUR_MAX_PERCENT_RESIST)
+                     - inputResistances -> otherDOTResist * ARMOUR_CONST_THRESHOLD,
+                     0.000000 //Does not add a negative number to tempOutput.
+                     ) ;
    }
 
    //Returns the total, modified by the base armour.
