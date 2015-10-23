@@ -13,9 +13,9 @@
 				<Option compiler="gcc" />
 			</Target>
 		</Build>
-		<Linker>
-			<Add library="gdi32" />
-		</Linker>
+		<Compiler>
+			<Add option="-std=c++11" />
+		</Compiler>
 		<Unit filename="AttackReader.cpp">
 			<Option virtualFolder="FirstGameStuff/GameObjects/DamageStuff/" />
 		</Unit>
