@@ -7,7 +7,7 @@
 #include <ctime>
 
 #define GLFW_INCLUDE_GLU
-#include "GLFW\glfw3.h"
+#include "GL\glfw3.h"
 
 #include "UsefulHeaders.h"
 
@@ -122,7 +122,7 @@ int openGLTest()
 
    while (!glfwWindowShouldClose(window))
    {
-      // Keep running, this defines what happens when someone uses alt-f4 or the close button on the window.
+      // Keep running, this defines what happens when someone has not used alt-f4 or the close button on the window.
       float ratio;
       int width, height;
       glfwGetFramebufferSize(window, &width, &height);

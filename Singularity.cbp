@@ -16,6 +16,7 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 		</Compiler>
+		<Unit filename="ActionEffects.h" />
 		<Unit filename="AttackReader.cpp">
 			<Option virtualFolder="FirstGameStuff/GameObjects/DamageStuff/" />
 		</Unit>
@@ -106,12 +107,14 @@
 		<Unit filename="Screens.h">
 			<Option virtualFolder="Utilities/Screens/" />
 		</Unit>
+		<Unit filename="ScriptVariables.h" />
 		<Unit filename="SecondGameMain.cpp">
 			<Option virtualFolder="SecondGameStuff/" />
 		</Unit>
 		<Unit filename="SecondGameMain.h">
 			<Option virtualFolder="SecondGameStuff/" />
 		</Unit>
+		<Unit filename="StatCompiler.h" />
 		<Unit filename="StatReader.h">
 			<Option virtualFolder="FirstGameStuff/GameObjects/ByTheStats/" />
 		</Unit>
