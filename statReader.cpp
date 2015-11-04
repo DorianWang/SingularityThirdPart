@@ -61,27 +61,28 @@ bool statReader::parseInput(std::string input)
 {
    input = stringModder.trimWhitespace(input, " \t");
    if (input != std::string("") && input.at(0) != '#'){
+      int curSize = statMap.size();
+      statMap.insert(std::pair<std::string, int>(input, statList.size()));
 
-      try
-      {
-         statMap.at(input);
-      }
-         catch (const std::out_of_range& oor)
-      {
+      if (statMap.size() != curSize){
          statList.push_back(input);
-         statMap.insert(std::pair<std::string, int>(input, statList.size()-1));
          return true;
       }
-      eventLogger -> addNewLog("Warning: Input: " + input + " already exists in the system.");
+
+      eventLogger -> addNewLog("File: statReader.cpp; Warning: Input: " + input + " already exists in the system.");
    }
    return false;
 }
 
-std::vector <std::string> statReader::testing()
+std::vector <std::string> statReader::getStatList()
 {
    return statList;
 }
 
+std::map <std::string, int> statReader::getStatMap()
+{
+   return statMap;
+}
 
 
 

@@ -3,6 +3,41 @@
 namespace attackScaling
 {
 
+   attackReader::attackReader()
+   {
+      statReader statTable;
+      scalingMap = statTable.getStatMap();
+      scalingList = statTable.getStatList();
+   }
+
+void attackReader::readScalingFile(std::string inputFilePath)
+{
+
+   FileIO file;
+   file.textOpenFile(inputFilePath, false);
+   stringFunc stringModder;
+   std::string readInput; std::string input;
+
+   while(file.readLine(&readInput)){
+
+      input = stringModder.trimWhitespace(readInput, " \t");
+      if (input != std::string() && input.at(0) != '#'){
+
+         int curSize = scalingMap.size();
+         scalingMap.insert(std::pair<std::string, int>(input, scalingList.size()));
+
+         if (scalingMap.size() != curSize){
+            scalingList.push_back(input);
+            continue;
+         }
+
+         eventLogger -> addNewLog("File: AttackReader.cpp; Warning: Input: " + input + " already exists in the system.");
+      }
+   }
+}
+
+
+
 //Screens are always stored in the data folder.
 //However, the FileIO object passed has all the necessary information.
 bool attackReader::readFile(std::string newFileName, std::vector <attackType>* outputVector)
@@ -72,8 +107,7 @@ struct attackScaling
 };
 */
 
-std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
-//TODO: get scaling names from file, and make attackScaling dynamic as well.
+
 
 std::string tempInput;
 
@@ -118,11 +152,8 @@ Stats which can scale attacks are:
 
 There are 19 different scalings, in the same order as above.
 */
-std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
-//TODO: get scaling names from file, and make attackScaling dynamic as well.
 
-
-statReader statTable;
+//TODO: Everything!
 
 std::string tempInput;
 std::string tempParsedInput;
@@ -137,20 +168,24 @@ double scalingValue;
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
-      if (tempInput.at(0) == '#'){
+      if (! (tempInput.empty()) && tempInput.at(0) == '#'){
          continue; //Comment found.
       }
 
       if (tempInput.substr(0, scalingname.length() + 1) == scalingname + ';'){
-         return true;
+         return true; //End of scaling block.
       }
 
+      try{
+      int thing = scalingMap.at(stringFunc::parseFirstToken(tempInput, " \t");
+      }
       for (int i = 0; i < nameOfScalings.size(); i++){
-         if (tempInput.substr(0, nameOfScalings[i].length()) == scalingname){
+         if (tempInput.substr(0, nameOfScalings[i].length()) == nameOfScalings[i]){
             tempParsedInput = tempInput.substr(nameOfScalings[i].length());
             sscanf(tempParsedInput.c_str(), "%*[^0-9]%lf", &scalingValue);
             statScaling tempStat; tempStat.statNum = i; tempStat.scaling = scalingValue;
             eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
+            break;
          }
 
       }

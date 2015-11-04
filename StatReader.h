@@ -41,7 +41,9 @@ public:
    int statToInt(std::string input);
    std::string intToStat(int input);
 
-   std::vector <std::string> testing();
+   std::vector <std::string> getStatList();
+   std::map <std::string, int> getStatMap();
+
 
 };
 

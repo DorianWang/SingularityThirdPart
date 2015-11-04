@@ -20,12 +20,21 @@ bool addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling
 bool addSubtypeScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings);
 attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName);
 
+
+
+std::vector <std::string> nameOfScalings = {"arcane", "elemental", "stab", "slash", "crush", "poison", "DOT", "void"};
+//TODO: get scaling names from file, and make attackScaling dynamic as well.
+
 public:
 
    attackReader();
+   void readScalingFile(std::string inputFilePath);
 
    std::vector <attackType> attacks;
    std::string fileName;
+
+   std::vector <std::string> scalingList;
+   std::map <std::string, int> scalingMap;
 
 /**
 Does things
@@ -41,6 +50,44 @@ Does things
 }
 
 #endif // ATTACKREADER_H_INCLUDED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

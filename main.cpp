@@ -145,6 +145,7 @@ int openGLTest()
       glEnd();
 
       glfwGetCursorPos(window, &xpos, &ypos);
+      cout << glfwGetTime() <<endl;
       cout << xpos << ", " << ypos << endl;
 
       glfwSwapBuffers(window);
@@ -348,7 +349,7 @@ openGLTest();
    system ("CLS");
 
    statReader statInput;
-   std::vector <std::string> testList = statInput.testing();
+   std::vector <std::string> testList = statInput.getStatList();
 
    for (int i = 0; i < testList.size(); i++){
       cout << testList[i] << endl;
@@ -378,7 +379,6 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
 
 
    testConsole.cursorOptions.changeCursorPos(0, 54);
-
 
    cout<<"I'm done!"<<endl;
    system("PAUSE");

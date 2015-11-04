@@ -4,6 +4,7 @@
 #ifndef IS_RELEASE
 
 #include "StatReader.h"
+//Need a class to get all data from files.
 
 class statCompiler
 {
