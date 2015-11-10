@@ -54,7 +54,7 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
    while (true){
 
       if (file -> readLine(&tempInput) == false){
-         eventLogger -> addNewLog("WARNING: Unexpected end of file: " + newFileName);
+         eventLogger -> addNewLog("File: AttackReader.cpp; WARNING: Unexpected end of file: " + newFileName);
          break;
       }
       tempInput = stringModder.trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
@@ -64,7 +64,7 @@ bool attackReader::readFile(std::string newFileName, std::vector <attackType>* o
       }
 
       if (tempInput.substr(0, 9) == "end file;"){
-         eventLogger -> addNewLog("INFO: No more attacks to read from file: " + newFileName);
+         eventLogger -> addNewLog("File: AttackReader.cpp; INFO: No more attacks to read from file: " + newFileName);
          return true; //End of file.
       }
 
@@ -108,7 +108,6 @@ struct attackScaling
 */
 
 
-
 std::string tempInput;
 
    while (true){
@@ -128,8 +127,6 @@ std::string tempInput;
             return addScaling(file, stringModder, &(outputScalings -> Scalings), nameOfScalings[i]);
          }
       }
-      //addAttack(FileIO attackFile, stringFunc* stringModder);
-
    }
 }
 
@@ -155,6 +152,8 @@ There are 19 different scalings, in the same order as above.
 
 //TODO: Everything!
 
+stringFunc strMod;
+
 std::string tempInput;
 std::string tempParsedInput;
 double scalingValue;
@@ -163,12 +162,12 @@ double scalingValue;
 
       if (file -> readLine(&tempInput) == false){
          eventLogger -> addNewLog("WARNING: Unexpected end of file in function: addScaling");
-         return false;
+         return false; //This shouldn't happen
       }
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
-      if (! (tempInput.empty()) && tempInput.at(0) == '#'){
+      if ( (tempInput.empty()) || tempInput.at(0) == '#'){
          continue; //Comment found.
       }
 
@@ -176,23 +175,19 @@ double scalingValue;
          return true; //End of scaling block.
       }
 
-      try{
-      int thing = scalingMap.at(stringFunc::parseFirstToken(tempInput, " \t");
+      try {
+         std::string token = strMod.popFirstToken(tempInput, " \t");
+         int newStatNum = scalingMap.at(token);
+         statScaling newStatScaling;
+         newStatScaling.statNum = newStatNum; newStatScaling.scaling = std::strtod(token.c_str(), NULL);
+         outputScalings -> push_back(newStatScaling);;;
+         eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
       }
-      for (int i = 0; i < nameOfScalings.size(); i++){
-         if (tempInput.substr(0, nameOfScalings[i].length()) == nameOfScalings[i]){
-            tempParsedInput = tempInput.substr(nameOfScalings[i].length());
-            sscanf(tempParsedInput.c_str(), "%*[^0-9]%lf", &scalingValue);
-            statScaling tempStat; tempStat.statNum = i; tempStat.scaling = scalingValue;
-            eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
-            break;
-         }
-
+      catch (const std::out_of_range& oor){
+         eventLogger -> addNewLog("ERROR: no scaling for: " + tempInput); //The string is not in the map. Most likely a spelling error.
       }
-
    }
 }
-
 
 }
 

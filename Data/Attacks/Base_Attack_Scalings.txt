@@ -1,39 +1,39 @@
-base;
+base
 #the base damage of the attack, increases damage by x
 
-attackerLvl;
+attackerLvl
 #the level of the one using the attack. +x per level
 
-int;
-wis;
-cha;
-str;
-agi;
-end;
+int
+wis
+cha
+str
+agi
+end
 #base stats, increases damage by x per point
 #intelligence, wisdom, charisma, strength, agility, and endurance
 
-spirit;
-#Special stat. Hard to boost, hard to calculate, 
+spirit
+#Special stat. Hard to change, with special story things.
 
-attackerHP;
-attackerMP;
+attackerHP
+attackerMP
 #other base stats of the attacker
 
-defenderHP;
-defenderMP;
+defenderHP
+defenderMP
 #some base stats of the defender
 
-defInt;
-defWis;
-defCha;
-defStr;
-defAgi;
-defEnd;
+defInt
+defWis
+defCha
+defStr
+defAgi
+defEnd
 #base stats of the defender. These are used mostly in special attacks.
 
-rand;
-#Some number between 0 to x inclusive. Use base to bump it up to y to x+y.
+rand
+#Some number between 0 to x inclusive. Use base to bump it up to y to x + y.
 
 
 

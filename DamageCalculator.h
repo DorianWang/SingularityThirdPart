@@ -42,8 +42,6 @@ class defenceCalculator{
 
 
 
-
-
 //double calculatePhysical(physicalDamage inputDamage, resistanceTypes* inputResistances);
 //double calculateMagical(magicDamage inputDamage, resistanceTypes* inputResistances);
 

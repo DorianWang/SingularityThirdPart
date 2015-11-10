@@ -1745,7 +1745,7 @@
 	"eventLog.h"
 	"StatReader.h"
 
-1446231226 c:\users\admin\documents\github\singularitythirdpart\damagecalculator.h
+1447094102 c:\users\admin\documents\github\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
@@ -1964,7 +1964,7 @@
 1443644640 c:\users\admin\documents\github\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1443801706 source:c:\users\admin\documents\github\singularitythirdpart\statreader.cpp
+1446663639 source:c:\users\admin\documents\github\singularitythirdpart\statreader.cpp
 	"StatReader.h"
 
 1443644640 source:c:\users\admin\documents\github\singularitythirdpart\takegamemain.cpp
