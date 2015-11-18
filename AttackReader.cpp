@@ -22,6 +22,7 @@ void attackReader::readScalingFile(std::string inputFilePath)
 
       input = stringModder.trimWhitespace(readInput, " \t");
       if (input != std::string() && input.at(0) != '#'){
+         //std::cout << input << " things" << std::endl;
 
          int curSize = scalingMap.size();
          scalingMap.insert(std::pair<std::string, int>(input, scalingList.size()));
