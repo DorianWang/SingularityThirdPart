@@ -16,9 +16,7 @@ class attackReader
 
 FileIO file;
 
-bool addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputScalings, std::string scalingname);
-bool addSubtypeScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings);
-attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName);
+
 
 
 
@@ -42,6 +40,12 @@ Does things
 @return things and stuff
 */
    bool readFile(std::string newFileName, std::vector <attackType>* outputVector);
+
+
+   //Temporary. Move to private when done testing.
+   bool addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputScalings, std::string scalingname);
+   bool addSubtypeScaling(FileIO* file, stringFunc* stringModder, attackScaling* outputScalings);
+   attackType addAttack(FileIO* file, stringFunc* stringModder, std::string newAttackName);
 
 
 };

@@ -1736,10 +1736,10 @@
 	<string>
 	<sstream>
 
-1447863689 source:c:\users\admin\documents\github\singularitythirdpart\attackreader.cpp
+1447873495 source:c:\users\admin\documents\github\singularitythirdpart\attackreader.cpp
 	"AttackReader.h"
 
-1446670628 c:\users\admin\documents\github\singularitythirdpart\attackreader.h
+1448307483 c:\users\admin\documents\github\singularitythirdpart\attackreader.h
 	"DamageCalculator.h"
 	"libraryIncluder.h"
 	"eventLog.h"
@@ -1986,7 +1986,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1447870461 source:c:\users\admin\documents\github\singularitythirdpart\main.cpp
+1448315368 source:c:\users\admin\documents\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>

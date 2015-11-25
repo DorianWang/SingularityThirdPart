@@ -20,6 +20,7 @@
 
 #include "AttackReader.h"
 
+
 //MUSIC! http://www.youtube.com/watch?v=nDyzVV_e7WM&list=LL5I3vUh2iNfQ3pCU3sodYRA&shuffle=167714
 
 eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
@@ -350,14 +351,17 @@ cout << (testingSub.substr(0, 6) == "qwerty") << endl;
    system("PAUSE");
    system ("CLS");
 
-   statReader statInput;
+   statReader statInput; attackScaling::attackReader attackInput;
    std::vector <std::string> testList = statInput.getStatList();
 
-   FileIO newFile; stringFunc stringThings; std::vector <statScaling> outputScalings
-   newFile.textOpenFile("Data/Attacks/Attack_Test.txt");
+   FileIO newFile; stringFunc stringThings; std::vector <attackScaling::statScaling> outputScalings;
+   newFile.textOpenFile("Data/Attacks/Attack_Test.txt", false);
 
-   statInput.addScaling(&newFile, &stringThings, &outputScalings, "TestScaling");
+   attackInput.addScaling(&newFile, &stringThings, &outputScalings, "TestScaling");
 
+   for (int i = 0; i < outputScalings.size(); i++){
+      cout << outputScalings[i].statNum << endl;
+   }
 
    for (int i = 0; i < testList.size(); i++){
       cout << testList[i] << endl;
