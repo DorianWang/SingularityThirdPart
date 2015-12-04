@@ -17,6 +17,7 @@
 #define DEBUG_BUFFER_SIZE 1
 
 #define DEBUG_MODE true
+#define NO_DEBUG_MODE false
 
 namespace eventRecorder
 {

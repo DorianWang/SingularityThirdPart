@@ -8,9 +8,10 @@ namespace attackScaling
       statReader statTable;
       scalingMap = statTable.getStatMap();
       scalingList = statTable.getStatList();
+      readScalingFile("Data/Attacks/Base_Attack_Scalings.txt");
    }
 
-void attackReader::readScalingFile(std::string inputFilePath)
+void attackReader::readScalingFile(const std::string inputFilePath)
 {
 
    FileIO file;
@@ -168,6 +169,8 @@ double scalingValue;
 
       tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
+      std::cout << tempInput << std::endl;
+
       if ( (tempInput.empty()) || tempInput.at(0) == '#'){
          continue; //Comment found.
       }
@@ -177,15 +180,17 @@ double scalingValue;
       }
 
       try {
-         std::string token = strMod.popFirstToken(tempInput, " \t");
+         std::string token = strMod.parseFirstToken(tempInput, " \t");
+         std::cout << token << std::endl;
          int newStatNum = scalingMap.at(token);
+         token = strMod.popFirstToken(tempInput, " \t");
          statScaling newStatScaling;
          newStatScaling.statNum = newStatNum; newStatScaling.scaling = std::strtod(token.c_str(), NULL);
          outputScalings -> push_back(newStatScaling);;;
          eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
       }
       catch (const std::out_of_range& oor){
-         eventLogger -> addNewLog("ERROR: no scaling for: " + tempInput); //The string is not in the map. Most likely a spelling error.
+         eventLogger -> addNewLog("ERROR: no scaling for: " + strMod.parseFirstToken(tempInput, " \t")); //The string is not in the map. Most likely a spelling error.
       }
    }
 }
