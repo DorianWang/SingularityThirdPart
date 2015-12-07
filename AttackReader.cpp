@@ -174,7 +174,7 @@ double scalingValue;
       if ( (tempInput.empty()) || tempInput.at(0) == '#'){
          continue; //Comment found.
       }
-
+      std::cout << tempInput.substr(0, scalingname.length() + 1) << ' ' << scalingname + ';' << std::endl;
       if (tempInput.substr(0, scalingname.length() + 1) == scalingname + ';'){
          return true; //End of scaling block.
       }

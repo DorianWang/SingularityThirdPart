@@ -25,12 +25,12 @@
 */
 //#include "_libraryController.h"
 
-#include "Libraries\Binary tree\BinaryTree.h"
-
 #ifndef FILEIO_H_INCLUDED
    #define FILEIO_H_INCLUDED
    #include "Libraries\FileIO\FileIO.h"
 #endif
+
+#include "Libraries\Binary tree\BinaryTree.h"
 
 #include "Libraries\itemTree\treeType.h"
 

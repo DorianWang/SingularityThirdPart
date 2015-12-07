@@ -1,0 +1,5 @@
+Adding new screen: screenTest
+Adding new screen: screenTest2
+INFO: added scaling for: TestScaling
+INFO: added scaling for: TestScaling
+WARNING: Unexpected end of file in function: addScaling

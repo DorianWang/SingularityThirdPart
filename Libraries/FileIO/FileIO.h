@@ -280,10 +280,11 @@ int FileIO::readLine(std::string* output)
 
    //Will read until it hits a line with text.
    while (true){
-      getline( myfile, input );
       if (!myfile.good()){
          return 0;
       }
+      getline( myfile, input );
+
       if (input.length() == 0){
          continue;
       }
