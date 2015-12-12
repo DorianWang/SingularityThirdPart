@@ -186,6 +186,9 @@ double scalingValue;
          token = strMod.popFirstToken(tempInput, " \t");
          statScaling newStatScaling;
          newStatScaling.statNum = newStatNum; newStatScaling.scaling = std::strtod(token.c_str(), NULL);
+
+         std::cout << newStatScaling.scaling << std::endl;
+
          outputScalings -> push_back(newStatScaling);;;
          eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
       }

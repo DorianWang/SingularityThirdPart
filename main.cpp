@@ -27,27 +27,6 @@ eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 
 //using namespace std;
 
-
-
-
-
-struct interactObject
-{
-   std::string nameObject;
-   int objectType;
-   int objectAlignment; //what it is (hostile, friendly, neutral, etc)
-   int numUse;
-   int specialType;//normally 0, different for other things
-};
-
-struct tile
-{
-   char tileSymbol;
-   interactObject tileEntities;
-   int xCoord;
-   int yCoord;
-};
-
 struct tester
 {
 int a;
@@ -67,7 +46,7 @@ char f;
 
 
 // global variables
-#define VERSION_NUM 0.01
+#define VERSION_NUM 0.02
 
 
 
@@ -278,43 +257,38 @@ double worthMe = 0.98423;
 
 while (true){
 
+   //Should I add macro conventions? Maybe INT_HEALTH for an integer, or STR_STRINGTHING for a string?
 
-//Should I add macro conventions? Maybe INT_HEALTH for an integer, or STR_STRINGTHING for a string?
+   instructDataOut* newInstruct;
+   if (screenTest.popFirstUnsetInstructPointer(&newInstruct) == false){
+      break;
+   }
 
-instructDataOut* newInstruct;
-if (screenTest.popFirstUnsetInstructPointer(&newInstruct) == false){
-   break;
-}
+   if (newInstruct -> macroInstruct == "TEST_MACRO"){
+      std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &testingMacroString;
+   }
+   else if (newInstruct -> macroInstruct == "MACRO"){
+      short ** tempPointer = (short **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &testShort;
+   }
+   else if (newInstruct -> macroInstruct == "HEALTH"){
+      int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &health;
+   }
+   else if (newInstruct -> macroInstruct == "WORTH"){
+      double ** tempPointer = (double **)(newInstruct -> variablePointerPointer);
+      *tempPointer = &worthMe;
+   }
+   else{
+      cout << "whut?" << endl;
+   }
 
-if (newInstruct -> macroInstruct == "TEST_MACRO"){
-   std::string ** tempPointer = (std::string **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &testingMacroString;
+   delete newInstruct;
 }
-else if (newInstruct -> macroInstruct == "MACRO"){
-   short ** tempPointer = (short **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &testShort;
-}
-else if (newInstruct -> macroInstruct == "HEALTH"){
-   int ** tempPointer = (int **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &health;
-}
-else if (newInstruct -> macroInstruct == "WORTH"){
-   double ** tempPointer = (double **)(newInstruct -> variablePointerPointer);
-   *tempPointer = &worthMe;
-}
-
-else{
-   cout << "whut?" << endl;
-}
-
-delete newInstruct;
-
-}
-//Things good here
 
 screenTest.outputScreen(0);
 
-//Not good by here...
 
 cout << "---" << endl;
 
@@ -333,19 +307,12 @@ testConsole.cursorOptions.setColour(15, 0);
 
 cout << "Testing colours" << endl;
 
-/*
-std::string testingSub = "qwertyuiop";
-cout << (testingSub.substr(0, 6) == "qwerty") << endl;
-//This is true.
-*/
 
    system("PAUSE");
    system ("CLS");
    cout << "Testing OpenGL!" << endl;
 
-
    //openGLTest();
-
 
 
    system("PAUSE");
