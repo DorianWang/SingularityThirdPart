@@ -876,7 +876,7 @@
 1414172119 d:\doriancode\singularitysecondpart\binarytree.inl
 	"binaryTree.h"
 
-1415407815 source:d:\dorian's programs\singularitythirdpart\bases.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\bases.cpp
 	"Bases.h"
 
 1415299016 source:d:\doriancode\singularitythirdpart\bases.cpp
@@ -1368,24 +1368,24 @@
 	<stdio.h>
 	<stdlib.h>
 
-1414625297 d:\dorian's programs\singularitythirdpart\bases.h
+1414621697 d:\dorian's programs\singularitythirdpart\bases.h
 
-1414625297 source:d:\dorian's programs\singularitythirdpart\inventory.cpp
+1414621697 source:d:\dorian's programs\singularitythirdpart\inventory.cpp
 	"ItemDeclaration.h"
 
-1418096892 d:\dorian's programs\singularitythirdpart\itemdeclaration.h
+1418093292 d:\dorian's programs\singularitythirdpart\itemdeclaration.h
 	"iostream"
 	"string"
 	"vector"
 
-1414625297 source:d:\dorian's programs\singularitythirdpart\inventorysorter.cpp
+1414621697 source:d:\dorian's programs\singularitythirdpart\inventorysorter.cpp
 	"ItemDeclaration.h"
 
-1415407815 source:d:\dorian's programs\singularitythirdpart\itemfileio.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\itemfileio.cpp
 
-1414625297 source:d:\dorian's programs\singularitythirdpart\items.cpp
+1414621697 source:d:\dorian's programs\singularitythirdpart\items.cpp
 
-1415407815 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\lootdrop.cpp
 
 1445802817 source:d:\dorian's programs\singularitythirdpart\main.cpp
 	<cstdlib>
@@ -1404,7 +1404,7 @@
 	"Bases.h"
 	"libraryIncluder.h"
 
-1421635485 d:\dorian's programs\singularitythirdpart\usefulheaders.h
+1421631885 d:\dorian's programs\singularitythirdpart\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
@@ -1417,9 +1417,9 @@
 	<windows.h>
 	<time.h>
 
-1423183093 d:\dorian's programs\singularitythirdpart\libraryincluder.h
-	"Libraries\Binary tree\BinaryTree.h"
+1449875217 d:\dorian's programs\singularitythirdpart\libraryincluder.h
 	"Libraries\FileIO\FileIO.h"
+	"Libraries\Binary tree\BinaryTree.h"
 	"Libraries\itemTree\treeType.h"
 	"Libraries\KeyIO\keys.h"
 	"Libraries\Linked list\Container.h"
@@ -1427,19 +1427,19 @@
 	"Libraries\usefulHeaders file\UsefulHeaders.h"
 	"Libraries\Windows console stuff\ConsoleOptions.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarytree.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarytree.h
 	<vector>
 	"functionChecker.h"
 	"binaryNodeType.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\binary tree\functionchecker.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\functionchecker.h
 	<array>
 	<iostream>
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarynodetype.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\binary tree\binarynodetype.h
 	<cstdlib>
 
-1439519258 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
+1449875217 d:\dorian's programs\singularitythirdpart\libraries\fileio\fileio.h
 	<string>
 	<fstream>
 	<iostream>
@@ -1448,7 +1448,7 @@
 	<cstdlib>
 	<vector>
 
-1440474212 d:\dorian's programs\singularitythirdpart\libraries\itemtree\treetype.h
+1440470612 d:\dorian's programs\singularitythirdpart\libraries\itemtree\treetype.h
 	<iostream>
 	<queue>
 	<vector>
@@ -1456,7 +1456,7 @@
 	"stringFunctions.h"
 	"leafType.h"
 
-1428348025 d:\dorian's programs\singularitythirdpart\libraries\itemtree\stringfunctions.h
+1428344425 d:\dorian's programs\singularitythirdpart\libraries\itemtree\stringfunctions.h
 	<stdio.h>
 	<iostream>
 	<vector>
@@ -1464,32 +1464,32 @@
 	<string.h>
 	<cstdarg>
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\itemtree\leaftype.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\itemtree\leaftype.h
 	<vector>
 	<string>
 
-1415407815 d:\dorian's programs\singularitythirdpart\libraries\keyio\keys.h
+1415404215 d:\dorian's programs\singularitythirdpart\libraries\keyio\keys.h
 	<string>
 	<iostream>
 	<cstdlib>
 	"conio.h"
 	"windows.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\linked list\container.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\linked list\container.h
 	"functionChecker.h"
 	<string>
 	<iostream>
 	<vector>
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\linked list\functionchecker.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\linked list\functionchecker.h
 	<array>
 	<iostream>
 
-1414625297 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\functionchecker.h
+1414621697 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\functionchecker.h
 	<array>
 	<iostream>
 
-1418349942 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
+1418346342 d:\dorian's programs\singularitythirdpart\libraries\usefulheaders file\usefulheaders.h
 	<string>
 	<vector>
 	<algorithm>
@@ -1500,56 +1500,56 @@
 	<windows.h>
 	<time.h>
 
-1421374566 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
+1421370966 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\consoleoptions.h
 	"CursorOptions.h"
 	<cstdlib>
 	<stdexcept>
 
-1421808089 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
+1421804489 d:\dorian's programs\singularitythirdpart\libraries\windows console stuff\cursoroptions.h
 	<cstdarg>
 	"windows.h"
 	"stdio.h"
 	<cstdlib>
 	<iostream>
 
-1424819632 source:d:\dorian's programs\singularitythirdpart\map.cpp
+1424816032 source:d:\dorian's programs\singularitythirdpart\map.cpp
 
-1414625297 d:\dorian's programs\singularitythirdpart\map.h
+1414621697 d:\dorian's programs\singularitythirdpart\map.h
 	"Locations.h"
 	"Effects.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\locations.h
+1414621697 d:\dorian's programs\singularitythirdpart\locations.h
 	<string>
 	<vector>
 	"Interactive.h"
 	"NPC.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\interactive.h
+1414621697 d:\dorian's programs\singularitythirdpart\interactive.h
 
-1424834668 d:\dorian's programs\singularitythirdpart\npc.h
+1424831068 d:\dorian's programs\singularitythirdpart\npc.h
 	"DamageCalculator.h"
 	"CharacterThings.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\effects.h
+1414621697 d:\dorian's programs\singularitythirdpart\effects.h
 
-1415407815 source:d:\dorian's programs\singularitythirdpart\maploader.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\maploader.cpp
 	"MapLoader.h"
 
-1415407815 d:\dorian's programs\singularitythirdpart\maploader.h
+1415404215 d:\dorian's programs\singularitythirdpart\maploader.h
 	"Map.h"
 	"libraryIncluder.h"
 
-1430771598 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
+1430767998 source:d:\dorian's programs\singularitythirdpart\screencontroller.cpp
 	"ScreenController.h"
 	"eventLog.h"
 
-1423183093 d:\dorian's programs\singularitythirdpart\screencontroller.h
+1423179493 d:\dorian's programs\singularitythirdpart\screencontroller.h
 	"libraryIncluder.h"
 	"Screens.h"
 	"ScreenInstructions.h"
 	<list>
 
-1423355293 d:\dorian's programs\singularitythirdpart\screens.h
+1423351693 d:\dorian's programs\singularitythirdpart\screens.h
 	<fstream>
 	<vector>
 	<stdarg.h>
@@ -1560,36 +1560,36 @@
 	"libraryIncluder.h"
 	"ScreenInstructions.h"
 
-1423355293 source:d:\dorian's programs\singularitythirdpart\screens.cpp
+1423351693 source:d:\dorian's programs\singularitythirdpart\screens.cpp
 	"Screens.h"
 
-1423004550 d:\dorian's programs\singularitythirdpart\screeninstructions.h
+1423000950 d:\dorian's programs\singularitythirdpart\screeninstructions.h
 	<iostream>
 	<vector>
 	"libraryIncluder.h"
 
-1415407815 source:d:\dorian's programs\singularitythirdpart\secondgamemain.cpp
+1415404215 source:d:\dorian's programs\singularitythirdpart\secondgamemain.cpp
 	"SecondGameMain.h"
 
-1415407815 d:\dorian's programs\singularitythirdpart\secondgamemain.h
+1415404215 d:\dorian's programs\singularitythirdpart\secondgamemain.h
 	"Bases.h"
 
-1414625297 source:d:\dorian's programs\singularitythirdpart\takegamemain.cpp
+1414621697 source:d:\dorian's programs\singularitythirdpart\takegamemain.cpp
 	"TakeGameMain.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\takegamemain.h
+1414621697 d:\dorian's programs\singularitythirdpart\takegamemain.h
 	"MapLoader.h"
 	"UsefulHeaders.h"
 	"FileReader.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\filereader.h
+1414621697 d:\dorian's programs\singularitythirdpart\filereader.h
 	"MapLoader.h"
 	"UsefulHeaders.h"
 
-1414625297 source:d:\dorian's programs\singularitythirdpart\typechanger.cpp
+1414621697 source:d:\dorian's programs\singularitythirdpart\typechanger.cpp
 	"typeChanger.h"
 
-1414625297 d:\dorian's programs\singularitythirdpart\typechanger.h
+1414621697 d:\dorian's programs\singularitythirdpart\typechanger.h
 	<stdio.h>
 	<stdlib.h>
 
@@ -1662,12 +1662,12 @@
 1423625067 source:d:\dorian's programs\singularitythirdpart\damagecalculator.cpp
 	"DamageCalculator.h"
 
-1445713872 d:\dorian's programs\singularitythirdpart\damagecalculator.h
+1447900523 d:\dorian's programs\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
 	<cmath>
 	"UsefulHeaders.h"
 
-1440643942 d:\dorian's programs\singularitythirdpart\damagetypes.h
+1440640342 d:\dorian's programs\singularitythirdpart\damagetypes.h
 
 1434120411 d:\github\singularitythirdpart\damagecalculator.h
 	"DamageTypes.h"
@@ -1676,7 +1676,7 @@
 
 1434120411 d:\github\singularitythirdpart\damagetypes.h
 
-1432169084 d:\dorian's programs\singularitythirdpart\characterthings.h
+1432165484 d:\dorian's programs\singularitythirdpart\characterthings.h
 
 1432827897 d:\doriancode\singularitythirdpart\characterthings.h
 
@@ -1707,7 +1707,7 @@
 	"libraryIncluder.h"
 	"eventLog.h"
 
-1436999454 d:\dorian's programs\singularitythirdpart\eventlog.h
+1449875217 d:\dorian's programs\singularitythirdpart\eventlog.h
 	"libraryIncluder.h"
 	<ctime>
 

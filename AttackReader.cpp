@@ -152,51 +152,55 @@ Stats which can scale attacks are:
 There are 19 different scalings, in the same order as above.
 */
 
-//TODO: Everything!
+   //TODO: Everything!
 
-stringFunc strMod;
+   stringFunc strMod;
 
-std::string tempInput;
-std::string tempParsedInput;
-double scalingValue;
+   std::string tempInput;
+   std::string tempParsedInput;
+   double scalingValue;
 
-   while (true){
+      while (true){
 
-      if (file -> readLine(&tempInput) == false){
-         eventLogger -> addNewLog("WARNING: Unexpected end of file in function: addScaling");
-         return false; //This shouldn't happen
-      }
+         if (file -> readLine(&tempInput) == false){
+            eventLogger -> addNewLog("WARNING: Unexpected end of file in function: addScaling");
+            return false; //This shouldn't happen
+         }
 
-      tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
+         tempInput = stringModder -> trimWhitespace(tempInput, " /t"); // Remove leading and trailing spaces.
 
-      std::cout << tempInput << std::endl;
+         std::cout << tempInput << std::endl;
 
-      if ( (tempInput.empty()) || tempInput.at(0) == '#'){
-         continue; //Comment found.
-      }
-      std::cout << tempInput.substr(0, scalingname.length() + 1) << ' ' << scalingname + ';' << std::endl;
-      if (tempInput.substr(0, scalingname.length() + 1) == scalingname + ';'){
-         return true; //End of scaling block.
-      }
+         if ( (tempInput.empty()) || tempInput.at(0) == '#'){
+            continue; //Comment found.
+         }
+         std::cout << tempInput.substr(0, scalingname.length() + 1) << ' ' << scalingname + ';' << std::endl;
+         if (tempInput.substr(0, scalingname.length() + 1) == scalingname + ';'){
+            return true; //End of scaling block.
+         }
 
-      try {
-         std::string token = strMod.parseFirstToken(tempInput, " \t");
-         std::cout << token << std::endl;
-         int newStatNum = scalingMap.at(token);
-         token = strMod.popFirstToken(tempInput, " \t");
-         statScaling newStatScaling;
-         newStatScaling.statNum = newStatNum; newStatScaling.scaling = std::strtod(token.c_str(), NULL);
+         try {
+            std::string token = strMod.parseFirstToken(tempInput, " \t");
+            std::cout << token << std::endl;
+            int newStatNum = scalingMap.at(token);
+            token = strMod.popFirstToken(tempInput, " \t");
+            statScaling newStatScaling;
 
-         std::cout << newStatScaling.scaling << std::endl;
+            scalingNum = std::strtod(token.c_str(), NULL);
+            if (scalingNum != 0.0 && abs(scalingNum) ! = HUGE_VAL){
+               newStatScaling.statNum = newStatNum; newStatScaling.scaling = scalingNum
+            }
 
-         outputScalings -> push_back(newStatScaling);;;
-         eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
-      }
-      catch (const std::out_of_range& oor){
-         eventLogger -> addNewLog("ERROR: no scaling for: " + strMod.parseFirstToken(tempInput, " \t")); //The string is not in the map. Most likely a spelling error.
+            std::cout << newStatScaling.scaling << std::endl;
+
+            outputScalings -> push_back(newStatScaling);;;
+            eventLogger -> addNewLog("INFO: added scaling for: " + scalingname);
+         }
+         catch (const std::out_of_range& oor){
+            eventLogger -> addNewLog("ERROR: no scaling for: " + strMod.parseFirstToken(tempInput, " \t")); //The string is not in the map. Most likely a spelling error.
+         }
       }
    }
-}
 
 }
 
