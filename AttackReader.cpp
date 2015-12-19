@@ -186,9 +186,9 @@ There are 19 different scalings, in the same order as above.
             token = strMod.popFirstToken(tempInput, " \t");
             statScaling newStatScaling;
 
-            scalingNum = std::strtod(token.c_str(), NULL);
-            if (scalingNum != 0.0 && abs(scalingNum) ! = HUGE_VAL){
-               newStatScaling.statNum = newStatNum; newStatScaling.scaling = scalingNum
+            double scalingNum = std::strtod(token.c_str(), NULL);
+            if (scalingNum != 0.0 && abs(scalingNum) != HUGE_VAL){
+               newStatScaling.statNum = newStatNum; newStatScaling.scaling = scalingNum;
             }
 
             std::cout << newStatScaling.scaling << std::endl;
