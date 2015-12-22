@@ -109,7 +109,6 @@ struct attackScaling
 };
 */
 
-
 std::string tempInput;
 
    while (true){
