@@ -18,12 +18,15 @@ void attackReader::readScalingFile(const std::string inputFilePath)
    file.textOpenFile(inputFilePath, false);
    stringFunc stringModder;
    std::string readInput; std::string input;
+   for (int i = 0; i < scalingMap.size(); i++){
+
+   }
+
 
    while(file.readLine(&readInput)){
 
       input = stringModder.trimWhitespace(readInput, " \t");
       if (input != std::string() && input.at(0) != '#'){
-         //std::cout << input << " things" << std::endl;
 
          int curSize = scalingMap.size();
          scalingMap.insert(std::pair<std::string, int>(input, scalingList.size()));
@@ -32,7 +35,7 @@ void attackReader::readScalingFile(const std::string inputFilePath)
             scalingList.push_back(input);
             continue;
          }
-
+         std::cout << input << " " << scalingMap[input] << std::endl;
          eventLogger -> addNewLog("File: AttackReader.cpp; Warning: Input: " + input + " already exists in the system.");
       }
    }
@@ -135,23 +138,7 @@ std::string tempInput;
 bool attackReader::addScaling(FileIO* file, stringFunc* stringModder, std::vector <statScaling>* outputScalings, const std::string scalingname)
 {
 
-/*
-Stats which can scale attacks are:
--Base (Not really a scaling, but must be counted, +x)
--Attacker level (+x per level)
--All base stats (int, etc, +x per stat point)
--Attacker Health and mana (+x per stat point)
--Defender Health and mana (+x per stat point)
--Defender base stats (Much more rare)
--Random number between 0 - x
-
--All learned skills
-   -These are obtained from a file, which maps names to an index.
-
-There are 19 different scalings, in the same order as above.
-*/
-
-   //TODO: Everything!
+   //Tested.
 
    stringFunc strMod;
 

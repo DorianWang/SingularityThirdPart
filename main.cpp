@@ -319,10 +319,11 @@ cout << "Testing colours" << endl;
    system ("CLS");
 
    statReader statInput; attackScaling::attackReader attackInput;
-   std::vector <std::string> testList = statInput.getStatList();
+
 
    FileIO newFile; stringFunc stringThings; std::vector <attackScaling::statScaling> outputScalings;
    newFile.textOpenFile("Data/Attacks/Attack_Test.txt", false);
+
 
    attackInput.addScaling(&newFile, &stringThings, &outputScalings, "TestScaling");
 
@@ -330,13 +331,6 @@ cout << "Testing colours" << endl;
       cout << outputScalings[i].statNum << endl;
    }
 
-   for (int i = 0; i < testList.size(); i++){
-      cout << testList[i] << endl;
-   }
-
-   for (int i = 0; i < testList.size(); i++){
-      cout << statInput.statToInt(testList[i]) << endl;
-   }
 
 
 

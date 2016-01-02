@@ -1,0 +1,25 @@
+Adding new screen: screenTest
+Adding new screen: screenTest2
+INFO: added scaling for: TestScaling
+INFO: added scaling for: TestScaling
+File: AttackReader.cpp; Warning: Input: base already exists in the system.
+File: AttackReader.cpp; Warning: Input: attackerLvl already exists in the system.
+File: AttackReader.cpp; Warning: Input: int already exists in the system.
+File: AttackReader.cpp; Warning: Input: wis already exists in the system.
+File: AttackReader.cpp; Warning: Input: cha already exists in the system.
+File: AttackReader.cpp; Warning: Input: str already exists in the system.
+File: AttackReader.cpp; Warning: Input: agi already exists in the system.
+File: AttackReader.cpp; Warning: Input: end already exists in the system.
+File: AttackReader.cpp; Warning: Input: spirit already exists in the system.
+File: AttackReader.cpp; Warning: Input: attackerHP already exists in the system.
+File: AttackReader.cpp; Warning: Input: attackerMP already exists in the system.
+File: AttackReader.cpp; Warning: Input: defenderHP already exists in the system.
+File: AttackReader.cpp; Warning: Input: defenderMP already exists in the system.
+File: AttackReader.cpp; Warning: Input: defInt already exists in the system.
+File: AttackReader.cpp; Warning: Input: defWis already exists in the system.
+File: AttackReader.cpp; Warning: Input: defCha already exists in the system.
+File: AttackReader.cpp; Warning: Input: defStr already exists in the system.
+File: AttackReader.cpp; Warning: Input: defAgi already exists in the system.
+File: AttackReader.cpp; Warning: Input: defEnd already exists in the system.
+File: AttackReader.cpp; Warning: Input: rand already exists in the system.
+End Program successfully!
