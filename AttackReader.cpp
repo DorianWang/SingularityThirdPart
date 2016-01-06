@@ -9,6 +9,7 @@ namespace attackScaling
       scalingMap = statTable.getStatMap();
       scalingList = statTable.getStatList();
       readScalingFile("Data/Attacks/Base_Attack_Scalings.txt");
+      std::cout << "Entering attackScaling" << std::endl;
    }
 
 void attackReader::readScalingFile(const std::string inputFilePath)
@@ -18,10 +19,9 @@ void attackReader::readScalingFile(const std::string inputFilePath)
    file.textOpenFile(inputFilePath, false);
    stringFunc stringModder;
    std::string readInput; std::string input;
-   for (int i = 0; i < scalingMap.size(); i++){
-
+   for( std::map <std::string, int>::iterator it = scalingMap.begin(); it != scalingMap.end(); ++it) {
+      std::cout << it -> first << std::endl;
    }
-
 
    while(file.readLine(&readInput)){
 
