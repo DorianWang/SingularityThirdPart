@@ -546,18 +546,19 @@ cout<<"Did this do anything?"<<endl;
 
 
 
-
-
-
-
-
-
-
-
-
 */
 
 
+/*
+bool keyPressed[4]; bool keyDown[4];
+system("PAUSE");
+KeyIO.get_code(keyPressed, keyDown, "asdf");
+system("PAUSE");
+KeyIO.get_code(keyPressed, keyDown, "asdf");
+std::string inputStuff;
+cin>>inputStuff;
+
+*/
 
 
 

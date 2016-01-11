@@ -6,8 +6,7 @@
 #include <iomanip>
 #include <ctime>
 
-#define GLFW_INCLUDE_GLU
-#include "GL\glfw3.h"
+
 
 #include "UsefulHeaders.h"
 
@@ -27,125 +26,19 @@ eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 
 //using namespace std;
 
-struct tester
-{
-int a;
-int b;
-int c;
-int d;
-char e;
-char f;
-};
-
 #include "Bases.h"
 
-
 #include "libraryIncluder.h"
-
 //#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
 
 
-// global variables
+// ---- Global Variables ---- //
 #define VERSION_NUM 0.02
-
-
 
 
 //Keypress keyIO;
 bool cursorVisibility = false;
 bool cursorSmall = true;
-
-double xpos;
-double ypos;
-
-//object
-
-
-void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
-{
-    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS);
-        //Call function of object.
-}
-
-
-void error_callback(int error, const char* description)
-{
-   //TODO: Add connection to logger here.
-   //fputs(description, stderr);
-}
-
-static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, GL_TRUE);
-}
-
-
-int openGLTest()
-{
-   if ( !glfwInit() )
-      return 0; // Something bad happened...
-
-   glfwSetErrorCallback(error_callback);
-
-   GLFWwindow* window = glfwCreateWindow(640, 480, "My Title", NULL, NULL);
-
-   if ( !window ){
-      glfwTerminate();
-      return 0;
-   }
-
-   glfwMakeContextCurrent(window);
-   glfwSetKeyCallback(window, key_callback);
-   glfwSwapInterval(1); //Set time between buffer switches.
-   glfwGetCursorPos(window, &xpos, &ypos);
-
-   double time = glfwGetTime();
-
-   while (!glfwWindowShouldClose(window))
-   {
-      // Keep running, this defines what happens when someone has not used alt-f4 or the close button on the window.
-      float ratio;
-      int width, height;
-      glfwGetFramebufferSize(window, &width, &height);
-      ratio = width / (float) height;
-      glViewport(0, 0, width, height);
-      glClear(GL_COLOR_BUFFER_BIT);
-      glMatrixMode(GL_PROJECTION);
-      glLoadIdentity();
-      glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-      glMatrixMode(GL_MODELVIEW);
-      glLoadIdentity();
-      glRotatef((float) glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
-      glBegin(GL_TRIANGLES);
-      glColor3f(1.f, 0.f, 0.f);
-      glVertex3f(-0.6f, -0.4f, 0.f);
-      glColor3f(0.f, 1.f, 0.f);
-      glVertex3f(0.6f, -0.4f, 0.f);
-      glColor3f(0.f, 0.f, 1.f);
-      glVertex3f(0.f, 0.6f, 0.f);
-      glEnd();
-
-      glfwGetCursorPos(window, &xpos, &ypos);
-      cout << glfwGetTime() <<endl;
-      cout << xpos << ", " << ypos << endl;
-
-      glfwSwapBuffers(window);
-      glfwPollEvents();
-
-   }
-
-   //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-   cout << xpos << ", " << ypos << endl;
-   glfwDestroyWindow(window);
-   glfwTerminate(); //All done.
-   return 1;
-}
-
-
-
-
-
 
 
 int main(int argc, char *argv[])
@@ -207,16 +100,6 @@ Keypress KeyIO;
 
 
 
-/*
-bool keyPressed[4]; bool keyDown[4];
-system("PAUSE");
-KeyIO.get_code(keyPressed, keyDown, "asdf");
-system("PAUSE");
-KeyIO.get_code(keyPressed, keyDown, "asdf");
-std::string inputStuff;
-cin>>inputStuff;
-
-*/
 
 //the backslash n creates a gap.
 std::string stringFuncTester = "qwerty.asdf.qwerty....This is a line break!\n....ytr.poi.";
@@ -255,8 +138,7 @@ short testShort = 20;
 int health = 100;
 double worthMe = 0.98423;
 
-while (true){
-
+while (false){
    //Should I add macro conventions? Maybe INT_HEALTH for an integer, or STR_STRINGTHING for a string?
 
    instructDataOut* newInstruct;
@@ -287,7 +169,7 @@ while (true){
    delete newInstruct;
 }
 
-screenTest.outputScreen(0);
+//screenTest.outputScreen(0);
 
 
 cout << "---" << endl;
@@ -312,7 +194,7 @@ cout << "Testing colours" << endl;
    system ("CLS");
    cout << "Testing OpenGL!" << endl;
 
-   //openGLTest();
+   openGLTest();
 
 
    system("PAUSE");
@@ -331,16 +213,10 @@ cout << "Testing colours" << endl;
       cout << outputScalings[i].statNum << endl;
    }
 
-
-
-
-
-
-
    system("PAUSE");
    system ("CLS");
 
-screenTest.outputScreen(1);
+//screenTest.outputScreen(1);
 
 
 /*
@@ -348,8 +224,6 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
    cout << screenTest.testVector[i]<<endl;
 }
 */
-
-
 
    testConsole.cursorOptions.changeCursorPos(0, 4);
 
@@ -365,6 +239,17 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
 
    return EXIT_SUCCESS;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

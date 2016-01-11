@@ -44,6 +44,12 @@
 		<Unit filename="Effects.h">
 			<Option virtualFolder="FirstGameStuff/" />
 		</Unit>
+		<Unit filename="GLFWLoop.cpp">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
+		<Unit filename="GLFWLoop.h">
+			<Option virtualFolder="FirstGameStuff/" />
+		</Unit>
 		<Unit filename="Interactive.h">
 			<Option virtualFolder="FirstGameStuff/map/" />
 		</Unit>
