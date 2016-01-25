@@ -16,21 +16,23 @@ namespace firstGameLoop{
 
    class firstGameLoop
    {
-      firstGameLoop();
-
-      ~firstGameLoop();
-
       double xpos;
       double ypos;
+
+   public:
+      firstGameLoop();
+      ~firstGameLoop();
+
+      int openGLTest();
 
       //Testing variables.
       int spinMod;
 
-   public:
-
-      int openGLTest();
-
    };
+
+   extern firstGameLoop gameMain;
+
+
 
    void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
    void error_callback(int error, const char* description);

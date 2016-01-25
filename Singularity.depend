@@ -1986,14 +1986,13 @@
 	<stdio.h>
 	<stdlib.h>
 
-1451518355 source:c:\users\admin\documents\github\singularitythirdpart\main.cpp
+1453401289 source:c:\users\admin\documents\github\singularitythirdpart\main.cpp
 	<cstdlib>
 	<iostream>
 	<algorithm>
 	<sstream>
 	<iomanip>
 	<ctime>
-	"GL\glfw3.h"
 	"UsefulHeaders.h"
 	"ScreenInstructions.h"
 	"ScreenController.h"
@@ -2003,6 +2002,7 @@
 	"AttackReader.h"
 	"Bases.h"
 	"libraryIncluder.h"
+	"GLFWLoop.h"
 
 1443644640 c:\users\admin\documents\github\singularitythirdpart\stringfunctions.h
 	<stdio.h>
@@ -2011,4 +2011,16 @@
 	<cstdio>
 	<string.h>
 	<cstdarg>
+
+1453401281 source:c:\users\admin\documents\github\singularitythirdpart\glfwloop.cpp
+	"GLFWLoop.h"
+
+1453401269 c:\users\admin\documents\github\singularitythirdpart\glfwloop.h
+	<cstdlib>
+	<iostream>
+	<algorithm>
+	<sstream>
+	<iomanip>
+	<ctime>
+	"GL\glfw3.h"
 

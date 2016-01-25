@@ -31,6 +31,7 @@ eventRecorder::eventLog* eventLogger = new eventRecorder::eventLog(DEBUG_MODE);
 #include "libraryIncluder.h"
 //#include "D:\Dorian's programs\UsefulLibraries\Libraries\FileIO\FileIO.h"
 
+#include "GLFWLoop.h"
 
 // ---- Global Variables ---- //
 #define VERSION_NUM 0.02
@@ -194,7 +195,7 @@ cout << "Testing colours" << endl;
    system ("CLS");
    cout << "Testing OpenGL!" << endl;
 
-   openGLTest();
+   firstGameLoop::gameMain.openGLTest();
 
 
    system("PAUSE");

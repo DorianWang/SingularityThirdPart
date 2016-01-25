@@ -2,7 +2,9 @@
 
 namespace firstGameLoop{
 
-void firstGameLoop::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+firstGameLoop gameMain;
+
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS){
       std::cout << "Right Click!" << std::endl;
@@ -11,18 +13,18 @@ void firstGameLoop::mouse_button_callback(GLFWwindow* window, int button, int ac
    //Call function of object.
 }
 
-void firstGameLoop::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
    std::cout << "Scrolled: " << yoffset << std::endl;
 }
 
-void firstGameLoop::error_callback(int error, const char* description)
+void error_callback(int error, const char* description)
 {
    //TODO: Add connection to logger here.
    //fputs(description, stderr);
 }
 
-void firstGameLoop::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
@@ -31,9 +33,9 @@ void firstGameLoop::key_callback(GLFWwindow* window, int key, int scancode, int 
          case (GLFW_KEY_ESCAPE):
             glfwSetWindowShouldClose(window, GL_TRUE); //Close window.
          case (GLFW_KEY_SPACE):
-            spinMod = spinMod * -1;
+            gameMain.spinMod = gameMain.spinMod * -1;
          default:
-            ;//Nothing!
+            ;//Nothing for now!
       }
    }
 }
@@ -45,7 +47,7 @@ int firstGameLoop::openGLTest()
    if ( !glfwInit() )
       return 0; // Something bad happened...
 
-   glfwSetErrorCallback(this -> error_callback);
+   glfwSetErrorCallback(error_callback);
 
    GLFWwindow* window = glfwCreateWindow(640, 480, "My Title", NULL, NULL);
 
@@ -55,10 +57,10 @@ int firstGameLoop::openGLTest()
    }
 
    glfwMakeContextCurrent(window);
-   glfwSetKeyCallback(window, this.key_callback);
+   glfwSetKeyCallback(window, key_callback);
    glfwSwapInterval(1); //Set time between buffer switches.
    glfwGetCursorPos(window, &xpos, &ypos);
-   glfwSetMouseButtonCallback(window, this.mouse_button_callback);
+   glfwSetMouseButtonCallback(window, mouse_button_callback);
 
    glfwSetScrollCallback(window, scroll_callback);
 
@@ -89,8 +91,8 @@ int firstGameLoop::openGLTest()
       glEnd();
 
       glfwGetCursorPos(window, &xpos, &ypos);
-      cout << glfwGetTime() <<endl;
-      cout << xpos << ", " << ypos << endl;
+      std::cout << glfwGetTime() << std::endl;
+      std::cout << xpos << ", " << ypos << std::endl;
 
       glfwSwapBuffers(window);
       glfwPollEvents();
@@ -98,13 +100,23 @@ int firstGameLoop::openGLTest()
    }
 
    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-   cout << xpos << ", " << ypos << endl;
+   std::cout << xpos << ", " << ypos << std::endl;
    glfwDestroyWindow(window);
    glfwTerminate(); //All done.
    return 1;
 }
 
+firstGameLoop::firstGameLoop()
+{
+   xpos = 0.0;
+   ypos = 0.0;
+   spinMod = 1;
+}
 
+firstGameLoop::~firstGameLoop()
+{
+   ;
+}
 
 
 }
