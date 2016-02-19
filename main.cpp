@@ -90,7 +90,7 @@ int counters = 0;
 ConsoleOptions testConsole;
 
 //cout<<"Please press the maximize button at the top right of the screen."<<endl;
-int screenX = 158; int screenY = 61;
+int screenX = 158; int screenY = 81;
 testConsole.setConsoleSize(screenX, screenY);
 testConsole.changeCurrentWindowText("New name!");
 
@@ -226,13 +226,14 @@ for (int i = 0; i < screenTest.testVector.size(); i++){
 }
 */
 
-   testConsole.cursorOptions.changeCursorPos(0, 4);
+   testConsole.cursorOptions.changeCursorPos(0, 0);
 
 
    attackScaling::attackReader thingsAndStuff;
-   thingsAndStuff.readScalingFile("Data/Attacks/Base_Attack_Scalings.txt");
 
    std::cout << "I'm done!" << std::endl;
+
+
    system("PAUSE");
 
    eventLogger -> addNewLog("End Program successfully!");

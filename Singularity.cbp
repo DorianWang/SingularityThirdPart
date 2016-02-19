@@ -14,7 +14,7 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
+			<Add option="-std=c++0x" />
 		</Compiler>
 		<Unit filename="ActionEffects.h" />
 		<Unit filename="AttackReader.cpp">

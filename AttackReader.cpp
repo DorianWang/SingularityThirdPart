@@ -19,9 +19,13 @@ void attackReader::readScalingFile(const std::string inputFilePath)
    file.textOpenFile(inputFilePath, false);
    stringFunc stringModder;
    std::string readInput; std::string input;
-   for( std::map <std::string, int>::iterator it = scalingMap.begin(); it != scalingMap.end(); ++it) {
+   /*for( std::map <std::string, int>::iterator it = scalingMap.begin(); it != scalingMap.end(); ++it) {
       std::cout << it -> first << std::endl;
    }
+   std::cout << "Things" << std::endl;
+   for (std::vector <std::string>::iterator it = scalingList.begin(); it != scalingList.end(); ++it){
+      std::cout << *it << std::endl;
+   }*/
 
    while(file.readLine(&readInput)){
 
@@ -35,7 +39,7 @@ void attackReader::readScalingFile(const std::string inputFilePath)
             scalingList.push_back(input);
             continue;
          }
-         std::cout << input << " " << scalingMap[input] << std::endl;
+         std::cout << input << " " << scalingMap[input] << " " <<scalingList[scalingMap[input]] << std::endl;
          eventLogger -> addNewLog("File: AttackReader.cpp; Warning: Input: " + input + " already exists in the system.");
       }
    }

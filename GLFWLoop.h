@@ -8,6 +8,8 @@
 #include <iomanip>
 #include <ctime>
 
+#include "DamageCalculator.h"
+
 #define GLFW_INCLUDE_GLU
 #include "GL\glfw3.h"
 
@@ -23,6 +25,10 @@ namespace firstGameLoop{
       firstGameLoop();
       ~firstGameLoop();
 
+
+      //Damage calculation things.
+
+      //Testing OpenGL!
       int openGLTest();
 
       //Testing variables.
